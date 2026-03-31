@@ -1,0 +1,8 @@
+# Large video files — stored in Azure Blob Storage (itpdocs)
+*.mp4
+*.mov
+*.avi
+*.wmv
+*.flv
+*.mkv
+*.webm
