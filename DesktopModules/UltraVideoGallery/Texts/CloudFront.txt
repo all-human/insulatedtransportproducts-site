@@ -1,0 +1,4 @@
+Bucket Name -> Distribution Name
+or
+Another Bucket -> rtmp://Distribution Name
+...

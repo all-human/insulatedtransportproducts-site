@@ -1,0 +1,2 @@
+﻿DesktopModules\ForemostMedia\SeoHelper\SkinObject.ascx
+DesktopModules\ForemostMedia\SeoHelper\Settings.ascx

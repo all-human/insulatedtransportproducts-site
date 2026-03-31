@@ -1,0 +1,16 @@
+﻿ALTER TABLE [dbo].[FMFormThirdPartySubmission] DROP CONSTRAINT [FK_FMFormThirdPartySubmission_FMFormSubmissions]
+GO
+ALTER TABLE [dbo].[FMFormFiles] DROP CONSTRAINT [FK_FMFormSubmissions_FMFormFiles]
+GO
+/****** Object:  Table [dbo].[FMFormThirdPartySubmission]    Script Date: 12/1/2016 3:36:37 PM ******/
+DROP TABLE [dbo].[FMFormThirdPartySubmission]
+GO
+/****** Object:  Table [dbo].[FMFormSubmissions]    Script Date: 12/1/2016 3:36:37 PM ******/
+DROP TABLE [dbo].[FMFormSubmissions]
+GO
+/****** Object:  Table [dbo].[FMFormFiles]    Script Date: 12/1/2016 3:36:38 PM ******/
+DROP TABLE [dbo].[FMFormFiles]
+GO
+/****** Object:  Table [dbo].[FMFormFailedSubmissions]    Script Date: 2/17/2017 9:23:09 AM ******/
+DROP TABLE [dbo].[FMFormFailedSubmissions]
+GO

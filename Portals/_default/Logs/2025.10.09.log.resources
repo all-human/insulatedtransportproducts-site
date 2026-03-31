@@ -1,0 +1,121 @@
+2025-10-09 13:49:34,496 [dnn2sqlv3][Thread:50][FATAL] DotNetNuke.Web.Common.Internal.DotNetNukeHttpApplication - System.Web.HttpException (0x80004005): A potentially dangerous Request.Path value was detected from the client (:).
+   at System.Web.HttpRequest.ValidateInputIfRequiredByConfig()
+   at System.Web.HttpApplication.PipelineStepManager.ValidateHelper(HttpContext context)
+2025-10-09 14:24:00,631 [dnn2sqlv3][Thread:50][FATAL] DotNetNuke.Web.Common.Internal.DotNetNukeHttpApplication - System.Web.HttpException (0x80004005): A potentially dangerous Request.Path value was detected from the client (:).
+   at System.Web.HttpRequest.ValidateInputIfRequiredByConfig()
+   at System.Web.HttpApplication.PipelineStepManager.ValidateHelper(HttpContext context)
+2025-10-09 14:30:42,975 [dnn2sqlv3][Thread:55][FATAL] DotNetNuke.Web.Common.Internal.DotNetNukeHttpApplication - System.Web.HttpException (0x80004005): A potentially dangerous Request.Path value was detected from the client (:).
+   at System.Web.HttpRequest.ValidateInputIfRequiredByConfig()
+   at System.Web.HttpApplication.PipelineStepManager.ValidateHelper(HttpContext context)
+2025-10-09 15:00:06,249 [dnn2sqlv3][Thread:70][FATAL] DotNetNuke.Web.Common.Internal.DotNetNukeHttpApplication - System.Web.HttpException (0x80004005): A potentially dangerous Request.Path value was detected from the client (:).
+   at System.Web.HttpRequest.ValidateInputIfRequiredByConfig()
+   at System.Web.HttpApplication.PipelineStepManager.ValidateHelper(HttpContext context)
+2025-10-09 15:28:22,642 [dnn2sqlv3][Thread:22][ERROR] DotNetNuke.Services.Exceptions.Exceptions - System.NullReferenceException: Object reference not set to an instance of an object.
+   at DotNetNuke.Entities.Users.UserController.DeleteUser(UserInfo& user, Boolean notify, Boolean deleteAdmin)
+   at ForemostMedia.Modules.RemoteUserManager.Components.Services.Implementation.RemoteUserManagerService.NukeUsers(List`1 existingHostUsers, List`1 currentUserEmails)
+   at ForemostMedia.Modules.RemoteUserManager.Components.Services.Implementation.RemoteUserManagerService.SyncFmUsers()
+2025-10-09 15:28:27,669 [dnn2sqlv3][Thread:22][ERROR] DotNetNuke.Services.Scheduling.SchedulerClient - System.AggregateException: One or more errors occurred. ---> System.Threading.Tasks.TaskCanceledException: A task was canceled.
+   --- End of inner exception stack trace ---
+   at System.Threading.Tasks.Task.ThrowIfExceptional(Boolean includeTaskCanceledExceptions)
+   at System.Threading.Tasks.Task`1.GetResultCore(Boolean waitCompletionNotification)
+   at System.Threading.Tasks.Task`1.get_Result()
+   at ForemostMedia.Modules.RemoteUserManager.Components.Services.Implementation.RemoteUserManagerService.NotifyLazarus(List`1 failures, String domain)
+   at ForemostMedia.Modules.RemoteUserManager.Components.Services.Implementation.RemoteUserManagerService.SyncFmUsers()
+   at ForemostMedia.Modules.RemoteUserManager.Components.Scheduler.SyncSupportUserScheduler.DoWork()
+---> (Inner Exception #0) System.Threading.Tasks.TaskCanceledException: A task was canceled.<---
+
+2025-10-09 15:28:27,671 [dnn2sqlv3][Thread:22][ERROR] DotNetNuke.Services.Exceptions.Exceptions - System.AggregateException: One or more errors occurred. ---> System.Threading.Tasks.TaskCanceledException: A task was canceled.
+   --- End of inner exception stack trace ---
+   at System.Threading.Tasks.Task.ThrowIfExceptional(Boolean includeTaskCanceledExceptions)
+   at System.Threading.Tasks.Task`1.GetResultCore(Boolean waitCompletionNotification)
+   at System.Threading.Tasks.Task`1.get_Result()
+   at ForemostMedia.Modules.RemoteUserManager.Components.Services.Implementation.RemoteUserManagerService.NotifyLazarus(List`1 failures, String domain)
+   at ForemostMedia.Modules.RemoteUserManager.Components.Services.Implementation.RemoteUserManagerService.SyncFmUsers()
+   at ForemostMedia.Modules.RemoteUserManager.Components.Scheduler.SyncSupportUserScheduler.DoWork()
+---> (Inner Exception #0) System.Threading.Tasks.TaskCanceledException: A task was canceled.<---
+
+2025-10-09 15:28:46,415 [dnn2sqlv3][Thread:24][ERROR] DotNetNuke.Services.Exceptions.Exceptions - System.NullReferenceException: Object reference not set to an instance of an object.
+   at DotNetNuke.Entities.Users.UserController.DeleteUser(UserInfo& user, Boolean notify, Boolean deleteAdmin)
+   at ForemostMedia.Modules.RemoteUserManager.Components.Services.Implementation.RemoteUserManagerService.NukeUsers(List`1 existingHostUsers, List`1 currentUserEmails)
+   at ForemostMedia.Modules.RemoteUserManager.Components.Services.Implementation.RemoteUserManagerService.SyncFmUsers()
+2025-10-09 15:28:51,457 [dnn2sqlv3][Thread:24][ERROR] DotNetNuke.Services.Scheduling.SchedulerClient - System.AggregateException: One or more errors occurred. ---> System.Threading.Tasks.TaskCanceledException: A task was canceled.
+   --- End of inner exception stack trace ---
+   at System.Threading.Tasks.Task.ThrowIfExceptional(Boolean includeTaskCanceledExceptions)
+   at System.Threading.Tasks.Task`1.GetResultCore(Boolean waitCompletionNotification)
+   at System.Threading.Tasks.Task`1.get_Result()
+   at ForemostMedia.Modules.RemoteUserManager.Components.Services.Implementation.RemoteUserManagerService.NotifyLazarus(List`1 failures, String domain)
+   at ForemostMedia.Modules.RemoteUserManager.Components.Services.Implementation.RemoteUserManagerService.SyncFmUsers()
+   at ForemostMedia.Modules.RemoteUserManager.Components.Scheduler.SyncSupportUserScheduler.DoWork()
+---> (Inner Exception #0) System.Threading.Tasks.TaskCanceledException: A task was canceled.<---
+
+2025-10-09 15:28:51,478 [dnn2sqlv3][Thread:24][ERROR] DotNetNuke.Services.Exceptions.Exceptions - System.AggregateException: One or more errors occurred. ---> System.Threading.Tasks.TaskCanceledException: A task was canceled.
+   --- End of inner exception stack trace ---
+   at System.Threading.Tasks.Task.ThrowIfExceptional(Boolean includeTaskCanceledExceptions)
+   at System.Threading.Tasks.Task`1.GetResultCore(Boolean waitCompletionNotification)
+   at System.Threading.Tasks.Task`1.get_Result()
+   at ForemostMedia.Modules.RemoteUserManager.Components.Services.Implementation.RemoteUserManagerService.NotifyLazarus(List`1 failures, String domain)
+   at ForemostMedia.Modules.RemoteUserManager.Components.Services.Implementation.RemoteUserManagerService.SyncFmUsers()
+   at ForemostMedia.Modules.RemoteUserManager.Components.Scheduler.SyncSupportUserScheduler.DoWork()
+---> (Inner Exception #0) System.Threading.Tasks.TaskCanceledException: A task was canceled.<---
+
+2025-10-09 15:33:08,683 [dnn2sqlv3][Thread:5][ERROR] DotNetNuke.Services.Exceptions.Exceptions - System.NullReferenceException: Object reference not set to an instance of an object.
+   at DotNetNuke.Entities.Users.UserController.DeleteUser(UserInfo& user, Boolean notify, Boolean deleteAdmin)
+   at ForemostMedia.Modules.RemoteUserManager.Components.Services.Implementation.RemoteUserManagerService.NukeUsers(List`1 existingHostUsers, List`1 currentUserEmails)
+   at ForemostMedia.Modules.RemoteUserManager.Components.Services.Implementation.RemoteUserManagerService.SyncFmUsers()
+2025-10-09 15:33:52,816 [dnn2sqlv3][Thread:59][ERROR] DotNetNuke.Services.Exceptions.Exceptions - System.NullReferenceException: Object reference not set to an instance of an object.
+   at DotNetNuke.Entities.Users.UserController.DeleteUser(UserInfo& user, Boolean notify, Boolean deleteAdmin)
+   at ForemostMedia.Modules.RemoteUserManager.Components.Services.Implementation.RemoteUserManagerService.NukeUsers(List`1 existingHostUsers, List`1 currentUserEmails)
+   at ForemostMedia.Modules.RemoteUserManager.Components.Services.Implementation.RemoteUserManagerService.SyncFmUsers()
+2025-10-09 15:35:26,913 [dnn2sqlv3][Thread:35][ERROR] DotNetNuke.Services.Exceptions.Exceptions - System.NullReferenceException: Object reference not set to an instance of an object.
+   at DotNetNuke.Entities.Users.UserController.DeleteUser(UserInfo& user, Boolean notify, Boolean deleteAdmin)
+   at ForemostMedia.Modules.RemoteUserManager.Components.Services.Implementation.RemoteUserManagerService.NukeUsers(List`1 existingHostUsers, List`1 currentUserEmails)
+   at ForemostMedia.Modules.RemoteUserManager.Components.Services.Implementation.RemoteUserManagerService.SyncFmUsers()
+2025-10-09 15:44:52,642 [dnn2sqlv3][Thread:16][FATAL] DotNetNuke.Web.Common.Internal.DotNetNukeHttpApplication - System.Web.HttpException (0x80004005): A potentially dangerous Request.Path value was detected from the client (:).
+   at System.Web.HttpRequest.ValidateInputIfRequiredByConfig()
+   at System.Web.HttpApplication.PipelineStepManager.ValidateHelper(HttpContext context)
+2025-10-09 16:06:13,713 [dnn2sqlv3][Thread:21][FATAL] DotNetNuke.Web.Common.Internal.DotNetNukeHttpApplication - System.Web.HttpException (0x80004005): A potentially dangerous Request.Path value was detected from the client (:).
+   at System.Web.HttpRequest.ValidateInputIfRequiredByConfig()
+   at System.Web.HttpApplication.PipelineStepManager.ValidateHelper(HttpContext context)
+2025-10-09 16:43:21,486 [dnn2sqlv3][Thread:80][FATAL] DotNetNuke.Web.Common.Internal.DotNetNukeHttpApplication - System.Web.HttpException (0x80004005): A potentially dangerous Request.Path value was detected from the client (:).
+   at System.Web.HttpRequest.ValidateInputIfRequiredByConfig()
+   at System.Web.HttpApplication.PipelineStepManager.ValidateHelper(HttpContext context)
+2025-10-09 17:47:11,342 [dnn2sqlv3][Thread:75][FATAL] DotNetNuke.Web.Common.Internal.DotNetNukeHttpApplication - System.Web.HttpException (0x80004005): A potentially dangerous Request.Path value was detected from the client (:).
+   at System.Web.HttpRequest.ValidateInputIfRequiredByConfig()
+   at System.Web.HttpApplication.PipelineStepManager.ValidateHelper(HttpContext context)
+2025-10-09 17:52:36,848 [dnn2sqlv3][Thread:43][FATAL] DotNetNuke.Web.Common.Internal.DotNetNukeHttpApplication - System.Web.HttpException (0x80004005): A potentially dangerous Request.Path value was detected from the client (:).
+   at System.Web.HttpRequest.ValidateInputIfRequiredByConfig()
+   at System.Web.HttpApplication.PipelineStepManager.ValidateHelper(HttpContext context)
+2025-10-09 18:29:45,259 [dnn2sqlv3][Thread:62][FATAL] DotNetNuke.Web.Common.Internal.DotNetNukeHttpApplication - System.Web.HttpException (0x80004005): A potentially dangerous Request.Path value was detected from the client (:).
+   at System.Web.HttpRequest.ValidateInputIfRequiredByConfig()
+   at System.Web.HttpApplication.PipelineStepManager.ValidateHelper(HttpContext context)
+2025-10-09 18:56:43,109 [dnn2sqlv3][Thread:60][FATAL] DotNetNuke.Web.Common.Internal.DotNetNukeHttpApplication - System.Web.HttpException (0x80004005): A potentially dangerous Request.Path value was detected from the client (:).
+   at System.Web.HttpRequest.ValidateInputIfRequiredByConfig()
+   at System.Web.HttpApplication.PipelineStepManager.ValidateHelper(HttpContext context)
+2025-10-09 19:52:28,806 [dnn2sqlv3][Thread:17][FATAL] DotNetNuke.Web.Common.Internal.DotNetNukeHttpApplication - System.Web.HttpException (0x80004005): A potentially dangerous Request.Path value was detected from the client (:).
+   at System.Web.HttpRequest.ValidateInputIfRequiredByConfig()
+   at System.Web.HttpApplication.PipelineStepManager.ValidateHelper(HttpContext context)
+2025-10-09 20:37:28,319 [dnn2sqlv3][Thread:67][FATAL] DotNetNuke.Web.Common.Internal.DotNetNukeHttpApplication - System.Web.HttpException (0x80004005): A potentially dangerous Request.Path value was detected from the client (:).
+   at System.Web.HttpRequest.ValidateInputIfRequiredByConfig()
+   at System.Web.HttpApplication.PipelineStepManager.ValidateHelper(HttpContext context)
+2025-10-09 20:57:37,529 [dnn2sqlv3][Thread:44][FATAL] DotNetNuke.Web.Common.Internal.DotNetNukeHttpApplication - System.Web.HttpException (0x80004005): A potentially dangerous Request.Path value was detected from the client (:).
+   at System.Web.HttpRequest.ValidateInputIfRequiredByConfig()
+   at System.Web.HttpApplication.PipelineStepManager.ValidateHelper(HttpContext context)
+2025-10-09 21:19:38,790 [dnn2sqlv3][Thread:25][FATAL] DotNetNuke.Web.Common.Internal.DotNetNukeHttpApplication - System.Web.HttpException (0x80004005): A potentially dangerous Request.Path value was detected from the client (:).
+   at System.Web.HttpRequest.ValidateInputIfRequiredByConfig()
+   at System.Web.HttpApplication.PipelineStepManager.ValidateHelper(HttpContext context)
+2025-10-09 21:27:10,700 [dnn2sqlv3][Thread:43][FATAL] DotNetNuke.Web.Common.Internal.DotNetNukeHttpApplication - System.Web.HttpException (0x80004005): A potentially dangerous Request.Path value was detected from the client (:).
+   at System.Web.HttpRequest.ValidateInputIfRequiredByConfig()
+   at System.Web.HttpApplication.PipelineStepManager.ValidateHelper(HttpContext context)
+2025-10-09 21:35:18,424 [dnn2sqlv3][Thread:43][FATAL] DotNetNuke.Web.Common.Internal.DotNetNukeHttpApplication - System.Web.HttpException (0x80004005): A potentially dangerous Request.Path value was detected from the client (:).
+   at System.Web.HttpRequest.ValidateInputIfRequiredByConfig()
+   at System.Web.HttpApplication.PipelineStepManager.ValidateHelper(HttpContext context)
+2025-10-09 21:38:11,470 [dnn2sqlv3][Thread:25][FATAL] DotNetNuke.Web.Common.Internal.DotNetNukeHttpApplication - System.Web.HttpException (0x80004005): A potentially dangerous Request.Path value was detected from the client (:).
+   at System.Web.HttpRequest.ValidateInputIfRequiredByConfig()
+   at System.Web.HttpApplication.PipelineStepManager.ValidateHelper(HttpContext context)
+2025-10-09 22:50:16,055 [dnn2sqlv3][Thread:8][FATAL] DotNetNuke.Web.Common.Internal.DotNetNukeHttpApplication - System.Web.HttpException (0x80004005): A potentially dangerous Request.Path value was detected from the client (:).
+   at System.Web.HttpRequest.ValidateInputIfRequiredByConfig()
+   at System.Web.HttpApplication.PipelineStepManager.ValidateHelper(HttpContext context)
+2025-10-09 23:35:32,303 [dnn2sqlv3][Thread:76][ERROR] DotNetNuke.Services.Exceptions.Exceptions - System.NullReferenceException: Object reference not set to an instance of an object.
+   at DotNetNuke.Entities.Users.UserController.DeleteUser(UserInfo& user, Boolean notify, Boolean deleteAdmin)
+   at ForemostMedia.Modules.RemoteUserManager.Components.Services.Implementation.RemoteUserManagerService.NukeUsers(List`1 existingHostUsers, List`1 currentUserEmails)
+   at ForemostMedia.Modules.RemoteUserManager.Components.Services.Implementation.RemoteUserManagerService.SyncFmUsers()

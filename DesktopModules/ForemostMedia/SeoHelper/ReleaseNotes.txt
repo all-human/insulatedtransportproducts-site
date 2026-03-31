@@ -1,0 +1,54 @@
+﻿<div id="fmReleaseNotes">
+  <h2 class="dnnFormSectionHead" ><a href="" class="dnnLabelExpanded">FM SEO Helper Release Notes</a></h2>
+  <fieldset>
+<ul>
+	<li>Version 01.00.07 includes
+	  <ol>
+		<li>Fix for redirects file not existing on load</li>
+	  </ol>
+    </li>
+	<li>Version 01.00.06 includes
+	  <ol>
+		<li>Fix web.config install</li>
+	  </ol>
+    </li>
+	<li>Version 01.00.05 includes
+	  <ol>
+		<li>Fix for new install - can't sort null</li>
+	  </ol>
+    </li>
+	<li>Version 01.00.04 includes
+	  <ol>
+		<li>Added Basic 301 redirects</li>
+	  </ol>
+    </li>
+	<li>Version 01.00.03 includes
+	  <ol>
+		<li>Split Google Analytics code from Leadformix code</li>
+		<li>Delete DNN Core's Google Analytics code if our GA code is present</li>
+	  </ol>
+    </li>
+	<li>Version 01.00.02 includes
+	  <ol>
+		<li>Added ability to edit FmSeo.txt for tracking code</li>
+	  </ol>
+    </li>
+	<li>Version 01.00.01 includes
+	  <ol>
+		<li>Added ability to edit Robots.txt</li>
+	  </ol>
+    </li>
+	<li>Version 01.00.00 includes
+	  <ol>
+		<li>Initial Release</li>
+	  </ol>
+    </li>
+</ul>
+
+  </fieldset>
+</div>
+<script type="text/javascript">
+jQuery(document).ready(function(){
+	$("#fmReleaseNotes").dnnPanels();
+});
+</script>

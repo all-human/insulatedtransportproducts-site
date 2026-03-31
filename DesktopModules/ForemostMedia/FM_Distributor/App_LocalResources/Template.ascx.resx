@@ -1,0 +1,183 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="lblButtonText.Help" xml:space="preserve">
+    <value>Text or html that will be the button for searching the distributors</value>
+  </data>
+  <data name="lblButtonText.Text" xml:space="preserve">
+    <value>Button Text</value>
+  </data>
+  <data name="lblPageSize.Help" xml:space="preserve">
+    <value>Set the page size - for paging purposes</value>
+  </data>
+  <data name="lblPageSize.Text" xml:space="preserve">
+    <value>Page Size</value>
+  </data>
+  <data name="lblTemplate.Help" xml:space="preserve">
+    <value>The html markup (as a table row) for the outlay of the results returned from the distributor search</value>
+  </data>
+  <data name="lblTemplate.Text" xml:space="preserve">
+    <value>Template</value>
+  </data>
+  <data name="lblTokens.Help" xml:space="preserve">
+    <value>Use these tokens to be replaced with corresponding info.</value>
+  </data>
+  <data name="lblTokens.Text" xml:space="preserve">
+    <value>Tokens</value>
+  </data>
+  <data name="Tokens.Text" xml:space="preserve">
+    <value>&lt;ul style="list-style-type: none;"&gt;
+	&lt;li&gt;&lt;strong&gt;[ADDRESS]&lt;/strong&gt;&lt;/li&gt;
+	&lt;li&gt;&lt;strong&gt;[CELL]&lt;/strong&gt;&lt;/li&gt;
+	&lt;li&gt;&lt;strong&gt;[CITY]&lt;/strong&gt;&lt;/li&gt;
+	&lt;li&gt;&lt;strong&gt;[CITYSTATECOUNTRY]&lt;/strong&gt; - for United States will output City, State - for other countries will output City(If applicable), State (If applicable), Country&lt;/li&gt;
+	&lt;li&gt;&lt;strong&gt;[COMPANY]&lt;/strong&gt;&lt;/li&gt;
+	&lt;li&gt;&lt;strong&gt;[COUNTRYNAME]&lt;/strong&gt; - name - not abbreviation of country&lt;/li&gt;
+	&lt;li&gt;&lt;strong&gt;[DISTIMAGES]&lt;/strong&gt; - displays distributor type images&lt;/li&gt;
+	&lt;li&gt;&lt;strong&gt;[EDIT]&lt;/strong&gt; - edit link for users with Editable permissions&lt;/li&gt;
+	&lt;li&gt;&lt;strong&gt;[EMAIL]&lt;/strong&gt;&lt;/li&gt;
+	&lt;li&gt;&lt;strong&gt;[FAX]&lt;/strong&gt;&lt;/li&gt;
+	&lt;li&gt;&lt;strong&gt;[FIRSTNAME]&lt;/strong&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;strong&gt;[HASFIRSTNAME]&lt;/strong&gt;&lt;strong&gt;[/HASFIRSTNAME]&lt;/strong&gt; - all text inside tags will only be output if record has a first name&lt;/li&gt;
+	&lt;li&gt;&lt;strong&gt;[HASEMAIL]&lt;/strong&gt;&lt;strong&gt;[/HASEMAIL]&lt;/strong&gt; - all text inside tags will only be output if record has an email&lt;/li&gt;
+	&lt;li&gt;&lt;strong&gt;[HASWEBSITE]&lt;/strong&gt;&lt;strong&gt;[/HASWEBSITE]&lt;/strong&gt; - all text inside tags will only be output if record has a website address&lt;/li&gt;&lt;li&gt;&lt;strong&gt;[HASWEBSITE2]&lt;/strong&gt;&lt;strong&gt;[/HASWEBSITE2]&lt;/strong&gt; - all text inside tags will only be output if record has an alternate website address&lt;/li&gt;
+	&lt;li&gt;&lt;strong&gt;[HASADDRESS]&lt;/strong&gt;&lt;strong&gt;[/HASADDRESS]&lt;/strong&gt; - all text inside tags will only be output if record has an address&lt;/li&gt;
+	&lt;li&gt;&lt;strong&gt;[HASADDRESS2]&lt;/strong&gt;&lt;strong&gt;[/HASADDRESS2]&lt;/strong&gt; - all text inside tags will only be output if record has an address2&lt;/li&gt;
+	&lt;li&gt;&lt;strong&gt;[HASPHONE]&lt;/strong&gt;&lt;strong&gt;[/HASPHONE]&lt;/strong&gt; - all text inside tags will only be output if record has a phone number&lt;/li&gt;
+	&lt;li&gt;&lt;strong&gt;[HASPHONE2]&lt;/strong&gt;&lt;strong&gt;[/HASPHONE2]&lt;/strong&gt; - all text inside tags will only be output if record has a phone2 number&lt;/li&gt;
+	&lt;li&gt;&lt;strong&gt;[HASFAX]&lt;/strong&gt;&lt;strong&gt;[/HASFAX]&lt;/strong&gt; - all text inside tags will only be output if record has a fax number&lt;/li&gt;
+	&lt;li&gt;&lt;strong&gt;[HASCELL]&lt;/strong&gt;&lt;strong&gt;[/HASCELL]&lt;/strong&gt; - all text inside tags will only be output if record has a cell phone number&lt;/li&gt;
+    &lt;li&gt;&lt;strong&gt;[HASCITY]&lt;/strong&gt;&lt;strong&gt;[/HASCITY]&lt;/strong&gt; - all text inside tags will only be output if record has a valid city&lt;/li&gt;
+	&lt;li&gt;&lt;strong&gt;[LASTNAME]&lt;/strong&gt;&lt;/li&gt;
+	&lt;li&gt;&lt;strong&gt;[NAME]&lt;/strong&gt; - Distplays FirstName LastName&lt;/li&gt;
+	&lt;li&gt;&lt;strong&gt;[NOTES]&lt;/strong&gt; - description&lt;/li&gt;
+	&lt;li&gt;&lt;strong&gt;[PHONE]&lt;/strong&gt;&lt;/li&gt;
+	&lt;li&gt;&lt;strong&gt;[PHONE2]&lt;/strong&gt;&lt;/li&gt;
+	&lt;li&gt;&lt;strong&gt;[POSTALCODE]&lt;/strong&gt;&lt;/li&gt;
+	&lt;li&gt;&lt;strong&gt;[PRIORITYGROUP:XXX]&lt;/strong&gt; &lt;strong&gt;[PRIORITYGROUP]&lt;/strong&gt; - Replace XXX with priority group NAME and all text within will only be shown if record is in that priority group&lt;/li&gt;
+	&lt;li&gt;&lt;strong&gt;[REGION:COUNTRY]&lt;/strong&gt; - displays a comman separated string of country Abbreviations that the record has in their region&lt;/li&gt;
+	&lt;li&gt;&lt;strong&gt;[REGION:STATE]&lt;/strong&gt; - displays a comman separated string of US state Abbreviations that the record has in their region&lt;/li&gt;
+	&lt;li&gt;&lt;strong&gt;[STATE]&lt;/strong&gt;&lt;/li&gt;
+	&lt;li&gt;&lt;strong&gt;[STATECOUNTRY]&lt;/strong&gt; - if the record's state is in the US - it will output their State Abbr - otherwise it will display the records Country name&lt;/li&gt;
+	&lt;li&gt;&lt;strong&gt;[TYPE]&lt;/strong&gt; - the Type of the record&lt;/li&gt;
+	&lt;li&gt;&lt;strong&gt;[WEBSITE]&lt;/strong&gt; - to make a link to the website use: [HASWEBSITE]&amp;lt;a href="[WEBSITE]" target="_blank"&amp;gt;[WEBSITE]&amp;lt;/a&amp;gt;[/HASWEBSITE]&lt;/li&gt;	
+	&lt;li&gt;&lt;strong&gt;[WEBSITE2]&lt;/strong&gt; - to make a link to the website use: [HASWEBSITE2]&amp;lt;a href="[WEBSITE2]" target="_blank"&amp;gt;[WEBSITE2]&amp;lt;/a&amp;gt;[/HASWEBSITE2]&lt;/li&gt;	
+&lt;/ul&gt;</value>
+  </data>
+</root>

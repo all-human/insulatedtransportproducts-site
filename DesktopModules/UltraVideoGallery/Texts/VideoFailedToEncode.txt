@@ -1,0 +1,3 @@
+Your video on [PORTALNAME] is deleted
+<p>Unfortunately, we failed to encode your video, [VIDEOTITLE], on [PORTALNAME], generally this is because the video itself use some non-standard codecs.</p>
+<p>You can encode your videos to .mp4 format by your self and try to upload it again.</p>

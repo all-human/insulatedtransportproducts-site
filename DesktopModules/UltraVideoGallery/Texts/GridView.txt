@@ -1,0 +1,13 @@
+<div>
+<a href="[LINK]" class="griditem">
+	<span class="imgntime" style="height:[SCREENSHOTHEIGHT]px">
+	<img src="[SCREENSHOT]" border="0" alt="Screenshot" />
+	[LENGTH]
+	</span>
+
+	<span class="title hl">[VIDEOTITLE]</span>
+	<span class="meta">
+		[VIEWS] views | [CREATEDAGO]
+	</span>
+</a>
+</div>

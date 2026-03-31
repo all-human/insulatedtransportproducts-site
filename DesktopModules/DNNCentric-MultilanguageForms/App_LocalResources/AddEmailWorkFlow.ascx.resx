@@ -1,0 +1,469 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="CheckExistWorkflowName.Text" xml:space="preserve">
+    <value>Workflow name already exist</value>
+  </data>
+  <data name="ControlTitle_addemailworkflow.Text" xml:space="preserve">
+    <value>Mail Workflow</value>
+  </data>
+  <data name="EmailTemplate.Text" xml:space="preserve">
+    <value>&lt;br/&gt;$(AutoFieldValuelist)&lt;br /&gt;&lt;br /&gt;From :&lt;br /&gt;$(dnn_DomainURL)</value>
+  </data>
+  <data name="EmptyWorkflowName.Text" xml:space="preserve">
+    <value>Workflow Name is Empty</value>
+  </data>
+  <data name="InvalidFromAddress.Text" xml:space="preserve">
+    <value>[From] Email Address Is Invalid</value>
+  </data>
+  <data name="lblAlertMsgNoRoleSelected.Text" xml:space="preserve">
+    <value>Please select At-Least one Role(s) from above list</value>
+  </data>
+  <data name="lblAlertMsgNoUsersSelected.Text" xml:space="preserve">
+    <value>Please select At-Least one User(s) from above list</value>
+  </data>
+  <data name="lblAutoFillAllFields.Help" xml:space="preserve">
+    <value>Use this token to get a ready made table of all the fields and corresponding values.&lt;br/&gt;&lt;b&gt;Tip:&lt;/b&gt;To format Auto Generated table,&lt;br/&gt; edit EmailTable.css file.</value>
+  </data>
+  <data name="lblAutoFillOptedFields.Help" xml:space="preserve">
+    <value>Use this token to get a ready made table of only those fields and their values that are filled in before the form is submitted.&lt;br/&gt;&lt;b&gt;Tip:&lt;/b&gt;To format Auto Generated table,&lt;br/&gt; edit EmailTable.css file.</value>
+  </data>
+  <data name="lblAvailableEmailTokensText.Text" xml:space="preserve">
+    <value>Available Email Tokens:</value>
+  </data>
+  <data name="lblCustom.Text" xml:space="preserve">
+    <value>&lt;b&gt;Tip:&lt;/b&gt; Use comma [,] to separate more than one email IDs</value>
+  </data>
+  <data name="lblEmail.Text" xml:space="preserve">
+    <value>Send Emails To :</value>
+  </data>
+  <data name="lblEmailSubject.Text" xml:space="preserve">
+    <value>Email Subject Line (Token Supported):</value>
+  </data>
+  <data name="lblEmailTemplate.Text" xml:space="preserve">
+    <value>Template (HTML Supported) :</value>
+  </data>
+  <data name="lblFromEmailText.Text" xml:space="preserve">
+    <value>Select [From] Email Address:</value>
+  </data>
+  <data name="lblSelectCulture.Text" xml:space="preserve">
+    <value>Template For The Language(Culture):</value>
+  </data>
+  <data name="lblSendEmailToRoles.Text" xml:space="preserve">
+    <value>Send Email To :</value>
+  </data>
+  <data name="lblSendEmailToUsers.Text" xml:space="preserve">
+    <value>Send Email To :</value>
+  </data>
+  <data name="lblShowTokens.Text" xml:space="preserve">
+    <value>Available Tokens:</value>
+  </data>
+  <data name="lblWorkFlowName.Text" xml:space="preserve">
+    <value>Workflow Name:</value>
+  </data>
+  <data name="lnkBack.Text" xml:space="preserve">
+    <value>Back</value>
+  </data>
+  <data name="lnkSave.Text" xml:space="preserve">
+    <value>Save</value>
+  </data>
+  <data name="lnkUpdate.Text" xml:space="preserve">
+    <value>Update</value>
+  </data>
+  <data name="SelectFromEmailAddress.Text" xml:space="preserve">
+    <value>Please Select [From] Email Address</value>
+  </data>
+  <data name="BCEmailid.Text" xml:space="preserve">
+    <value>BCCEmailID(s):</value>
+  </data>
+  <data name="CCMailids.Text" xml:space="preserve">
+    <value>CCEmailID(s):</value>
+  </data>
+  <data name="FirstAttachemnt.Text" xml:space="preserve">
+    <value>Upload File:</value>
+  </data>
+  <data name="secAttachment.Text" xml:space="preserve">
+    <value>Email Attachment (optional)</value>
+  </data>
+  <data name="secEmailSettings.Text" xml:space="preserve">
+    <value>Email Settings</value>
+  </data>
+  <data name="InvalidFileTypeError.Text" xml:space="preserve">
+    <value>Invalid file type!</value>
+  </data>
+  <data name="SelectAfile.Text" xml:space="preserve">
+    <value>Please select a file!</value>
+  </data>
+  <data name="lblNote.Text" xml:space="preserve">
+    <value>&lt;br/&gt;&lt;b&gt;Note:&lt;/b&gt;&lt;br /&gt; 1.&lt;span style="color:red;"&gt;&lt;b&gt;TIP:&lt;/b&gt;&lt;/span&gt; Every field token can be used as $(fieldname.&lt;b&gt;caption&lt;/b&gt;) to retrieve field's caption text.&lt;br /&gt;
+2. Token replacement is case sensitive.&lt;br /&gt; 3.To custom format date and time fields you can also specify format string as... &lt;br /&gt;
+$(Datefield#&amp;lt;format&amp;gt;)&lt;br /&gt;
+for example $(Datefield#dd-MMM-yyyy)&lt;br /&gt;
+$(Timefield#&amp;lt;format&amp;gt;)&lt;br /&gt;
+for example $(Timefield#m:sstt)&lt;br /&gt;</value>
+  </data>
+  <data name="DNNRole.Text" xml:space="preserve">
+    <value>DNNRole</value>
+  </data>
+  <data name="DNNUser.Text" xml:space="preserve">
+    <value>DNNUser</value>
+  </data>
+  <data name="SendEmailTo.Text" xml:space="preserve">
+    <value>SendEmailTo</value>
+  </data>
+  <data name="lblPrecondition.Help" xml:space="preserve">
+    <value>Activate this workflow only if following condition is meet. (leave blank to always active state)</value>
+  </data>
+  <data name="lblPrecondition.Text" xml:space="preserve">
+    <value>Activate this workflow only if following condition is meet. (leave blank to always active state):</value>
+  </data>
+  <data name="secPreCondition.Text" xml:space="preserve">
+    <value>Precondition </value>
+  </data>
+  <data name="lblNoteFinalPreCon.Text" xml:space="preserve">
+    <value>Note: field names and querystring names are case sensitive</value>
+  </data>
+  <data name="lblPreConditionHelp.Text" xml:space="preserve">
+    <value>&lt;table cellpadding="1px" cellspacing="0px"  class="CFC_NormalTextBox"&gt;
+    &lt;tr&gt;
+      &lt;td&gt;
+       Precondition
+     &lt;/td&gt;
+     &lt;td&gt;
+      Explanation
+     &lt;/td&gt;
+     &lt;td&gt;
+     Notes
+     &lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;
+       '$(Firstname)' = 'sam' 
+      &lt;/td&gt;
+      &lt;td&gt;
+       Email will be sent only if field firstName is sam. 
+      &lt;/td&gt;
+      &lt;td&gt;
+       Single quotes around field tokens that can have string values
+      &lt;/td&gt;
+     &lt;/tr&gt;
+     
+     &lt;tr&gt;
+      &lt;td&gt;
+       in('$(Lastname)','sam','sammy')
+      &lt;/td&gt;
+      &lt;td&gt;
+       Activate workflow only if lastname is sam or sammy. 
+      &lt;/td&gt;
+      &lt;td&gt;
+       Again note single quotes
+      &lt;/td&gt;
+     &lt;/tr&gt;
+     
+     &lt;tr&gt;
+      &lt;td&gt;
+       (qs:PropertyID) != 1 or '(qs:PropertyName)' = 'Flat'
+      &lt;/td&gt;
+      &lt;td&gt;
+       Activate only if query string PropertyID is not 1 or PropertyName is equal to Flat.
+      &lt;/td&gt;
+      &lt;td&gt;
+       Query strings can be used for precondition also notice the use of single quotes
+      &lt;/td&gt;
+     &lt;/tr&gt;
+     
+     &lt;tr&gt;
+      &lt;td&gt;
+       ($(price)+100) &gt; (qs:SecretPrice) 
+      &lt;/td&gt;
+      &lt;td&gt;
+       Self explanatory.
+      &lt;/td&gt;
+      &lt;td&gt;
+       For advanced users
+      &lt;/td&gt;
+     &lt;/tr&gt;
+     &lt;tr&gt;
+      &lt;td&gt;
+       $(price) &gt; 100 and '$(name)' = 'sam' 
+      &lt;/td&gt;
+      &lt;td&gt;
+       Self explanatory.
+      &lt;/td&gt;
+      &lt;td&gt;
+       For advanced users
+      &lt;/td&gt;
+     &lt;/tr&gt;
+   &lt;/table&gt;</value>
+  </data>
+  <data name="lblPreConTip.Text" xml:space="preserve">
+    <value>Tip: Example preconditions</value>
+  </data>
+  <data name="lblCustomTip.Text" xml:space="preserve">
+    <value>&lt;b&gt;Tip:&lt;/b&gt; &lt;br /&gt;
+1. Type one or more email addresses (comma separated) &lt;br /&gt;
+2. You can also use field tokens provided is required field and validation type is text-&gt;email.&lt;br /&gt;</value>
+  </data>
+  <data name="lblSendEmailTip.Help" xml:space="preserve">
+    <value>1. different values can be read from query string as well like ... &lt;br /&gt;
+      a. use [QS:UserID:&lt;span color="red"&gt;uid&lt;/span&gt;]  to send email to user ID as picked from query string value "UID". &lt;br /&gt;
+      b. use [QS:UserName:&lt;span color="red"&gt;uname&lt;/span&gt;]  to send email to user ID as picked from query string value "UID". &lt;br /&gt;
+     c. use [QS:RoleID:&lt;span color="red"&gt;rid&lt;/span&gt;] to send email to all users in role with ID picked from query string value "rid".&lt;br /&gt;
+     d. use [QS:RoleName:&lt;span color="red"&gt;rname&lt;/span&gt;] to send email to all users in role with ID picked from query string value "rid".&lt;br /&gt;
+     e. use [QS:Email:&lt;span color="red"&gt;emailid&lt;/span&gt;] to send email to the email address specifyed in querystring value "emailid".&lt;br /&gt;&lt;br /&gt;
+ NOTE: query string names (shown in red above) are customizable. Replace them with your actual query string names.&lt;br /&gt;&lt;br /&gt;
+	
+2. Values can also be inserted like this ...&lt;br /&gt;
+     a. [UserName:John] or [UserName:$(someField)] &lt;br /&gt;
+     b. [UserID:12] or [UserID:$(someField)] &lt;br /&gt;
+     c. [RoleName:Subscribers] or [RoleName:$(someField)] &lt;br /&gt;
+     d. [RoleID:12] or [RoleID:$(someField)] &lt;br /&gt;
+	
+3. What's more you can mix and match these options by the use of comma for eg : [QS:UserID:&lt;span color="red"&gt;uid&lt;/span&gt;], [UserName:John] &lt;br /&gt;</value>
+  </data>
+  <data name="lblSendEmailTip.Text" xml:space="preserve">
+    <value>&lt;b&gt;Tip for Advanced users (show below in helptext)&lt;/b&gt;&lt;br /&gt;</value>
+  </data>
+  <data name="liCustom.Text" xml:space="preserve">
+    <value>Custom</value>
+  </data>
+  <data name="liSelDNNRole.Text" xml:space="preserve">
+    <value>Select DNN Role(s)</value>
+  </data>
+  <data name="liSelDNNUser.Text" xml:space="preserve">
+    <value>Select DNN User(s)</value>
+  </data>
+  <data name="lblAlarmAction.Help" xml:space="preserve">
+    <value> alarm action</value>
+  </data>
+  <data name="lblAlarmAction.Text" xml:space="preserve">
+    <value>Alarm Action</value>
+  </data>
+  <data name="lblAlarmDescription.Help" xml:space="preserve">
+    <value>alarm description</value>
+  </data>
+  <data name="lblAlarmDescription.Text" xml:space="preserve">
+    <value>Alarm Description</value>
+  </data>
+  <data name="lblAlarmTrigger.Help" xml:space="preserve">
+    <value>alarm trigger</value>
+  </data>
+  <data name="lblAlarmTrigger.Text" xml:space="preserve">
+    <value>Alarm Trigger</value>
+  </data>
+  <data name="lblCategories.Help" xml:space="preserve">
+    <value>categories</value>
+  </data>
+  <data name="lblCategories.Text" xml:space="preserve">
+    <value>Categories</value>
+  </data>
+  <data name="lblDateEnd.Help" xml:space="preserve">
+    <value>end date</value>
+  </data>
+  <data name="lblDateEnd.Text" xml:space="preserve">
+    <value>Date End</value>
+  </data>
+  <data name="lblDateStart.Help" xml:space="preserve">
+    <value>start date</value>
+  </data>
+  <data name="lblDateStart.Text" xml:space="preserve">
+    <value>Date Start</value>
+  </data>
+  <data name="lblDescription.Help" xml:space="preserve">
+    <value>enter description</value>
+  </data>
+  <data name="lblDescription.Text" xml:space="preserve">
+    <value>Description</value>
+  </data>
+  <data name="lblLocation.Help" xml:space="preserve">
+    <value>enter location</value>
+  </data>
+  <data name="lblLocation.Text" xml:space="preserve">
+    <value>Location</value>
+  </data>
+  <data name="lblPriority.Help" xml:space="preserve">
+    <value>select priority</value>
+  </data>
+  <data name="lblPriority.Text" xml:space="preserve">
+    <value>Priority</value>
+  </data>
+  <data name="lblSummery.Help" xml:space="preserve">
+    <value>enter summary</value>
+  </data>
+  <data name="lblSummery.Text" xml:space="preserve">
+    <value>Summary</value>
+  </data>
+  <data name="secAppointment.Text" xml:space="preserve">
+    <value>Attach Appointment (optional)</value>
+  </data>
+  <data name="lblEnableAppoinment.Help" xml:space="preserve">
+    <value>Check in to enable appointment</value>
+  </data>
+  <data name="lblEnableAppoinment.Text" xml:space="preserve">
+    <value>Enable Appointment</value>
+  </data>
+  <data name="lblEndTime.Help" xml:space="preserve">
+    <value>enter end time</value>
+  </data>
+  <data name="lblEndTime.Text" xml:space="preserve">
+    <value>End Time</value>
+  </data>
+  <data name="lblStartTime.Help" xml:space="preserve">
+    <value>Enter start time</value>
+  </data>
+  <data name="lblStartTime.Text" xml:space="preserve">
+    <value>Start Time</value>
+  </data>
+  <data name="lblAppontmentHelp.Text" xml:space="preserve">
+    <value>Feel free to use DNN or form field tokens here.</value>
+  </data>
+  <data name="lblMethod.Help" xml:space="preserve">
+    <value>select method</value>
+  </data>
+  <data name="lblMethod.Text" xml:space="preserve">
+    <value>Method</value>
+  </data>
+  <data name="lblIsActive.Text" xml:space="preserve">
+    <value>Active</value>
+  </data>
+  <data name="lblEnablePDFConversion.Help" xml:space="preserve">
+    <value>Check in to enable PDF</value>
+  </data>
+  <data name="lblEnablePDFConversion.Text" xml:space="preserve">
+    <value>Enable PDF  Attachment</value>
+  </data>
+  <data name="lblPDFContent.Help" xml:space="preserve">
+    <value>Configure PDF content template</value>
+  </data>
+  <data name="lblPDFContent.Text" xml:space="preserve">
+    <value>PDF Content Template</value>
+  </data>
+  <data name="lblPDFHeading.Help" xml:space="preserve">
+    <value>Configure PDF content heading </value>
+  </data>
+  <data name="lblPDFHeading.Text" xml:space="preserve">
+    <value>PDF Content Heading Template</value>
+  </data>
+  <data name="SecPDFConversion.Text" xml:space="preserve">
+    <value>PDF Attachment (optional)</value>
+  </data>
+  <data name="InvalidSendAddress.Text" xml:space="preserve">
+    <value>[Send] Email Address Is Invalid</value>
+  </data>
+</root>

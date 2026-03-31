@@ -1,0 +1,1354 @@
+2025-07-05 04:09:52,097 [dnn2sqlv3][Thread:40][FATAL] DotNetNuke.Web.Common.Internal.DotNetNukeHttpApplication - System.Web.HttpException (0x80004005): A potentially dangerous Request.Path value was detected from the client (:).
+   at System.Web.HttpRequest.ValidateInputIfRequiredByConfig()
+   at System.Web.HttpApplication.PipelineStepManager.ValidateHelper(HttpContext context)
+2025-07-05 05:30:01,427 [dnn2sqlv3][Thread:34][ERROR] DotNetNuke.Services.Exceptions.Exceptions - System.ArgumentException: Logins to decrypt: g35PABcgcYLejFhgr8hNRbyD2roiQCMC4Z0rncb4gvqzYLLDeJoA1g==
+2025-07-05 09:33:49,957 [dnn2sqlv3][Thread:39][ERROR] DotNetNuke.Services.Exceptions.Exceptions - System.ArgumentException: Logins to decrypt: g35PABcgcYLejFhgr8hNRbyD2roiQCMC4Z0rncb4gvqzYLLDeJoA1g==
+2025-07-05 10:49:39,378 [dnn2sqlv3][Thread:50][FATAL] DotNetNuke.Web.Common.Internal.DotNetNukeHttpApplication - System.Web.HttpException (0x80004005): A potentially dangerous Request.Path value was detected from the client (:).
+   at System.Web.HttpRequest.ValidateInputIfRequiredByConfig()
+   at System.Web.HttpApplication.PipelineStepManager.ValidateHelper(HttpContext context)
+2025-07-05 12:27:50,463 [dnn2sqlv3][Thread:44][ERROR] DotNetNuke.Services.Exceptions.Exceptions - System.Web.HttpException (0x80004005): Not Found
+   at DotNetNuke.Modules.Admin.Users.ViewProfile.OnInit(EventArgs e)
+   at System.Web.UI.Control.InitRecursive(Control namingContainer)
+   at System.Web.UI.Control.AddedControl(Control control, Int32 index)
+   at System.Web.UI.ControlCollection.Add(Control child)
+   at DotNetNuke.UI.Modules.ModuleHost.InjectModuleContent(Control content)
+   at DotNetNuke.UI.Modules.ModuleHost.CreateChildControls()
+   at System.Web.UI.Control.EnsureChildControls()
+   at DotNetNuke.UI.Containers.Container.get_ModuleControl()
+   at DotNetNuke.UI.Containers.Container.ProcessModule()
+   at DotNetNuke.UI.Skins.Pane.InjectModule(ModuleInfo module)
+2025-07-05 12:27:50,487 [dnn2sqlv3][Thread:44][ERROR] DotNetNuke.Services.Exceptions.Exceptions - DotNetNuke.Services.Exceptions.ModuleLoadException: Unhandled Error Adding Module to contentPane ---> System.Web.HttpException: Not Found
+   at DotNetNuke.Modules.Admin.Users.ViewProfile.OnInit(EventArgs e)
+   at System.Web.UI.Control.InitRecursive(Control namingContainer)
+   at System.Web.UI.Control.AddedControl(Control control, Int32 index)
+   at System.Web.UI.ControlCollection.Add(Control child)
+   at DotNetNuke.UI.Modules.ModuleHost.InjectModuleContent(Control content)
+   at DotNetNuke.UI.Modules.ModuleHost.CreateChildControls()
+   at System.Web.UI.Control.EnsureChildControls()
+   at DotNetNuke.UI.Containers.Container.get_ModuleControl()
+   at DotNetNuke.UI.Containers.Container.ProcessModule()
+   at DotNetNuke.UI.Skins.Pane.InjectModule(ModuleInfo module)
+   --- End of inner exception stack trace ---
+   at DotNetNuke.UI.Skins.Pane.InjectModule(ModuleInfo module)
+   at DotNetNuke.UI.Skins.Skin.InjectModule(Pane pane, ModuleInfo module)
+2025-07-05 12:27:50,495 [dnn2sqlv3][Thread:44][ERROR] DotNetNuke.Services.Exceptions.Exceptions - System.Web.HttpException (0x80004005): Not Found
+   at DotNetNuke.Modules.Admin.Users.ViewProfile.OnInit(EventArgs e)
+   at System.Web.UI.Control.InitRecursive(Control namingContainer)
+   at System.Web.UI.Control.AddedControl(Control control, Int32 index)
+   at System.Web.UI.ControlCollection.Add(Control child)
+   at DotNetNuke.UI.Modules.ModuleHost.InjectModuleContent(Control content)
+   at DotNetNuke.UI.Modules.ModuleHost.CreateChildControls()
+   at System.Web.UI.Control.EnsureChildControls()
+   at DotNetNuke.UI.Containers.Container.get_ModuleControl()
+   at DotNetNuke.UI.Containers.Container.ProcessModule()
+   at DotNetNuke.UI.Skins.Pane.InjectModule(ModuleInfo module)
+2025-07-05 12:27:50,505 [dnn2sqlv3][Thread:44][ERROR] DotNetNuke.Services.Exceptions.Exceptions - DotNetNuke.Services.Exceptions.ModuleLoadException: Unhandled Error Adding Module to contentPane ---> System.Web.HttpException: Not Found
+   at DotNetNuke.Modules.Admin.Users.ViewProfile.OnInit(EventArgs e)
+   at System.Web.UI.Control.InitRecursive(Control namingContainer)
+   at System.Web.UI.Control.AddedControl(Control control, Int32 index)
+   at System.Web.UI.ControlCollection.Add(Control child)
+   at DotNetNuke.UI.Modules.ModuleHost.InjectModuleContent(Control content)
+   at DotNetNuke.UI.Modules.ModuleHost.CreateChildControls()
+   at System.Web.UI.Control.EnsureChildControls()
+   at DotNetNuke.UI.Containers.Container.get_ModuleControl()
+   at DotNetNuke.UI.Containers.Container.ProcessModule()
+   at DotNetNuke.UI.Skins.Pane.InjectModule(ModuleInfo module)
+   --- End of inner exception stack trace ---
+   at DotNetNuke.UI.Skins.Pane.InjectModule(ModuleInfo module)
+   at DotNetNuke.UI.Skins.Skin.InjectModule(Pane pane, ModuleInfo module)
+2025-07-05 12:27:50,639 [dnn2sqlv3][Thread:44][FATAL] DotNetNuke.Framework.PageBase - An error has occurred while loading page.
+System.Web.HttpException (0x80004005): Not Found
+   at DotNetNuke.Modules.Admin.Users.ViewProfile.OnInit(EventArgs e)
+   at System.Web.UI.Control.InitRecursive(Control namingContainer)
+   at System.Web.UI.Control.AddedControl(Control control, Int32 index)
+   at System.Web.UI.ControlCollection.Add(Control child)
+   at DotNetNuke.UI.Modules.ModuleHost.InjectModuleContent(Control content)
+   at DotNetNuke.UI.Modules.ModuleHost.CreateChildControls()
+   at System.Web.UI.Control.EnsureChildControls()
+   at System.Web.UI.Control.PreRenderRecursiveInternal()
+   at System.Web.UI.Control.PreRenderRecursiveInternal()
+   at System.Web.UI.Control.PreRenderRecursiveInternal()
+   at System.Web.UI.Control.PreRenderRecursiveInternal()
+   at System.Web.UI.Control.PreRenderRecursiveInternal()
+   at System.Web.UI.Control.PreRenderRecursiveInternal()
+   at System.Web.UI.Control.PreRenderRecursiveInternal()
+   at System.Web.UI.Control.PreRenderRecursiveInternal()
+   at System.Web.UI.Control.PreRenderRecursiveInternal()
+   at System.Web.UI.Control.PreRenderRecursiveInternal()
+   at System.Web.UI.Page.ProcessRequestMain(Boolean includeStagesBeforeAsyncPoint, Boolean includeStagesAfterAsyncPoint)
+2025-07-05 13:35:53,967 [dnn2sqlv3][Thread:44][ERROR] DotNetNuke.Services.Exceptions.Exceptions - System.ArgumentException: Logins to decrypt: g35PABcgcYLejFhgr8hNRbyD2roiQCMC4Z0rncb4gvqzYLLDeJoA1g==
+2025-07-05 13:58:30,109 [dnn2sqlv3][Thread:35][FATAL] DotNetNuke.Web.Common.Internal.DotNetNukeHttpApplication - System.ArgumentException: Illegal characters in path.
+   at System.IO.Path.CheckInvalidPathChars(String path, Boolean checkAdditional)
+   at System.IO.Path.GetExtension(String path)
+   at ForemostMedia.Modules.SeoHelper.HttpModules.FileTrackingFilter.OnTrackFile(Uri uri)
+   at ForemostMedia.Modules.SeoHelper.HttpModules.FileTrackingFilter.OnEndRequest(Object sender, EventArgs e)
+   at System.Web.HttpApplication.SyncEventExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   at System.Web.HttpApplication.ExecuteStepImpl(IExecutionStep step)
+   at System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+2025-07-05 13:58:30,204 [dnn2sqlv3][Thread:21][FATAL] DotNetNuke.Web.Common.Internal.DotNetNukeHttpApplication - System.ArgumentException: Illegal characters in path.
+   at System.IO.Path.CheckInvalidPathChars(String path, Boolean checkAdditional)
+   at System.IO.Path.GetExtension(String path)
+   at ForemostMedia.Modules.SeoHelper.HttpModules.FileTrackingFilter.OnTrackFile(Uri uri)
+   at ForemostMedia.Modules.SeoHelper.HttpModules.FileTrackingFilter.OnEndRequest(Object sender, EventArgs e)
+   at System.Web.HttpApplication.SyncEventExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   at System.Web.HttpApplication.ExecuteStepImpl(IExecutionStep step)
+   at System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+2025-07-05 13:58:44,154 [dnn2sqlv3][Thread:44][FATAL] DotNetNuke.Web.Common.Internal.DotNetNukeHttpApplication - System.ArgumentException: Illegal characters in path.
+   at System.IO.Path.CheckInvalidPathChars(String path, Boolean checkAdditional)
+   at System.IO.Path.GetExtension(String path)
+   at ForemostMedia.Modules.SeoHelper.HttpModules.FileTrackingFilter.OnTrackFile(Uri uri)
+   at ForemostMedia.Modules.SeoHelper.HttpModules.FileTrackingFilter.OnEndRequest(Object sender, EventArgs e)
+   at System.Web.HttpApplication.SyncEventExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   at System.Web.HttpApplication.ExecuteStepImpl(IExecutionStep step)
+   at System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+2025-07-05 13:58:44,243 [dnn2sqlv3][Thread:40][FATAL] DotNetNuke.Web.Common.Internal.DotNetNukeHttpApplication - System.ArgumentException: Illegal characters in path.
+   at System.IO.Path.CheckInvalidPathChars(String path, Boolean checkAdditional)
+   at System.IO.Path.GetExtension(String path)
+   at ForemostMedia.Modules.SeoHelper.HttpModules.FileTrackingFilter.OnTrackFile(Uri uri)
+   at ForemostMedia.Modules.SeoHelper.HttpModules.FileTrackingFilter.OnEndRequest(Object sender, EventArgs e)
+   at System.Web.HttpApplication.SyncEventExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   at System.Web.HttpApplication.ExecuteStepImpl(IExecutionStep step)
+   at System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+2025-07-05 13:59:21,104 [dnn2sqlv3][Thread:30][FATAL] DotNetNuke.Web.Common.Internal.DotNetNukeHttpApplication - System.ArgumentException: Illegal characters in path.
+   at System.IO.Path.CheckInvalidPathChars(String path, Boolean checkAdditional)
+   at System.IO.Path.GetExtension(String path)
+   at ForemostMedia.Modules.SeoHelper.HttpModules.FileTrackingFilter.OnTrackFile(Uri uri)
+   at ForemostMedia.Modules.SeoHelper.HttpModules.FileTrackingFilter.OnEndRequest(Object sender, EventArgs e)
+   at System.Web.HttpApplication.SyncEventExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   at System.Web.HttpApplication.ExecuteStepImpl(IExecutionStep step)
+   at System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+2025-07-05 13:59:21,198 [dnn2sqlv3][Thread:40][FATAL] DotNetNuke.Web.Common.Internal.DotNetNukeHttpApplication - System.ArgumentException: Illegal characters in path.
+   at System.IO.Path.CheckInvalidPathChars(String path, Boolean checkAdditional)
+   at System.IO.Path.GetExtension(String path)
+   at ForemostMedia.Modules.SeoHelper.HttpModules.FileTrackingFilter.OnTrackFile(Uri uri)
+   at ForemostMedia.Modules.SeoHelper.HttpModules.FileTrackingFilter.OnEndRequest(Object sender, EventArgs e)
+   at System.Web.HttpApplication.SyncEventExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   at System.Web.HttpApplication.ExecuteStepImpl(IExecutionStep step)
+   at System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+2025-07-05 13:59:21,276 [dnn2sqlv3][Thread:35][FATAL] DotNetNuke.Web.Common.Internal.DotNetNukeHttpApplication - System.ArgumentException: Illegal characters in path.
+   at System.IO.Path.CheckInvalidPathChars(String path, Boolean checkAdditional)
+   at System.IO.Path.GetExtension(String path)
+   at ForemostMedia.Modules.SeoHelper.HttpModules.FileTrackingFilter.OnTrackFile(Uri uri)
+   at ForemostMedia.Modules.SeoHelper.HttpModules.FileTrackingFilter.OnEndRequest(Object sender, EventArgs e)
+   at System.Web.HttpApplication.SyncEventExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   at System.Web.HttpApplication.ExecuteStepImpl(IExecutionStep step)
+   at System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+2025-07-05 13:59:21,371 [dnn2sqlv3][Thread:38][FATAL] DotNetNuke.Web.Common.Internal.DotNetNukeHttpApplication - System.ArgumentException: Illegal characters in path.
+   at System.IO.Path.CheckInvalidPathChars(String path, Boolean checkAdditional)
+   at System.IO.Path.GetExtension(String path)
+   at ForemostMedia.Modules.SeoHelper.HttpModules.FileTrackingFilter.OnTrackFile(Uri uri)
+   at ForemostMedia.Modules.SeoHelper.HttpModules.FileTrackingFilter.OnEndRequest(Object sender, EventArgs e)
+   at System.Web.HttpApplication.SyncEventExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   at System.Web.HttpApplication.ExecuteStepImpl(IExecutionStep step)
+   at System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+2025-07-05 13:59:21,449 [dnn2sqlv3][Thread:34][FATAL] DotNetNuke.Web.Common.Internal.DotNetNukeHttpApplication - System.ArgumentException: Illegal characters in path.
+   at System.IO.Path.CheckInvalidPathChars(String path, Boolean checkAdditional)
+   at System.IO.Path.GetExtension(String path)
+   at ForemostMedia.Modules.SeoHelper.HttpModules.FileTrackingFilter.OnTrackFile(Uri uri)
+   at ForemostMedia.Modules.SeoHelper.HttpModules.FileTrackingFilter.OnEndRequest(Object sender, EventArgs e)
+   at System.Web.HttpApplication.SyncEventExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   at System.Web.HttpApplication.ExecuteStepImpl(IExecutionStep step)
+   at System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+2025-07-05 13:59:21,528 [dnn2sqlv3][Thread:11][FATAL] DotNetNuke.Web.Common.Internal.DotNetNukeHttpApplication - System.ArgumentException: Illegal characters in path.
+   at System.IO.Path.CheckInvalidPathChars(String path, Boolean checkAdditional)
+   at System.IO.Path.GetExtension(String path)
+   at ForemostMedia.Modules.SeoHelper.HttpModules.FileTrackingFilter.OnTrackFile(Uri uri)
+   at ForemostMedia.Modules.SeoHelper.HttpModules.FileTrackingFilter.OnEndRequest(Object sender, EventArgs e)
+   at System.Web.HttpApplication.SyncEventExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   at System.Web.HttpApplication.ExecuteStepImpl(IExecutionStep step)
+   at System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+2025-07-05 13:59:22,471 [dnn2sqlv3][Thread:27][FATAL] DotNetNuke.Web.Common.Internal.DotNetNukeHttpApplication - System.ArgumentException: Illegal characters in path.
+   at System.IO.Path.CheckInvalidPathChars(String path, Boolean checkAdditional)
+   at System.IO.Path.GetExtension(String path)
+   at ForemostMedia.Modules.SeoHelper.HttpModules.FileTrackingFilter.OnTrackFile(Uri uri)
+   at ForemostMedia.Modules.SeoHelper.HttpModules.FileTrackingFilter.OnEndRequest(Object sender, EventArgs e)
+   at System.Web.HttpApplication.SyncEventExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   at System.Web.HttpApplication.ExecuteStepImpl(IExecutionStep step)
+   at System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+2025-07-05 13:59:22,561 [dnn2sqlv3][Thread:34][FATAL] DotNetNuke.Web.Common.Internal.DotNetNukeHttpApplication - System.ArgumentException: Illegal characters in path.
+   at System.IO.Path.CheckInvalidPathChars(String path, Boolean checkAdditional)
+   at System.IO.Path.GetExtension(String path)
+   at ForemostMedia.Modules.SeoHelper.HttpModules.FileTrackingFilter.OnTrackFile(Uri uri)
+   at ForemostMedia.Modules.SeoHelper.HttpModules.FileTrackingFilter.OnEndRequest(Object sender, EventArgs e)
+   at System.Web.HttpApplication.SyncEventExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   at System.Web.HttpApplication.ExecuteStepImpl(IExecutionStep step)
+   at System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+2025-07-05 13:59:22,640 [dnn2sqlv3][Thread:44][FATAL] DotNetNuke.Web.Common.Internal.DotNetNukeHttpApplication - System.ArgumentException: Illegal characters in path.
+   at System.IO.Path.CheckInvalidPathChars(String path, Boolean checkAdditional)
+   at System.IO.Path.GetExtension(String path)
+   at ForemostMedia.Modules.SeoHelper.HttpModules.FileTrackingFilter.OnTrackFile(Uri uri)
+   at ForemostMedia.Modules.SeoHelper.HttpModules.FileTrackingFilter.OnEndRequest(Object sender, EventArgs e)
+   at System.Web.HttpApplication.SyncEventExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   at System.Web.HttpApplication.ExecuteStepImpl(IExecutionStep step)
+   at System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+2025-07-05 13:59:22,735 [dnn2sqlv3][Thread:30][FATAL] DotNetNuke.Web.Common.Internal.DotNetNukeHttpApplication - System.ArgumentException: Illegal characters in path.
+   at System.IO.Path.CheckInvalidPathChars(String path, Boolean checkAdditional)
+   at System.IO.Path.GetExtension(String path)
+   at ForemostMedia.Modules.SeoHelper.HttpModules.FileTrackingFilter.OnTrackFile(Uri uri)
+   at ForemostMedia.Modules.SeoHelper.HttpModules.FileTrackingFilter.OnEndRequest(Object sender, EventArgs e)
+   at System.Web.HttpApplication.SyncEventExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   at System.Web.HttpApplication.ExecuteStepImpl(IExecutionStep step)
+   at System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+2025-07-05 13:59:22,831 [dnn2sqlv3][Thread:21][FATAL] DotNetNuke.Web.Common.Internal.DotNetNukeHttpApplication - System.ArgumentException: Illegal characters in path.
+   at System.IO.Path.CheckInvalidPathChars(String path, Boolean checkAdditional)
+   at System.IO.Path.GetExtension(String path)
+   at ForemostMedia.Modules.SeoHelper.HttpModules.FileTrackingFilter.OnTrackFile(Uri uri)
+   at ForemostMedia.Modules.SeoHelper.HttpModules.FileTrackingFilter.OnEndRequest(Object sender, EventArgs e)
+   at System.Web.HttpApplication.SyncEventExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   at System.Web.HttpApplication.ExecuteStepImpl(IExecutionStep step)
+   at System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+2025-07-05 13:59:22,909 [dnn2sqlv3][Thread:44][FATAL] DotNetNuke.Web.Common.Internal.DotNetNukeHttpApplication - System.ArgumentException: Illegal characters in path.
+   at System.IO.Path.CheckInvalidPathChars(String path, Boolean checkAdditional)
+   at System.IO.Path.GetExtension(String path)
+   at ForemostMedia.Modules.SeoHelper.HttpModules.FileTrackingFilter.OnTrackFile(Uri uri)
+   at ForemostMedia.Modules.SeoHelper.HttpModules.FileTrackingFilter.OnEndRequest(Object sender, EventArgs e)
+   at System.Web.HttpApplication.SyncEventExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   at System.Web.HttpApplication.ExecuteStepImpl(IExecutionStep step)
+   at System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+2025-07-05 14:02:03,221 [dnn2sqlv3][Thread:12][ERROR] DotNetNuke.Services.Exceptions.Exceptions - System.Web.HttpException (0x80004005): Not Found
+   at DotNetNuke.Entities.Urls.AdvancedUrlRewriter.SecurityCheck(HttpApplication app)
+   at DotNetNuke.Entities.Urls.AdvancedUrlRewriter.RewriteUrl(Object sender, EventArgs e)
+2025-07-05 14:02:03,237 [dnn2sqlv3][Thread:12][FATAL] DotNetNuke.Web.Common.Internal.DotNetNukeHttpApplication - System.NullReferenceException: Object reference not set to an instance of an object.
+   at DotNetNuke.Entities.Urls.AdvancedUrlRewriter.Handle404OrException(FriendlyUrlSettings settings, HttpContext context, Exception ex, UrlAction result, Boolean transfer, Boolean showDebug)
+   at DotNetNuke.Entities.Urls.AdvancedUrlRewriter.RewriteUrl(Object sender, EventArgs e)
+   at System.Web.HttpApplication.SyncEventExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   at System.Web.HttpApplication.ExecuteStepImpl(IExecutionStep step)
+   at System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+2025-07-05 14:02:04,051 [dnn2sqlv3][Thread:27][ERROR] DotNetNuke.Services.Exceptions.Exceptions - System.Web.HttpException (0x80004005): Not Found
+   at DotNetNuke.Entities.Urls.AdvancedUrlRewriter.SecurityCheck(HttpApplication app)
+   at DotNetNuke.Entities.Urls.AdvancedUrlRewriter.RewriteUrl(Object sender, EventArgs e)
+2025-07-05 14:02:04,066 [dnn2sqlv3][Thread:27][FATAL] DotNetNuke.Web.Common.Internal.DotNetNukeHttpApplication - System.NullReferenceException: Object reference not set to an instance of an object.
+   at DotNetNuke.Entities.Urls.AdvancedUrlRewriter.Handle404OrException(FriendlyUrlSettings settings, HttpContext context, Exception ex, UrlAction result, Boolean transfer, Boolean showDebug)
+   at DotNetNuke.Entities.Urls.AdvancedUrlRewriter.RewriteUrl(Object sender, EventArgs e)
+   at System.Web.HttpApplication.SyncEventExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   at System.Web.HttpApplication.ExecuteStepImpl(IExecutionStep step)
+   at System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+2025-07-05 14:02:04,888 [dnn2sqlv3][Thread:52][ERROR] DotNetNuke.Services.Exceptions.Exceptions - System.Web.HttpException (0x80004005): Not Found
+   at DotNetNuke.Entities.Urls.AdvancedUrlRewriter.SecurityCheck(HttpApplication app)
+   at DotNetNuke.Entities.Urls.AdvancedUrlRewriter.RewriteUrl(Object sender, EventArgs e)
+2025-07-05 14:02:04,888 [dnn2sqlv3][Thread:52][FATAL] DotNetNuke.Web.Common.Internal.DotNetNukeHttpApplication - System.NullReferenceException: Object reference not set to an instance of an object.
+   at DotNetNuke.Entities.Urls.AdvancedUrlRewriter.Handle404OrException(FriendlyUrlSettings settings, HttpContext context, Exception ex, UrlAction result, Boolean transfer, Boolean showDebug)
+   at DotNetNuke.Entities.Urls.AdvancedUrlRewriter.RewriteUrl(Object sender, EventArgs e)
+   at System.Web.HttpApplication.SyncEventExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   at System.Web.HttpApplication.ExecuteStepImpl(IExecutionStep step)
+   at System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+2025-07-05 14:02:05,734 [dnn2sqlv3][Thread:52][ERROR] DotNetNuke.Services.Exceptions.Exceptions - System.Web.HttpException (0x80004005): Not Found
+   at DotNetNuke.Entities.Urls.AdvancedUrlRewriter.SecurityCheck(HttpApplication app)
+   at DotNetNuke.Entities.Urls.AdvancedUrlRewriter.RewriteUrl(Object sender, EventArgs e)
+2025-07-05 14:02:05,743 [dnn2sqlv3][Thread:52][FATAL] DotNetNuke.Web.Common.Internal.DotNetNukeHttpApplication - System.NullReferenceException: Object reference not set to an instance of an object.
+   at DotNetNuke.Entities.Urls.AdvancedUrlRewriter.Handle404OrException(FriendlyUrlSettings settings, HttpContext context, Exception ex, UrlAction result, Boolean transfer, Boolean showDebug)
+   at DotNetNuke.Entities.Urls.AdvancedUrlRewriter.RewriteUrl(Object sender, EventArgs e)
+   at System.Web.HttpApplication.SyncEventExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   at System.Web.HttpApplication.ExecuteStepImpl(IExecutionStep step)
+   at System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+2025-07-05 14:02:06,579 [dnn2sqlv3][Thread:27][ERROR] DotNetNuke.Services.Exceptions.Exceptions - System.Web.HttpException (0x80004005): Not Found
+   at DotNetNuke.Entities.Urls.AdvancedUrlRewriter.SecurityCheck(HttpApplication app)
+   at DotNetNuke.Entities.Urls.AdvancedUrlRewriter.RewriteUrl(Object sender, EventArgs e)
+2025-07-05 14:02:06,587 [dnn2sqlv3][Thread:27][FATAL] DotNetNuke.Web.Common.Internal.DotNetNukeHttpApplication - System.NullReferenceException: Object reference not set to an instance of an object.
+   at DotNetNuke.Entities.Urls.AdvancedUrlRewriter.Handle404OrException(FriendlyUrlSettings settings, HttpContext context, Exception ex, UrlAction result, Boolean transfer, Boolean showDebug)
+   at DotNetNuke.Entities.Urls.AdvancedUrlRewriter.RewriteUrl(Object sender, EventArgs e)
+   at System.Web.HttpApplication.SyncEventExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   at System.Web.HttpApplication.ExecuteStepImpl(IExecutionStep step)
+   at System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+2025-07-05 14:02:07,413 [dnn2sqlv3][Thread:35][ERROR] DotNetNuke.Services.Exceptions.Exceptions - System.Web.HttpException (0x80004005): Not Found
+   at DotNetNuke.Entities.Urls.AdvancedUrlRewriter.SecurityCheck(HttpApplication app)
+   at DotNetNuke.Entities.Urls.AdvancedUrlRewriter.RewriteUrl(Object sender, EventArgs e)
+2025-07-05 14:02:07,418 [dnn2sqlv3][Thread:35][FATAL] DotNetNuke.Web.Common.Internal.DotNetNukeHttpApplication - System.NullReferenceException: Object reference not set to an instance of an object.
+   at DotNetNuke.Entities.Urls.AdvancedUrlRewriter.Handle404OrException(FriendlyUrlSettings settings, HttpContext context, Exception ex, UrlAction result, Boolean transfer, Boolean showDebug)
+   at DotNetNuke.Entities.Urls.AdvancedUrlRewriter.RewriteUrl(Object sender, EventArgs e)
+   at System.Web.HttpApplication.SyncEventExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   at System.Web.HttpApplication.ExecuteStepImpl(IExecutionStep step)
+   at System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+2025-07-05 14:02:08,281 [dnn2sqlv3][Thread:27][ERROR] DotNetNuke.Services.Exceptions.Exceptions - System.Web.HttpException (0x80004005): Not Found
+   at DotNetNuke.Entities.Urls.AdvancedUrlRewriter.SecurityCheck(HttpApplication app)
+   at DotNetNuke.Entities.Urls.AdvancedUrlRewriter.RewriteUrl(Object sender, EventArgs e)
+2025-07-05 14:02:08,380 [dnn2sqlv3][Thread:27][FATAL] DotNetNuke.Web.Common.Internal.DotNetNukeHttpApplication - System.NullReferenceException: Object reference not set to an instance of an object.
+   at DotNetNuke.Entities.Urls.AdvancedUrlRewriter.Handle404OrException(FriendlyUrlSettings settings, HttpContext context, Exception ex, UrlAction result, Boolean transfer, Boolean showDebug)
+   at DotNetNuke.Entities.Urls.AdvancedUrlRewriter.RewriteUrl(Object sender, EventArgs e)
+   at System.Web.HttpApplication.SyncEventExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   at System.Web.HttpApplication.ExecuteStepImpl(IExecutionStep step)
+   at System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+2025-07-05 14:02:09,271 [dnn2sqlv3][Thread:21][ERROR] DotNetNuke.Services.Exceptions.Exceptions - System.Web.HttpException (0x80004005): Not Found
+   at DotNetNuke.Entities.Urls.AdvancedUrlRewriter.SecurityCheck(HttpApplication app)
+   at DotNetNuke.Entities.Urls.AdvancedUrlRewriter.RewriteUrl(Object sender, EventArgs e)
+2025-07-05 14:02:09,275 [dnn2sqlv3][Thread:21][FATAL] DotNetNuke.Web.Common.Internal.DotNetNukeHttpApplication - System.NullReferenceException: Object reference not set to an instance of an object.
+   at DotNetNuke.Entities.Urls.AdvancedUrlRewriter.Handle404OrException(FriendlyUrlSettings settings, HttpContext context, Exception ex, UrlAction result, Boolean transfer, Boolean showDebug)
+   at DotNetNuke.Entities.Urls.AdvancedUrlRewriter.RewriteUrl(Object sender, EventArgs e)
+   at System.Web.HttpApplication.SyncEventExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   at System.Web.HttpApplication.ExecuteStepImpl(IExecutionStep step)
+   at System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+2025-07-05 14:02:10,118 [dnn2sqlv3][Thread:52][ERROR] DotNetNuke.Services.Exceptions.Exceptions - System.Web.HttpException (0x80004005): Not Found
+   at DotNetNuke.Entities.Urls.AdvancedUrlRewriter.SecurityCheck(HttpApplication app)
+   at DotNetNuke.Entities.Urls.AdvancedUrlRewriter.RewriteUrl(Object sender, EventArgs e)
+2025-07-05 14:02:10,118 [dnn2sqlv3][Thread:52][FATAL] DotNetNuke.Web.Common.Internal.DotNetNukeHttpApplication - System.NullReferenceException: Object reference not set to an instance of an object.
+   at DotNetNuke.Entities.Urls.AdvancedUrlRewriter.Handle404OrException(FriendlyUrlSettings settings, HttpContext context, Exception ex, UrlAction result, Boolean transfer, Boolean showDebug)
+   at DotNetNuke.Entities.Urls.AdvancedUrlRewriter.RewriteUrl(Object sender, EventArgs e)
+   at System.Web.HttpApplication.SyncEventExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   at System.Web.HttpApplication.ExecuteStepImpl(IExecutionStep step)
+   at System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+2025-07-05 14:02:10,972 [dnn2sqlv3][Thread:38][ERROR] DotNetNuke.Services.Exceptions.Exceptions - System.Web.HttpException (0x80004005): Not Found
+   at DotNetNuke.Entities.Urls.AdvancedUrlRewriter.SecurityCheck(HttpApplication app)
+   at DotNetNuke.Entities.Urls.AdvancedUrlRewriter.RewriteUrl(Object sender, EventArgs e)
+2025-07-05 14:02:10,972 [dnn2sqlv3][Thread:38][FATAL] DotNetNuke.Web.Common.Internal.DotNetNukeHttpApplication - System.NullReferenceException: Object reference not set to an instance of an object.
+   at DotNetNuke.Entities.Urls.AdvancedUrlRewriter.Handle404OrException(FriendlyUrlSettings settings, HttpContext context, Exception ex, UrlAction result, Boolean transfer, Boolean showDebug)
+   at DotNetNuke.Entities.Urls.AdvancedUrlRewriter.RewriteUrl(Object sender, EventArgs e)
+   at System.Web.HttpApplication.SyncEventExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   at System.Web.HttpApplication.ExecuteStepImpl(IExecutionStep step)
+   at System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+2025-07-05 14:02:11,146 [dnn2sqlv3][Thread:30][ERROR] DotNetNuke.Services.Exceptions.Exceptions - System.Web.HttpException (0x80004005): Not Found
+   at DotNetNuke.Entities.Urls.AdvancedUrlRewriter.SecurityCheck(HttpApplication app)
+   at DotNetNuke.Entities.Urls.AdvancedUrlRewriter.RewriteUrl(Object sender, EventArgs e)
+2025-07-05 14:02:11,146 [dnn2sqlv3][Thread:30][FATAL] DotNetNuke.Web.Common.Internal.DotNetNukeHttpApplication - System.NullReferenceException: Object reference not set to an instance of an object.
+   at DotNetNuke.Entities.Urls.AdvancedUrlRewriter.Handle404OrException(FriendlyUrlSettings settings, HttpContext context, Exception ex, UrlAction result, Boolean transfer, Boolean showDebug)
+   at DotNetNuke.Entities.Urls.AdvancedUrlRewriter.RewriteUrl(Object sender, EventArgs e)
+   at System.Web.HttpApplication.SyncEventExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   at System.Web.HttpApplication.ExecuteStepImpl(IExecutionStep step)
+   at System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+2025-07-05 14:02:11,625 [dnn2sqlv3][Thread:30][ERROR] DotNetNuke.Services.Exceptions.Exceptions - System.Web.HttpException (0x80004005): Not Found
+   at DotNetNuke.Entities.Urls.AdvancedUrlRewriter.SecurityCheck(HttpApplication app)
+   at DotNetNuke.Entities.Urls.AdvancedUrlRewriter.RewriteUrl(Object sender, EventArgs e)
+2025-07-05 14:02:11,641 [dnn2sqlv3][Thread:30][FATAL] DotNetNuke.Web.Common.Internal.DotNetNukeHttpApplication - System.NullReferenceException: Object reference not set to an instance of an object.
+   at DotNetNuke.Entities.Urls.AdvancedUrlRewriter.Handle404OrException(FriendlyUrlSettings settings, HttpContext context, Exception ex, UrlAction result, Boolean transfer, Boolean showDebug)
+   at DotNetNuke.Entities.Urls.AdvancedUrlRewriter.RewriteUrl(Object sender, EventArgs e)
+   at System.Web.HttpApplication.SyncEventExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   at System.Web.HttpApplication.ExecuteStepImpl(IExecutionStep step)
+   at System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+2025-07-05 14:02:11,809 [dnn2sqlv3][Thread:44][ERROR] DotNetNuke.Services.Exceptions.Exceptions - System.Web.HttpException (0x80004005): Not Found
+   at DotNetNuke.Entities.Urls.AdvancedUrlRewriter.SecurityCheck(HttpApplication app)
+   at DotNetNuke.Entities.Urls.AdvancedUrlRewriter.RewriteUrl(Object sender, EventArgs e)
+2025-07-05 14:02:11,809 [dnn2sqlv3][Thread:44][FATAL] DotNetNuke.Web.Common.Internal.DotNetNukeHttpApplication - System.NullReferenceException: Object reference not set to an instance of an object.
+   at DotNetNuke.Entities.Urls.AdvancedUrlRewriter.Handle404OrException(FriendlyUrlSettings settings, HttpContext context, Exception ex, UrlAction result, Boolean transfer, Boolean showDebug)
+   at DotNetNuke.Entities.Urls.AdvancedUrlRewriter.RewriteUrl(Object sender, EventArgs e)
+   at System.Web.HttpApplication.SyncEventExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   at System.Web.HttpApplication.ExecuteStepImpl(IExecutionStep step)
+   at System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+2025-07-05 14:02:11,977 [dnn2sqlv3][Thread:40][ERROR] DotNetNuke.Services.Exceptions.Exceptions - System.Web.HttpException (0x80004005): Not Found
+   at DotNetNuke.Entities.Urls.AdvancedUrlRewriter.SecurityCheck(HttpApplication app)
+   at DotNetNuke.Entities.Urls.AdvancedUrlRewriter.RewriteUrl(Object sender, EventArgs e)
+2025-07-05 14:02:11,982 [dnn2sqlv3][Thread:40][FATAL] DotNetNuke.Web.Common.Internal.DotNetNukeHttpApplication - System.NullReferenceException: Object reference not set to an instance of an object.
+   at DotNetNuke.Entities.Urls.AdvancedUrlRewriter.Handle404OrException(FriendlyUrlSettings settings, HttpContext context, Exception ex, UrlAction result, Boolean transfer, Boolean showDebug)
+   at DotNetNuke.Entities.Urls.AdvancedUrlRewriter.RewriteUrl(Object sender, EventArgs e)
+   at System.Web.HttpApplication.SyncEventExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   at System.Web.HttpApplication.ExecuteStepImpl(IExecutionStep step)
+   at System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+2025-07-05 14:02:12,466 [dnn2sqlv3][Thread:44][ERROR] DotNetNuke.Services.Exceptions.Exceptions - System.Web.HttpException (0x80004005): Not Found
+   at DotNetNuke.Entities.Urls.AdvancedUrlRewriter.SecurityCheck(HttpApplication app)
+   at DotNetNuke.Entities.Urls.AdvancedUrlRewriter.RewriteUrl(Object sender, EventArgs e)
+2025-07-05 14:02:12,466 [dnn2sqlv3][Thread:44][FATAL] DotNetNuke.Web.Common.Internal.DotNetNukeHttpApplication - System.NullReferenceException: Object reference not set to an instance of an object.
+   at DotNetNuke.Entities.Urls.AdvancedUrlRewriter.Handle404OrException(FriendlyUrlSettings settings, HttpContext context, Exception ex, UrlAction result, Boolean transfer, Boolean showDebug)
+   at DotNetNuke.Entities.Urls.AdvancedUrlRewriter.RewriteUrl(Object sender, EventArgs e)
+   at System.Web.HttpApplication.SyncEventExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   at System.Web.HttpApplication.ExecuteStepImpl(IExecutionStep step)
+   at System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+2025-07-05 14:02:12,639 [dnn2sqlv3][Thread:21][ERROR] DotNetNuke.Services.Exceptions.Exceptions - System.Web.HttpException (0x80004005): Not Found
+   at DotNetNuke.Entities.Urls.AdvancedUrlRewriter.SecurityCheck(HttpApplication app)
+   at DotNetNuke.Entities.Urls.AdvancedUrlRewriter.RewriteUrl(Object sender, EventArgs e)
+2025-07-05 14:02:12,639 [dnn2sqlv3][Thread:21][FATAL] DotNetNuke.Web.Common.Internal.DotNetNukeHttpApplication - System.NullReferenceException: Object reference not set to an instance of an object.
+   at DotNetNuke.Entities.Urls.AdvancedUrlRewriter.Handle404OrException(FriendlyUrlSettings settings, HttpContext context, Exception ex, UrlAction result, Boolean transfer, Boolean showDebug)
+   at DotNetNuke.Entities.Urls.AdvancedUrlRewriter.RewriteUrl(Object sender, EventArgs e)
+   at System.Web.HttpApplication.SyncEventExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   at System.Web.HttpApplication.ExecuteStepImpl(IExecutionStep step)
+   at System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+2025-07-05 14:02:12,814 [dnn2sqlv3][Thread:52][ERROR] DotNetNuke.Services.Exceptions.Exceptions - System.Web.HttpException (0x80004005): Not Found
+   at DotNetNuke.Entities.Urls.AdvancedUrlRewriter.SecurityCheck(HttpApplication app)
+   at DotNetNuke.Entities.Urls.AdvancedUrlRewriter.RewriteUrl(Object sender, EventArgs e)
+2025-07-05 14:02:12,814 [dnn2sqlv3][Thread:52][FATAL] DotNetNuke.Web.Common.Internal.DotNetNukeHttpApplication - System.NullReferenceException: Object reference not set to an instance of an object.
+   at DotNetNuke.Entities.Urls.AdvancedUrlRewriter.Handle404OrException(FriendlyUrlSettings settings, HttpContext context, Exception ex, UrlAction result, Boolean transfer, Boolean showDebug)
+   at DotNetNuke.Entities.Urls.AdvancedUrlRewriter.RewriteUrl(Object sender, EventArgs e)
+   at System.Web.HttpApplication.SyncEventExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   at System.Web.HttpApplication.ExecuteStepImpl(IExecutionStep step)
+   at System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+2025-07-05 14:02:13,305 [dnn2sqlv3][Thread:34][ERROR] DotNetNuke.Services.Exceptions.Exceptions - System.Web.HttpException (0x80004005): Not Found
+   at DotNetNuke.Entities.Urls.AdvancedUrlRewriter.SecurityCheck(HttpApplication app)
+   at DotNetNuke.Entities.Urls.AdvancedUrlRewriter.RewriteUrl(Object sender, EventArgs e)
+2025-07-05 14:02:13,305 [dnn2sqlv3][Thread:34][FATAL] DotNetNuke.Web.Common.Internal.DotNetNukeHttpApplication - System.NullReferenceException: Object reference not set to an instance of an object.
+   at DotNetNuke.Entities.Urls.AdvancedUrlRewriter.Handle404OrException(FriendlyUrlSettings settings, HttpContext context, Exception ex, UrlAction result, Boolean transfer, Boolean showDebug)
+   at DotNetNuke.Entities.Urls.AdvancedUrlRewriter.RewriteUrl(Object sender, EventArgs e)
+   at System.Web.HttpApplication.SyncEventExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   at System.Web.HttpApplication.ExecuteStepImpl(IExecutionStep step)
+   at System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+2025-07-05 14:02:13,477 [dnn2sqlv3][Thread:27][ERROR] DotNetNuke.Services.Exceptions.Exceptions - System.Web.HttpException (0x80004005): Not Found
+   at DotNetNuke.Entities.Urls.AdvancedUrlRewriter.SecurityCheck(HttpApplication app)
+   at DotNetNuke.Entities.Urls.AdvancedUrlRewriter.RewriteUrl(Object sender, EventArgs e)
+2025-07-05 14:02:13,477 [dnn2sqlv3][Thread:27][FATAL] DotNetNuke.Web.Common.Internal.DotNetNukeHttpApplication - System.NullReferenceException: Object reference not set to an instance of an object.
+   at DotNetNuke.Entities.Urls.AdvancedUrlRewriter.Handle404OrException(FriendlyUrlSettings settings, HttpContext context, Exception ex, UrlAction result, Boolean transfer, Boolean showDebug)
+   at DotNetNuke.Entities.Urls.AdvancedUrlRewriter.RewriteUrl(Object sender, EventArgs e)
+   at System.Web.HttpApplication.SyncEventExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   at System.Web.HttpApplication.ExecuteStepImpl(IExecutionStep step)
+   at System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+2025-07-05 14:02:13,649 [dnn2sqlv3][Thread:38][ERROR] DotNetNuke.Services.Exceptions.Exceptions - System.Web.HttpException (0x80004005): Not Found
+   at DotNetNuke.Entities.Urls.AdvancedUrlRewriter.SecurityCheck(HttpApplication app)
+   at DotNetNuke.Entities.Urls.AdvancedUrlRewriter.RewriteUrl(Object sender, EventArgs e)
+2025-07-05 14:02:13,649 [dnn2sqlv3][Thread:38][FATAL] DotNetNuke.Web.Common.Internal.DotNetNukeHttpApplication - System.NullReferenceException: Object reference not set to an instance of an object.
+   at DotNetNuke.Entities.Urls.AdvancedUrlRewriter.Handle404OrException(FriendlyUrlSettings settings, HttpContext context, Exception ex, UrlAction result, Boolean transfer, Boolean showDebug)
+   at DotNetNuke.Entities.Urls.AdvancedUrlRewriter.RewriteUrl(Object sender, EventArgs e)
+   at System.Web.HttpApplication.SyncEventExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   at System.Web.HttpApplication.ExecuteStepImpl(IExecutionStep step)
+   at System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+2025-07-05 14:02:14,140 [dnn2sqlv3][Thread:34][ERROR] DotNetNuke.Services.Exceptions.Exceptions - System.Web.HttpException (0x80004005): Not Found
+   at DotNetNuke.Entities.Urls.AdvancedUrlRewriter.SecurityCheck(HttpApplication app)
+   at DotNetNuke.Entities.Urls.AdvancedUrlRewriter.RewriteUrl(Object sender, EventArgs e)
+2025-07-05 14:02:14,140 [dnn2sqlv3][Thread:34][FATAL] DotNetNuke.Web.Common.Internal.DotNetNukeHttpApplication - System.NullReferenceException: Object reference not set to an instance of an object.
+   at DotNetNuke.Entities.Urls.AdvancedUrlRewriter.Handle404OrException(FriendlyUrlSettings settings, HttpContext context, Exception ex, UrlAction result, Boolean transfer, Boolean showDebug)
+   at DotNetNuke.Entities.Urls.AdvancedUrlRewriter.RewriteUrl(Object sender, EventArgs e)
+   at System.Web.HttpApplication.SyncEventExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   at System.Web.HttpApplication.ExecuteStepImpl(IExecutionStep step)
+   at System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+2025-07-05 14:02:14,319 [dnn2sqlv3][Thread:35][ERROR] DotNetNuke.Services.Exceptions.Exceptions - System.Web.HttpException (0x80004005): Not Found
+   at DotNetNuke.Entities.Urls.AdvancedUrlRewriter.SecurityCheck(HttpApplication app)
+   at DotNetNuke.Entities.Urls.AdvancedUrlRewriter.RewriteUrl(Object sender, EventArgs e)
+2025-07-05 14:02:14,319 [dnn2sqlv3][Thread:35][FATAL] DotNetNuke.Web.Common.Internal.DotNetNukeHttpApplication - System.NullReferenceException: Object reference not set to an instance of an object.
+   at DotNetNuke.Entities.Urls.AdvancedUrlRewriter.Handle404OrException(FriendlyUrlSettings settings, HttpContext context, Exception ex, UrlAction result, Boolean transfer, Boolean showDebug)
+   at DotNetNuke.Entities.Urls.AdvancedUrlRewriter.RewriteUrl(Object sender, EventArgs e)
+   at System.Web.HttpApplication.SyncEventExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   at System.Web.HttpApplication.ExecuteStepImpl(IExecutionStep step)
+   at System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+2025-07-05 14:02:14,491 [dnn2sqlv3][Thread:40][ERROR] DotNetNuke.Services.Exceptions.Exceptions - System.Web.HttpException (0x80004005): Not Found
+   at DotNetNuke.Entities.Urls.AdvancedUrlRewriter.SecurityCheck(HttpApplication app)
+   at DotNetNuke.Entities.Urls.AdvancedUrlRewriter.RewriteUrl(Object sender, EventArgs e)
+2025-07-05 14:02:14,506 [dnn2sqlv3][Thread:40][FATAL] DotNetNuke.Web.Common.Internal.DotNetNukeHttpApplication - System.NullReferenceException: Object reference not set to an instance of an object.
+   at DotNetNuke.Entities.Urls.AdvancedUrlRewriter.Handle404OrException(FriendlyUrlSettings settings, HttpContext context, Exception ex, UrlAction result, Boolean transfer, Boolean showDebug)
+   at DotNetNuke.Entities.Urls.AdvancedUrlRewriter.RewriteUrl(Object sender, EventArgs e)
+   at System.Web.HttpApplication.SyncEventExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   at System.Web.HttpApplication.ExecuteStepImpl(IExecutionStep step)
+   at System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+2025-07-05 14:02:14,978 [dnn2sqlv3][Thread:12][ERROR] DotNetNuke.Services.Exceptions.Exceptions - System.Web.HttpException (0x80004005): Not Found
+   at DotNetNuke.Entities.Urls.AdvancedUrlRewriter.SecurityCheck(HttpApplication app)
+   at DotNetNuke.Entities.Urls.AdvancedUrlRewriter.RewriteUrl(Object sender, EventArgs e)
+2025-07-05 14:02:14,978 [dnn2sqlv3][Thread:12][FATAL] DotNetNuke.Web.Common.Internal.DotNetNukeHttpApplication - System.NullReferenceException: Object reference not set to an instance of an object.
+   at DotNetNuke.Entities.Urls.AdvancedUrlRewriter.Handle404OrException(FriendlyUrlSettings settings, HttpContext context, Exception ex, UrlAction result, Boolean transfer, Boolean showDebug)
+   at DotNetNuke.Entities.Urls.AdvancedUrlRewriter.RewriteUrl(Object sender, EventArgs e)
+   at System.Web.HttpApplication.SyncEventExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   at System.Web.HttpApplication.ExecuteStepImpl(IExecutionStep step)
+   at System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+2025-07-05 14:02:15,150 [dnn2sqlv3][Thread:11][ERROR] DotNetNuke.Services.Exceptions.Exceptions - System.Web.HttpException (0x80004005): Not Found
+   at DotNetNuke.Entities.Urls.AdvancedUrlRewriter.SecurityCheck(HttpApplication app)
+   at DotNetNuke.Entities.Urls.AdvancedUrlRewriter.RewriteUrl(Object sender, EventArgs e)
+2025-07-05 14:02:15,150 [dnn2sqlv3][Thread:11][FATAL] DotNetNuke.Web.Common.Internal.DotNetNukeHttpApplication - System.NullReferenceException: Object reference not set to an instance of an object.
+   at DotNetNuke.Entities.Urls.AdvancedUrlRewriter.Handle404OrException(FriendlyUrlSettings settings, HttpContext context, Exception ex, UrlAction result, Boolean transfer, Boolean showDebug)
+   at DotNetNuke.Entities.Urls.AdvancedUrlRewriter.RewriteUrl(Object sender, EventArgs e)
+   at System.Web.HttpApplication.SyncEventExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   at System.Web.HttpApplication.ExecuteStepImpl(IExecutionStep step)
+   at System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+2025-07-05 14:02:15,329 [dnn2sqlv3][Thread:27][ERROR] DotNetNuke.Services.Exceptions.Exceptions - System.Web.HttpException (0x80004005): Not Found
+   at DotNetNuke.Entities.Urls.AdvancedUrlRewriter.SecurityCheck(HttpApplication app)
+   at DotNetNuke.Entities.Urls.AdvancedUrlRewriter.RewriteUrl(Object sender, EventArgs e)
+2025-07-05 14:02:15,329 [dnn2sqlv3][Thread:27][FATAL] DotNetNuke.Web.Common.Internal.DotNetNukeHttpApplication - System.NullReferenceException: Object reference not set to an instance of an object.
+   at DotNetNuke.Entities.Urls.AdvancedUrlRewriter.Handle404OrException(FriendlyUrlSettings settings, HttpContext context, Exception ex, UrlAction result, Boolean transfer, Boolean showDebug)
+   at DotNetNuke.Entities.Urls.AdvancedUrlRewriter.RewriteUrl(Object sender, EventArgs e)
+   at System.Web.HttpApplication.SyncEventExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   at System.Web.HttpApplication.ExecuteStepImpl(IExecutionStep step)
+   at System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+2025-07-05 14:02:15,832 [dnn2sqlv3][Thread:34][ERROR] DotNetNuke.Services.Exceptions.Exceptions - System.Web.HttpException (0x80004005): Not Found
+   at DotNetNuke.Entities.Urls.AdvancedUrlRewriter.SecurityCheck(HttpApplication app)
+   at DotNetNuke.Entities.Urls.AdvancedUrlRewriter.RewriteUrl(Object sender, EventArgs e)
+2025-07-05 14:02:15,832 [dnn2sqlv3][Thread:34][FATAL] DotNetNuke.Web.Common.Internal.DotNetNukeHttpApplication - System.NullReferenceException: Object reference not set to an instance of an object.
+   at DotNetNuke.Entities.Urls.AdvancedUrlRewriter.Handle404OrException(FriendlyUrlSettings settings, HttpContext context, Exception ex, UrlAction result, Boolean transfer, Boolean showDebug)
+   at DotNetNuke.Entities.Urls.AdvancedUrlRewriter.RewriteUrl(Object sender, EventArgs e)
+   at System.Web.HttpApplication.SyncEventExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   at System.Web.HttpApplication.ExecuteStepImpl(IExecutionStep step)
+   at System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+2025-07-05 14:02:16,004 [dnn2sqlv3][Thread:12][ERROR] DotNetNuke.Services.Exceptions.Exceptions - System.Web.HttpException (0x80004005): Not Found
+   at DotNetNuke.Entities.Urls.AdvancedUrlRewriter.SecurityCheck(HttpApplication app)
+   at DotNetNuke.Entities.Urls.AdvancedUrlRewriter.RewriteUrl(Object sender, EventArgs e)
+2025-07-05 14:02:16,004 [dnn2sqlv3][Thread:12][FATAL] DotNetNuke.Web.Common.Internal.DotNetNukeHttpApplication - System.NullReferenceException: Object reference not set to an instance of an object.
+   at DotNetNuke.Entities.Urls.AdvancedUrlRewriter.Handle404OrException(FriendlyUrlSettings settings, HttpContext context, Exception ex, UrlAction result, Boolean transfer, Boolean showDebug)
+   at DotNetNuke.Entities.Urls.AdvancedUrlRewriter.RewriteUrl(Object sender, EventArgs e)
+   at System.Web.HttpApplication.SyncEventExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   at System.Web.HttpApplication.ExecuteStepImpl(IExecutionStep step)
+   at System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+2025-07-05 14:02:16,177 [dnn2sqlv3][Thread:11][ERROR] DotNetNuke.Services.Exceptions.Exceptions - System.Web.HttpException (0x80004005): Not Found
+   at DotNetNuke.Entities.Urls.AdvancedUrlRewriter.SecurityCheck(HttpApplication app)
+   at DotNetNuke.Entities.Urls.AdvancedUrlRewriter.RewriteUrl(Object sender, EventArgs e)
+2025-07-05 14:02:16,193 [dnn2sqlv3][Thread:11][FATAL] DotNetNuke.Web.Common.Internal.DotNetNukeHttpApplication - System.NullReferenceException: Object reference not set to an instance of an object.
+   at DotNetNuke.Entities.Urls.AdvancedUrlRewriter.Handle404OrException(FriendlyUrlSettings settings, HttpContext context, Exception ex, UrlAction result, Boolean transfer, Boolean showDebug)
+   at DotNetNuke.Entities.Urls.AdvancedUrlRewriter.RewriteUrl(Object sender, EventArgs e)
+   at System.Web.HttpApplication.SyncEventExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   at System.Web.HttpApplication.ExecuteStepImpl(IExecutionStep step)
+   at System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+2025-07-05 14:02:16,680 [dnn2sqlv3][Thread:12][ERROR] DotNetNuke.Services.Exceptions.Exceptions - System.Web.HttpException (0x80004005): Not Found
+   at DotNetNuke.Entities.Urls.AdvancedUrlRewriter.SecurityCheck(HttpApplication app)
+   at DotNetNuke.Entities.Urls.AdvancedUrlRewriter.RewriteUrl(Object sender, EventArgs e)
+2025-07-05 14:02:16,696 [dnn2sqlv3][Thread:12][FATAL] DotNetNuke.Web.Common.Internal.DotNetNukeHttpApplication - System.NullReferenceException: Object reference not set to an instance of an object.
+   at DotNetNuke.Entities.Urls.AdvancedUrlRewriter.Handle404OrException(FriendlyUrlSettings settings, HttpContext context, Exception ex, UrlAction result, Boolean transfer, Boolean showDebug)
+   at DotNetNuke.Entities.Urls.AdvancedUrlRewriter.RewriteUrl(Object sender, EventArgs e)
+   at System.Web.HttpApplication.SyncEventExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   at System.Web.HttpApplication.ExecuteStepImpl(IExecutionStep step)
+   at System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+2025-07-05 14:02:16,854 [dnn2sqlv3][Thread:52][ERROR] DotNetNuke.Services.Exceptions.Exceptions - System.Web.HttpException (0x80004005): Not Found
+   at DotNetNuke.Entities.Urls.AdvancedUrlRewriter.SecurityCheck(HttpApplication app)
+   at DotNetNuke.Entities.Urls.AdvancedUrlRewriter.RewriteUrl(Object sender, EventArgs e)
+2025-07-05 14:02:16,870 [dnn2sqlv3][Thread:52][FATAL] DotNetNuke.Web.Common.Internal.DotNetNukeHttpApplication - System.NullReferenceException: Object reference not set to an instance of an object.
+   at DotNetNuke.Entities.Urls.AdvancedUrlRewriter.Handle404OrException(FriendlyUrlSettings settings, HttpContext context, Exception ex, UrlAction result, Boolean transfer, Boolean showDebug)
+   at DotNetNuke.Entities.Urls.AdvancedUrlRewriter.RewriteUrl(Object sender, EventArgs e)
+   at System.Web.HttpApplication.SyncEventExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   at System.Web.HttpApplication.ExecuteStepImpl(IExecutionStep step)
+   at System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+2025-07-05 14:02:17,042 [dnn2sqlv3][Thread:35][ERROR] DotNetNuke.Services.Exceptions.Exceptions - System.Web.HttpException (0x80004005): Not Found
+   at DotNetNuke.Entities.Urls.AdvancedUrlRewriter.SecurityCheck(HttpApplication app)
+   at DotNetNuke.Entities.Urls.AdvancedUrlRewriter.RewriteUrl(Object sender, EventArgs e)
+2025-07-05 14:02:17,042 [dnn2sqlv3][Thread:35][FATAL] DotNetNuke.Web.Common.Internal.DotNetNukeHttpApplication - System.NullReferenceException: Object reference not set to an instance of an object.
+   at DotNetNuke.Entities.Urls.AdvancedUrlRewriter.Handle404OrException(FriendlyUrlSettings settings, HttpContext context, Exception ex, UrlAction result, Boolean transfer, Boolean showDebug)
+   at DotNetNuke.Entities.Urls.AdvancedUrlRewriter.RewriteUrl(Object sender, EventArgs e)
+   at System.Web.HttpApplication.SyncEventExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   at System.Web.HttpApplication.ExecuteStepImpl(IExecutionStep step)
+   at System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+2025-07-05 14:02:17,539 [dnn2sqlv3][Thread:30][ERROR] DotNetNuke.Services.Exceptions.Exceptions - System.Web.HttpException (0x80004005): Not Found
+   at DotNetNuke.Entities.Urls.AdvancedUrlRewriter.SecurityCheck(HttpApplication app)
+   at DotNetNuke.Entities.Urls.AdvancedUrlRewriter.RewriteUrl(Object sender, EventArgs e)
+2025-07-05 14:02:17,539 [dnn2sqlv3][Thread:30][FATAL] DotNetNuke.Web.Common.Internal.DotNetNukeHttpApplication - System.NullReferenceException: Object reference not set to an instance of an object.
+   at DotNetNuke.Entities.Urls.AdvancedUrlRewriter.Handle404OrException(FriendlyUrlSettings settings, HttpContext context, Exception ex, UrlAction result, Boolean transfer, Boolean showDebug)
+   at DotNetNuke.Entities.Urls.AdvancedUrlRewriter.RewriteUrl(Object sender, EventArgs e)
+   at System.Web.HttpApplication.SyncEventExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   at System.Web.HttpApplication.ExecuteStepImpl(IExecutionStep step)
+   at System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+2025-07-05 14:02:17,695 [dnn2sqlv3][Thread:12][ERROR] DotNetNuke.Services.Exceptions.Exceptions - System.Web.HttpException (0x80004005): Not Found
+   at DotNetNuke.Entities.Urls.AdvancedUrlRewriter.SecurityCheck(HttpApplication app)
+   at DotNetNuke.Entities.Urls.AdvancedUrlRewriter.RewriteUrl(Object sender, EventArgs e)
+2025-07-05 14:02:17,714 [dnn2sqlv3][Thread:12][FATAL] DotNetNuke.Web.Common.Internal.DotNetNukeHttpApplication - System.NullReferenceException: Object reference not set to an instance of an object.
+   at DotNetNuke.Entities.Urls.AdvancedUrlRewriter.Handle404OrException(FriendlyUrlSettings settings, HttpContext context, Exception ex, UrlAction result, Boolean transfer, Boolean showDebug)
+   at DotNetNuke.Entities.Urls.AdvancedUrlRewriter.RewriteUrl(Object sender, EventArgs e)
+   at System.Web.HttpApplication.SyncEventExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   at System.Web.HttpApplication.ExecuteStepImpl(IExecutionStep step)
+   at System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+2025-07-05 14:02:17,870 [dnn2sqlv3][Thread:38][ERROR] DotNetNuke.Services.Exceptions.Exceptions - System.Web.HttpException (0x80004005): Not Found
+   at DotNetNuke.Entities.Urls.AdvancedUrlRewriter.SecurityCheck(HttpApplication app)
+   at DotNetNuke.Entities.Urls.AdvancedUrlRewriter.RewriteUrl(Object sender, EventArgs e)
+2025-07-05 14:02:17,870 [dnn2sqlv3][Thread:38][FATAL] DotNetNuke.Web.Common.Internal.DotNetNukeHttpApplication - System.NullReferenceException: Object reference not set to an instance of an object.
+   at DotNetNuke.Entities.Urls.AdvancedUrlRewriter.Handle404OrException(FriendlyUrlSettings settings, HttpContext context, Exception ex, UrlAction result, Boolean transfer, Boolean showDebug)
+   at DotNetNuke.Entities.Urls.AdvancedUrlRewriter.RewriteUrl(Object sender, EventArgs e)
+   at System.Web.HttpApplication.SyncEventExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   at System.Web.HttpApplication.ExecuteStepImpl(IExecutionStep step)
+   at System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+2025-07-05 14:02:18,436 [dnn2sqlv3][Thread:27][ERROR] DotNetNuke.Services.Exceptions.Exceptions - System.Web.HttpException (0x80004005): Not Found
+   at DotNetNuke.Entities.Urls.AdvancedUrlRewriter.SecurityCheck(HttpApplication app)
+   at DotNetNuke.Entities.Urls.AdvancedUrlRewriter.RewriteUrl(Object sender, EventArgs e)
+2025-07-05 14:02:18,545 [dnn2sqlv3][Thread:27][FATAL] DotNetNuke.Web.Common.Internal.DotNetNukeHttpApplication - System.NullReferenceException: Object reference not set to an instance of an object.
+   at DotNetNuke.Entities.Urls.AdvancedUrlRewriter.Handle404OrException(FriendlyUrlSettings settings, HttpContext context, Exception ex, UrlAction result, Boolean transfer, Boolean showDebug)
+   at DotNetNuke.Entities.Urls.AdvancedUrlRewriter.RewriteUrl(Object sender, EventArgs e)
+   at System.Web.HttpApplication.SyncEventExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   at System.Web.HttpApplication.ExecuteStepImpl(IExecutionStep step)
+   at System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+2025-07-05 14:02:18,747 [dnn2sqlv3][Thread:27][ERROR] DotNetNuke.Services.Exceptions.Exceptions - System.Web.HttpException (0x80004005): Not Found
+   at DotNetNuke.Entities.Urls.AdvancedUrlRewriter.SecurityCheck(HttpApplication app)
+   at DotNetNuke.Entities.Urls.AdvancedUrlRewriter.RewriteUrl(Object sender, EventArgs e)
+2025-07-05 14:02:18,752 [dnn2sqlv3][Thread:27][FATAL] DotNetNuke.Web.Common.Internal.DotNetNukeHttpApplication - System.NullReferenceException: Object reference not set to an instance of an object.
+   at DotNetNuke.Entities.Urls.AdvancedUrlRewriter.Handle404OrException(FriendlyUrlSettings settings, HttpContext context, Exception ex, UrlAction result, Boolean transfer, Boolean showDebug)
+   at DotNetNuke.Entities.Urls.AdvancedUrlRewriter.RewriteUrl(Object sender, EventArgs e)
+   at System.Web.HttpApplication.SyncEventExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   at System.Web.HttpApplication.ExecuteStepImpl(IExecutionStep step)
+   at System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+2025-07-05 14:02:18,926 [dnn2sqlv3][Thread:21][ERROR] DotNetNuke.Services.Exceptions.Exceptions - System.Web.HttpException (0x80004005): Not Found
+   at DotNetNuke.Entities.Urls.AdvancedUrlRewriter.SecurityCheck(HttpApplication app)
+   at DotNetNuke.Entities.Urls.AdvancedUrlRewriter.RewriteUrl(Object sender, EventArgs e)
+2025-07-05 14:02:18,926 [dnn2sqlv3][Thread:21][FATAL] DotNetNuke.Web.Common.Internal.DotNetNukeHttpApplication - System.NullReferenceException: Object reference not set to an instance of an object.
+   at DotNetNuke.Entities.Urls.AdvancedUrlRewriter.Handle404OrException(FriendlyUrlSettings settings, HttpContext context, Exception ex, UrlAction result, Boolean transfer, Boolean showDebug)
+   at DotNetNuke.Entities.Urls.AdvancedUrlRewriter.RewriteUrl(Object sender, EventArgs e)
+   at System.Web.HttpApplication.SyncEventExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   at System.Web.HttpApplication.ExecuteStepImpl(IExecutionStep step)
+   at System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+2025-07-05 14:02:19,422 [dnn2sqlv3][Thread:34][ERROR] DotNetNuke.Services.Exceptions.Exceptions - System.Web.HttpException (0x80004005): Not Found
+   at DotNetNuke.Entities.Urls.AdvancedUrlRewriter.SecurityCheck(HttpApplication app)
+   at DotNetNuke.Entities.Urls.AdvancedUrlRewriter.RewriteUrl(Object sender, EventArgs e)
+2025-07-05 14:02:19,426 [dnn2sqlv3][Thread:34][FATAL] DotNetNuke.Web.Common.Internal.DotNetNukeHttpApplication - System.NullReferenceException: Object reference not set to an instance of an object.
+   at DotNetNuke.Entities.Urls.AdvancedUrlRewriter.Handle404OrException(FriendlyUrlSettings settings, HttpContext context, Exception ex, UrlAction result, Boolean transfer, Boolean showDebug)
+   at DotNetNuke.Entities.Urls.AdvancedUrlRewriter.RewriteUrl(Object sender, EventArgs e)
+   at System.Web.HttpApplication.SyncEventExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   at System.Web.HttpApplication.ExecuteStepImpl(IExecutionStep step)
+   at System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+2025-07-05 14:02:19,596 [dnn2sqlv3][Thread:44][ERROR] DotNetNuke.Services.Exceptions.Exceptions - System.Web.HttpException (0x80004005): Not Found
+   at DotNetNuke.Entities.Urls.AdvancedUrlRewriter.SecurityCheck(HttpApplication app)
+   at DotNetNuke.Entities.Urls.AdvancedUrlRewriter.RewriteUrl(Object sender, EventArgs e)
+2025-07-05 14:02:19,600 [dnn2sqlv3][Thread:44][FATAL] DotNetNuke.Web.Common.Internal.DotNetNukeHttpApplication - System.NullReferenceException: Object reference not set to an instance of an object.
+   at DotNetNuke.Entities.Urls.AdvancedUrlRewriter.Handle404OrException(FriendlyUrlSettings settings, HttpContext context, Exception ex, UrlAction result, Boolean transfer, Boolean showDebug)
+   at DotNetNuke.Entities.Urls.AdvancedUrlRewriter.RewriteUrl(Object sender, EventArgs e)
+   at System.Web.HttpApplication.SyncEventExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   at System.Web.HttpApplication.ExecuteStepImpl(IExecutionStep step)
+   at System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+2025-07-05 14:02:21,843 [dnn2sqlv3][Thread:21][ERROR] DotNetNuke.Services.Exceptions.Exceptions - System.Web.HttpException (0x80004005): Not Found
+   at DotNetNuke.Entities.Urls.AdvancedUrlRewriter.SecurityCheck(HttpApplication app)
+   at DotNetNuke.Entities.Urls.AdvancedUrlRewriter.RewriteUrl(Object sender, EventArgs e)
+2025-07-05 14:02:21,843 [dnn2sqlv3][Thread:21][FATAL] DotNetNuke.Web.Common.Internal.DotNetNukeHttpApplication - System.NullReferenceException: Object reference not set to an instance of an object.
+   at DotNetNuke.Entities.Urls.AdvancedUrlRewriter.Handle404OrException(FriendlyUrlSettings settings, HttpContext context, Exception ex, UrlAction result, Boolean transfer, Boolean showDebug)
+   at DotNetNuke.Entities.Urls.AdvancedUrlRewriter.RewriteUrl(Object sender, EventArgs e)
+   at System.Web.HttpApplication.SyncEventExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   at System.Web.HttpApplication.ExecuteStepImpl(IExecutionStep step)
+   at System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+2025-07-05 14:02:23,979 [dnn2sqlv3][Thread:12][ERROR] DotNetNuke.Services.Exceptions.Exceptions - System.Web.HttpException (0x80004005): Not Found
+   at DotNetNuke.Entities.Urls.AdvancedUrlRewriter.SecurityCheck(HttpApplication app)
+   at DotNetNuke.Entities.Urls.AdvancedUrlRewriter.RewriteUrl(Object sender, EventArgs e)
+2025-07-05 14:02:23,979 [dnn2sqlv3][Thread:12][FATAL] DotNetNuke.Web.Common.Internal.DotNetNukeHttpApplication - System.NullReferenceException: Object reference not set to an instance of an object.
+   at DotNetNuke.Entities.Urls.AdvancedUrlRewriter.Handle404OrException(FriendlyUrlSettings settings, HttpContext context, Exception ex, UrlAction result, Boolean transfer, Boolean showDebug)
+   at DotNetNuke.Entities.Urls.AdvancedUrlRewriter.RewriteUrl(Object sender, EventArgs e)
+   at System.Web.HttpApplication.SyncEventExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   at System.Web.HttpApplication.ExecuteStepImpl(IExecutionStep step)
+   at System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+2025-07-05 14:02:26,097 [dnn2sqlv3][Thread:12][ERROR] DotNetNuke.Services.Exceptions.Exceptions - System.Web.HttpException (0x80004005): Not Found
+   at DotNetNuke.Entities.Urls.AdvancedUrlRewriter.SecurityCheck(HttpApplication app)
+   at DotNetNuke.Entities.Urls.AdvancedUrlRewriter.RewriteUrl(Object sender, EventArgs e)
+2025-07-05 14:02:26,114 [dnn2sqlv3][Thread:12][FATAL] DotNetNuke.Web.Common.Internal.DotNetNukeHttpApplication - System.NullReferenceException: Object reference not set to an instance of an object.
+   at DotNetNuke.Entities.Urls.AdvancedUrlRewriter.Handle404OrException(FriendlyUrlSettings settings, HttpContext context, Exception ex, UrlAction result, Boolean transfer, Boolean showDebug)
+   at DotNetNuke.Entities.Urls.AdvancedUrlRewriter.RewriteUrl(Object sender, EventArgs e)
+   at System.Web.HttpApplication.SyncEventExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   at System.Web.HttpApplication.ExecuteStepImpl(IExecutionStep step)
+   at System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+2025-07-05 14:02:28,262 [dnn2sqlv3][Thread:12][ERROR] DotNetNuke.Services.Exceptions.Exceptions - System.Web.HttpException (0x80004005): Not Found
+   at DotNetNuke.Entities.Urls.AdvancedUrlRewriter.SecurityCheck(HttpApplication app)
+   at DotNetNuke.Entities.Urls.AdvancedUrlRewriter.RewriteUrl(Object sender, EventArgs e)
+2025-07-05 14:02:28,340 [dnn2sqlv3][Thread:12][FATAL] DotNetNuke.Web.Common.Internal.DotNetNukeHttpApplication - System.NullReferenceException: Object reference not set to an instance of an object.
+   at DotNetNuke.Entities.Urls.AdvancedUrlRewriter.Handle404OrException(FriendlyUrlSettings settings, HttpContext context, Exception ex, UrlAction result, Boolean transfer, Boolean showDebug)
+   at DotNetNuke.Entities.Urls.AdvancedUrlRewriter.RewriteUrl(Object sender, EventArgs e)
+   at System.Web.HttpApplication.SyncEventExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   at System.Web.HttpApplication.ExecuteStepImpl(IExecutionStep step)
+   at System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+2025-07-05 14:02:30,478 [dnn2sqlv3][Thread:11][ERROR] DotNetNuke.Services.Exceptions.Exceptions - System.Web.HttpException (0x80004005): Not Found
+   at DotNetNuke.Entities.Urls.AdvancedUrlRewriter.SecurityCheck(HttpApplication app)
+   at DotNetNuke.Entities.Urls.AdvancedUrlRewriter.RewriteUrl(Object sender, EventArgs e)
+2025-07-05 14:02:30,478 [dnn2sqlv3][Thread:11][FATAL] DotNetNuke.Web.Common.Internal.DotNetNukeHttpApplication - System.NullReferenceException: Object reference not set to an instance of an object.
+   at DotNetNuke.Entities.Urls.AdvancedUrlRewriter.Handle404OrException(FriendlyUrlSettings settings, HttpContext context, Exception ex, UrlAction result, Boolean transfer, Boolean showDebug)
+   at DotNetNuke.Entities.Urls.AdvancedUrlRewriter.RewriteUrl(Object sender, EventArgs e)
+   at System.Web.HttpApplication.SyncEventExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   at System.Web.HttpApplication.ExecuteStepImpl(IExecutionStep step)
+   at System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+2025-07-05 14:02:32,660 [dnn2sqlv3][Thread:44][ERROR] DotNetNuke.Services.Exceptions.Exceptions - System.Web.HttpException (0x80004005): Not Found
+   at DotNetNuke.Entities.Urls.AdvancedUrlRewriter.SecurityCheck(HttpApplication app)
+   at DotNetNuke.Entities.Urls.AdvancedUrlRewriter.RewriteUrl(Object sender, EventArgs e)
+2025-07-05 14:02:32,660 [dnn2sqlv3][Thread:44][FATAL] DotNetNuke.Web.Common.Internal.DotNetNukeHttpApplication - System.NullReferenceException: Object reference not set to an instance of an object.
+   at DotNetNuke.Entities.Urls.AdvancedUrlRewriter.Handle404OrException(FriendlyUrlSettings settings, HttpContext context, Exception ex, UrlAction result, Boolean transfer, Boolean showDebug)
+   at DotNetNuke.Entities.Urls.AdvancedUrlRewriter.RewriteUrl(Object sender, EventArgs e)
+   at System.Web.HttpApplication.SyncEventExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   at System.Web.HttpApplication.ExecuteStepImpl(IExecutionStep step)
+   at System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+2025-07-05 14:02:34,817 [dnn2sqlv3][Thread:12][ERROR] DotNetNuke.Services.Exceptions.Exceptions - System.Web.HttpException (0x80004005): Not Found
+   at DotNetNuke.Entities.Urls.AdvancedUrlRewriter.SecurityCheck(HttpApplication app)
+   at DotNetNuke.Entities.Urls.AdvancedUrlRewriter.RewriteUrl(Object sender, EventArgs e)
+2025-07-05 14:02:34,822 [dnn2sqlv3][Thread:12][FATAL] DotNetNuke.Web.Common.Internal.DotNetNukeHttpApplication - System.NullReferenceException: Object reference not set to an instance of an object.
+   at DotNetNuke.Entities.Urls.AdvancedUrlRewriter.Handle404OrException(FriendlyUrlSettings settings, HttpContext context, Exception ex, UrlAction result, Boolean transfer, Boolean showDebug)
+   at DotNetNuke.Entities.Urls.AdvancedUrlRewriter.RewriteUrl(Object sender, EventArgs e)
+   at System.Web.HttpApplication.SyncEventExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   at System.Web.HttpApplication.ExecuteStepImpl(IExecutionStep step)
+   at System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+2025-07-05 14:02:36,929 [dnn2sqlv3][Thread:44][ERROR] DotNetNuke.Services.Exceptions.Exceptions - System.Web.HttpException (0x80004005): Not Found
+   at DotNetNuke.Entities.Urls.AdvancedUrlRewriter.SecurityCheck(HttpApplication app)
+   at DotNetNuke.Entities.Urls.AdvancedUrlRewriter.RewriteUrl(Object sender, EventArgs e)
+2025-07-05 14:02:36,929 [dnn2sqlv3][Thread:44][FATAL] DotNetNuke.Web.Common.Internal.DotNetNukeHttpApplication - System.NullReferenceException: Object reference not set to an instance of an object.
+   at DotNetNuke.Entities.Urls.AdvancedUrlRewriter.Handle404OrException(FriendlyUrlSettings settings, HttpContext context, Exception ex, UrlAction result, Boolean transfer, Boolean showDebug)
+   at DotNetNuke.Entities.Urls.AdvancedUrlRewriter.RewriteUrl(Object sender, EventArgs e)
+   at System.Web.HttpApplication.SyncEventExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   at System.Web.HttpApplication.ExecuteStepImpl(IExecutionStep step)
+   at System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+2025-07-05 14:02:39,118 [dnn2sqlv3][Thread:44][ERROR] DotNetNuke.Services.Exceptions.Exceptions - System.Web.HttpException (0x80004005): Not Found
+   at DotNetNuke.Entities.Urls.AdvancedUrlRewriter.SecurityCheck(HttpApplication app)
+   at DotNetNuke.Entities.Urls.AdvancedUrlRewriter.RewriteUrl(Object sender, EventArgs e)
+2025-07-05 14:02:39,134 [dnn2sqlv3][Thread:44][FATAL] DotNetNuke.Web.Common.Internal.DotNetNukeHttpApplication - System.NullReferenceException: Object reference not set to an instance of an object.
+   at DotNetNuke.Entities.Urls.AdvancedUrlRewriter.Handle404OrException(FriendlyUrlSettings settings, HttpContext context, Exception ex, UrlAction result, Boolean transfer, Boolean showDebug)
+   at DotNetNuke.Entities.Urls.AdvancedUrlRewriter.RewriteUrl(Object sender, EventArgs e)
+   at System.Web.HttpApplication.SyncEventExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   at System.Web.HttpApplication.ExecuteStepImpl(IExecutionStep step)
+   at System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+2025-07-05 14:02:41,276 [dnn2sqlv3][Thread:21][ERROR] DotNetNuke.Services.Exceptions.Exceptions - System.Web.HttpException (0x80004005): Not Found
+   at DotNetNuke.Entities.Urls.AdvancedUrlRewriter.SecurityCheck(HttpApplication app)
+   at DotNetNuke.Entities.Urls.AdvancedUrlRewriter.RewriteUrl(Object sender, EventArgs e)
+2025-07-05 14:02:41,276 [dnn2sqlv3][Thread:21][FATAL] DotNetNuke.Web.Common.Internal.DotNetNukeHttpApplication - System.NullReferenceException: Object reference not set to an instance of an object.
+   at DotNetNuke.Entities.Urls.AdvancedUrlRewriter.Handle404OrException(FriendlyUrlSettings settings, HttpContext context, Exception ex, UrlAction result, Boolean transfer, Boolean showDebug)
+   at DotNetNuke.Entities.Urls.AdvancedUrlRewriter.RewriteUrl(Object sender, EventArgs e)
+   at System.Web.HttpApplication.SyncEventExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   at System.Web.HttpApplication.ExecuteStepImpl(IExecutionStep step)
+   at System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+2025-07-05 14:02:41,729 [dnn2sqlv3][Thread:52][ERROR] DotNetNuke.Services.Exceptions.Exceptions - System.Web.HttpException (0x80004005): Not Found
+   at DotNetNuke.Entities.Urls.AdvancedUrlRewriter.SecurityCheck(HttpApplication app)
+   at DotNetNuke.Entities.Urls.AdvancedUrlRewriter.RewriteUrl(Object sender, EventArgs e)
+2025-07-05 14:02:41,729 [dnn2sqlv3][Thread:52][FATAL] DotNetNuke.Web.Common.Internal.DotNetNukeHttpApplication - System.NullReferenceException: Object reference not set to an instance of an object.
+   at DotNetNuke.Entities.Urls.AdvancedUrlRewriter.Handle404OrException(FriendlyUrlSettings settings, HttpContext context, Exception ex, UrlAction result, Boolean transfer, Boolean showDebug)
+   at DotNetNuke.Entities.Urls.AdvancedUrlRewriter.RewriteUrl(Object sender, EventArgs e)
+   at System.Web.HttpApplication.SyncEventExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   at System.Web.HttpApplication.ExecuteStepImpl(IExecutionStep step)
+   at System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+2025-07-05 14:02:42,985 [dnn2sqlv3][Thread:30][ERROR] DotNetNuke.Services.Exceptions.Exceptions - System.Web.HttpException (0x80004005): Not Found
+   at DotNetNuke.Entities.Urls.AdvancedUrlRewriter.SecurityCheck(HttpApplication app)
+   at DotNetNuke.Entities.Urls.AdvancedUrlRewriter.RewriteUrl(Object sender, EventArgs e)
+2025-07-05 14:02:42,985 [dnn2sqlv3][Thread:30][FATAL] DotNetNuke.Web.Common.Internal.DotNetNukeHttpApplication - System.NullReferenceException: Object reference not set to an instance of an object.
+   at DotNetNuke.Entities.Urls.AdvancedUrlRewriter.Handle404OrException(FriendlyUrlSettings settings, HttpContext context, Exception ex, UrlAction result, Boolean transfer, Boolean showDebug)
+   at DotNetNuke.Entities.Urls.AdvancedUrlRewriter.RewriteUrl(Object sender, EventArgs e)
+   at System.Web.HttpApplication.SyncEventExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   at System.Web.HttpApplication.ExecuteStepImpl(IExecutionStep step)
+   at System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+2025-07-05 14:02:43,408 [dnn2sqlv3][Thread:27][ERROR] DotNetNuke.Services.Exceptions.Exceptions - System.Web.HttpException (0x80004005): Not Found
+   at DotNetNuke.Entities.Urls.AdvancedUrlRewriter.SecurityCheck(HttpApplication app)
+   at DotNetNuke.Entities.Urls.AdvancedUrlRewriter.RewriteUrl(Object sender, EventArgs e)
+2025-07-05 14:02:43,423 [dnn2sqlv3][Thread:27][FATAL] DotNetNuke.Web.Common.Internal.DotNetNukeHttpApplication - System.NullReferenceException: Object reference not set to an instance of an object.
+   at DotNetNuke.Entities.Urls.AdvancedUrlRewriter.Handle404OrException(FriendlyUrlSettings settings, HttpContext context, Exception ex, UrlAction result, Boolean transfer, Boolean showDebug)
+   at DotNetNuke.Entities.Urls.AdvancedUrlRewriter.RewriteUrl(Object sender, EventArgs e)
+   at System.Web.HttpApplication.SyncEventExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   at System.Web.HttpApplication.ExecuteStepImpl(IExecutionStep step)
+   at System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+2025-07-05 14:02:43,841 [dnn2sqlv3][Thread:34][ERROR] DotNetNuke.Services.Exceptions.Exceptions - System.Web.HttpException (0x80004005): Not Found
+   at DotNetNuke.Entities.Urls.AdvancedUrlRewriter.SecurityCheck(HttpApplication app)
+   at DotNetNuke.Entities.Urls.AdvancedUrlRewriter.RewriteUrl(Object sender, EventArgs e)
+2025-07-05 14:02:43,841 [dnn2sqlv3][Thread:34][FATAL] DotNetNuke.Web.Common.Internal.DotNetNukeHttpApplication - System.NullReferenceException: Object reference not set to an instance of an object.
+   at DotNetNuke.Entities.Urls.AdvancedUrlRewriter.Handle404OrException(FriendlyUrlSettings settings, HttpContext context, Exception ex, UrlAction result, Boolean transfer, Boolean showDebug)
+   at DotNetNuke.Entities.Urls.AdvancedUrlRewriter.RewriteUrl(Object sender, EventArgs e)
+   at System.Web.HttpApplication.SyncEventExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   at System.Web.HttpApplication.ExecuteStepImpl(IExecutionStep step)
+   at System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+2025-07-05 14:02:45,080 [dnn2sqlv3][Thread:38][ERROR] DotNetNuke.Services.Exceptions.Exceptions - System.Web.HttpException (0x80004005): Not Found
+   at DotNetNuke.Entities.Urls.AdvancedUrlRewriter.SecurityCheck(HttpApplication app)
+   at DotNetNuke.Entities.Urls.AdvancedUrlRewriter.RewriteUrl(Object sender, EventArgs e)
+2025-07-05 14:02:45,080 [dnn2sqlv3][Thread:38][FATAL] DotNetNuke.Web.Common.Internal.DotNetNukeHttpApplication - System.NullReferenceException: Object reference not set to an instance of an object.
+   at DotNetNuke.Entities.Urls.AdvancedUrlRewriter.Handle404OrException(FriendlyUrlSettings settings, HttpContext context, Exception ex, UrlAction result, Boolean transfer, Boolean showDebug)
+   at DotNetNuke.Entities.Urls.AdvancedUrlRewriter.RewriteUrl(Object sender, EventArgs e)
+   at System.Web.HttpApplication.SyncEventExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   at System.Web.HttpApplication.ExecuteStepImpl(IExecutionStep step)
+   at System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+2025-07-05 14:02:45,530 [dnn2sqlv3][Thread:34][ERROR] DotNetNuke.Services.Exceptions.Exceptions - System.Web.HttpException (0x80004005): Not Found
+   at DotNetNuke.Entities.Urls.AdvancedUrlRewriter.SecurityCheck(HttpApplication app)
+   at DotNetNuke.Entities.Urls.AdvancedUrlRewriter.RewriteUrl(Object sender, EventArgs e)
+2025-07-05 14:02:45,530 [dnn2sqlv3][Thread:34][FATAL] DotNetNuke.Web.Common.Internal.DotNetNukeHttpApplication - System.NullReferenceException: Object reference not set to an instance of an object.
+   at DotNetNuke.Entities.Urls.AdvancedUrlRewriter.Handle404OrException(FriendlyUrlSettings settings, HttpContext context, Exception ex, UrlAction result, Boolean transfer, Boolean showDebug)
+   at DotNetNuke.Entities.Urls.AdvancedUrlRewriter.RewriteUrl(Object sender, EventArgs e)
+   at System.Web.HttpApplication.SyncEventExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   at System.Web.HttpApplication.ExecuteStepImpl(IExecutionStep step)
+   at System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+2025-07-05 14:02:45,974 [dnn2sqlv3][Thread:35][ERROR] DotNetNuke.Services.Exceptions.Exceptions - System.Web.HttpException (0x80004005): Not Found
+   at DotNetNuke.Entities.Urls.AdvancedUrlRewriter.SecurityCheck(HttpApplication app)
+   at DotNetNuke.Entities.Urls.AdvancedUrlRewriter.RewriteUrl(Object sender, EventArgs e)
+2025-07-05 14:02:45,978 [dnn2sqlv3][Thread:35][FATAL] DotNetNuke.Web.Common.Internal.DotNetNukeHttpApplication - System.NullReferenceException: Object reference not set to an instance of an object.
+   at DotNetNuke.Entities.Urls.AdvancedUrlRewriter.Handle404OrException(FriendlyUrlSettings settings, HttpContext context, Exception ex, UrlAction result, Boolean transfer, Boolean showDebug)
+   at DotNetNuke.Entities.Urls.AdvancedUrlRewriter.RewriteUrl(Object sender, EventArgs e)
+   at System.Web.HttpApplication.SyncEventExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   at System.Web.HttpApplication.ExecuteStepImpl(IExecutionStep step)
+   at System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+2025-07-05 14:02:47,269 [dnn2sqlv3][Thread:38][ERROR] DotNetNuke.Services.Exceptions.Exceptions - System.Web.HttpException (0x80004005): Not Found
+   at DotNetNuke.Entities.Urls.AdvancedUrlRewriter.SecurityCheck(HttpApplication app)
+   at DotNetNuke.Entities.Urls.AdvancedUrlRewriter.RewriteUrl(Object sender, EventArgs e)
+2025-07-05 14:02:47,269 [dnn2sqlv3][Thread:38][FATAL] DotNetNuke.Web.Common.Internal.DotNetNukeHttpApplication - System.NullReferenceException: Object reference not set to an instance of an object.
+   at DotNetNuke.Entities.Urls.AdvancedUrlRewriter.Handle404OrException(FriendlyUrlSettings settings, HttpContext context, Exception ex, UrlAction result, Boolean transfer, Boolean showDebug)
+   at DotNetNuke.Entities.Urls.AdvancedUrlRewriter.RewriteUrl(Object sender, EventArgs e)
+   at System.Web.HttpApplication.SyncEventExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   at System.Web.HttpApplication.ExecuteStepImpl(IExecutionStep step)
+   at System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+2025-07-05 14:02:47,703 [dnn2sqlv3][Thread:34][ERROR] DotNetNuke.Services.Exceptions.Exceptions - System.Web.HttpException (0x80004005): Not Found
+   at DotNetNuke.Entities.Urls.AdvancedUrlRewriter.SecurityCheck(HttpApplication app)
+   at DotNetNuke.Entities.Urls.AdvancedUrlRewriter.RewriteUrl(Object sender, EventArgs e)
+2025-07-05 14:02:47,703 [dnn2sqlv3][Thread:34][FATAL] DotNetNuke.Web.Common.Internal.DotNetNukeHttpApplication - System.NullReferenceException: Object reference not set to an instance of an object.
+   at DotNetNuke.Entities.Urls.AdvancedUrlRewriter.Handle404OrException(FriendlyUrlSettings settings, HttpContext context, Exception ex, UrlAction result, Boolean transfer, Boolean showDebug)
+   at DotNetNuke.Entities.Urls.AdvancedUrlRewriter.RewriteUrl(Object sender, EventArgs e)
+   at System.Web.HttpApplication.SyncEventExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   at System.Web.HttpApplication.ExecuteStepImpl(IExecutionStep step)
+   at System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+2025-07-05 14:02:48,112 [dnn2sqlv3][Thread:52][ERROR] DotNetNuke.Services.Exceptions.Exceptions - System.Web.HttpException (0x80004005): Not Found
+   at DotNetNuke.Entities.Urls.AdvancedUrlRewriter.SecurityCheck(HttpApplication app)
+   at DotNetNuke.Entities.Urls.AdvancedUrlRewriter.RewriteUrl(Object sender, EventArgs e)
+2025-07-05 14:02:48,128 [dnn2sqlv3][Thread:52][FATAL] DotNetNuke.Web.Common.Internal.DotNetNukeHttpApplication - System.NullReferenceException: Object reference not set to an instance of an object.
+   at DotNetNuke.Entities.Urls.AdvancedUrlRewriter.Handle404OrException(FriendlyUrlSettings settings, HttpContext context, Exception ex, UrlAction result, Boolean transfer, Boolean showDebug)
+   at DotNetNuke.Entities.Urls.AdvancedUrlRewriter.RewriteUrl(Object sender, EventArgs e)
+   at System.Web.HttpApplication.SyncEventExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   at System.Web.HttpApplication.ExecuteStepImpl(IExecutionStep step)
+   at System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+2025-07-05 14:02:49,541 [dnn2sqlv3][Thread:35][ERROR] DotNetNuke.Services.Exceptions.Exceptions - System.Web.HttpException (0x80004005): Not Found
+   at DotNetNuke.Entities.Urls.AdvancedUrlRewriter.SecurityCheck(HttpApplication app)
+   at DotNetNuke.Entities.Urls.AdvancedUrlRewriter.RewriteUrl(Object sender, EventArgs e)
+2025-07-05 14:02:49,545 [dnn2sqlv3][Thread:35][FATAL] DotNetNuke.Web.Common.Internal.DotNetNukeHttpApplication - System.NullReferenceException: Object reference not set to an instance of an object.
+   at DotNetNuke.Entities.Urls.AdvancedUrlRewriter.Handle404OrException(FriendlyUrlSettings settings, HttpContext context, Exception ex, UrlAction result, Boolean transfer, Boolean showDebug)
+   at DotNetNuke.Entities.Urls.AdvancedUrlRewriter.RewriteUrl(Object sender, EventArgs e)
+   at System.Web.HttpApplication.SyncEventExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   at System.Web.HttpApplication.ExecuteStepImpl(IExecutionStep step)
+   at System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+2025-07-05 14:02:49,949 [dnn2sqlv3][Thread:38][ERROR] DotNetNuke.Services.Exceptions.Exceptions - System.Web.HttpException (0x80004005): Not Found
+   at DotNetNuke.Entities.Urls.AdvancedUrlRewriter.SecurityCheck(HttpApplication app)
+   at DotNetNuke.Entities.Urls.AdvancedUrlRewriter.RewriteUrl(Object sender, EventArgs e)
+2025-07-05 14:02:49,949 [dnn2sqlv3][Thread:38][FATAL] DotNetNuke.Web.Common.Internal.DotNetNukeHttpApplication - System.NullReferenceException: Object reference not set to an instance of an object.
+   at DotNetNuke.Entities.Urls.AdvancedUrlRewriter.Handle404OrException(FriendlyUrlSettings settings, HttpContext context, Exception ex, UrlAction result, Boolean transfer, Boolean showDebug)
+   at DotNetNuke.Entities.Urls.AdvancedUrlRewriter.RewriteUrl(Object sender, EventArgs e)
+   at System.Web.HttpApplication.SyncEventExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   at System.Web.HttpApplication.ExecuteStepImpl(IExecutionStep step)
+   at System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+2025-07-05 14:02:50,393 [dnn2sqlv3][Thread:40][ERROR] DotNetNuke.Services.Exceptions.Exceptions - System.Web.HttpException (0x80004005): Not Found
+   at DotNetNuke.Entities.Urls.AdvancedUrlRewriter.SecurityCheck(HttpApplication app)
+   at DotNetNuke.Entities.Urls.AdvancedUrlRewriter.RewriteUrl(Object sender, EventArgs e)
+2025-07-05 14:02:50,393 [dnn2sqlv3][Thread:40][FATAL] DotNetNuke.Web.Common.Internal.DotNetNukeHttpApplication - System.NullReferenceException: Object reference not set to an instance of an object.
+   at DotNetNuke.Entities.Urls.AdvancedUrlRewriter.Handle404OrException(FriendlyUrlSettings settings, HttpContext context, Exception ex, UrlAction result, Boolean transfer, Boolean showDebug)
+   at DotNetNuke.Entities.Urls.AdvancedUrlRewriter.RewriteUrl(Object sender, EventArgs e)
+   at System.Web.HttpApplication.SyncEventExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   at System.Web.HttpApplication.ExecuteStepImpl(IExecutionStep step)
+   at System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+2025-07-05 14:02:51,706 [dnn2sqlv3][Thread:35][ERROR] DotNetNuke.Services.Exceptions.Exceptions - System.Web.HttpException (0x80004005): Not Found
+   at DotNetNuke.Entities.Urls.AdvancedUrlRewriter.SecurityCheck(HttpApplication app)
+   at DotNetNuke.Entities.Urls.AdvancedUrlRewriter.RewriteUrl(Object sender, EventArgs e)
+2025-07-05 14:02:51,721 [dnn2sqlv3][Thread:35][FATAL] DotNetNuke.Web.Common.Internal.DotNetNukeHttpApplication - System.NullReferenceException: Object reference not set to an instance of an object.
+   at DotNetNuke.Entities.Urls.AdvancedUrlRewriter.Handle404OrException(FriendlyUrlSettings settings, HttpContext context, Exception ex, UrlAction result, Boolean transfer, Boolean showDebug)
+   at DotNetNuke.Entities.Urls.AdvancedUrlRewriter.RewriteUrl(Object sender, EventArgs e)
+   at System.Web.HttpApplication.SyncEventExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   at System.Web.HttpApplication.ExecuteStepImpl(IExecutionStep step)
+   at System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+2025-07-05 14:02:52,148 [dnn2sqlv3][Thread:11][ERROR] DotNetNuke.Services.Exceptions.Exceptions - System.Web.HttpException (0x80004005): Not Found
+   at DotNetNuke.Entities.Urls.AdvancedUrlRewriter.SecurityCheck(HttpApplication app)
+   at DotNetNuke.Entities.Urls.AdvancedUrlRewriter.RewriteUrl(Object sender, EventArgs e)
+2025-07-05 14:02:52,156 [dnn2sqlv3][Thread:11][FATAL] DotNetNuke.Web.Common.Internal.DotNetNukeHttpApplication - System.NullReferenceException: Object reference not set to an instance of an object.
+   at DotNetNuke.Entities.Urls.AdvancedUrlRewriter.Handle404OrException(FriendlyUrlSettings settings, HttpContext context, Exception ex, UrlAction result, Boolean transfer, Boolean showDebug)
+   at DotNetNuke.Entities.Urls.AdvancedUrlRewriter.RewriteUrl(Object sender, EventArgs e)
+   at System.Web.HttpApplication.SyncEventExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   at System.Web.HttpApplication.ExecuteStepImpl(IExecutionStep step)
+   at System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+2025-07-05 14:02:52,568 [dnn2sqlv3][Thread:35][ERROR] DotNetNuke.Services.Exceptions.Exceptions - System.Web.HttpException (0x80004005): Not Found
+   at DotNetNuke.Entities.Urls.AdvancedUrlRewriter.SecurityCheck(HttpApplication app)
+   at DotNetNuke.Entities.Urls.AdvancedUrlRewriter.RewriteUrl(Object sender, EventArgs e)
+2025-07-05 14:02:52,568 [dnn2sqlv3][Thread:35][FATAL] DotNetNuke.Web.Common.Internal.DotNetNukeHttpApplication - System.NullReferenceException: Object reference not set to an instance of an object.
+   at DotNetNuke.Entities.Urls.AdvancedUrlRewriter.Handle404OrException(FriendlyUrlSettings settings, HttpContext context, Exception ex, UrlAction result, Boolean transfer, Boolean showDebug)
+   at DotNetNuke.Entities.Urls.AdvancedUrlRewriter.RewriteUrl(Object sender, EventArgs e)
+   at System.Web.HttpApplication.SyncEventExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   at System.Web.HttpApplication.ExecuteStepImpl(IExecutionStep step)
+   at System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+2025-07-05 14:02:53,819 [dnn2sqlv3][Thread:34][ERROR] DotNetNuke.Services.Exceptions.Exceptions - System.Web.HttpException (0x80004005): Not Found
+   at DotNetNuke.Entities.Urls.AdvancedUrlRewriter.SecurityCheck(HttpApplication app)
+   at DotNetNuke.Entities.Urls.AdvancedUrlRewriter.RewriteUrl(Object sender, EventArgs e)
+2025-07-05 14:02:53,819 [dnn2sqlv3][Thread:34][FATAL] DotNetNuke.Web.Common.Internal.DotNetNukeHttpApplication - System.NullReferenceException: Object reference not set to an instance of an object.
+   at DotNetNuke.Entities.Urls.AdvancedUrlRewriter.Handle404OrException(FriendlyUrlSettings settings, HttpContext context, Exception ex, UrlAction result, Boolean transfer, Boolean showDebug)
+   at DotNetNuke.Entities.Urls.AdvancedUrlRewriter.RewriteUrl(Object sender, EventArgs e)
+   at System.Web.HttpApplication.SyncEventExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   at System.Web.HttpApplication.ExecuteStepImpl(IExecutionStep step)
+   at System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+2025-07-05 14:02:54,227 [dnn2sqlv3][Thread:40][ERROR] DotNetNuke.Services.Exceptions.Exceptions - System.Web.HttpException (0x80004005): Not Found
+   at DotNetNuke.Entities.Urls.AdvancedUrlRewriter.SecurityCheck(HttpApplication app)
+   at DotNetNuke.Entities.Urls.AdvancedUrlRewriter.RewriteUrl(Object sender, EventArgs e)
+2025-07-05 14:02:54,242 [dnn2sqlv3][Thread:40][FATAL] DotNetNuke.Web.Common.Internal.DotNetNukeHttpApplication - System.NullReferenceException: Object reference not set to an instance of an object.
+   at DotNetNuke.Entities.Urls.AdvancedUrlRewriter.Handle404OrException(FriendlyUrlSettings settings, HttpContext context, Exception ex, UrlAction result, Boolean transfer, Boolean showDebug)
+   at DotNetNuke.Entities.Urls.AdvancedUrlRewriter.RewriteUrl(Object sender, EventArgs e)
+   at System.Web.HttpApplication.SyncEventExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   at System.Web.HttpApplication.ExecuteStepImpl(IExecutionStep step)
+   at System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+2025-07-05 14:02:54,663 [dnn2sqlv3][Thread:27][ERROR] DotNetNuke.Services.Exceptions.Exceptions - System.Web.HttpException (0x80004005): Not Found
+   at DotNetNuke.Entities.Urls.AdvancedUrlRewriter.SecurityCheck(HttpApplication app)
+   at DotNetNuke.Entities.Urls.AdvancedUrlRewriter.RewriteUrl(Object sender, EventArgs e)
+2025-07-05 14:02:54,678 [dnn2sqlv3][Thread:27][FATAL] DotNetNuke.Web.Common.Internal.DotNetNukeHttpApplication - System.NullReferenceException: Object reference not set to an instance of an object.
+   at DotNetNuke.Entities.Urls.AdvancedUrlRewriter.Handle404OrException(FriendlyUrlSettings settings, HttpContext context, Exception ex, UrlAction result, Boolean transfer, Boolean showDebug)
+   at DotNetNuke.Entities.Urls.AdvancedUrlRewriter.RewriteUrl(Object sender, EventArgs e)
+   at System.Web.HttpApplication.SyncEventExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   at System.Web.HttpApplication.ExecuteStepImpl(IExecutionStep step)
+   at System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+2025-07-05 14:02:55,961 [dnn2sqlv3][Thread:38][ERROR] DotNetNuke.Services.Exceptions.Exceptions - System.Web.HttpException (0x80004005): Not Found
+   at DotNetNuke.Entities.Urls.AdvancedUrlRewriter.SecurityCheck(HttpApplication app)
+   at DotNetNuke.Entities.Urls.AdvancedUrlRewriter.RewriteUrl(Object sender, EventArgs e)
+2025-07-05 14:02:55,961 [dnn2sqlv3][Thread:38][FATAL] DotNetNuke.Web.Common.Internal.DotNetNukeHttpApplication - System.NullReferenceException: Object reference not set to an instance of an object.
+   at DotNetNuke.Entities.Urls.AdvancedUrlRewriter.Handle404OrException(FriendlyUrlSettings settings, HttpContext context, Exception ex, UrlAction result, Boolean transfer, Boolean showDebug)
+   at DotNetNuke.Entities.Urls.AdvancedUrlRewriter.RewriteUrl(Object sender, EventArgs e)
+   at System.Web.HttpApplication.SyncEventExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   at System.Web.HttpApplication.ExecuteStepImpl(IExecutionStep step)
+   at System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+2025-07-05 14:02:56,383 [dnn2sqlv3][Thread:40][ERROR] DotNetNuke.Services.Exceptions.Exceptions - System.Web.HttpException (0x80004005): Not Found
+   at DotNetNuke.Entities.Urls.AdvancedUrlRewriter.SecurityCheck(HttpApplication app)
+   at DotNetNuke.Entities.Urls.AdvancedUrlRewriter.RewriteUrl(Object sender, EventArgs e)
+2025-07-05 14:02:56,387 [dnn2sqlv3][Thread:40][FATAL] DotNetNuke.Web.Common.Internal.DotNetNukeHttpApplication - System.NullReferenceException: Object reference not set to an instance of an object.
+   at DotNetNuke.Entities.Urls.AdvancedUrlRewriter.Handle404OrException(FriendlyUrlSettings settings, HttpContext context, Exception ex, UrlAction result, Boolean transfer, Boolean showDebug)
+   at DotNetNuke.Entities.Urls.AdvancedUrlRewriter.RewriteUrl(Object sender, EventArgs e)
+   at System.Web.HttpApplication.SyncEventExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   at System.Web.HttpApplication.ExecuteStepImpl(IExecutionStep step)
+   at System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+2025-07-05 14:02:56,804 [dnn2sqlv3][Thread:21][ERROR] DotNetNuke.Services.Exceptions.Exceptions - System.Web.HttpException (0x80004005): Not Found
+   at DotNetNuke.Entities.Urls.AdvancedUrlRewriter.SecurityCheck(HttpApplication app)
+   at DotNetNuke.Entities.Urls.AdvancedUrlRewriter.RewriteUrl(Object sender, EventArgs e)
+2025-07-05 14:02:56,804 [dnn2sqlv3][Thread:21][FATAL] DotNetNuke.Web.Common.Internal.DotNetNukeHttpApplication - System.NullReferenceException: Object reference not set to an instance of an object.
+   at DotNetNuke.Entities.Urls.AdvancedUrlRewriter.Handle404OrException(FriendlyUrlSettings settings, HttpContext context, Exception ex, UrlAction result, Boolean transfer, Boolean showDebug)
+   at DotNetNuke.Entities.Urls.AdvancedUrlRewriter.RewriteUrl(Object sender, EventArgs e)
+   at System.Web.HttpApplication.SyncEventExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   at System.Web.HttpApplication.ExecuteStepImpl(IExecutionStep step)
+   at System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+2025-07-05 14:02:58,062 [dnn2sqlv3][Thread:27][ERROR] DotNetNuke.Services.Exceptions.Exceptions - System.Web.HttpException (0x80004005): Not Found
+   at DotNetNuke.Entities.Urls.AdvancedUrlRewriter.SecurityCheck(HttpApplication app)
+   at DotNetNuke.Entities.Urls.AdvancedUrlRewriter.RewriteUrl(Object sender, EventArgs e)
+2025-07-05 14:02:58,062 [dnn2sqlv3][Thread:27][FATAL] DotNetNuke.Web.Common.Internal.DotNetNukeHttpApplication - System.NullReferenceException: Object reference not set to an instance of an object.
+   at DotNetNuke.Entities.Urls.AdvancedUrlRewriter.Handle404OrException(FriendlyUrlSettings settings, HttpContext context, Exception ex, UrlAction result, Boolean transfer, Boolean showDebug)
+   at DotNetNuke.Entities.Urls.AdvancedUrlRewriter.RewriteUrl(Object sender, EventArgs e)
+   at System.Web.HttpApplication.SyncEventExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   at System.Web.HttpApplication.ExecuteStepImpl(IExecutionStep step)
+   at System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+2025-07-05 14:02:58,603 [dnn2sqlv3][Thread:38][ERROR] DotNetNuke.Services.Exceptions.Exceptions - System.Web.HttpException (0x80004005): Not Found
+   at DotNetNuke.Entities.Urls.AdvancedUrlRewriter.SecurityCheck(HttpApplication app)
+   at DotNetNuke.Entities.Urls.AdvancedUrlRewriter.RewriteUrl(Object sender, EventArgs e)
+2025-07-05 14:02:58,635 [dnn2sqlv3][Thread:38][FATAL] DotNetNuke.Web.Common.Internal.DotNetNukeHttpApplication - System.NullReferenceException: Object reference not set to an instance of an object.
+   at DotNetNuke.Entities.Urls.AdvancedUrlRewriter.Handle404OrException(FriendlyUrlSettings settings, HttpContext context, Exception ex, UrlAction result, Boolean transfer, Boolean showDebug)
+   at DotNetNuke.Entities.Urls.AdvancedUrlRewriter.RewriteUrl(Object sender, EventArgs e)
+   at System.Web.HttpApplication.SyncEventExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   at System.Web.HttpApplication.ExecuteStepImpl(IExecutionStep step)
+   at System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+2025-07-05 14:02:59,060 [dnn2sqlv3][Thread:30][ERROR] DotNetNuke.Services.Exceptions.Exceptions - System.Web.HttpException (0x80004005): Not Found
+   at DotNetNuke.Entities.Urls.AdvancedUrlRewriter.SecurityCheck(HttpApplication app)
+   at DotNetNuke.Entities.Urls.AdvancedUrlRewriter.RewriteUrl(Object sender, EventArgs e)
+2025-07-05 14:02:59,060 [dnn2sqlv3][Thread:30][FATAL] DotNetNuke.Web.Common.Internal.DotNetNukeHttpApplication - System.NullReferenceException: Object reference not set to an instance of an object.
+   at DotNetNuke.Entities.Urls.AdvancedUrlRewriter.Handle404OrException(FriendlyUrlSettings settings, HttpContext context, Exception ex, UrlAction result, Boolean transfer, Boolean showDebug)
+   at DotNetNuke.Entities.Urls.AdvancedUrlRewriter.RewriteUrl(Object sender, EventArgs e)
+   at System.Web.HttpApplication.SyncEventExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   at System.Web.HttpApplication.ExecuteStepImpl(IExecutionStep step)
+   at System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+2025-07-05 14:03:00,321 [dnn2sqlv3][Thread:34][ERROR] DotNetNuke.Services.Exceptions.Exceptions - System.Web.HttpException (0x80004005): Not Found
+   at DotNetNuke.Entities.Urls.AdvancedUrlRewriter.SecurityCheck(HttpApplication app)
+   at DotNetNuke.Entities.Urls.AdvancedUrlRewriter.RewriteUrl(Object sender, EventArgs e)
+2025-07-05 14:03:00,337 [dnn2sqlv3][Thread:34][FATAL] DotNetNuke.Web.Common.Internal.DotNetNukeHttpApplication - System.NullReferenceException: Object reference not set to an instance of an object.
+   at DotNetNuke.Entities.Urls.AdvancedUrlRewriter.Handle404OrException(FriendlyUrlSettings settings, HttpContext context, Exception ex, UrlAction result, Boolean transfer, Boolean showDebug)
+   at DotNetNuke.Entities.Urls.AdvancedUrlRewriter.RewriteUrl(Object sender, EventArgs e)
+   at System.Web.HttpApplication.SyncEventExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   at System.Web.HttpApplication.ExecuteStepImpl(IExecutionStep step)
+   at System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+2025-07-05 14:03:00,756 [dnn2sqlv3][Thread:12][ERROR] DotNetNuke.Services.Exceptions.Exceptions - System.Web.HttpException (0x80004005): Not Found
+   at DotNetNuke.Entities.Urls.AdvancedUrlRewriter.SecurityCheck(HttpApplication app)
+   at DotNetNuke.Entities.Urls.AdvancedUrlRewriter.RewriteUrl(Object sender, EventArgs e)
+2025-07-05 14:03:00,756 [dnn2sqlv3][Thread:12][FATAL] DotNetNuke.Web.Common.Internal.DotNetNukeHttpApplication - System.NullReferenceException: Object reference not set to an instance of an object.
+   at DotNetNuke.Entities.Urls.AdvancedUrlRewriter.Handle404OrException(FriendlyUrlSettings settings, HttpContext context, Exception ex, UrlAction result, Boolean transfer, Boolean showDebug)
+   at DotNetNuke.Entities.Urls.AdvancedUrlRewriter.RewriteUrl(Object sender, EventArgs e)
+   at System.Web.HttpApplication.SyncEventExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   at System.Web.HttpApplication.ExecuteStepImpl(IExecutionStep step)
+   at System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+2025-07-05 14:03:01,195 [dnn2sqlv3][Thread:44][ERROR] DotNetNuke.Services.Exceptions.Exceptions - System.Web.HttpException (0x80004005): Not Found
+   at DotNetNuke.Entities.Urls.AdvancedUrlRewriter.SecurityCheck(HttpApplication app)
+   at DotNetNuke.Entities.Urls.AdvancedUrlRewriter.RewriteUrl(Object sender, EventArgs e)
+2025-07-05 14:03:01,199 [dnn2sqlv3][Thread:44][FATAL] DotNetNuke.Web.Common.Internal.DotNetNukeHttpApplication - System.NullReferenceException: Object reference not set to an instance of an object.
+   at DotNetNuke.Entities.Urls.AdvancedUrlRewriter.Handle404OrException(FriendlyUrlSettings settings, HttpContext context, Exception ex, UrlAction result, Boolean transfer, Boolean showDebug)
+   at DotNetNuke.Entities.Urls.AdvancedUrlRewriter.RewriteUrl(Object sender, EventArgs e)
+   at System.Web.HttpApplication.SyncEventExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   at System.Web.HttpApplication.ExecuteStepImpl(IExecutionStep step)
+   at System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+2025-07-05 14:03:02,429 [dnn2sqlv3][Thread:27][ERROR] DotNetNuke.Services.Exceptions.Exceptions - System.Web.HttpException (0x80004005): Not Found
+   at DotNetNuke.Entities.Urls.AdvancedUrlRewriter.SecurityCheck(HttpApplication app)
+   at DotNetNuke.Entities.Urls.AdvancedUrlRewriter.RewriteUrl(Object sender, EventArgs e)
+2025-07-05 14:03:02,429 [dnn2sqlv3][Thread:27][FATAL] DotNetNuke.Web.Common.Internal.DotNetNukeHttpApplication - System.NullReferenceException: Object reference not set to an instance of an object.
+   at DotNetNuke.Entities.Urls.AdvancedUrlRewriter.Handle404OrException(FriendlyUrlSettings settings, HttpContext context, Exception ex, UrlAction result, Boolean transfer, Boolean showDebug)
+   at DotNetNuke.Entities.Urls.AdvancedUrlRewriter.RewriteUrl(Object sender, EventArgs e)
+   at System.Web.HttpApplication.SyncEventExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   at System.Web.HttpApplication.ExecuteStepImpl(IExecutionStep step)
+   at System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+2025-07-05 14:03:02,851 [dnn2sqlv3][Thread:11][ERROR] DotNetNuke.Services.Exceptions.Exceptions - System.Web.HttpException (0x80004005): Not Found
+   at DotNetNuke.Entities.Urls.AdvancedUrlRewriter.SecurityCheck(HttpApplication app)
+   at DotNetNuke.Entities.Urls.AdvancedUrlRewriter.RewriteUrl(Object sender, EventArgs e)
+2025-07-05 14:03:02,851 [dnn2sqlv3][Thread:11][FATAL] DotNetNuke.Web.Common.Internal.DotNetNukeHttpApplication - System.NullReferenceException: Object reference not set to an instance of an object.
+   at DotNetNuke.Entities.Urls.AdvancedUrlRewriter.Handle404OrException(FriendlyUrlSettings settings, HttpContext context, Exception ex, UrlAction result, Boolean transfer, Boolean showDebug)
+   at DotNetNuke.Entities.Urls.AdvancedUrlRewriter.RewriteUrl(Object sender, EventArgs e)
+   at System.Web.HttpApplication.SyncEventExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   at System.Web.HttpApplication.ExecuteStepImpl(IExecutionStep step)
+   at System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+2025-07-05 14:03:03,526 [dnn2sqlv3][Thread:34][FATAL] DotNetNuke.Web.Common.Internal.DotNetNukeHttpApplication - System.ArgumentException: Illegal characters in path.
+   at System.IO.Path.CheckInvalidPathChars(String path, Boolean checkAdditional)
+   at System.IO.Path.GetExtension(String path)
+   at ForemostMedia.Modules.SeoHelper.HttpModules.FileTrackingFilter.OnTrackFile(Uri uri)
+   at ForemostMedia.Modules.SeoHelper.HttpModules.FileTrackingFilter.OnEndRequest(Object sender, EventArgs e)
+   at System.Web.HttpApplication.SyncEventExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   at System.Web.HttpApplication.ExecuteStepImpl(IExecutionStep step)
+   at System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+2025-07-05 14:03:04,464 [dnn2sqlv3][Thread:12][FATAL] DotNetNuke.Web.Common.Internal.DotNetNukeHttpApplication - System.ArgumentException: Illegal characters in path.
+   at System.IO.Path.CheckInvalidPathChars(String path, Boolean checkAdditional)
+   at System.IO.Path.GetExtension(String path)
+   at ForemostMedia.Modules.SeoHelper.HttpModules.FileTrackingFilter.OnTrackFile(Uri uri)
+   at ForemostMedia.Modules.SeoHelper.HttpModules.FileTrackingFilter.OnEndRequest(Object sender, EventArgs e)
+   at System.Web.HttpApplication.SyncEventExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   at System.Web.HttpApplication.ExecuteStepImpl(IExecutionStep step)
+   at System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+2025-07-05 14:06:38,696 [dnn2sqlv3][Thread:21][FATAL] DotNetNuke.Web.Common.Internal.DotNetNukeHttpApplication - System.Web.HttpException (0x80004005): A potentially dangerous Request.Path value was detected from the client (:).
+   at System.Web.HttpRequest.ValidateInputIfRequiredByConfig()
+   at System.Web.HttpApplication.PipelineStepManager.ValidateHelper(HttpContext context)
+2025-07-05 14:06:38,861 [dnn2sqlv3][Thread:21][FATAL] DotNetNuke.Web.Common.Internal.DotNetNukeHttpApplication - System.Web.HttpException (0x80004005): A potentially dangerous Request.Path value was detected from the client (:).
+   at System.Web.HttpRequest.ValidateInputIfRequiredByConfig()
+   at System.Web.HttpApplication.PipelineStepManager.ValidateHelper(HttpContext context)
+2025-07-05 14:06:38,983 [dnn2sqlv3][Thread:21][FATAL] DotNetNuke.Web.Common.Internal.DotNetNukeHttpApplication - System.Web.HttpException (0x80004005): A potentially dangerous Request.Path value was detected from the client (:).
+   at System.Web.HttpRequest.ValidateInputIfRequiredByConfig()
+   at System.Web.HttpApplication.PipelineStepManager.ValidateHelper(HttpContext context)
+2025-07-05 14:06:39,077 [dnn2sqlv3][Thread:35][FATAL] DotNetNuke.Web.Common.Internal.DotNetNukeHttpApplication - System.Web.HttpException (0x80004005): A potentially dangerous Request.Path value was detected from the client (:).
+   at System.Web.HttpRequest.ValidateInputIfRequiredByConfig()
+   at System.Web.HttpApplication.PipelineStepManager.ValidateHelper(HttpContext context)
+2025-07-05 14:06:39,166 [dnn2sqlv3][Thread:52][FATAL] DotNetNuke.Web.Common.Internal.DotNetNukeHttpApplication - System.Web.HttpException (0x80004005): A potentially dangerous Request.Path value was detected from the client (:).
+   at System.Web.HttpRequest.ValidateInputIfRequiredByConfig()
+   at System.Web.HttpApplication.PipelineStepManager.ValidateHelper(HttpContext context)
+2025-07-05 14:06:39,255 [dnn2sqlv3][Thread:12][FATAL] DotNetNuke.Web.Common.Internal.DotNetNukeHttpApplication - System.Web.HttpException (0x80004005): A potentially dangerous Request.Path value was detected from the client (:).
+   at System.Web.HttpRequest.ValidateInputIfRequiredByConfig()
+   at System.Web.HttpApplication.PipelineStepManager.ValidateHelper(HttpContext context)
+2025-07-05 14:06:40,177 [dnn2sqlv3][Thread:44][FATAL] DotNetNuke.Web.Common.Internal.DotNetNukeHttpApplication - System.Web.HttpException (0x80004005): A potentially dangerous Request.Path value was detected from the client (:).
+   at System.Web.HttpRequest.ValidateInputIfRequiredByConfig()
+   at System.Web.HttpApplication.PipelineStepManager.ValidateHelper(HttpContext context)
+2025-07-05 14:06:40,271 [dnn2sqlv3][Thread:34][FATAL] DotNetNuke.Web.Common.Internal.DotNetNukeHttpApplication - System.Web.HttpException (0x80004005): A potentially dangerous Request.Path value was detected from the client (:).
+   at System.Web.HttpRequest.ValidateInputIfRequiredByConfig()
+   at System.Web.HttpApplication.PipelineStepManager.ValidateHelper(HttpContext context)
+2025-07-05 14:06:40,353 [dnn2sqlv3][Thread:40][FATAL] DotNetNuke.Web.Common.Internal.DotNetNukeHttpApplication - System.Web.HttpException (0x80004005): A potentially dangerous Request.Path value was detected from the client (:).
+   at System.Web.HttpRequest.ValidateInputIfRequiredByConfig()
+   at System.Web.HttpApplication.PipelineStepManager.ValidateHelper(HttpContext context)
+2025-07-05 14:06:40,432 [dnn2sqlv3][Thread:11][FATAL] DotNetNuke.Web.Common.Internal.DotNetNukeHttpApplication - System.Web.HttpException (0x80004005): A potentially dangerous Request.Path value was detected from the client (:).
+   at System.Web.HttpRequest.ValidateInputIfRequiredByConfig()
+   at System.Web.HttpApplication.PipelineStepManager.ValidateHelper(HttpContext context)
+2025-07-05 14:06:40,542 [dnn2sqlv3][Thread:30][FATAL] DotNetNuke.Web.Common.Internal.DotNetNukeHttpApplication - System.Web.HttpException (0x80004005): A potentially dangerous Request.Path value was detected from the client (:).
+   at System.Web.HttpRequest.ValidateInputIfRequiredByConfig()
+   at System.Web.HttpApplication.PipelineStepManager.ValidateHelper(HttpContext context)
+2025-07-05 14:06:40,620 [dnn2sqlv3][Thread:21][FATAL] DotNetNuke.Web.Common.Internal.DotNetNukeHttpApplication - System.Web.HttpException (0x80004005): A potentially dangerous Request.Path value was detected from the client (:).
+   at System.Web.HttpRequest.ValidateInputIfRequiredByConfig()
+   at System.Web.HttpApplication.PipelineStepManager.ValidateHelper(HttpContext context)
+2025-07-05 14:06:55,521 [dnn2sqlv3][Thread:21][FATAL] DotNetNuke.Web.Common.Internal.DotNetNukeHttpApplication - System.Web.HttpException (0x80004005): A potentially dangerous Request.Path value was detected from the client (*).
+   at System.Web.HttpRequest.ValidateInputIfRequiredByConfig()
+   at System.Web.HttpApplication.PipelineStepManager.ValidateHelper(HttpContext context)
+2025-07-05 14:06:56,443 [dnn2sqlv3][Thread:30][FATAL] DotNetNuke.Web.Common.Internal.DotNetNukeHttpApplication - System.Web.HttpException (0x80004005): A potentially dangerous Request.Path value was detected from the client (*).
+   at System.Web.HttpRequest.ValidateInputIfRequiredByConfig()
+   at System.Web.HttpApplication.PipelineStepManager.ValidateHelper(HttpContext context)
+2025-07-05 14:07:46,471 [dnn2sqlv3][Thread:40][FATAL] DotNetNuke.Web.Common.Internal.DotNetNukeHttpApplication - System.Web.HttpException (0x80004005): A potentially dangerous Request.Path value was detected from the client (<).
+   at System.Web.HttpRequest.ValidateInputIfRequiredByConfig()
+   at System.Web.HttpApplication.PipelineStepManager.ValidateHelper(HttpContext context)
+2025-07-05 14:07:46,558 [dnn2sqlv3][Thread:35][FATAL] DotNetNuke.Web.Common.Internal.DotNetNukeHttpApplication - System.Web.HttpException (0x80004005): A potentially dangerous Request.Path value was detected from the client (<).
+   at System.Web.HttpRequest.ValidateInputIfRequiredByConfig()
+   at System.Web.HttpApplication.PipelineStepManager.ValidateHelper(HttpContext context)
+2025-07-05 14:07:46,642 [dnn2sqlv3][Thread:44][FATAL] DotNetNuke.Web.Common.Internal.DotNetNukeHttpApplication - System.Web.HttpException (0x80004005): A potentially dangerous Request.Path value was detected from the client (<).
+   at System.Web.HttpRequest.ValidateInputIfRequiredByConfig()
+   at System.Web.HttpApplication.PipelineStepManager.ValidateHelper(HttpContext context)
+2025-07-05 14:07:47,084 [dnn2sqlv3][Thread:44][FATAL] DotNetNuke.Web.Common.Internal.DotNetNukeHttpApplication - System.Web.HttpException (0x80004005): A potentially dangerous Request.Path value was detected from the client (<).
+   at System.Web.HttpRequest.ValidateInputIfRequiredByConfig()
+   at System.Web.HttpApplication.PipelineStepManager.ValidateHelper(HttpContext context)
+2025-07-05 14:07:47,173 [dnn2sqlv3][Thread:11][FATAL] DotNetNuke.Web.Common.Internal.DotNetNukeHttpApplication - System.Web.HttpException (0x80004005): A potentially dangerous Request.Path value was detected from the client (<).
+   at System.Web.HttpRequest.ValidateInputIfRequiredByConfig()
+   at System.Web.HttpApplication.PipelineStepManager.ValidateHelper(HttpContext context)
+2025-07-05 14:07:47,262 [dnn2sqlv3][Thread:52][FATAL] DotNetNuke.Web.Common.Internal.DotNetNukeHttpApplication - System.Web.HttpException (0x80004005): A potentially dangerous Request.Path value was detected from the client (<).
+   at System.Web.HttpRequest.ValidateInputIfRequiredByConfig()
+   at System.Web.HttpApplication.PipelineStepManager.ValidateHelper(HttpContext context)
+2025-07-05 14:07:52,976 [dnn2sqlv3][Thread:52][FATAL] DotNetNuke.Web.Common.Internal.DotNetNukeHttpApplication - System.Web.HttpException (0x80004005): A potentially dangerous Request.Path value was detected from the client (>).
+   at System.Web.HttpRequest.ValidateInputIfRequiredByConfig()
+   at System.Web.HttpApplication.PipelineStepManager.ValidateHelper(HttpContext context)
+2025-07-05 14:07:53,055 [dnn2sqlv3][Thread:38][FATAL] DotNetNuke.Web.Common.Internal.DotNetNukeHttpApplication - System.Web.HttpException (0x80004005): A potentially dangerous Request.Path value was detected from the client (>).
+   at System.Web.HttpRequest.ValidateInputIfRequiredByConfig()
+   at System.Web.HttpApplication.PipelineStepManager.ValidateHelper(HttpContext context)
+2025-07-05 14:07:53,134 [dnn2sqlv3][Thread:40][FATAL] DotNetNuke.Web.Common.Internal.DotNetNukeHttpApplication - System.Web.HttpException (0x80004005): A potentially dangerous Request.Path value was detected from the client (>).
+   at System.Web.HttpRequest.ValidateInputIfRequiredByConfig()
+   at System.Web.HttpApplication.PipelineStepManager.ValidateHelper(HttpContext context)
+2025-07-05 14:07:54,061 [dnn2sqlv3][Thread:30][FATAL] DotNetNuke.Web.Common.Internal.DotNetNukeHttpApplication - System.Web.HttpException (0x80004005): A potentially dangerous Request.Path value was detected from the client (>).
+   at System.Web.HttpRequest.ValidateInputIfRequiredByConfig()
+   at System.Web.HttpApplication.PipelineStepManager.ValidateHelper(HttpContext context)
+2025-07-05 14:07:54,140 [dnn2sqlv3][Thread:34][FATAL] DotNetNuke.Web.Common.Internal.DotNetNukeHttpApplication - System.Web.HttpException (0x80004005): A potentially dangerous Request.Path value was detected from the client (>).
+   at System.Web.HttpRequest.ValidateInputIfRequiredByConfig()
+   at System.Web.HttpApplication.PipelineStepManager.ValidateHelper(HttpContext context)
+2025-07-05 14:07:54,237 [dnn2sqlv3][Thread:35][FATAL] DotNetNuke.Web.Common.Internal.DotNetNukeHttpApplication - System.Web.HttpException (0x80004005): A potentially dangerous Request.Path value was detected from the client (>).
+   at System.Web.HttpRequest.ValidateInputIfRequiredByConfig()
+   at System.Web.HttpApplication.PipelineStepManager.ValidateHelper(HttpContext context)
+2025-07-05 14:07:54,331 [dnn2sqlv3][Thread:27][FATAL] DotNetNuke.Web.Common.Internal.DotNetNukeHttpApplication - System.Web.HttpException (0x80004005): A potentially dangerous Request.Path value was detected from the client (>).
+   at System.Web.HttpRequest.ValidateInputIfRequiredByConfig()
+   at System.Web.HttpApplication.PipelineStepManager.ValidateHelper(HttpContext context)
+2025-07-05 14:07:54,409 [dnn2sqlv3][Thread:11][FATAL] DotNetNuke.Web.Common.Internal.DotNetNukeHttpApplication - System.Web.HttpException (0x80004005): A potentially dangerous Request.Path value was detected from the client (>).
+   at System.Web.HttpRequest.ValidateInputIfRequiredByConfig()
+   at System.Web.HttpApplication.PipelineStepManager.ValidateHelper(HttpContext context)
+2025-07-05 14:07:54,487 [dnn2sqlv3][Thread:44][FATAL] DotNetNuke.Web.Common.Internal.DotNetNukeHttpApplication - System.Web.HttpException (0x80004005): A potentially dangerous Request.Path value was detected from the client (>).
+   at System.Web.HttpRequest.ValidateInputIfRequiredByConfig()
+   at System.Web.HttpApplication.PipelineStepManager.ValidateHelper(HttpContext context)
+2025-07-05 14:07:55,444 [dnn2sqlv3][Thread:52][FATAL] DotNetNuke.Web.Common.Internal.DotNetNukeHttpApplication - System.Web.HttpException (0x80004005): A potentially dangerous Request.Path value was detected from the client (>).
+   at System.Web.HttpRequest.ValidateInputIfRequiredByConfig()
+   at System.Web.HttpApplication.PipelineStepManager.ValidateHelper(HttpContext context)
+2025-07-05 14:07:55,537 [dnn2sqlv3][Thread:34][FATAL] DotNetNuke.Web.Common.Internal.DotNetNukeHttpApplication - System.Web.HttpException (0x80004005): A potentially dangerous Request.Path value was detected from the client (>).
+   at System.Web.HttpRequest.ValidateInputIfRequiredByConfig()
+   at System.Web.HttpApplication.PipelineStepManager.ValidateHelper(HttpContext context)
+2025-07-05 14:07:55,617 [dnn2sqlv3][Thread:40][FATAL] DotNetNuke.Web.Common.Internal.DotNetNukeHttpApplication - System.Web.HttpException (0x80004005): A potentially dangerous Request.Path value was detected from the client (>).
+   at System.Web.HttpRequest.ValidateInputIfRequiredByConfig()
+   at System.Web.HttpApplication.PipelineStepManager.ValidateHelper(HttpContext context)
+2025-07-05 14:08:07,812 [dnn2sqlv3][Thread:44][FATAL] DotNetNuke.Web.Common.Internal.DotNetNukeHttpApplication - System.Web.HttpException (0x80004005): A potentially dangerous Request.Path value was detected from the client (>).
+   at System.Web.HttpRequest.ValidateInputIfRequiredByConfig()
+   at System.Web.HttpApplication.PipelineStepManager.ValidateHelper(HttpContext context)
+2025-07-05 14:08:07,906 [dnn2sqlv3][Thread:52][FATAL] DotNetNuke.Web.Common.Internal.DotNetNukeHttpApplication - System.Web.HttpException (0x80004005): A potentially dangerous Request.Path value was detected from the client (>).
+   at System.Web.HttpRequest.ValidateInputIfRequiredByConfig()
+   at System.Web.HttpApplication.PipelineStepManager.ValidateHelper(HttpContext context)
+2025-07-05 14:08:07,985 [dnn2sqlv3][Thread:27][FATAL] DotNetNuke.Web.Common.Internal.DotNetNukeHttpApplication - System.Web.HttpException (0x80004005): A potentially dangerous Request.Path value was detected from the client (>).
+   at System.Web.HttpRequest.ValidateInputIfRequiredByConfig()
+   at System.Web.HttpApplication.PipelineStepManager.ValidateHelper(HttpContext context)
+2025-07-05 14:08:09,023 [dnn2sqlv3][Thread:12][FATAL] DotNetNuke.Web.Common.Internal.DotNetNukeHttpApplication - System.Web.HttpException (0x80004005): A potentially dangerous Request.Path value was detected from the client (>).
+   at System.Web.HttpRequest.ValidateInputIfRequiredByConfig()
+   at System.Web.HttpApplication.PipelineStepManager.ValidateHelper(HttpContext context)
+2025-07-05 14:08:09,103 [dnn2sqlv3][Thread:34][FATAL] DotNetNuke.Web.Common.Internal.DotNetNukeHttpApplication - System.Web.HttpException (0x80004005): A potentially dangerous Request.Path value was detected from the client (>).
+   at System.Web.HttpRequest.ValidateInputIfRequiredByConfig()
+   at System.Web.HttpApplication.PipelineStepManager.ValidateHelper(HttpContext context)
+2025-07-05 14:08:09,185 [dnn2sqlv3][Thread:44][FATAL] DotNetNuke.Web.Common.Internal.DotNetNukeHttpApplication - System.Web.HttpException (0x80004005): A potentially dangerous Request.Path value was detected from the client (>).
+   at System.Web.HttpRequest.ValidateInputIfRequiredByConfig()
+   at System.Web.HttpApplication.PipelineStepManager.ValidateHelper(HttpContext context)
+2025-07-05 14:08:35,455 [dnn2sqlv3][Thread:40][FATAL] DotNetNuke.Web.Common.Internal.DotNetNukeHttpApplication - System.Web.HttpException (0x80004005): A potentially dangerous Request.Path value was detected from the client (:).
+   at System.Web.HttpRequest.ValidateInputIfRequiredByConfig()
+   at System.Web.HttpApplication.PipelineStepManager.ValidateHelper(HttpContext context)
+2025-07-05 14:08:37,360 [dnn2sqlv3][Thread:35][FATAL] DotNetNuke.Web.Common.Internal.DotNetNukeHttpApplication - System.Web.HttpException (0x80004005): A potentially dangerous Request.Path value was detected from the client (:).
+   at System.Web.HttpRequest.ValidateInputIfRequiredByConfig()
+   at System.Web.HttpApplication.PipelineStepManager.ValidateHelper(HttpContext context)
+2025-07-05 14:10:36,920 [dnn2sqlv3][Thread:34][ERROR] DotNetNuke.Services.Exceptions.Exceptions - System.Web.HttpException (0x80004005): Not Found
+   at DotNetNuke.Entities.Urls.AdvancedUrlRewriter.SecurityCheck(HttpApplication app)
+   at DotNetNuke.Entities.Urls.AdvancedUrlRewriter.RewriteUrl(Object sender, EventArgs e)
+2025-07-05 14:10:36,936 [dnn2sqlv3][Thread:34][FATAL] DotNetNuke.Web.Common.Internal.DotNetNukeHttpApplication - System.NullReferenceException: Object reference not set to an instance of an object.
+   at DotNetNuke.Entities.Urls.AdvancedUrlRewriter.Handle404OrException(FriendlyUrlSettings settings, HttpContext context, Exception ex, UrlAction result, Boolean transfer, Boolean showDebug)
+   at DotNetNuke.Entities.Urls.AdvancedUrlRewriter.RewriteUrl(Object sender, EventArgs e)
+   at System.Web.HttpApplication.SyncEventExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   at System.Web.HttpApplication.ExecuteStepImpl(IExecutionStep step)
+   at System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+2025-07-05 14:10:37,124 [dnn2sqlv3][Thread:27][ERROR] DotNetNuke.Services.Exceptions.Exceptions - System.Web.HttpException (0x80004005): Not Found
+   at DotNetNuke.Entities.Urls.AdvancedUrlRewriter.SecurityCheck(HttpApplication app)
+   at DotNetNuke.Entities.Urls.AdvancedUrlRewriter.RewriteUrl(Object sender, EventArgs e)
+2025-07-05 14:10:37,124 [dnn2sqlv3][Thread:27][FATAL] DotNetNuke.Web.Common.Internal.DotNetNukeHttpApplication - System.NullReferenceException: Object reference not set to an instance of an object.
+   at DotNetNuke.Entities.Urls.AdvancedUrlRewriter.Handle404OrException(FriendlyUrlSettings settings, HttpContext context, Exception ex, UrlAction result, Boolean transfer, Boolean showDebug)
+   at DotNetNuke.Entities.Urls.AdvancedUrlRewriter.RewriteUrl(Object sender, EventArgs e)
+   at System.Web.HttpApplication.SyncEventExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   at System.Web.HttpApplication.ExecuteStepImpl(IExecutionStep step)
+   at System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+2025-07-05 14:10:37,303 [dnn2sqlv3][Thread:35][ERROR] DotNetNuke.Services.Exceptions.Exceptions - System.Web.HttpException (0x80004005): Not Found
+   at DotNetNuke.Entities.Urls.AdvancedUrlRewriter.SecurityCheck(HttpApplication app)
+   at DotNetNuke.Entities.Urls.AdvancedUrlRewriter.RewriteUrl(Object sender, EventArgs e)
+2025-07-05 14:10:37,307 [dnn2sqlv3][Thread:35][FATAL] DotNetNuke.Web.Common.Internal.DotNetNukeHttpApplication - System.NullReferenceException: Object reference not set to an instance of an object.
+   at DotNetNuke.Entities.Urls.AdvancedUrlRewriter.Handle404OrException(FriendlyUrlSettings settings, HttpContext context, Exception ex, UrlAction result, Boolean transfer, Boolean showDebug)
+   at DotNetNuke.Entities.Urls.AdvancedUrlRewriter.RewriteUrl(Object sender, EventArgs e)
+   at System.Web.HttpApplication.SyncEventExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   at System.Web.HttpApplication.ExecuteStepImpl(IExecutionStep step)
+   at System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+2025-07-05 14:10:38,399 [dnn2sqlv3][Thread:11][ERROR] DotNetNuke.Services.Exceptions.Exceptions - System.Web.HttpException (0x80004005): Not Found
+   at DotNetNuke.Entities.Urls.AdvancedUrlRewriter.SecurityCheck(HttpApplication app)
+   at DotNetNuke.Entities.Urls.AdvancedUrlRewriter.RewriteUrl(Object sender, EventArgs e)
+2025-07-05 14:10:38,406 [dnn2sqlv3][Thread:11][FATAL] DotNetNuke.Web.Common.Internal.DotNetNukeHttpApplication - System.NullReferenceException: Object reference not set to an instance of an object.
+   at DotNetNuke.Entities.Urls.AdvancedUrlRewriter.Handle404OrException(FriendlyUrlSettings settings, HttpContext context, Exception ex, UrlAction result, Boolean transfer, Boolean showDebug)
+   at DotNetNuke.Entities.Urls.AdvancedUrlRewriter.RewriteUrl(Object sender, EventArgs e)
+   at System.Web.HttpApplication.SyncEventExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   at System.Web.HttpApplication.ExecuteStepImpl(IExecutionStep step)
+   at System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+2025-07-05 14:10:38,992 [dnn2sqlv3][Thread:44][ERROR] DotNetNuke.Services.Exceptions.Exceptions - System.Web.HttpException (0x80004005): Not Found
+   at DotNetNuke.Entities.Urls.AdvancedUrlRewriter.SecurityCheck(HttpApplication app)
+   at DotNetNuke.Entities.Urls.AdvancedUrlRewriter.RewriteUrl(Object sender, EventArgs e)
+2025-07-05 14:10:39,070 [dnn2sqlv3][Thread:44][FATAL] DotNetNuke.Web.Common.Internal.DotNetNukeHttpApplication - System.NullReferenceException: Object reference not set to an instance of an object.
+   at DotNetNuke.Entities.Urls.AdvancedUrlRewriter.Handle404OrException(FriendlyUrlSettings settings, HttpContext context, Exception ex, UrlAction result, Boolean transfer, Boolean showDebug)
+   at DotNetNuke.Entities.Urls.AdvancedUrlRewriter.RewriteUrl(Object sender, EventArgs e)
+   at System.Web.HttpApplication.SyncEventExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   at System.Web.HttpApplication.ExecuteStepImpl(IExecutionStep step)
+   at System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+2025-07-05 14:10:39,525 [dnn2sqlv3][Thread:12][ERROR] DotNetNuke.Services.Exceptions.Exceptions - System.Web.HttpException (0x80004005): Not Found
+   at DotNetNuke.Entities.Urls.AdvancedUrlRewriter.SecurityCheck(HttpApplication app)
+   at DotNetNuke.Entities.Urls.AdvancedUrlRewriter.RewriteUrl(Object sender, EventArgs e)
+2025-07-05 14:10:39,525 [dnn2sqlv3][Thread:12][FATAL] DotNetNuke.Web.Common.Internal.DotNetNukeHttpApplication - System.NullReferenceException: Object reference not set to an instance of an object.
+   at DotNetNuke.Entities.Urls.AdvancedUrlRewriter.Handle404OrException(FriendlyUrlSettings settings, HttpContext context, Exception ex, UrlAction result, Boolean transfer, Boolean showDebug)
+   at DotNetNuke.Entities.Urls.AdvancedUrlRewriter.RewriteUrl(Object sender, EventArgs e)
+   at System.Web.HttpApplication.SyncEventExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   at System.Web.HttpApplication.ExecuteStepImpl(IExecutionStep step)
+   at System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+2025-07-05 14:10:58,449 [dnn2sqlv3][Thread:12][FATAL] DotNetNuke.Web.Common.Internal.DotNetNukeHttpApplication - System.ArgumentException: Illegal characters in path.
+   at System.IO.Path.CheckInvalidPathChars(String path, Boolean checkAdditional)
+   at System.IO.Path.GetExtension(String path)
+   at ForemostMedia.Modules.SeoHelper.HttpModules.FileTrackingFilter.OnTrackFile(Uri uri)
+   at ForemostMedia.Modules.SeoHelper.HttpModules.FileTrackingFilter.OnEndRequest(Object sender, EventArgs e)
+   at System.Web.HttpApplication.SyncEventExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   at System.Web.HttpApplication.ExecuteStepImpl(IExecutionStep step)
+   at System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+2025-07-05 14:10:58,528 [dnn2sqlv3][Thread:30][FATAL] DotNetNuke.Web.Common.Internal.DotNetNukeHttpApplication - System.ArgumentException: Illegal characters in path.
+   at System.IO.Path.CheckInvalidPathChars(String path, Boolean checkAdditional)
+   at System.IO.Path.GetExtension(String path)
+   at ForemostMedia.Modules.SeoHelper.HttpModules.FileTrackingFilter.OnTrackFile(Uri uri)
+   at ForemostMedia.Modules.SeoHelper.HttpModules.FileTrackingFilter.OnEndRequest(Object sender, EventArgs e)
+   at System.Web.HttpApplication.SyncEventExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   at System.Web.HttpApplication.ExecuteStepImpl(IExecutionStep step)
+   at System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+2025-07-05 14:10:58,622 [dnn2sqlv3][Thread:52][FATAL] DotNetNuke.Web.Common.Internal.DotNetNukeHttpApplication - System.ArgumentException: Illegal characters in path.
+   at System.IO.Path.CheckInvalidPathChars(String path, Boolean checkAdditional)
+   at System.IO.Path.GetExtension(String path)
+   at ForemostMedia.Modules.SeoHelper.HttpModules.FileTrackingFilter.OnTrackFile(Uri uri)
+   at ForemostMedia.Modules.SeoHelper.HttpModules.FileTrackingFilter.OnEndRequest(Object sender, EventArgs e)
+   at System.Web.HttpApplication.SyncEventExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   at System.Web.HttpApplication.ExecuteStepImpl(IExecutionStep step)
+   at System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+2025-07-05 14:11:00,533 [dnn2sqlv3][Thread:40][FATAL] DotNetNuke.Web.Common.Internal.DotNetNukeHttpApplication - System.ArgumentException: Illegal characters in path.
+   at System.IO.Path.CheckInvalidPathChars(String path, Boolean checkAdditional)
+   at System.IO.Path.GetExtension(String path)
+   at ForemostMedia.Modules.SeoHelper.HttpModules.FileTrackingFilter.OnTrackFile(Uri uri)
+   at ForemostMedia.Modules.SeoHelper.HttpModules.FileTrackingFilter.OnEndRequest(Object sender, EventArgs e)
+   at System.Web.HttpApplication.SyncEventExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   at System.Web.HttpApplication.ExecuteStepImpl(IExecutionStep step)
+   at System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+2025-07-05 14:11:00,611 [dnn2sqlv3][Thread:12][FATAL] DotNetNuke.Web.Common.Internal.DotNetNukeHttpApplication - System.ArgumentException: Illegal characters in path.
+   at System.IO.Path.CheckInvalidPathChars(String path, Boolean checkAdditional)
+   at System.IO.Path.GetExtension(String path)
+   at ForemostMedia.Modules.SeoHelper.HttpModules.FileTrackingFilter.OnTrackFile(Uri uri)
+   at ForemostMedia.Modules.SeoHelper.HttpModules.FileTrackingFilter.OnEndRequest(Object sender, EventArgs e)
+   at System.Web.HttpApplication.SyncEventExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   at System.Web.HttpApplication.ExecuteStepImpl(IExecutionStep step)
+   at System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+2025-07-05 14:11:00,689 [dnn2sqlv3][Thread:35][FATAL] DotNetNuke.Web.Common.Internal.DotNetNukeHttpApplication - System.ArgumentException: Illegal characters in path.
+   at System.IO.Path.CheckInvalidPathChars(String path, Boolean checkAdditional)
+   at System.IO.Path.GetExtension(String path)
+   at ForemostMedia.Modules.SeoHelper.HttpModules.FileTrackingFilter.OnTrackFile(Uri uri)
+   at ForemostMedia.Modules.SeoHelper.HttpModules.FileTrackingFilter.OnEndRequest(Object sender, EventArgs e)
+   at System.Web.HttpApplication.SyncEventExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   at System.Web.HttpApplication.ExecuteStepImpl(IExecutionStep step)
+   at System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+2025-07-05 14:11:28,874 [dnn2sqlv3][Thread:21][FATAL] DotNetNuke.Web.Common.Internal.DotNetNukeHttpApplication - System.Web.HttpException (0x80004005): A potentially dangerous Request.Path value was detected from the client (:).
+   at System.Web.HttpRequest.ValidateInputIfRequiredByConfig()
+   at System.Web.HttpApplication.PipelineStepManager.ValidateHelper(HttpContext context)
+2025-07-05 14:11:29,900 [dnn2sqlv3][Thread:21][FATAL] DotNetNuke.Web.Common.Internal.DotNetNukeHttpApplication - System.Web.HttpException (0x80004005): A potentially dangerous Request.Path value was detected from the client (:).
+   at System.Web.HttpRequest.ValidateInputIfRequiredByConfig()
+   at System.Web.HttpApplication.PipelineStepManager.ValidateHelper(HttpContext context)
+2025-07-05 14:12:20,219 [dnn2sqlv3][Thread:30][FATAL] DotNetNuke.Web.Common.Internal.DotNetNukeHttpApplication - System.Web.HttpException (0x80004005)
+   at System.Web.Util.FileUtil.CheckSuspiciousPhysicalPath(String physicalPath)
+   at System.Web.CachedPathData.ValidatePath(String physicalPath)
+   at System.Web.HttpContext.ValidatePath()
+   at System.Web.HttpApplication.PipelineStepManager.ValidateHelper(HttpContext context)
+2025-07-05 14:12:22,275 [dnn2sqlv3][Thread:40][FATAL] DotNetNuke.Web.Common.Internal.DotNetNukeHttpApplication - System.Web.HttpException (0x80004005)
+   at System.Web.Util.FileUtil.CheckSuspiciousPhysicalPath(String physicalPath)
+   at System.Web.CachedPathData.ValidatePath(String physicalPath)
+   at System.Web.HttpContext.ValidatePath()
+   at System.Web.HttpApplication.PipelineStepManager.ValidateHelper(HttpContext context)
+2025-07-05 14:12:22,445 [dnn2sqlv3][Thread:30][FATAL] DotNetNuke.Web.Common.Internal.DotNetNukeHttpApplication - System.Web.HttpException (0x80004005): A potentially dangerous Request.Path value was detected from the client (:).
+   at System.Web.HttpRequest.ValidateInputIfRequiredByConfig()
+   at System.Web.HttpApplication.PipelineStepManager.ValidateHelper(HttpContext context)
+2025-07-05 14:12:23,850 [dnn2sqlv3][Thread:52][FATAL] DotNetNuke.Web.Common.Internal.DotNetNukeHttpApplication - System.Web.HttpException (0x80004005): A potentially dangerous Request.Path value was detected from the client (:).
+   at System.Web.HttpRequest.ValidateInputIfRequiredByConfig()
+   at System.Web.HttpApplication.PipelineStepManager.ValidateHelper(HttpContext context)
+2025-07-05 14:14:35,426 [dnn2sqlv3][Thread:35][ERROR] DotNetNuke.Services.Exceptions.Exceptions - System.Web.HttpException (0x80004005): Not Found
+   at DotNetNuke.Modules.Admin.Users.ViewProfile.OnInit(EventArgs e)
+   at System.Web.UI.Control.InitRecursive(Control namingContainer)
+   at System.Web.UI.Control.AddedControl(Control control, Int32 index)
+   at System.Web.UI.ControlCollection.Add(Control child)
+   at DotNetNuke.UI.Modules.ModuleHost.InjectModuleContent(Control content)
+   at DotNetNuke.UI.Modules.ModuleHost.CreateChildControls()
+   at System.Web.UI.Control.EnsureChildControls()
+   at DotNetNuke.UI.Containers.Container.get_ModuleControl()
+   at DotNetNuke.UI.Containers.Container.ProcessModule()
+   at DotNetNuke.UI.Skins.Pane.InjectModule(ModuleInfo module)
+2025-07-05 14:14:35,442 [dnn2sqlv3][Thread:35][ERROR] DotNetNuke.Services.Exceptions.Exceptions - DotNetNuke.Services.Exceptions.ModuleLoadException: Unhandled Error Adding Module to contentPane ---> System.Web.HttpException: Not Found
+   at DotNetNuke.Modules.Admin.Users.ViewProfile.OnInit(EventArgs e)
+   at System.Web.UI.Control.InitRecursive(Control namingContainer)
+   at System.Web.UI.Control.AddedControl(Control control, Int32 index)
+   at System.Web.UI.ControlCollection.Add(Control child)
+   at DotNetNuke.UI.Modules.ModuleHost.InjectModuleContent(Control content)
+   at DotNetNuke.UI.Modules.ModuleHost.CreateChildControls()
+   at System.Web.UI.Control.EnsureChildControls()
+   at DotNetNuke.UI.Containers.Container.get_ModuleControl()
+   at DotNetNuke.UI.Containers.Container.ProcessModule()
+   at DotNetNuke.UI.Skins.Pane.InjectModule(ModuleInfo module)
+   --- End of inner exception stack trace ---
+   at DotNetNuke.UI.Skins.Pane.InjectModule(ModuleInfo module)
+   at DotNetNuke.UI.Skins.Skin.InjectModule(Pane pane, ModuleInfo module)
+2025-07-05 14:14:35,442 [dnn2sqlv3][Thread:35][ERROR] DotNetNuke.Services.Exceptions.Exceptions - System.Web.HttpException (0x80004005): Not Found
+   at DotNetNuke.Modules.Admin.Users.ViewProfile.OnInit(EventArgs e)
+   at System.Web.UI.Control.InitRecursive(Control namingContainer)
+   at System.Web.UI.Control.AddedControl(Control control, Int32 index)
+   at System.Web.UI.ControlCollection.Add(Control child)
+   at DotNetNuke.UI.Modules.ModuleHost.InjectModuleContent(Control content)
+   at DotNetNuke.UI.Modules.ModuleHost.CreateChildControls()
+   at System.Web.UI.Control.EnsureChildControls()
+   at DotNetNuke.UI.Containers.Container.get_ModuleControl()
+   at DotNetNuke.UI.Containers.Container.ProcessModule()
+   at DotNetNuke.UI.Skins.Pane.InjectModule(ModuleInfo module)
+2025-07-05 14:14:35,442 [dnn2sqlv3][Thread:35][ERROR] DotNetNuke.Services.Exceptions.Exceptions - DotNetNuke.Services.Exceptions.ModuleLoadException: Unhandled Error Adding Module to contentPane ---> System.Web.HttpException: Not Found
+   at DotNetNuke.Modules.Admin.Users.ViewProfile.OnInit(EventArgs e)
+   at System.Web.UI.Control.InitRecursive(Control namingContainer)
+   at System.Web.UI.Control.AddedControl(Control control, Int32 index)
+   at System.Web.UI.ControlCollection.Add(Control child)
+   at DotNetNuke.UI.Modules.ModuleHost.InjectModuleContent(Control content)
+   at DotNetNuke.UI.Modules.ModuleHost.CreateChildControls()
+   at System.Web.UI.Control.EnsureChildControls()
+   at DotNetNuke.UI.Containers.Container.get_ModuleControl()
+   at DotNetNuke.UI.Containers.Container.ProcessModule()
+   at DotNetNuke.UI.Skins.Pane.InjectModule(ModuleInfo module)
+   --- End of inner exception stack trace ---
+   at DotNetNuke.UI.Skins.Pane.InjectModule(ModuleInfo module)
+   at DotNetNuke.UI.Skins.Skin.InjectModule(Pane pane, ModuleInfo module)
+2025-07-05 14:14:35,457 [dnn2sqlv3][Thread:35][FATAL] DotNetNuke.Framework.PageBase - An error has occurred while loading page.
+System.Web.HttpException (0x80004005): Not Found
+   at DotNetNuke.Modules.Admin.Users.ViewProfile.OnInit(EventArgs e)
+   at System.Web.UI.Control.InitRecursive(Control namingContainer)
+   at System.Web.UI.Control.AddedControl(Control control, Int32 index)
+   at System.Web.UI.ControlCollection.Add(Control child)
+   at DotNetNuke.UI.Modules.ModuleHost.InjectModuleContent(Control content)
+   at DotNetNuke.UI.Modules.ModuleHost.CreateChildControls()
+   at System.Web.UI.Control.EnsureChildControls()
+   at System.Web.UI.Control.PreRenderRecursiveInternal()
+   at System.Web.UI.Control.PreRenderRecursiveInternal()
+   at System.Web.UI.Control.PreRenderRecursiveInternal()
+   at System.Web.UI.Control.PreRenderRecursiveInternal()
+   at System.Web.UI.Control.PreRenderRecursiveInternal()
+   at System.Web.UI.Control.PreRenderRecursiveInternal()
+   at System.Web.UI.Control.PreRenderRecursiveInternal()
+   at System.Web.UI.Control.PreRenderRecursiveInternal()
+   at System.Web.UI.Control.PreRenderRecursiveInternal()
+   at System.Web.UI.Control.PreRenderRecursiveInternal()
+   at System.Web.UI.Page.ProcessRequestMain(Boolean includeStagesBeforeAsyncPoint, Boolean includeStagesAfterAsyncPoint)
+2025-07-05 14:38:12,625 [dnn2sqlv3][Thread:34][ERROR] DotNetNuke.Services.Exceptions.Exceptions - System.Web.HttpException (0x80004005): Not Found
+   at DotNetNuke.Modules.Admin.Users.ViewProfile.OnInit(EventArgs e)
+   at System.Web.UI.Control.InitRecursive(Control namingContainer)
+   at System.Web.UI.Control.AddedControl(Control control, Int32 index)
+   at System.Web.UI.ControlCollection.Add(Control child)
+   at DotNetNuke.UI.Modules.ModuleHost.InjectModuleContent(Control content)
+   at DotNetNuke.UI.Modules.ModuleHost.CreateChildControls()
+   at System.Web.UI.Control.EnsureChildControls()
+   at DotNetNuke.UI.Containers.Container.get_ModuleControl()
+   at DotNetNuke.UI.Containers.Container.ProcessModule()
+   at DotNetNuke.UI.Skins.Pane.InjectModule(ModuleInfo module)
+2025-07-05 14:38:12,640 [dnn2sqlv3][Thread:34][ERROR] DotNetNuke.Services.Exceptions.Exceptions - DotNetNuke.Services.Exceptions.ModuleLoadException: Unhandled Error Adding Module to contentPane ---> System.Web.HttpException: Not Found
+   at DotNetNuke.Modules.Admin.Users.ViewProfile.OnInit(EventArgs e)
+   at System.Web.UI.Control.InitRecursive(Control namingContainer)
+   at System.Web.UI.Control.AddedControl(Control control, Int32 index)
+   at System.Web.UI.ControlCollection.Add(Control child)
+   at DotNetNuke.UI.Modules.ModuleHost.InjectModuleContent(Control content)
+   at DotNetNuke.UI.Modules.ModuleHost.CreateChildControls()
+   at System.Web.UI.Control.EnsureChildControls()
+   at DotNetNuke.UI.Containers.Container.get_ModuleControl()
+   at DotNetNuke.UI.Containers.Container.ProcessModule()
+   at DotNetNuke.UI.Skins.Pane.InjectModule(ModuleInfo module)
+   --- End of inner exception stack trace ---
+   at DotNetNuke.UI.Skins.Pane.InjectModule(ModuleInfo module)
+   at DotNetNuke.UI.Skins.Skin.InjectModule(Pane pane, ModuleInfo module)
+2025-07-05 14:38:12,640 [dnn2sqlv3][Thread:34][ERROR] DotNetNuke.Services.Exceptions.Exceptions - System.Web.HttpException (0x80004005): Not Found
+   at DotNetNuke.Modules.Admin.Users.ViewProfile.OnInit(EventArgs e)
+   at System.Web.UI.Control.InitRecursive(Control namingContainer)
+   at System.Web.UI.Control.AddedControl(Control control, Int32 index)
+   at System.Web.UI.ControlCollection.Add(Control child)
+   at DotNetNuke.UI.Modules.ModuleHost.InjectModuleContent(Control content)
+   at DotNetNuke.UI.Modules.ModuleHost.CreateChildControls()
+   at System.Web.UI.Control.EnsureChildControls()
+   at DotNetNuke.UI.Containers.Container.get_ModuleControl()
+   at DotNetNuke.UI.Containers.Container.ProcessModule()
+   at DotNetNuke.UI.Skins.Pane.InjectModule(ModuleInfo module)
+2025-07-05 14:38:12,640 [dnn2sqlv3][Thread:34][ERROR] DotNetNuke.Services.Exceptions.Exceptions - DotNetNuke.Services.Exceptions.ModuleLoadException: Unhandled Error Adding Module to contentPane ---> System.Web.HttpException: Not Found
+   at DotNetNuke.Modules.Admin.Users.ViewProfile.OnInit(EventArgs e)
+   at System.Web.UI.Control.InitRecursive(Control namingContainer)
+   at System.Web.UI.Control.AddedControl(Control control, Int32 index)
+   at System.Web.UI.ControlCollection.Add(Control child)
+   at DotNetNuke.UI.Modules.ModuleHost.InjectModuleContent(Control content)
+   at DotNetNuke.UI.Modules.ModuleHost.CreateChildControls()
+   at System.Web.UI.Control.EnsureChildControls()
+   at DotNetNuke.UI.Containers.Container.get_ModuleControl()
+   at DotNetNuke.UI.Containers.Container.ProcessModule()
+   at DotNetNuke.UI.Skins.Pane.InjectModule(ModuleInfo module)
+   --- End of inner exception stack trace ---
+   at DotNetNuke.UI.Skins.Pane.InjectModule(ModuleInfo module)
+   at DotNetNuke.UI.Skins.Skin.InjectModule(Pane pane, ModuleInfo module)
+2025-07-05 14:38:12,656 [dnn2sqlv3][Thread:34][ERROR] DotNetNuke.Services.Exceptions.Exceptions - System.Web.HttpException (0x80004005): Not Found
+   at DotNetNuke.Modules.Admin.Users.ViewProfile.OnInit(EventArgs e)
+   at System.Web.UI.Control.InitRecursive(Control namingContainer)
+   at System.Web.UI.Control.AddedControl(Control control, Int32 index)
+   at System.Web.UI.ControlCollection.Add(Control child)
+   at DotNetNuke.UI.Modules.ModuleHost.InjectModuleContent(Control content)
+   at DotNetNuke.UI.Modules.ModuleHost.CreateChildControls()
+   at System.Web.UI.Control.EnsureChildControls()
+   at DotNetNuke.UI.Containers.Container.get_ModuleControl()
+   at DotNetNuke.UI.Containers.Container.ProcessModule()
+   at DotNetNuke.UI.Skins.Pane.InjectModule(ModuleInfo module)
+2025-07-05 14:38:12,661 [dnn2sqlv3][Thread:34][ERROR] DotNetNuke.Services.Exceptions.Exceptions - DotNetNuke.Services.Exceptions.ModuleLoadException: Unhandled Error Adding Module to contentPane ---> System.Web.HttpException: Not Found
+   at DotNetNuke.Modules.Admin.Users.ViewProfile.OnInit(EventArgs e)
+   at System.Web.UI.Control.InitRecursive(Control namingContainer)
+   at System.Web.UI.Control.AddedControl(Control control, Int32 index)
+   at System.Web.UI.ControlCollection.Add(Control child)
+   at DotNetNuke.UI.Modules.ModuleHost.InjectModuleContent(Control content)
+   at DotNetNuke.UI.Modules.ModuleHost.CreateChildControls()
+   at System.Web.UI.Control.EnsureChildControls()
+   at DotNetNuke.UI.Containers.Container.get_ModuleControl()
+   at DotNetNuke.UI.Containers.Container.ProcessModule()
+   at DotNetNuke.UI.Skins.Pane.InjectModule(ModuleInfo module)
+   --- End of inner exception stack trace ---
+   at DotNetNuke.UI.Skins.Pane.InjectModule(ModuleInfo module)
+   at DotNetNuke.UI.Skins.Skin.InjectModule(Pane pane, ModuleInfo module)
+2025-07-05 14:38:12,681 [dnn2sqlv3][Thread:34][FATAL] DotNetNuke.Framework.PageBase - An error has occurred while loading page.
+System.Web.HttpException (0x80004005): Not Found
+   at DotNetNuke.Modules.Admin.Users.ViewProfile.OnInit(EventArgs e)
+   at System.Web.UI.Control.InitRecursive(Control namingContainer)
+   at System.Web.UI.Control.AddedControl(Control control, Int32 index)
+   at System.Web.UI.ControlCollection.Add(Control child)
+   at DotNetNuke.UI.Modules.ModuleHost.InjectModuleContent(Control content)
+   at DotNetNuke.UI.Modules.ModuleHost.CreateChildControls()
+   at System.Web.UI.Control.EnsureChildControls()
+   at System.Web.UI.Control.PreRenderRecursiveInternal()
+   at System.Web.UI.Control.PreRenderRecursiveInternal()
+   at System.Web.UI.Control.PreRenderRecursiveInternal()
+   at System.Web.UI.Control.PreRenderRecursiveInternal()
+   at System.Web.UI.Control.PreRenderRecursiveInternal()
+   at System.Web.UI.Control.PreRenderRecursiveInternal()
+   at System.Web.UI.Control.PreRenderRecursiveInternal()
+   at System.Web.UI.Control.PreRenderRecursiveInternal()
+   at System.Web.UI.Control.PreRenderRecursiveInternal()
+   at System.Web.UI.Control.PreRenderRecursiveInternal()
+   at System.Web.UI.Page.ProcessRequestMain(Boolean includeStagesBeforeAsyncPoint, Boolean includeStagesAfterAsyncPoint)
+2025-07-05 17:39:13,728 [dnn2sqlv3][Thread:58][ERROR] DotNetNuke.Services.Exceptions.Exceptions - System.ArgumentException: Logins to decrypt: g35PABcgcYLejFhgr8hNRbyD2roiQCMC4Z0rncb4gvqzYLLDeJoA1g==
+2025-07-05 21:41:35,376 [dnn2sqlv3][Thread:38][ERROR] DotNetNuke.Services.Exceptions.Exceptions - System.ArgumentException: Logins to decrypt: g35PABcgcYLejFhgr8hNRbyD2roiQCMC4Z0rncb4gvqzYLLDeJoA1g==

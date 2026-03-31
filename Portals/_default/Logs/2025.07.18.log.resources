@@ -1,0 +1,5 @@
+2025-07-18 16:32:22,131 [dnn2sqlv3][Thread:7][ERROR] DotNetNuke.Services.Exceptions.Exceptions - System.ArgumentException: Logins to decrypt: g35PABcgcYLejFhgr8hNRbyD2roiQCMC4Z0rncb4gvqzYLLDeJoA1g==
+2025-07-18 17:05:07,336 [dnn2sqlv3][Thread:8][FATAL] DotNetNuke.Web.Common.Internal.DotNetNukeHttpApplication - System.Web.HttpException (0x80004005): A potentially dangerous Request.Path value was detected from the client (:).
+   at System.Web.HttpRequest.ValidateInputIfRequiredByConfig()
+   at System.Web.HttpApplication.PipelineStepManager.ValidateHelper(HttpContext context)
+2025-07-18 20:36:11,955 [dnn2sqlv3][Thread:5][ERROR] DotNetNuke.Services.Exceptions.Exceptions - System.ArgumentException: Logins to decrypt: g35PABcgcYLejFhgr8hNRbyD2roiQCMC4Z0rncb4gvqzYLLDeJoA1g==

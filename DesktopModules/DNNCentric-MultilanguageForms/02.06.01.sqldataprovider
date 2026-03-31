@@ -1,0 +1,300 @@
+
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE {databaseOwner}[{objectQualifier}DCC_EF_CategoryMaster] ADD IsActive bit not null Default 1
+go
+
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE {databaseOwner}[{objectQualifier}DCC_EF_EmailForm] ADD IsActive bit not null Default 1
+go
+
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+alter view {databaseOwner}[{objectQualifier}DCC_EF_Category]
+as
+select 
+	cm.CategoryID,
+	cc.Culture,
+	cc.CategoryName,
+	cm.SortOrder,
+	cm.ModuleID,
+	cm.IsExpanded,
+	cm.IsActive
+from {databaseOwner}[{objectQualifier}DCC_EF_CategoryMaster] cm,{databaseOwner}[{objectQualifier}DCC_EF_CategoryCulture] cc
+where cm.CategoryID=cc.CategoryID AND cm.IsDeleted='false'
+
+-- EF table
+
+GO
+
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+alter function {databaseOwner}[{objectQualifier}DCC_EF_GetCategoryList] 
+(
+	@defaultLanguage as nvarchar(15),
+	@currentLanguage as nvarchar(15),
+	@ModuleID int
+)
+RETURNS TABLE 
+AS
+return
+(
+SELECT  TOP 100 PERCENT  
+	A.CategoryID,
+	isnull(B.CategoryName,A.CategoryName) CategoryName,
+	A.SortOrder,
+	A.IsExpanded
+FROM
+   (SELECT     
+		CategoryID, 
+		Culture, 
+		CategoryName,
+		SortORder,
+        IsExpanded
+	FROM	    	      
+		{databaseOwner}[{objectQualifier}DCC_EF_Category] 
+	WHERE      
+		(Culture = @defaultLanguage AND ModuleID=@ModuleID AND IsActive='true')) 
+AS A LEFT OUTER JOIN
+	(SELECT     
+		CategoryID, 
+		Culture, 
+		CategoryName,
+		SortORder,
+        IsExpanded
+	FROM          
+		{databaseOwner}[{objectQualifier}DCC_EF_Category] AS DCC_EF_Category_1 
+	WHERE      
+		(Culture = @currentLanguage AND ModuleID=@ModuleID AND IsActive='true')) 
+AS B ON A.CategoryID = B.CategoryID
+ORDER BY A.SortOrder
+)
+GO
+
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+
+alter procedure {databaseOwner}[{objectQualifier}DCC_EF_InsertNewCategory] 
+@ModuleID int,
+@IsExpanded bit,
+@IsDeleted bit,
+@IsActive bit
+as
+declare @SortOrder int
+
+set @SortOrder=(select  isnull (max(CategoryID),0)+1 from {databaseOwner}[{objectQualifier}DCC_EF_CategoryMaster])
+
+Insert into {databaseOwner}[{objectQualifier}DCC_EF_CategoryMaster](ModuleID,SortOrder,IsExpanded,IsDeleted,IsActive) 
+values(@ModuleID,@SortOrder,@IsExpanded ,@IsDeleted,@IsActive)
+SELECT  SCOPE_IDENTITY()
+
+GO
+
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+
+alter procedure {databaseOwner}[{objectQualifier}DCC_EF_GetCategoryByCulture] 
+@currentLanguage nvarchar(15),
+@DefaultLanguage nvarchar(15),
+@ModuleID int
+as
+SELECT     A.CategoryID,isnull(B.CategoryName,A.CategoryName) CategoryName,A.SortOrder,A.IsExpanded,A.IsActive
+FROM         (SELECT  CategoryID, Culture, CategoryName,SortOrder,IsExpanded,IsActive
+FROM          {databaseOwner}[{objectQualifier}DCC_EF_Category]
+WHERE      (Culture = @defaultLanguage AND ModuleID=@ModuleID)) AS A LEFT OUTER JOIN
+(SELECT     CategoryID, Culture, CategoryName,SortOrder,IsExpanded,IsActive
+FROM          {databaseOwner}[{objectQualifier}DCC_EF_Category] AS DCC_EF_Category_1 
+WHERE      (Culture = @currentLanguage AND ModuleID=@ModuleID)) AS B ON A.CategoryID = B.CategoryID
+
+order by A.SortOrder
+GO
+
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+
+alter procedure {databaseOwner}[{objectQualifier}DCC_EF_GetCategoryNameByCategoryID] 
+@CategoryID int
+AS
+select Culture,CategoryName,IsActive
+from {databaseOwner}[{objectQualifier}DCC_EF_Category] 
+where CategoryID=@CategoryID
+GO
+
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+
+alter procedure {databaseOwner}[{objectQualifier}DCC_EF_UpdateCategoryNameByCategoryID] 
+@CategoryID int,
+@Culture nvarchar(50),
+@CategoryName nvarchar(4000),
+@ModuleID int,
+@IsActive bit
+AS
+
+IF EXISTS (select Culture from {databaseOwner}[{objectQualifier}DCC_EF_Category] where CategoryID=@CategoryID AND Culture = @Culture AND ModuleID=@ModuleID) 
+Begin
+update {databaseOwner}[{objectQualifier}DCC_EF_CategoryMaster] set IsActive=@IsActive where CategoryID=@CategoryID
+update
+{databaseOwner}[{objectQualifier}DCC_EF_CategoryCulture]
+set
+Culture=@Culture,
+CategoryName=@CategoryName
+where
+CategoryID=@CategoryID
+AND Culture=@Culture
+End
+ELSE
+Begin
+insert into
+{databaseOwner}[{objectQualifier}DCC_EF_CategoryCulture]
+(CategoryID,Culture,CategoryName)
+values
+(@CategoryID,@Culture,@CategoryName)
+
+End
+
+GO
+
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+
+Alter procedure {databaseOwner}[{objectQualifier}DCC_EF_AddControls] 
+@FieldName nvarchar(1000),
+@ControlType nvarchar(50),
+@CategoryID int,
+@ModuleID int,
+@IsDeleted bit,
+@IsActive bit
+as
+declare @SortOrder int
+set @SortOrder =(select isnull(MAX(FieldID),0) from {databaseOwner}[{objectQualifier}DCC_EF_EmailForm]) 
+set @SortOrder=@SortOrder+1
+insert into {databaseOwner}[{objectQualifier}DCC_EF_EmailForm]
+(FieldName,ControlType,SortOrder,CategoryID,Visible,ModuleID,IsDeleted,IsActive) 
+values
+(@FieldName,@ControlType,@SortOrder,@CategoryID,1,@ModuleID,@IsDeleted,@IsActive)select @@identity FieldIDIndex
+GO
+
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+
+alter procedure {databaseOwner}[{objectQualifier}DCC_EF_GetControlsListByCategoryID] 
+@CurrentCulture nvarchar(15),
+@DefaultCulture nvarchar(15),
+@CategoryID int,
+@ModuleID int
+as
+select  A.FieldID,A.FieldName,A.ControlType,isnull(B.CategoryName,A.CategoryName)as CategoryName,A.SortOrder,A.IsActive
+From
+((select  ef.FieldID,ef.FieldName,ef.ControlType,cat.CategoryName,ef.SortOrder,ef.CategoryID,ef.IsActive
+from {databaseOwner}[{objectQualifier}DCC_EF_EmailForm] ef,{databaseOwner}[{objectQualifier}DCC_EF_Category] cat 
+where ef.CategoryID=cat.CategoryID and ef.visible='true' and  ef.IsDeleted='false' and ef.CategoryID=@CategoryID AND cat.Culture=@DefaultCulture AND ef.ModuleID=@ModuleID) AS A left outer join
+
+(select  ef.FieldID,ef.FieldName,ef.ControlType,cat.CategoryName,ef.SortOrder,ef.CategoryID,ef.IsActive
+from {databaseOwner}[{objectQualifier}DCC_EF_EmailForm] ef,{databaseOwner}[{objectQualifier}DCC_EF_Category] cat 
+where ef.CategoryID=cat.CategoryID and ef.visible='true' and  ef.IsDeleted='false' and ef.CategoryID=@CategoryID AND cat.Culture=@CurrentCulture AND ef.ModuleID=@ModuleID) AS B
+On A.FieldID=B.FieldID)
+order by A.SortOrder
+
+GO
+
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+
+alter procedure {databaseOwner}[{objectQualifier}DCC_EF_GetAllControlList] 
+@CurrentCulture nvarchar(15),
+@DefaultCulture nvarchar(15),
+@ModuleID int
+AS
+Select 
+M.Culture,
+M.FieldName,
+M.ControlType,
+M.Culture_Value,
+C.CategoryName,
+C.CategoryID,
+C.IsExpanded,
+M.FieldID
+FROM
+(select (case when B.CulTure_Value is null then a.culture else b.culture end) Culture,A.FieldName,A.ControlType, isnull(B.CulTure_Value,A.CulTure_Value) CulTure_Value,A.CategoryID,A.SortOrder,A.FieldID
+from
+(select cul.Culture,ef.FieldID, ef.FieldName,ef.ControlType,cul.Culture_Value,ef.CategoryID,ef.SortOrder
+from {databaseOwner}[{objectQualifier}DCC_EF_EmailForm] ef,{databaseOwner}[{objectQualifier}DCC_EF_EmailFormCulture] cul 
+where ef.FieldID=cul.FieldID and ef.visible='true' and  ef.IsDeleted='false'  and cul.Culture=@DefaultCulture AND ef.ModuleID=@ModuleID and  ef.IsActive='true') 
+AS A left Outer join
+(select  cul.Culture,ef.FieldID,ef.FieldName, ef.ControlType,cul.Culture_Value,ef.CategoryID,ef.SortOrder
+from {databaseOwner}[{objectQualifier}DCC_EF_EmailForm] ef,{databaseOwner}[{objectQualifier}DCC_EF_EmailFormCulture] cul 
+where ef.FieldID=cul.FieldID and  ef.visible='true' and  ef.IsDeleted='false' and cul.Culture=@CurrentCulture AND ef.ModuleID=@ModuleID and ef.IsActive='true') AS B
+ON A.FieldID=B.FieldID) 
+
+AS M,
+
+(select * from {databaseOwner}[{objectQualifier}DCC_EF_GetCategoryList](@DefaultCulture,@CurrentCulture,@ModuleID)) 
+
+AS C 
+
+where M.CategoryID=C.CategoryID
+order by C.SortOrder,M.SortOrder
+
+GO
+
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+
+alter procedure {databaseOwner}[{objectQualifier}DCC_EF_GetControlByFieldID] 
+@FieldID int
+AS
+select cul.Culture, ef.FieldName,ef.ControlType,ef.CategoryID, ef.IsActive,cul.Culture_Value
+from {databaseOwner}[{objectQualifier}DCC_EF_EmailForm] ef,{databaseOwner}[{objectQualifier}DCC_EF_EmailFormCulture] cul 
+where cul.FieldID=ef.FieldID and ef.FieldID=@FieldID
+
+GO
+
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+
+alter procedure {databaseOwner}[{objectQualifier}DCC_EF_UpdateControls] 
+@FieldName nvarchar(1000),
+@ControlType nvarchar(50),
+@CategoryID int,
+@FieldID int,
+@IsActive bit
+AS
+update {databaseOwner}[{objectQualifier}DCC_EF_EmailForm] 
+set
+FieldName=@FieldName,
+ControlType=@ControlType,
+CategoryID=@CategoryID,
+IsActive=@IsActive
+where FieldID=@FieldID
+
+GO
+
+

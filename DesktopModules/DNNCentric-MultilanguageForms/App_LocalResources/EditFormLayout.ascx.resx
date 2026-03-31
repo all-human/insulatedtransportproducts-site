@@ -1,0 +1,332 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="btnUploadImage.Text" xml:space="preserve">
+    <value>Upload</value>
+  </data>
+  <data name="ControlTitle_editformlayout.Text" xml:space="preserve">
+    <value>Customize Form Layout</value>
+  </data>
+  <data name="lblCaptchaVisibility.Text" xml:space="preserve">
+    <value>Show Captcha Control</value>
+  </data>
+  <data name="lblCaptionAlign.Text" xml:space="preserve">
+    <value>Caption Position</value>
+  </data>
+  <data name="lblCaptionColor.Text" xml:space="preserve">
+    <value>Caption Text Color/Font</value>
+  </data>
+  <data name="lblCaptionTextAlign.Text" xml:space="preserve">
+    <value>Caption Alignment</value>
+  </data>
+  <data name="lblCategoryCollapsible.Text" xml:space="preserve">
+    <value>Category Section Collapsible</value>
+  </data>
+  <data name="lblCategoryTextAlign.Text" xml:space="preserve">
+    <value>Category Header Text Alignment</value>
+  </data>
+  <data name="lblClearBtnVisibility.Text" xml:space="preserve">
+    <value>Clear Form Fields Button</value>
+  </data>
+  <data name="lblControlsAreaWidth.Text" xml:space="preserve">
+    <value>Input Control's Area Width</value>
+  </data>
+  <data name="lblErrorMsgTemplate.Text" xml:space="preserve">
+    <value>Error Message Template</value>
+  </data>
+  <data name="lblErrorPositon.Text" xml:space="preserve">
+    <value>Error Message Panel Position</value>
+  </data>
+  <data name="lblFormAlignment.Text" xml:space="preserve">
+    <value>Form Alignment</value>
+  </data>
+  <data name="lblFormBackgroundColor.Text" xml:space="preserve">
+    <value>Form Background Color</value>
+  </data>
+  <data name="lblFormWidth.Text" xml:space="preserve">
+    <value>Form Width</value>
+  </data>
+  <data name="lblHeaderBackgroundColor.Text" xml:space="preserve">
+    <value>Category Header Background Color</value>
+  </data>
+  <data name="lblHeaderTextColor.Text" xml:space="preserve">
+    <value>Category Header Text Color</value>
+  </data>
+  <data name="lblHeaderTextFont.Text" xml:space="preserve">
+    <value>Category Header Text Font&lt;br /&gt;/Size/Style</value>
+  </data>
+  <data name="lblLnkBtnText.Text" xml:space="preserve">
+    <value>(Leave blank to use default)</value>
+  </data>
+  <data name="lblPercOfWidth.Text" xml:space="preserve">
+    <value>% of form width</value>
+  </data>
+  <data name="lblShowHeader.Text" xml:space="preserve">
+    <value>Show Category Text Header</value>
+  </data>
+  <data name="lblShowMLContent.Text" xml:space="preserve">
+    <value>Enable MultiLanguage Feature</value>
+  </data>
+  <data name="lblSubmitBtnAlign.Text" xml:space="preserve">
+    <value> Button Alignment</value>
+  </data>
+  <data name="lblSubmitButtonType.Text" xml:space="preserve">
+    <value> Button Type</value>
+  </data>
+  <data name="lblwrtText.Text" xml:space="preserve">
+    <value>with respect to </value>
+  </data>
+  <data name="lnkbtnBack.Text" xml:space="preserve">
+    <value>Back</value>
+  </data>
+  <data name="lnkbtnSave.Text" xml:space="preserve">
+    <value>Save</value>
+  </data>
+  <data name="secHeadCaptcha.Text" xml:space="preserve">
+    <value>Customize Captcha</value>
+  </data>
+  <data name="secHeadErrorFormat.Text" xml:space="preserve">
+    <value>Customize Error and Validation</value>
+  </data>
+  <data name="secHeadFormUI.Text" xml:space="preserve">
+    <value>Customize Form UI</value>
+  </data>
+  <data name="SecHeadGeneral.Text" xml:space="preserve">
+    <value>General Settings</value>
+  </data>
+  <data name="secHeadSubmitBtn.Text" xml:space="preserve">
+    <value>Customize  Buttons</value>
+  </data>
+  <data name="AsynchronousEmail.Text" xml:space="preserve">
+    <value>Send emails Asynchronously </value>
+  </data>
+  <data name="secHeadEmail.Text" xml:space="preserve">
+    <value>Mail Setting</value>
+  </data>
+  <data name="lblSendMails.Help" xml:space="preserve">
+    <value>Use this option if your SMTP Server does not support "Relaying".&lt;br/&gt; Please note that you can customize your [email  from address] &lt;br/&gt; on the email workflow page.&lt;br/&gt;However, in case your SMTP requires you to send email from SMTP domain only, then &lt;br/&gt;you will have to select this option and configure your site admin email accordingly</value>
+  </data>
+  <data name="lblSendMails.Text" xml:space="preserve">
+    <value>Force Site Admin as Email Sender</value>
+  </data>
+  <data name="CheckCaptchaHeight.Text" xml:space="preserve">
+    <value>Captcha Height Should be Integer only</value>
+  </data>
+  <data name="CheckCaptchaWidth.Text" xml:space="preserve">
+    <value>Captcha Width Should be Integer only</value>
+  </data>
+  <data name="CheckControlAreaWidth.Text" xml:space="preserve">
+    <value>Control Area Width Should be Integer only</value>
+  </data>
+  <data name="CheckFormWidth.Text" xml:space="preserve">
+    <value>Form Width Should be Integer only</value>
+  </data>
+  <data name="ControlAreaWidth.Text" xml:space="preserve">
+    <value>Control Area Width Should be in range 20%  to  100% only </value>
+  </data>
+  <data name="ErrorTokenMissing.Text" xml:space="preserve">
+    <value>Error Message Tokens Missing, Please Provide it</value>
+  </data>
+  <data name="FormWidthRange.Text" xml:space="preserve">
+    <value>Form Width Should be in range 250px  to  1200px only </value>
+  </data>
+  <data name="InvalidSelectImage.Text" xml:space="preserve">
+    <value>Invalid Image File Selected</value>
+  </data>
+  <data name="SubmitButton.Text" xml:space="preserve">
+    <value>Submit</value>
+  </data>
+  <data name="UploadFile.Text" xml:space="preserve">
+    <value>Please Browse a File to Upload</value>
+  </data>
+  <data name="UsedTokens.Text" xml:space="preserve">
+    <value>Use Tokens $(EF_FieldCaption) , $(EF_ErrorMessage)</value>
+  </data>
+  <data name="lblCaptionSizeStyle.Text" xml:space="preserve">
+    <value>Caption Text Size/Style</value>
+  </data>
+  <data name="AlignErrorCap.Text" xml:space="preserve">
+    <value>Align Required Field</value>
+  </data>
+  <data name="ReqFldIndict.Text" xml:space="preserve">
+    <value>Show Required Field Indicator</value>
+  </data>
+  <data name="RfieldTemplate.Text" xml:space="preserve">
+    <value>Required Field Template</value>
+  </data>
+  <data name="lblUploadpath.Help" xml:space="preserve">
+    <value>Leave blank to use default (portalroot\DNNCentric-CustomForms )&lt;br /&gt;
+&lt;b&gt;Tokens supported:&lt;/b&gt; &lt;br /&gt;
+[PortalRoot]&lt;br /&gt;
+[FormID]&lt;br /&gt;
+[UserID]&lt;br /&gt;
+[UserName]&lt;br /&gt;
+[Year]&lt;br /&gt;
+[Month]&lt;br /&gt;
+[Day]&lt;br /&gt;
+[hh-mm-ss]&lt;br /&gt;&lt;br /&gt;
+
+So for eg. path can be prepared as &lt;b&gt; [PortalRoot]\[UserID]\[Year]&lt;/b&gt;</value>
+  </data>
+  <data name="lblUploadpath.Text" xml:space="preserve">
+    <value>File Upload Path</value>
+  </data>
+  <data name="shFileUploadSetting.Text" xml:space="preserve">
+    <value>File Upload Path Setting</value>
+  </data>
+  <data name="lblWatemarkCaptionColor.Text" xml:space="preserve">
+    <value>WaterMark Caption Text Color/Font</value>
+  </data>
+  <data name="lblMaxErrorHelp.Text" xml:space="preserve">
+    <value>Enter 0 for unlimited no of errors</value>
+  </data>
+  <data name="lblMaxErrorShow.Text" xml:space="preserve">
+    <value>Show Maximum No of Error To</value>
+  </data>
+  <data name="lblWaterMarkCaptionSizeStyle.Text" xml:space="preserve">
+    <value>WaterMark Caption Text Size/Style</value>
+  </data>
+  <data name="lblCaptchaStyle.Text" xml:space="preserve">
+    <value>Captcha Style</value>
+  </data>
+  <data name="lblCaptchaTheme.Text" xml:space="preserve">
+    <value>Theme</value>
+  </data>
+  <data name="lblPrivatekey.Text" xml:space="preserve">
+    <value>Private Key</value>
+  </data>
+  <data name="lblPublickey.Text" xml:space="preserve">
+    <value>Public Key</value>
+  </data>
+  <data name="lblCaptchaAlign.Text" xml:space="preserve">
+    <value>Captcha Alignment</value>
+  </data>
+  <data name="lblCaptchaAlignwrt.Text" xml:space="preserve">
+    <value>with respect to</value>
+  </data>
+  <data name="lblstandardheight.Text" xml:space="preserve">
+    <value>Height(px)</value>
+  </data>
+  <data name="lblstandardwidth.Text" xml:space="preserve">
+    <value>Width(px)</value>
+  </data>
+  <data name="reCaptchekey.Text" xml:space="preserve">
+    <value> Go to https://www.google.com/recaptcha/admin/create to create reCaptcha key. </value>
+  </data>
+</root>

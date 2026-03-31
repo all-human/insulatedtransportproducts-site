@@ -1,0 +1,24 @@
+2025-09-02 05:54:46,306 [dnn2sqlv3][Thread:11][ERROR] DotNetNuke.Services.Exceptions.Exceptions - System.Net.Mail.SmtpException: Mailbox unavailable. The server response was: Verification failed for <sales@itpsales.net>
+   at System.Net.Mail.MailCommand.CheckResponse(SmtpStatusCode statusCode, String response)
+   at System.Net.Mail.MailCommand.Send(SmtpConnection conn, Byte[] command, MailAddress from, Boolean allowUnicode)
+   at System.Net.Mail.SmtpTransport.SendMail(MailAddress sender, MailAddressCollection recipients, String deliveryNotify, Boolean allowUnicode, SmtpFailedRecipientException& exception)
+   at System.Net.Mail.SmtpClient.Send(MailMessage message)
+   at ForemostMedia.Modules.FM_Forms_DNN.Utils.FMHelpers.FmSendMailInternal(Int32 moduleId, Int32 tabId, String emailFrom, String emailTo, String emailSubject, String emailBody, String replyToAddress, List`1 files)
+2025-09-02 07:02:36,947 [dnn2sqlv3][Thread:33][FATAL] DotNetNuke.Web.Common.Internal.DotNetNukeHttpApplication - System.Web.HttpException (0x80004005): A potentially dangerous Request.Path value was detected from the client (:).
+   at System.Web.HttpRequest.ValidateInputIfRequiredByConfig()
+   at System.Web.HttpApplication.PipelineStepManager.ValidateHelper(HttpContext context)
+2025-09-02 10:15:39,385 [dnn2sqlv3][Thread:40][ERROR] DotNetNuke.Services.Exceptions.Exceptions - System.Net.Mail.SmtpException: Mailbox unavailable. The server response was: Verification failed for <sales@itpsales.net>
+   at System.Net.Mail.MailCommand.CheckResponse(SmtpStatusCode statusCode, String response)
+   at System.Net.Mail.MailCommand.Send(SmtpConnection conn, Byte[] command, MailAddress from, Boolean allowUnicode)
+   at System.Net.Mail.SmtpTransport.SendMail(MailAddress sender, MailAddressCollection recipients, String deliveryNotify, Boolean allowUnicode, SmtpFailedRecipientException& exception)
+   at System.Net.Mail.SmtpClient.Send(MailMessage message)
+   at ForemostMedia.Modules.FM_Forms_DNN.Utils.FMHelpers.FmSendMailInternal(Int32 moduleId, Int32 tabId, String emailFrom, String emailTo, String emailSubject, String emailBody, String replyToAddress, List`1 files)
+2025-09-02 10:15:56,517 [dnn2sqlv3][Thread:37][ERROR] DotNetNuke.Services.Exceptions.Exceptions - System.Net.Mail.SmtpException: Mailbox unavailable. The server response was: Verification failed for <sales@itpsales.net>
+   at System.Net.Mail.MailCommand.CheckResponse(SmtpStatusCode statusCode, String response)
+   at System.Net.Mail.MailCommand.Send(SmtpConnection conn, Byte[] command, MailAddress from, Boolean allowUnicode)
+   at System.Net.Mail.SmtpTransport.SendMail(MailAddress sender, MailAddressCollection recipients, String deliveryNotify, Boolean allowUnicode, SmtpFailedRecipientException& exception)
+   at System.Net.Mail.SmtpClient.Send(MailMessage message)
+   at ForemostMedia.Modules.FM_Forms_DNN.Utils.FMHelpers.FmSendMailInternal(Int32 moduleId, Int32 tabId, String emailFrom, String emailTo, String emailSubject, String emailBody, String replyToAddress, List`1 files)
+2025-09-02 15:41:08,936 [dnn2sqlv3][Thread:73][FATAL] DotNetNuke.Web.Common.Internal.DotNetNukeHttpApplication - System.Web.HttpException (0x80004005): A potentially dangerous Request.Path value was detected from the client (:).
+   at System.Web.HttpRequest.ValidateInputIfRequiredByConfig()
+   at System.Web.HttpApplication.PipelineStepManager.ValidateHelper(HttpContext context)

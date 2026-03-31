@@ -1,0 +1,45 @@
+﻿/****** Object:  ForeignKey [FK_fm_dist_Distributor_fm_dist_Distributor]    Script Date: 03/01/2012 12:53:12 ******/
+ALTER TABLE [dbo].[fm_dist_Distributor] DROP CONSTRAINT [FK_fm_dist_Distributor_fm_dist_Distributor]
+GO
+/****** Object:  ForeignKey [FK_fm_dist_Distributor_fm_dist_PriorityGroup]    Script Date: 03/01/2012 12:53:12 ******/
+ALTER TABLE [dbo].[fm_dist_Distributor] DROP CONSTRAINT [FK_fm_dist_Distributor_fm_dist_PriorityGroup]
+GO
+/****** Object:  ForeignKey [FK_fm_dist_DistributorType_fm_dist_Distributor]    Script Date: 03/01/2012 12:53:12 ******/
+ALTER TABLE [dbo].[fm_dist_DistributorType] DROP CONSTRAINT [FK_fm_dist_DistributorType_fm_dist_Distributor]
+GO
+/****** Object:  ForeignKey [FK_fm_dist_DistributorType_fm_dist_Type]    Script Date: 03/01/2012 12:53:12 ******/
+ALTER TABLE [dbo].[fm_dist_DistributorType] DROP CONSTRAINT [FK_fm_dist_DistributorType_fm_dist_Type]
+GO
+/****** Object:  ForeignKey [FK_fm_dist_RegionCovering_fm_dist_Distributor]    Script Date: 03/01/2012 12:53:13 ******/
+ALTER TABLE [dbo].[fm_dist_RegionCovering] DROP CONSTRAINT [FK_fm_dist_RegionCovering_fm_dist_Distributor]
+GO
+/****** Object:  Table [dbo].[fm_dist_DistributorType]    Script Date: 03/01/2012 12:53:12 ******/
+ALTER TABLE [dbo].[fm_dist_DistributorType] DROP CONSTRAINT [FK_fm_dist_DistributorType_fm_dist_Distributor]
+GO
+ALTER TABLE [dbo].[fm_dist_DistributorType] DROP CONSTRAINT [FK_fm_dist_DistributorType_fm_dist_Type]
+GO
+DROP TABLE [dbo].[fm_dist_DistributorType]
+GO
+/****** Object:  Table [dbo].[fm_dist_RegionCovering]    Script Date: 03/01/2012 12:53:13 ******/
+ALTER TABLE [dbo].[fm_dist_RegionCovering] DROP CONSTRAINT [FK_fm_dist_RegionCovering_fm_dist_Distributor]
+GO
+DROP TABLE [dbo].[fm_dist_RegionCovering]
+GO
+/****** Object:  Table [dbo].[fm_dist_Distributor]    Script Date: 03/01/2012 12:53:12 ******/
+ALTER TABLE [dbo].[fm_dist_Distributor] DROP CONSTRAINT [FK_fm_dist_Distributor_fm_dist_Distributor]
+GO
+ALTER TABLE [dbo].[fm_dist_Distributor] DROP CONSTRAINT [FK_fm_dist_Distributor_fm_dist_PriorityGroup]
+GO
+DROP TABLE [dbo].[fm_dist_Distributor]
+GO
+/****** Object:  Table [dbo].[fm_dist_PriorityGroup]    Script Date: 03/01/2012 12:53:13 ******/
+ALTER TABLE [dbo].[fm_dist_PriorityGroup] DROP CONSTRAINT [DF_fm_dist_PriorityGroup_SortOrder]
+GO
+DROP TABLE [dbo].[fm_dist_PriorityGroup]
+GO
+/****** Object:  Table [dbo].[fm_dist_Template]    Script Date: 03/01/2012 12:53:13 ******/
+DROP TABLE [dbo].[fm_dist_Template]
+GO
+/****** Object:  Table [dbo].[fm_dist_Type]    Script Date: 03/01/2012 12:53:13 ******/
+DROP TABLE [dbo].[fm_dist_Type]
+GO

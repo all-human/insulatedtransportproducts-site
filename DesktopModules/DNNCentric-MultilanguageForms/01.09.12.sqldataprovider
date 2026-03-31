@@ -1,0 +1,17 @@
+﻿SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+
+ALTER procedure {databaseOwner}[{objectQualifier}DCC_EF_GetTokens] 
+@ModuleID int
+AS
+
+select FieldName,ControlType from {databaseOwner}[{objectQualifier}DCC_EF_EmailForm]
+--where ControlType !='FileUpload'
+--AND ModuleID=@ModuleID
+WHERE ModuleID=@ModuleID
+and visible='true' and  IsDeleted='false'
+
+GO
+

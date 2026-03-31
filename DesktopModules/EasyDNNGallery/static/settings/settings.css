@@ -1,0 +1,790 @@
+@import url(http://fonts.googleapis.com/css?family=Roboto+Condensed:700);
+#edgAdminSettings {
+  width: 900px;
+  padding: 0;
+  border: 0;
+  margin: 0 auto;
+  display: block;
+  font: 12px/1.3 Arial, Helvetica, sans-serif;
+  box-sizing: content-box;
+  -webkit-box-sizing: content-box;
+  -moz-box-sizing: content-box;
+  box-shadow: none;
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+}
+#edgAdminSettings div, #edgAdminSettings span, #edgAdminSettings object, #edgAdminSettings iframe,
+#edgAdminSettings h1, #edgAdminSettings h2, #edgAdminSettings h3, #edgAdminSettings h4, #edgAdminSettings h5, #edgAdminSettings h6, #edgAdminSettings p, #edgAdminSettings blockquote, #edgAdminSettings pre,
+#edgAdminSettings a, #edgAdminSettings input, #edgAdminSettings img, #edgAdminSettings b, #edgAdminSettings u, #edgAdminSettings i, #edgAdminSettings center,
+#edgAdminSettings dl, #edgAdminSettings dt, #edgAdminSettings dd, #edgAdminSettings ol, #edgAdminSettings ul, #edgAdminSettings li,
+#edgAdminSettings fieldset, #edgAdminSettings form, #edgAdminSettings label, #edgAdminSettings legend,
+#edgAdminSettings table, #edgAdminSettings caption, #edgAdminSettings tbody, #edgAdminSettings tfoot, #edgAdminSettings thead, #edgAdminSettings tr, #edgAdminSettings th, #edgAdminSettings td, #edgAdminSettings embed {
+  font-size: 12px;
+  font: inherit;
+  vertical-align: baseline;
+  box-sizing: content-box;
+  -webkit-box-sizing: content-box;
+  -moz-box-sizing: content-box;
+  box-shadow: none;
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  text-decoration: none;
+}
+#edgAdminSettings a:focus,
+#edgAdminSettings input[type='file']:focus,
+#edgAdminSettings input[type='radio']:focus,
+#edgAdminSettings input[type='checkbox']:focus {
+  outline: thin dotted;
+  outline: 5px auto -webkit-focus-ring-color;
+  outline-offset: -2px;
+}
+#edgAdminSettings a:hover {
+  text-decoration: underline;
+}
+#edgAdminSettings ol, #edgAdminSettings ul {
+  list-style: none;
+}
+#edgAdminSettings blockquote, #edgAdminSettings q {
+  quotes: none;
+}
+#edgAdminSettings blockquote:before, #edgAdminSettings blockquote:after,
+#edgAdminSettings q:before, #edgAdminSettings q:after {
+  content: "";
+  content: none;
+}
+#edgAdminSettings table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+#edgAdminSettings select {
+  padding: 2px;
+  margin: 0;
+  border: 1px solid #c1c1c1;
+  min-width: 110px;
+}
+#edgAdminSettings .settingsTitle {
+  color: #787878;
+  font-size: 27px;
+  margin: 25px 0 10px;
+  padding: 0;
+  text-align: center;
+  text-shadow: 1px 1px 1px white;
+  text-transform: uppercase;
+}
+#edgAdminSettings .settingsTable {
+  padding: 0;
+  margin: 0;
+  border: 0;
+  width: 100%;
+}
+#edgAdminSettings .settingsTable td {
+  padding: 15px 20px;
+  margin: 0;
+  border: 0;
+  width: 50%;
+}
+#edgAdminSettings .settingsTable td .dnnLabel {
+  max-width: 150px;
+}
+#edgAdminSettings .settingsTable td .dnnTooltip {
+  width: 200px;
+  float: none;
+  display: inline-block;
+}
+#edgAdminSettings .module_settings .first_coll_fixed_table {
+  padding: 15px 0 0;
+}
+#edgAdminSettings .module_settings .first_coll_fixed_table .permissionsNotifications {
+  margin: 0;
+}
+#edgAdminSettings .module_settings .first_coll_fixed_table tr td .dnnCheckbox {
+  position: relative;
+  top: 4px;
+}
+#edgAdminSettings .module_settings .first_coll_fixed_table tr td.subjectName {
+  text-align: right !important;
+  vertical-align: middle !important;
+  background: #f1f1f1;
+  padding-right: 10px !important;
+}
+#edgAdminSettings .module_settings .first_coll_fixed_table tr td.subjectName p {
+  width: 140px;
+  overflow: hidden;
+  padding: 0;
+  margin: 0;
+}
+#edgAdminSettings .module_settings .first_coll_fixed_table tr td.subjectName span {
+  font-size: 10px;
+  font-weight: normal;
+  color: #434343;
+  text-shadow: 1px 1px white;
+}
+#edgAdminSettings .module_settings .first_coll_fixed_table tr th.header_cell {
+  background: white;
+  height: 35px;
+}
+#edgAdminSettings .module_settings .first_coll_fixed_table tr.second td.subjectName {
+  background: #e3e3e3;
+}
+#edgAdminSettings .module_settings .first_coll_fixed_table tr.second td.subjectName span {
+  text-shadow: 1px 1px #e8e8e8;
+}
+#edgAdminSettings .settingsGroup {
+  display: block;
+}
+#edgAdminSettings .settingsGroup.square {
+  margin: 0 0 20px;
+}
+#edgAdminSettings .settingsGroup.square > h2 {
+  border: 1px solid #326db6;
+  background: #4f8edc;
+  padding: 10px 15px;
+  margin: 0;
+}
+#edgAdminSettings .settingsGroup.square > h2 span {
+  font: 18px/1.3 "Roboto Condensed", sans-serif;
+  text-transform: uppercase;
+  color: white;
+}
+#edgAdminSettings .settingsGroup.square > div.content {
+  border: 1px solid #b0b0b0;
+  border-top: 0;
+  background: #f1f1f1;
+}
+#edgAdminSettings .settingsGroup.square.bluish {
+  background: #c0d1e7;
+  border: 1px solid #b0b0b0;
+}
+#edgAdminSettings .settingsGroup.square.bluish > h2 {
+  background: none;
+  border: 0;
+}
+#edgAdminSettings .settingsGroup.square.bluish > h2 > span {
+  font: 20px/1.3 Arial, Helvetica, sans-serif;
+  color: #51637a;
+  text-shadow: 1px 1px 0 rgba(255, 255, 255, 0.5);
+  text-transform: none;
+}
+#edgAdminSettings .settingsGroup.square.bluish > div.content {
+  background: none;
+  border: 0;
+  border-top: 1px solid #b1c3db;
+}
+#edgAdminSettings .settingsGroup.square.bluish > div.content > div {
+  border-top: 1px solid #d1dded;
+}
+#edgAdminSettings .settingsGroup.square.galleries {
+  position: relative;
+}
+#edgAdminSettings .settingsGroup.square.galleries > .displayAllGalleriesFromCategories {
+  position: absolute;
+  top: 11px;
+  bottom: auto;
+  left: auto;
+  right: 20px;
+  border: 0;
+  padding: 0;
+  margin: 0;
+}
+#edgAdminSettings .settingsGroup.square.galleries > .displayAllGalleriesFromCategories .dnnCheckbox {
+  position: relative;
+  top: 5px;
+}
+#edgAdminSettings .settingsGroup.square.galleries > .displayAllGalleriesFromCategories label {
+  color: #51637a;
+  font: 14px/1.3 Arial, Helvetica, sans-serif;
+  text-shadow: 1px 1px 0 rgba(255, 255, 255, 0.5);
+}
+#edgAdminSettings .settingsGroup.square.galleries .itemSelectionContainer .itemSelection_selectedItemsContainer {
+  border-top-color: #a3b3c8;
+}
+#edgAdminSettings .settingsGroup.square.galleries .itemSelectionContainer .itemSelection_selectedItemsContainer .itemSelection_selectedItemsTitle {
+  border-top-color: #c1cdde;
+  background: #acbcd2;
+}
+#edgAdminSettings .settingsGroup.square.galleries .itemSelectionContainer .itemSelection_selectedItemsContainer .itemSelection_selectedItemsTitle > span {
+  color: #51637a;
+  text-shadow: 1px 1px 0 rgba(255, 255, 255, 0.5);
+}
+#edgAdminSettings .settingsGroup.square.galleries .itemSelectionContainer .itemSelection_selectedItemsContainer .itemSelection_noItemsSelectedMsg > span {
+  color: #cc2121;
+}
+#edgAdminSettings .settingsGroup.edgDisplaySettings {
+  margin-bottom: 40px;
+  transition: margin 0.2s ease-in-out;
+  -webkit-transition: margin 0.2s ease-in-out;
+  -moz-transition: margin 0.2s ease-in-out;
+  -o-transition: margin 0.2s ease-in-out;
+}
+#edgAdminSettings .settingsGroup.edgDisplaySettings > h3 {
+  margin: 0;
+  padding: 9px 11px;
+  line-height: 1;
+  font-family: Arial;
+  color: white;
+  font-size: 12px;
+  font-weight: normal;
+  letter-spacing: normal;
+  position: relative;
+}
+#edgAdminSettings .settingsGroup.edgDisplaySettings > h3 > .onOffToggle {
+  position: absolute;
+  top: 4px;
+  left: auto;
+  right: 13px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3) inset;
+}
+#edgAdminSettings .settingsGroup.edgDisplaySettings > h3 > .onOffToggle.blue {
+  background-color: #0086d9;
+}
+#edgAdminSettings .settingsGroup.edgDisplaySettings > h3 > .onOffToggle.red {
+  background-color: #b71414;
+}
+#edgAdminSettings .settingsGroup.edgDisplaySettings > h3 > .onOffToggle.green {
+  background-color: #389600;
+}
+#edgAdminSettings .settingsGroup.edgDisplaySettings > h3 > .onOffToggle.yellow {
+  background-color: #ff7f00;
+}
+#edgAdminSettings .settingsGroup.edgDisplaySettings > div {
+  border: solid 1px #b0b0b0;
+  background-color: #eeeeee;
+}
+#edgAdminSettings .settingsGroup.edgDisplaySettings .edgGalleryLevel {
+  width: 115px;
+  text-align: center;
+  background-position: center bottom;
+  background-repeat: no-repeat;
+  padding: 10px 10px 90px;
+  margin-bottom: 10px;
+  float: left;
+}
+#edgAdminSettings .settingsGroup.edgDisplaySettings .edgGalleryLevel > span {
+  font-family: Arial;
+  font-size: 40px;
+  color: #757575;
+  text-shadow: 1px 1px rgba(255, 255, 255, 0.75);
+  padding: 8px 0;
+  line-height: 1;
+}
+#edgAdminSettings .settingsGroup.edgDisplaySettings .edggalleryDisplayOptions {
+  width: 760px;
+  border: solid 1px #dddddd;
+  float: right;
+}
+#edgAdminSettings .settingsGroup.edgDisplaySettings .edggalleryDisplayOptions tr:nth-child(odd) {
+  background: gainsboro;
+}
+#edgAdminSettings .settingsGroup.edgDisplaySettings .edggalleryDisplayOptions tr:nth-child(odd) td {
+  border-bottom: solid 1px #d4d4d4;
+}
+#edgAdminSettings .settingsGroup.edgDisplaySettings .edggalleryDisplayOptions tr:nth-child(odd) td:nth-child(even) {
+  border-right: solid 1px #d4d4d4;
+}
+#edgAdminSettings .settingsGroup.edgDisplaySettings .edggalleryDisplayOptions tr:nth-child(even) {
+  background: #e5e5e5;
+}
+#edgAdminSettings .settingsGroup.edgDisplaySettings .edggalleryDisplayOptions tr:nth-child(even) td {
+  border-top: solid 1px #ebebeb;
+}
+#edgAdminSettings .settingsGroup.edgDisplaySettings .edggalleryDisplayOptions tr td {
+  font-size: 12px;
+  color: #757575;
+  text-shadow: 1px 1px rgba(255, 255, 255, 0.75);
+  padding: 10px 15px;
+  font-family: Arial;
+}
+#edgAdminSettings .settingsGroup.edgDisplaySettings .edggalleryDisplayOptions tr td:nth-child(even) {
+  border-right: solid 1px #d9d9d9;
+  padding-left: 0;
+}
+#edgAdminSettings .settingsGroup.edgDisplaySettings .edggalleryDisplayOptions tr td .dnnLabel {
+  text-align: left;
+  color: #414141;
+  text-shadow: 1px 1px 0 white;
+}
+#edgAdminSettings .settingsGroup.edgDisplaySettings .edggalleryDisplayOptions tr td .dnnLabel .dnnHelpText {
+  text-shadow: none;
+  color: #f2f2f2;
+}
+#edgAdminSettings .settingsGroup.edgDisplaySettings .edggalleryDisplayOptions tr td .dnnCheckbox, #edgAdminSettings .settingsGroup.edgDisplaySettings .edggalleryDisplayOptions tr td .dnnRadiobutton {
+  position: relative;
+  top: 4px;
+}
+#edgAdminSettings .settingsGroup.edgDisplaySettings .edggalleryDisplayOptions tr td input[type="text"] {
+  width: 40px;
+}
+#edgAdminSettings .settingsGroup.edgDisplaySettings .edggalleryDisplayOptions tr td .radioButtonTable tr {
+  background: none;
+}
+#edgAdminSettings .settingsGroup.edgDisplaySettings .edggalleryDisplayOptions tr td .radioButtonTable tr td {
+  border: 0 !important;
+  margin: 0;
+  padding: 0 10px 0 0;
+}
+#edgAdminSettings .settingsGroup.edgDisplaySettings .edggalleryDisplayOptions tr td .radioButtonTable tr td:first-child {
+  width: auto;
+}
+#edgAdminSettings .settingsGroup.edgDisplaySettings .edggalleryDisplayOptions.twoColumn tr td:first-child {
+  width: 250px;
+}
+#edgAdminSettings .settingsGroup.edgDisplaySettings.edgCategories > h3 {
+  background-color: #1198ee;
+  text-shadow: 1px 1px rgba(12, 119, 185, 0.75);
+  box-shadow: 0 30px 30px -17px #27abff inset;
+}
+#edgAdminSettings .settingsGroup.edgDisplaySettings.edgCategories .edgGalleryLevel {
+  background-image: url("images/icons/edgCategoryLevelImage.png");
+}
+#edgAdminSettings .settingsGroup.edgDisplaySettings.edgGalleries > h3 {
+  background-color: #ee9912;
+  text-shadow: 1px 1px rgba(192, 122, 12, 0.75);
+  box-shadow: 0 30px 30px -17px #ffb136 inset;
+}
+#edgAdminSettings .settingsGroup.edgDisplaySettings.edgGalleries .edgGalleryLevel {
+  background-image: url("images/icons/edgGalleryLevelImage.png");
+}
+#edgAdminSettings .settingsGroup.edgDisplaySettings.edgItems > h3 {
+  background-color: #42970c;
+  text-shadow: 1px 1px rgba(40, 100, 4, 0.75);
+  box-shadow: 0 30px 30px -17px #16be16 inset;
+}
+#edgAdminSettings .settingsGroup.edgDisplaySettings.edgItems .edgGalleryLevel {
+  background-image: url("images/icons/edgItems.png");
+}
+#edgAdminSettings .settingsGroup.edgDisplaySettings.edgItemDetails > h3 {
+  background-color: #b41717;
+  text-shadow: 1px 1px rgba(170, 22, 22, 0.75);
+  box-shadow: 0 30px 30px -17px #ff3d3d inset;
+}
+#edgAdminSettings .settingsGroup.edgDisplaySettings.edgItemDetails .edgGalleryLevel {
+  background-image: url("images/icons/edgItemDetails.png");
+}
+#edgAdminSettings .settingsGroup.edgDisplaySettings.edgAditionalOptions > h3 {
+  background-color: #e5e5e5;
+  display: inline-block;
+  color: #757575;
+  font-size: 18px;
+  border: solid 1px #b0b0b0;
+  border-radius: 3px 3px 0 0;
+  border-bottom: none;
+  text-shadow: 1px 1px rgba(255, 255, 255, 0.47);
+  padding: 5px 15px;
+}
+#edgAdminSettings .settingsGroup.edgDisplaySettings.edgAditionalOptions > div {
+  border-radius: 0;
+}
+#edgAdminSettings .settingsGroup.edgDisplaySettings.edgAditionalOptions .edggalleryDisplayOptions {
+  width: 100%;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+#edgAdminSettings .dnnClear {
+  clear: both;
+}
+#edgAdminSettings .onOffToggle {
+  background: none;
+  border: 2px solid #cccccc;
+  border-radius: 12px;
+  margin: 0;
+  padding: 0;
+  box-shadow: 1px 1px 0 white, 0 0 10px rgba(0, 0, 0, 0.3) inset;
+  position: relative;
+  display: inline-block;
+  width: 50px;
+  height: 18px;
+  cursor: pointer;
+  transition: all 0.1s ease-in-out;
+  -webkit-transition: all 0.1s ease-in-out;
+  -moz-transition: all 0.1s ease-in-out;
+  -o-transition: all 0.1s ease-in-out;
+  overflow: hidden;
+}
+#edgAdminSettings .onOffToggle .normalCheckBox {
+  position: absolute;
+  top: 0;
+  left: 100%;
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+#edgAdminSettings .onOffToggle input {
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+#edgAdminSettings .onOffToggle > .offText,
+#edgAdminSettings .onOffToggle > .onText {
+  position: absolute;
+  top: 1px;
+  bottom: auto;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font: 9px/1.8 Arial;
+  text-transform: uppercase;
+  font-weight: bold;
+  color: white;
+  text-shadow: 1px 1px rgba(0, 0, 0, 0.3);
+  transition: all 0.2s ease-in-out;
+  -webkit-transition: all 0.2s ease-in-out;
+  -moz-transition: all 0.2s ease-in-out;
+  -o-transition: all 0.2s ease-in-out;
+}
+#edgAdminSettings .onOffToggle > .offText {
+  left: 10px;
+  opacity: 0;
+}
+#edgAdminSettings .onOffToggle > .onText {
+  right: 10px;
+}
+#edgAdminSettings .onOffToggle > .slider {
+  position: absolute;
+  top: 0;
+  left: -1px;
+  width: 18px;
+  height: 18px;
+  border: 0;
+  border-radius: 50%;
+  background-color: #e6e6e6;
+  background-image: -moz-linear-gradient(90deg, #d1d1d1 0%, #f6f6f6 100%);
+  background-image: -webkit-linear-gradient(90deg, #d1d1d1 0%, #f6f6f6 100%);
+  box-shadow: 0.5px 0.866px 2px 0px black;
+  transition: all 0.1s ease-in-out;
+  -webkit-transition: all 0.1s ease-in-out;
+  -moz-transition: all 0.1s ease-in-out;
+  -o-transition: all 0.1s ease-in-out;
+}
+#edgAdminSettings .onOffToggle.off {
+  background-image: none;
+  background-color: #bbbbbb !important;
+}
+#edgAdminSettings .onOffToggle.off > .offText {
+  opacity: 1;
+}
+#edgAdminSettings .onOffToggle.off > .onText {
+  opacity: 0;
+}
+#edgAdminSettings .onOffToggle.off > .slider {
+  left: 33px;
+}
+#edgAdminSettings .onOffToggle.blue {
+  background-color: #50b1ef;
+}
+#edgAdminSettings .onOffToggle.blue:hover {
+  background-color: #1e92d9;
+}
+#edgAdminSettings .onOffToggle.yellow {
+  background-color: #f0b352;
+}
+#edgAdminSettings .onOffToggle.yellow:hover {
+  background-color: #f49f0f;
+}
+#edgAdminSettings .onOffToggle.green {
+  background-color: #73b14c;
+}
+#edgAdminSettings .onOffToggle.green:hover {
+  background-color: #3fa700;
+}
+#edgAdminSettings .onOffToggle.red {
+  background-color: #c75454;
+}
+#edgAdminSettings .onOffToggle.red:hover {
+  background-color: #da2222;
+}
+#edgAdminSettings .edsgg_admin_sectionTogglesWrapper {
+  display: block;
+  margin: 0 auto 40px;
+  padding: 0;
+  border: 0;
+  font: 0/0 Arial;
+  width: 812px;
+}
+#edgAdminSettings .edsgg_admin_sectionTogglesWrapper > .section {
+  background: #e8e8e8 no-repeat;
+  border: 0;
+  margin: 0 20px 0 0;
+  padding: 0;
+  display: inline-block;
+  box-shadow: inset 0 0 3px 0 rgba(0, 0, 0, 0.3);
+  -webkit-box-shadow: inset 0 0 3px 0 rgba(0, 0, 0, 0.3);
+  -moz-box-shadow: inset 0 0 3px 0 rgba(0, 0, 0, 0.3);
+  width: 188px;
+  height: auto;
+  position: relative;
+}
+#edgAdminSettings .edsgg_admin_sectionTogglesWrapper > .section:last-child {
+  margin: 0;
+}
+#edgAdminSettings .edsgg_admin_sectionTogglesWrapper > .section h3 {
+  margin: 0;
+  padding: 8px 0;
+  border: 0;
+  background: none;
+  font: 12px/1 Arial;
+  letter-spacing: normal;
+  color: white;
+  text-align: center;
+  text-transform: uppercase;
+}
+#edgAdminSettings .edsgg_admin_sectionTogglesWrapper > .section .onOffToggle {
+  margin: 150px auto 20px;
+  display: block;
+}
+#edgAdminSettings .edsgg_admin_sectionTogglesWrapper > .section.categories {
+  background-image: url("images/icons/edgCategoryLevelImage.png");
+  background-position: center 63px;
+}
+#edgAdminSettings .edsgg_admin_sectionTogglesWrapper > .section.categories h3 {
+  background-color: #1198ee;
+  text-shadow: 1px 1px rgba(12, 119, 185, 0.75);
+  box-shadow: 0 30px 30px -17px #27abff inset;
+}
+#edgAdminSettings .edsgg_admin_sectionTogglesWrapper > .section.galleries {
+  background-image: url("images/icons/edgGalleryLevelImage.png");
+  background-position: center 66px;
+}
+#edgAdminSettings .edsgg_admin_sectionTogglesWrapper > .section.galleries h3 {
+  background-color: #ee9912;
+  text-shadow: 1px 1px rgba(192, 122, 12, 0.75);
+  box-shadow: 0 30px 30px -17px #ffb136 inset;
+}
+#edgAdminSettings .edsgg_admin_sectionTogglesWrapper > .section.items {
+  background-image: url("images/icons/edgItems.png");
+  background-position: center 69px;
+}
+#edgAdminSettings .edsgg_admin_sectionTogglesWrapper > .section.items h3 {
+  background-color: #42970c;
+  text-shadow: 1px 1px rgba(40, 100, 4, 0.75);
+  box-shadow: 0 30px 30px -17px #16be16 inset;
+}
+#edgAdminSettings .edsgg_admin_sectionTogglesWrapper > .section.details {
+  background-image: url("images/icons/edgItemDetails.png");
+  background-position: center center;
+}
+#edgAdminSettings .edsgg_admin_sectionTogglesWrapper > .section.details h3 {
+  background-color: #b41717;
+  text-shadow: 1px 1px rgba(170, 22, 22, 0.75);
+  box-shadow: 0 30px 30px -17px #ff3d3d inset;
+}
+#edgAdminSettings .edsgg_admin_sectionTogglesWrapper > .section.categories:after, #edgAdminSettings .edsgg_admin_sectionTogglesWrapper > .section.galleries:after, #edgAdminSettings .edsgg_admin_sectionTogglesWrapper > .section.items:after {
+  position: absolute;
+  content: "";
+  width: 58px;
+  height: 32px;
+  background: transparent url("images/icons/arrow-1.png") no-repeat center center;
+  top: 42px;
+  right: -43px;
+  z-index: 1;
+}
+#edgAdminSettings .edsgg_admin_sectionTogglesWrapper > .section.galleries:after {
+  background-image: url("images/icons/arrow-2.png");
+  top: 140px;
+}
+#edgAdminSettings .itemSelectionContainer {
+  position: relative;
+}
+#edgAdminSettings .itemSelectionContainer .itemSelection_processingOverlay {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  border: 0;
+  margin: 0;
+  padding: 0;
+  background: white url("images/animations/processing/white_circular.gif") center center no-repeat;
+  opacity: 0.8;
+}
+#edgAdminSettings .itemSelectionContainer .itemSelection_itemList {
+  display: block;
+  padding: 20px;
+  margin: 0;
+  border: 0;
+  font: 0/0 Arial;
+}
+#edgAdminSettings .itemSelectionContainer .itemSelection_itemPagination {
+  display: block;
+  margin: 0;
+  padding: 0 15px 5px;
+  border: 0;
+  text-align: center;
+  font: 0/0 Arial;
+  overflow: hidden;
+}
+#edgAdminSettings .itemSelectionContainer .itemSelection_itemPagination > .page {
+  font: 14px/1.3 Arial, Helvetica, sans-serif;
+  display: inline-block;
+  margin: 0 3px 0 0;
+  padding: 2px 7px 1px;
+  border: 0;
+  box-shadow: 1px 1px 0 #878787;
+  border-radius: 3px;
+  color: #404040;
+  text-decoration: none;
+  background-color: #eeeeee;
+}
+#edgAdminSettings .itemSelectionContainer .itemSelection_itemPagination > .page:hover {
+  color: #3e8ae6;
+  background-color: #dfe5ea;
+}
+#edgAdminSettings .itemSelectionContainer .itemSelection_itemPagination > .page.active {
+  color: white;
+  background: #5185aa;
+}
+#edgAdminSettings .itemSelectionContainer .itemSelection_itemPagination > .page.active:hover {
+  background: #3e8ae6;
+}
+#edgAdminSettings .itemSelectionContainer .itemSelection_itemList .itemSelection_item,
+#edgAdminSettings .itemSelectionContainer .itemSelection_selectedItemsContainer .itemSelection_selectedItemsList > li {
+  border: 1px solid #666666;
+  background: #e8e8e8;
+  border-radius: 3px;
+  display: inline-block;
+  padding: 5px 10px;
+  margin: 5px;
+  cursor: pointer;
+  box-shadow: inset 0 0 3px 0 rgba(0, 0, 0, 0.3);
+  -webkit-box-shadow: inset 0 0 3px 0 rgba(0, 0, 0, 0.3);
+  -moz-box-shadow: inset 0 0 3px 0 rgba(0, 0, 0, 0.3);
+  transition: all 0.1s ease-in-out;
+  -webkit-transition: all 0.1s ease-in-out;
+  -moz-transition: all 0.1s ease-in-out;
+  -o-transition: all 0.1s ease-in-out;
+  list-style-type: none;
+}
+#edgAdminSettings .itemSelectionContainer .itemSelection_itemList .itemSelection_item > span.name,
+#edgAdminSettings .itemSelectionContainer .itemSelection_selectedItemsContainer .itemSelection_selectedItemsList > li > span.name {
+  font: 13px/1.3 Arial, Helvetica, sans-serif;
+  color: #333333;
+  transition: all 0.1s ease-in-out;
+  -webkit-transition: all 0.1s ease-in-out;
+  -moz-transition: all 0.1s ease-in-out;
+  -o-transition: all 0.1s ease-in-out;
+}
+#edgAdminSettings .itemSelectionContainer .itemSelection_itemList .itemSelection_item:hover,
+#edgAdminSettings .itemSelectionContainer .itemSelection_selectedItemsContainer .itemSelection_selectedItemsList > li:hover {
+  background: #a4ff6d;
+  border: 1px solid #7eb32e;
+  box-shadow: 0 0 3px 0 rgba(255, 255, 255, 0.5) inset, 0 0 3px 0 rgba(0, 0, 0, 0.25);
+}
+#edgAdminSettings .itemSelectionContainer .itemSelection_itemList .itemSelection_item:hover > span.name,
+#edgAdminSettings .itemSelectionContainer .itemSelection_selectedItemsContainer .itemSelection_selectedItemsList > li:hover > span.name {
+  color: #222222;
+}
+#edgAdminSettings .itemSelectionContainer .itemSelection_selectedItemsContainer {
+  border: 0;
+  border-top: 1px solid #d4d4d4;
+}
+#edgAdminSettings .itemSelectionContainer .itemSelection_selectedItemsContainer .itemSelection_selectedItemsTitle {
+  border: 0;
+  border-top: 1px solid #eeeeee;
+  background: #e0e0e0;
+  display: block;
+  margin: 0;
+  padding: 12px 20px 15px;
+}
+#edgAdminSettings .itemSelectionContainer .itemSelection_selectedItemsContainer .itemSelection_selectedItemsTitle > span {
+  color: #6c6c6c;
+  font: 20px/1.3 Arial, Helvetica, sans-serif;
+}
+#edgAdminSettings .itemSelectionContainer .itemSelection_selectedItemsContainer .itemSelection_noItemsSelectedMsg,
+#edgAdminSettings .itemSelectionContainer .itemSelection_selectedItemsContainer .itemSelection_selectedItemsList {
+  box-shadow: inset 0 5px 3px -5px rgba(0, 0, 0, 0.6);
+  -webkit-box-shadow: inset 0 5px 3px -5px rgba(0, 0, 0, 0.6);
+  -moz-box-shadow: inset 0 5px 3px -5px rgba(0, 0, 0, 0.6);
+}
+#edgAdminSettings .itemSelectionContainer .itemSelection_selectedItemsContainer .itemSelection_noItemsSelectedMsg {
+  display: none;
+  text-align: center;
+  margin: 0;
+  padding: 15px;
+  border: 0;
+}
+#edgAdminSettings .itemSelectionContainer .itemSelection_selectedItemsContainer .itemSelection_noItemsSelectedMsg > span {
+  font: 14px/1.3 Arial, Helvetica, sans-serif;
+  color: #de0000;
+}
+#edgAdminSettings .itemSelectionContainer .itemSelection_selectedItemsContainer .itemSelection_selectedItemsList {
+  display: block;
+  padding: 20px;
+  margin: 0;
+  border: 0;
+  font: 0/0 Arial;
+  background-color: #dedede;
+}
+#edgAdminSettings .itemSelectionContainer .itemSelection_selectedItemsContainer .itemSelection_selectedItemsList.galleryselection {
+  background-color: #96a7bf;
+}
+#edgAdminSettings .itemSelectionContainer .itemSelection_selectedItemsContainer .itemSelection_selectedItemsList > li {
+  position: relative;
+  padding: 5px 28px 5px 10px;
+  cursor: default;
+}
+#edgAdminSettings .itemSelectionContainer .itemSelection_selectedItemsContainer .itemSelection_selectedItemsList > li > .remove {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  display: inline-block;
+  width: 24px;
+  background: url(images/icons/red_cross.png) no-repeat center 7px;
+  border: 0;
+  padding: 0;
+  margin: 0;
+  cursor: pointer;
+}
+#edgAdminSettings .itemSelectionContainer .itemSelection_selectedItemsContainer .itemSelection_selectedItemsList > li > .remove:hover {
+  background-color: #b7b7b7;
+}
+#edgAdminSettings .itemSelectionContainer .itemSelection_selectedItemsContainer .itemSelection_selectedItemsList > li:hover {
+  background: #e8e8e8;
+  border: 1px solid #666666;
+  box-shadow: inset 0 0 3px 0 rgba(0, 0, 0, 0.3);
+  -webkit-box-shadow: inset 0 0 3px 0 rgba(0, 0, 0, 0.3);
+  -moz-box-shadow: inset 0 0 3px 0 rgba(0, 0, 0, 0.3);
+}
+#edgAdminSettings .itemSelectionContainer .itemSelection_selectedItemsContainer .itemSelection_selectedItemsList > li:hover > span.name {
+  color: #333333;
+}
+#edgAdminSettings .itemSelectionContainer .itemSelection_selectedItemsContainer.noItemsSelected .itemSelection_selectedItemsList {
+  display: none;
+}
+#edgAdminSettings .itemSelectionContainer .itemSelection_selectedItemsContainer.noItemsSelected .itemSelection_noItemsSelectedMsg {
+  display: block;
+}
+#edgAdminSettings input[type="submit"] {
+  background: -moz-linear-gradient(center top, #358eea 0%, #2170cd 100%) repeat scroll 0 0 transparent;
+  background-color: #358eea;
+  border-color: #0d569e;
+  box-shadow: 0 1px 0 0 rgba(0, 0, 0, 0.6), 0 1px 0 0 rgba(255, 255, 255, 0.4) inset;
+  color: #efefef;
+  text-shadow: 0 -1px 0 #185b93;
+  margin-right: 5px;
+  padding: 7px;
+}
+#edgAdminSettings input[type="submit"]:hover {
+  background: -moz-linear-gradient(center top, #6cb6f3 0%, #4387d2 100%) repeat scroll 0 0 transparent;
+  border-color: #0d569e;
+  color: white;
+}
+#edgAdminSettings .saveMessage {
+  border: solid 1px;
+  background-position: 10px 5px;
+  background-repeat: no-repeat;
+  padding: 12px 12px 12px 50px;
+  margin: 10px 0;
+  display: block;
+}
+#edgAdminSettings .saveMessage.successMessage {
+  background-image: url(images/icons/Valid.png);
+  border-color: #109300;
+  background-color: #b3f7b2;
+  color: #028800;
+}
+#edgAdminSettings .saveMessage.errorMessage {
+  background-image: url(images/icons/Error.png);
+  border-color: #931000;
+  background-color: #f7b3b2;
+  color: #880200;
+}

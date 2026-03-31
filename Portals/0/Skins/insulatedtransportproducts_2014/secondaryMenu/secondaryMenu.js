@@ -1,0 +1,1 @@
+$(document).ready(function(){function e(){$(this).addClass("hover")}function t(){$(this).removeClass("hover")}var n={sensitivity:2,interval:200,over:e,timeout:500,out:t};$("#dnnMenu .topLevel > li.haschild").hoverIntent(n);$(".subLevel li.haschild").hover(e,t)})

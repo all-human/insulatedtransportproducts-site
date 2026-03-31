@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<root>
+	<xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+		<xsd:element name="root" msdata:IsDataSet="true">
+			<xsd:complexType>
+				<xsd:choice maxOccurs="unbounded">
+					<xsd:element name="data">
+						<xsd:complexType>
+							<xsd:sequence>
+								<xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+								<xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+							</xsd:sequence>
+							<xsd:attribute name="name" type="xsd:string" />
+							<xsd:attribute name="type" type="xsd:string" />
+							<xsd:attribute name="mimetype" type="xsd:string" />
+						</xsd:complexType>
+					</xsd:element>
+					<xsd:element name="resheader">
+						<xsd:complexType>
+							<xsd:sequence>
+								<xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+							</xsd:sequence>
+							<xsd:attribute name="name" type="xsd:string" use="required" />
+						</xsd:complexType>
+					</xsd:element>
+				</xsd:choice>
+			</xsd:complexType>
+		</xsd:element>
+	</xsd:schema>
+	<resheader name="resmimetype">
+		<value>text/microsoft-resx</value>
+	</resheader>
+	<resheader name="version">
+		<value>1.3</value>
+	</resheader>
+	<resheader name="reader">
+		<value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=1.0.5000.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+	</resheader>
+	<resheader name="writer">
+		<value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=1.0.5000.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+	</resheader>
+
+	<data name="ControlTitle_commercial.Text">
+		<value>Edit Commercial</value>
+	</data>
+	<data name="CurrentStatus.Text">
+	    <value>Current status is</value>
+	</data>
+	<data name="With.Text">
+	    <value>with</value>
+	</data>
+	<data name="Clicks.Text">
+	    <value>clicks.</value>
+	</data>
+	<data name="ImpressionsAnd.Text">
+	    <value>impressions and</value>
+	</data>
+	<data name="AllLibraries.Text">
+	    <value>All Libraries</value>
+	</data>
+	<data name="plType.Text">
+	    <value>Type</value>
+	</data>
+	<data name="plTitle.Text">
+	    <value>Title</value>
+	</data>
+	<data name="plDescription.Text">
+	    <value>Description</value>
+	</data>
+	<data name="Scope.Text">
+	    <value>Applys to</value>
+	</data>
+	<data name="LinkUrl.Text">
+	    <value>Link Url</value>
+	</data>
+	<data name="LinkUrl.Help">
+	    <value>The link of this commercial is optional</value>
+	</data>
+	<data name="FileUrl.Text">
+	    <value>File Url</value>
+	</data>
+	<data name="FileUrl2.Help">
+	    <value>The absolute path of the commercial file, in .mp4 format</value>
+	</data>
+	<data name="FileUrl1.Help">
+	    <value>The absolute path of the commercial file, in .jpg format</value>
+	</data>
+
+
+	<data name="plAudience.Text">
+	    <value>Audience</value>
+	</data>
+	<data name="plAudience.Help">
+	    <value>this commercial to: </value>
+	</data>
+	<data name="WhenToStop.Text">
+	    <value>Stop it When:</value>
+	</data>
+
+	<data name="CriteriaOr.Text">
+	    <value>Either end date or max impressions reached</value>
+	</data>
+	<data name="CriteriaAnd.Text">
+	    <value>Both end date and max impressions reached</value>
+	</data>
+	<data name="LinkText.Text">
+	    <value>Link Text</value>
+	</data>
+	<data name="Archive.Text">
+	    <value>Archive</value>
+	</data>
+	<data name="DownloadReport.Text">
+	    <value>Download Report</value>
+	</data>
+	<data name="StartDate.Text">
+	    <value>Start Date</value>
+	</data>
+	<data name="EndDate.Text">
+	    <value>End Date</value>
+	</data>
+	<data name="MaxImpressions.Text">
+	    <value>Max Impresssons</value>
+	</data>
+	<data name="MaxImpressions.Help">
+	    <value>Enter 0 for unlimited impressions</value>
+	</data>
+	<data name="CPM.Text">
+	    <value>CPM/Cost</value>
+	</data>
+	<data name="CPM.Help">
+	    <value>Cost of 1000 views, or a flat fee</value>
+	</data>
+</root>

@@ -1,0 +1,129 @@
+﻿SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+
+ALTER procedure {databaseOwner}[{objectQualifier}DCC_EF_GetALLWorkFlowName]
+@ModuleID int
+as
+select actWF.WorkFlowID,SndMail.Culture,actWF.WorkFlowName,actWF.SortOrder,actWF.[Disabled] 
+from {databaseOwner}[{objectQualifier}DCC_EF_ActiveWorkFlows] actWF,{databaseOwner}[{objectQualifier}DCC_EF_WorkFlow_SendEmail] SndMail
+Where actWF.ModuleID=@ModuleID
+And actWF.WorkFlowID=SndMail.WorkFlowID
+        order by SortOrder
+ 
+GO
+ 
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+
+ALTER procedure {databaseOwner}[{objectQualifier}DCC_EF_GetWorkFlowNameByID]
+@WorkFlowID int,
+@ModuleID int
+AS
+
+select B.WorkFlowName ,A.Culture, A.EmailSubject,A.EmailTemplate,A.SendType,A.SendToList,A.FromEmailID,A.PreCondition,A.AppointmentXML,B.[Disabled]
+from {databaseOwner}[{objectQualifier}DCC_EF_WorkFlow_SendEmail] A,{databaseOwner}[{objectQualifier}DCC_EF_ActiveWorkFlows] B
+where A.WorkFlowID=B.WorkFlowID 
+AND A.WorkFlowID=@WorkFlowID
+AND B.ModuleID=@ModuleID
+
+GO
+
+
+ALTER TABLE {databaseOwner}[{objectQualifier}DCC_EF_WorkFlow_SQLPost]
+ADD Active bit NULL
+
+GO
+
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+
+ALTER procedure {databaseOwner}[{objectQualifier}DCC_EF_GetPostDataWorkFlowByCulture]
+@Culture nvarchar(50)='Any',
+@ModuleID int 
+
+as
+select * from {databaseOwner}[{objectQualifier}DCC_EF_WorkFlow_SQLPost]
+
+where Culture=@Culture and ModuleID=@ModuleID and Active=1
+
+GO
+
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+
+ALTER procedure {databaseOwner}[{objectQualifier}DCC_EF_ADDPostDataWorkFlow]
+@Workflowname nvarchar(256),
+@Connectionstring nvarchar(256),
+@Scripttype nvarchar(50),
+@SQLScript nvarchar(max),
+@Culture nvarchar(50),
+@moduleId int,
+@PreCondition nvarchar(512),
+@active bit
+
+as
+insert into {databaseOwner}[{objectQualifier}DCC_EF_WorkFlow_SQLPost]
+(
+WorkFlowName,
+ConnectionString,
+ScriptType,
+SQLScript,
+Culture,
+ModuleID,
+PreCondition,
+Active
+)
+Values
+(
+@Workflowname,
+@Connectionstring,
+@Scripttype,
+@SQLScript,
+@Culture,
+@moduleId,
+@PreCondition,
+@active
+)
+
+GO
+
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+
+ALTER procedure {databaseOwner}[{objectQualifier}DCC_EF_UpdatePostDataWorkFlow]
+@WorkflowId int,
+@Workflowname nvarchar(256),
+@Connectionstring nvarchar(256),
+@Scripttype nvarchar(50),
+@SQLScript nvarchar(max),
+@Culture nvarchar(50),
+@ModuleId int,
+@PreCondition nvarchar(512),
+@active bit
+
+as
+update {databaseOwner}[{objectQualifier}DCC_EF_WorkFlow_SQLPost]
+set
+WorkFlowName=@Workflowname,
+ConnectionString=@Connectionstring,
+ScriptType=@Scripttype,
+SQLScript=@SQLScript,
+Culture=@Culture,
+ModuleID=@ModuleId,
+PreCondition=@PreCondition,
+Active=@active
+
+where WorkFlowID=@WorkflowId and ModuleID=@ModuleId
+
+GO
+

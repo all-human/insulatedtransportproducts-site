@@ -1,0 +1,76 @@
+﻿<dotnetnuke type="ResourceFile" version="5.0">
+  <files>
+    <file>
+      <path>Components/Models/Generated/</path>
+      <name>Database.cs</name>
+    </file>
+    <file>
+      <path>Components/Models/Generated/</path>
+      <name>Database.tt</name>
+    </file>
+    <file>
+      <path>Components/Models/Generated/</path>
+      <name>PetaPoco.Core.ttinclude</name>
+    </file>
+    <file>
+      <path>Components/Models/Generated/</path>
+      <name>PetaPoco.Generator.ttinclude</name>
+    </file>
+    <file>
+      <path>Scripts/</path>
+      <name>application.js</name>
+    </file>
+    <file>
+      <path>Razor/</path>
+      <name>MainView.cshtml</name>
+    </file>
+    <file>
+      <path>Css/</path>
+      <name>application.css</name>
+    </file>
+    <file>
+      <path>App_LocalResources/</path>
+      <name>ExampleView.ascx.resx</name>
+    </file>
+    <file>
+      <path>App_LocalResources/</path>
+      <name>MainView.ascx.resx</name>
+    </file>
+    <file>
+      <path>App_LocalResources/</path>
+      <name>Settings.ascx.resx</name>
+    </file>
+    <file>
+      <path>App_LocalResources/</path>
+      <name>SharedResources.resx</name>
+    </file>
+    <file>
+      <path>Images/</path>
+      <name>foremost-media-logo.jpg</name>
+    </file>
+    <file>
+      <path />
+      <name>CookiesTheme.ascx</name>
+    </file>
+    <file>
+      <path />
+      <name>Dispatch.ascx</name>
+    </file>
+    <file>
+      <path />
+      <name>ExampleAdminView.ascx</name>
+    </file>
+    <file>
+      <path />
+      <name>ExampleView.ascx</name>
+    </file>
+    <file>
+      <path />
+      <name>Settings.ascx</name>
+    </file>
+    <file>
+      <path />
+      <name>web.config</name>
+    </file>
+  </files>
+</dotnetnuke>

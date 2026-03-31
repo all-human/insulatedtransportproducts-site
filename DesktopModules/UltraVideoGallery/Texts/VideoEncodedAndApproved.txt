@@ -1,0 +1,2 @@
+Your video on [PORTALNAME] is encoded
+<p>Your video, [VIDEOTITLE], on [PORTALNAME] is encoded, it is now public available to all site visitors.</p>

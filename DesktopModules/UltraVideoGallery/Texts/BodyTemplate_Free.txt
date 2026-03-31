@@ -1,0 +1,16 @@
+<a href="[LINK]" class="listitem" style="height:[SCREENSHOTHEIGHT]px;">
+	<span class="imgntime" style="width:[SCREENSHOTWIDTH]px;">
+		<img src="[SCREENSHOT]" border="0" alt="Screenshot" onclick="window.location='[LINK]';" />
+		[LENGTH]
+	</span>
+
+	<div class="texts">
+		<span class="lkndslk"><span class='likes'>[LIKES]</span></span>
+		<span class="title hl">[VIDEOTITLE]</span>
+	
+		<span class="desc">[DESCRIPTION:100]</span>
+		<span class="meta">
+			by <font class="hl">[AUTHOR]</font> | [VIEWS] views | [CREATEDAGO]
+		</span>
+	</div>
+</a>

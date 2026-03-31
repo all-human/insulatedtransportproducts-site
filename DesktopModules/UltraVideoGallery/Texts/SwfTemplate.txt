@@ -1,0 +1,1 @@
+<object width="[MEDIAWIDTH]" height="[MEDIAHEIGHT]"><param name="movie" value="[MEDIAURL]"></param><param name="allowFullScreen" value="true"></param><param name="allowscriptaccess" value="always"></param><embed src="[MEDIAURL]" type="application/x-shockwave-flash" allowscriptaccess="always" allowfullscreen="true" width="[MEDIAWIDTH]" height="[MEDIAHEIGHT]"></embed></object>

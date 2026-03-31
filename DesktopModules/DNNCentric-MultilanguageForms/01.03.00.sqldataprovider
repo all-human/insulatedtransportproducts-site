@@ -1,0 +1,36 @@
+﻿SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+
+ALTER procedure {databaseOwner}[{objectQualifier}DCC_EF_GetAllControlList] 
+@CurrentCulture nvarchar(15),
+@DefaultCulture nvarchar(15),
+@ModuleID int
+AS
+Select 
+M.Culture,
+M.FieldName,
+M.ControlType,
+M.Culture_Value,
+C.CategoryName
+FROM
+(select (case when B.CulTure_Value is null then a.culture else b.culture end) Culture,A.FieldName,A.ControlType, isnull(B.CulTure_Value,A.CulTure_Value) CulTure_Value,A.CategoryID,A.SortOrder
+from
+(select cul.Culture,ef.FieldID, ef.FieldName,ef.ControlType,cul.Culture_Value,ef.CategoryID,ef.SortOrder
+from {databaseOwner}[{objectQualifier}DCC_EF_EmailForm] ef,{databaseOwner}[{objectQualifier}DCC_EF_EmailFormCulture] cul 
+where ef.FieldID=cul.FieldID and cul.Culture=@DefaultCulture AND ef.ModuleID=@ModuleID) 
+AS A left Outer join
+(select  cul.Culture,ef.FieldID,ef.FieldName, ef.ControlType,cul.Culture_Value,ef.CategoryID,ef.SortOrder
+from {databaseOwner}[{objectQualifier}DCC_EF_EmailForm] ef,{databaseOwner}[{objectQualifier}DCC_EF_EmailFormCulture] cul 
+where ef.FieldID=cul.FieldID and cul.Culture=@CurrentCulture AND ef.ModuleID=@ModuleID) AS B
+ON A.FieldID=B.FieldID) 
+
+AS M,
+
+(select * from {databaseOwner}[{objectQualifier}DCC_EF_GetCategoryList](@DefaultCulture,@CurrentCulture,@ModuleID)) 
+
+AS C 
+
+where M.CategoryID=C.CategoryID
+order by C.SortOrder,M.SortOrder

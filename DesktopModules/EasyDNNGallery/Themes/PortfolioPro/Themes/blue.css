@@ -1,0 +1,28 @@
+/*  ---------------------------------------------------------------
+    general style
+    --------------------------------------------------------------- */
+
+/* apply a natural box layout model to all elements  - http://www.paulirish.com/2012/box-sizing-border-box-ftw/*/
+
+
+
+/*  END - general style */
+
+
+/* style for Cube Portfolio wrapper*/
+.wrapper {
+    width: 96%;
+    max-width: 1170px;
+    margin: 0 auto;
+}
+.wrapper *, .wrapper *:before, .wrapper *:after {
+    -webkit-box-sizing: border-box;
+       -moz-box-sizing: border-box;
+            box-sizing: border-box;
+ }
+
+.wrapper *:focus {
+    outline: 0;
+}
+
+.wrapper ::-moz-focus-inner { padding:0; border:0 }  /* ! removes focus line */

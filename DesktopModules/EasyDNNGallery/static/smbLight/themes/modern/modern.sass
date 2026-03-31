@@ -1,0 +1,540 @@
+@import url(http://fonts.googleapis.com/css?family=Roboto+Condensed&subset=latin,cyrillic-ext,latin-ext,cyrillic)
+
+body.smbLightFixed
+	overflow: hidden
+
+.smbLightOverlayWrapper.modern
+	display: block
+	position: fixed
+	max-height: none
+	max-width: none
+	height: auto
+	width: auto
+	top: 0
+	right: 0
+	bottom: 0
+	left: 0
+	border: 0
+	margin: 0
+	padding: 0
+	background: rgba(0, 0, 0, .7)
+	opacity: 0
+	z-index: 99999
+
+	> div
+		display: block
+		position: absolute
+		max-height: none
+		max-width: none
+		height: auto
+		width: auto
+		top: 0
+		right: 0
+		bottom: 0
+		left: 0
+		border: 0
+		margin: 0
+		padding: 0
+		background: none
+		opacity: 1
+
+	.socialButtonsWrapper
+		position: absolute
+		display: none
+		top: auto
+		left: auto
+		right: 0
+		bottom: 0
+		margin: 0
+		padding: 10px 0 3px 10px
+		border: 0
+		z-index: 1
+		background: rgba(0, 0, 0, .8)
+		border-radius: 4px 0 0 0
+
+		> div
+			display: block
+			margin: 0 0 1px
+			padding: 0
+			border: 0
+			height: 25px
+			width: 100px
+
+		&.show
+			display: block
+
+	.mainWrapper
+		display: block
+		background: #2F2F2F
+		border: 6px solid #fff
+		border-radius: 8px
+		margin: 52px
+		position: absolute
+		top: 0
+		bottom: auto
+		left: 0
+		right: auto
+		box-shadow: 0 0 18px rgba(0, 0, 0, .7)
+		height: 50px
+		width: 50px
+
+		.itemContentWrapper
+			display: block
+			background: transparent
+			border: 0
+			margin: 0
+			padding: 0
+			overflow: hidden
+			height: 100%
+			width: 100%
+			position: relative
+
+			> div
+				display: block
+				background: transparent
+				border: 0
+				margin: 0
+				padding: 0
+				overflow: hidden
+				height: 100%
+				width: 100%
+				position: absolute
+				top: 0
+				left: 100%
+				bottom: auto
+				right: auto
+
+				&.activeElement
+					left: 0
+
+				&.audioVideo
+
+					iframe
+						display: block
+						width: 100%
+						height: 100%
+						margin: 0
+						padding: 0
+						border: 0
+
+				&.images
+
+					img,
+					p
+						display: block
+						border: 0
+						padding: 0
+						margin: 0
+						height: auto
+						max-height: none
+						width: auto
+						max-width: none
+						position: absolute
+						top: 0
+						left: 100%
+						right: auto
+						bottom: auto
+
+					img
+
+						&.activeElement
+							left: 0
+							height: 100%
+							width: 100%
+
+					p
+						text-align: center
+						font: 16px/20px Arial, sans-serif
+						top: 50%
+						margin: -10px 0 0
+						padding: 0 30px
+						height: auto
+						color: #fff
+						box-sizing: border-box
+						-webkit-box-sizing: border-box
+						-moz-box-sizing: border-box
+						height: 100%
+						width: 100%
+
+					&.imageNotLoaded
+
+						> p
+							left: 0
+
+
+		.loadingOverlay
+			display: block
+			position: absolute
+			top: 0
+			left: 0
+			right: 0
+			bottom: 0
+			background: url(images/loader.gif) 500% 0 #2F2F2F no-repeat
+			z-index: 1
+
+			&.inProgress
+				background-position: center center
+
+		.itemTitle
+			display: block
+			font: 18px/1.3 'Roboto Condensed', sans-serif
+			margin: 0 70px 10px 0
+			padding: 0
+			border: 0
+			background: none
+			color: #fff
+			text-shadow: 1px 1px 0 #333
+			position: absolute
+			top: auto
+			bottom: 100%
+			left: 0
+			right: 0
+			opacity: 0
+
+		.navigation,
+		.close,
+		.socialButtonsTrigger
+			display: block
+			margin: 0
+			padding: 0
+			border: 0
+			background: none
+			position: absolute
+			bottom: auto
+			left: auto
+			right: auto
+			cursor: pointer
+
+		.navigation
+			top: 50%
+			width: 34px
+			height: 70px
+			background: #fff
+			margin-top: -35px
+
+			> span
+				display: block
+				position: absolute
+				top: 50%
+				bottom: auto
+				left: 50%
+				right: auto
+				width: 12px
+				height: 20px
+				background: url(images/icons.png) no-repeat -28px 0
+				margin: -10px 0 0 -6px
+				padding: 0
+				border: 0
+
+			&.prev
+				right: 100%
+				margin-right: 6px
+				border-radius: 4px 0 0 4px
+
+				> span
+					background-position: -28px 0
+
+			&.next
+				left: 100%
+				margin-left: 6px
+				border-radius: 0 4px 4px 0
+
+				> span
+					background-position: -28px -20px
+
+			&:hover
+
+				&.prev > span
+					background-position: -40px 0
+
+				&.next > span
+					background-position: -40px -20px
+
+		.close
+			top: auto
+			bottom: 100%
+			right: 20px
+			width: 42px
+			height: 31px
+			background: #fff
+			border-radius: 4px 4px 0 0
+			margin: 0 0 6px
+
+			> span
+				display: block
+				position: absolute
+				top: 50%
+				bottom: auto
+				left: 50%
+				right: auto
+				width: 14px
+				height: 15px
+				background: url(images/icons.png) no-repeat 0 0
+				margin: -7px 0 0 -7px
+				padding: 0
+				border: 0
+
+			&:hover
+				background: #ce0000
+
+				> span
+					background-position: -14px 0
+
+		.socialButtonsTrigger
+			top: 100%
+			width: 40px
+			height: 31px
+			right: 20px
+			background: #fff
+			border-radius: 0 0 4px 4px
+			margin: 6px 0 0
+
+			> span
+				display: block
+				position: absolute
+				top: 50%
+				bottom: auto
+				left: 50%
+				right: auto
+				width: 13px
+				height: 15px
+				background: url(images/icons.png) no-repeat 0 -15px
+				margin: -7px 0 0 -8px
+				padding: 0
+				border: 0
+
+			&:hover
+
+				> span
+					background-position: -13px -15px
+
+		&.audioItem
+
+			.navigation
+				height: 30px
+				margin-top: -15px
+
+	.mobileControls,
+	.mobileControls > div
+		display: block
+		margin: 0
+		padding: 0
+		border: 0
+		position: absolute
+		top: auto
+		bottom: 0
+		left: 0
+		right: auto
+		width: 100%
+		height: 40px
+		background: #000
+
+	.mobileControls
+		bottom: 0
+
+		> div
+
+			> span:hover
+				background: #333
+
+			.socialButtonsTrigger
+				display: block
+				margin: 0 0 0 -120px
+				padding: 0
+				border: 0
+				position: absolute
+				bottom: auto
+				left: 50%
+				right: auto
+				top: auto
+				cursor: pointer
+				width: 30px
+				height: 40px
+				background: none
+				border-radius: 0
+
+				> span
+					display: block
+					margin: 0
+					padding: 0
+					border: 0
+					position: absolute
+					bottom: auto
+					left: 5px
+					right: auto
+					top: 8px
+					cursor: pointer
+					width: 19px
+					height: 24px
+					background: url(images/mobileIcons.png) no-repeat 0 -23px
+					border-radius: 0
+
+				&.show
+					background-position: -64px -38px
+
+			.socialButtonsWrapper
+				padding: 8px 8px 0
+				border-radius: 0
+				right: auto
+				left: 50%
+				margin: 0 0 0 -160px
+				bottom: 40px
+
+			.fullscreenTrigger
+				display: block
+				margin: 0 0 0 -20px
+				padding: 0
+				border: 0
+				position: absolute
+				bottom: auto
+				left: 50%
+				right: auto
+				top: 0
+				cursor: pointer
+				width: 40px
+				height: 40px
+				background: none
+				border-radius: 0
+
+				> span
+					display: block
+					width: 38px
+					height: 24px
+					margin: 0
+					padding: 0
+					border: 0
+					position: absolute
+					top: 8px
+					bottom: auto
+					left: 1px
+					right: auto
+					background: url(images/mobileIcons.png) no-repeat -20px -23px
+
+				&.active
+
+					> span
+						background-position: -59px -23px
+
+			.navigation
+				display: block
+				padding: 0
+				border: 0
+				margin: 0
+				position: absolute
+				bottom: auto
+				left: 50%
+				right: auto
+				top: 0
+				cursor: pointer
+				width: 32px
+				height: 40px
+				background: none
+				border-radius: 0
+
+				> span
+					display: block
+					margin: 0
+					padding: 0
+					border: 0
+					position: absolute
+					bottom: auto
+					left: 10px
+					right: auto
+					top: 9px
+					width: 12px
+					height: 22px
+					background: url(images/mobileIcons.png) no-repeat
+
+				&.prev
+					margin: 0 0 0 -62px
+
+					> span
+						background-position: 0 0
+
+				&.next
+					margin: 0 0 0 30px
+
+					> span
+						background-position: -13px 0
+
+			.close
+				display: block
+				padding: 0
+				border: 0
+				margin: 0 0 0 80px
+				position: absolute
+				bottom: auto
+				left: 50%
+				right: auto
+				top: 0
+				cursor: pointer
+				width: 32px
+				height: 40px
+				background: none
+				border-radius: 0
+
+				> span
+					display: block
+					margin: 0
+					padding: 0
+					border: 0
+					position: absolute
+					bottom: auto
+					left: 5px
+					right: auto
+					top: 9px
+					width: 22px
+					height: 22px
+					background: url(images/mobileIcons.png) no-repeat -26px 0
+
+	&.onMobile
+		top: auto
+		height: 100%
+
+		> div
+			margin: 0 0 40px
+
+			&.mobileControls
+				margin: 0
+
+		.mainWrapper
+			border: 0
+			margin: 0
+
+			.itemTitle
+				font-size: 16px
+				margin: 0
+
+			&.imageItem
+
+				.itemTitle
+					bottom: auto
+					top: 0
+					padding: 8px 10px
+					background: rgba(0, 0, 0, .7)
+
+			&.videoItem
+
+				.itemTitle
+					display: none !important
+
+			&.audioItem
+
+				.itemTitle
+					margin: 0 5px 5px
+
+		&.notFullscreenable
+
+			.mobileControls
+
+				.fullscreenTrigger
+					display: none
+
+	&.initializing
+
+		.mainWrapper
+
+			.navigation,
+			.close,
+			.socialButtonsTrigger
+				display: none

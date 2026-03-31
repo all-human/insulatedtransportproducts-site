@@ -1,0 +1,450 @@
+﻿
+ALTER TABLE {databaseOwner}[{objectQualifier}DCC_EF_WorkFlow_SendEmail]
+  ADD PreCondition nvarchar(512) Null
+  
+ALTER TABLE {databaseOwner}[{objectQualifier}DCC_EF_WorkFlow_SQLPost]
+  ADD PreCondition nvarchar(512) Null
+
+  SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+
+-- {databaseOwner}[{objectQualifier}DCC_EF_GetModuleDataToExport] 483
+ALTER Procedure {databaseOwner}[{objectQualifier}DCC_EF_GetModuleDataToExport]
+@ModuleID int
+as
+
+--- CategoryMaster ---
+
+Select * 
+INTO #Temp0
+From {databaseOwner}[{objectQualifier}DCC_EF_CategoryMaster] as CatMas
+Where ModuleID=@ModuleID
+	if( @@rowcount >0)
+		begin
+		select * from #Temp0
+		end
+	Else
+		begin
+		select '~' NoRecordExists
+		End
+-- need to fetch Culture belonging to ModuleID only ---
+--- CategoryCulture ---
+Select CC.* 
+INTO #Temp1
+From {databaseOwner}[{objectQualifier}DCC_EF_CategoryCulture] CC,{databaseOwner}[{objectQualifier}DCC_EF_CategoryMaster] CM
+Where 
+ CM.ModuleID=@ModuleID
+AND
+CM.CategoryID=CC.CategoryID
+if( @@rowcount >0)
+		begin
+		select * from #Temp1
+		end
+	Else
+		begin
+		select '~' NoRecordExists
+		End
+--- EmailForm ---
+Select * 
+INTO #Temp2
+From {databaseOwner}[{objectQualifier}DCC_EF_EmailForm]
+Where ModuleID=@ModuleID
+	if( @@rowcount >0)
+		begin
+		select * from #Temp2
+		end
+	Else
+		begin
+		select '~' NoRecordExists
+		End
+-- need to fetch Culture belonging to ModuleID only--
+--- EmailFormCulture---
+Select EFC.* 
+INTO #Temp3
+From {databaseOwner}[{objectQualifier}DCC_EF_EmailFormCulture] EFC,{databaseOwner}[{objectQualifier}DCC_EF_EmailForm] EFM
+Where 
+ EFM.ModuleID=@ModuleID
+AND
+EFM.FieldID=EFC.FieldID
+	if( @@rowcount >0)
+		begin
+		select * from #Temp3
+		end
+	Else
+		begin
+		select '~' NoRecordExists
+		End
+---- ModuleSettings-------
+Select settingName,settingValue 
+INTO #Temp4
+From {databaseOwner}[{objectQualifier}ModuleSettings]
+Where ModuleID=@ModuleID
+if( @@rowcount >0)
+		begin
+		select * from #Temp4
+		end
+	Else
+		begin
+		select '~' NoRecordExists
+		End
+-----ErrorMsgWithCulture-----
+select * 
+INTO #Temp5
+from {databaseOwner}[{objectQualifier}DCC_EF_ErrorMsgWithCulture]
+Where ModuleID=@ModuleID
+	if( @@rowcount >0)
+		begin
+		select * from #Temp5
+		end
+	Else
+		begin
+		select '~' NoRecordExists
+		End
+----MiscLocalization----
+select * 
+INTO #Temp6
+from  {databaseOwner}[{objectQualifier}DCC_EF_MiscLocalization]
+Where ModuleID=@ModuleID
+if( @@rowcount >0)
+		begin
+		select * from #Temp6
+		end
+	Else
+		begin
+		select '~' NoRecordExists
+		End
+
+----ResponseOnSubmit-----
+
+	select * 
+	INTO #Temp7
+	from {databaseOwner}[{objectQualifier}DCC_EF_ResponseOnSubmit]
+	Where ModuleID=@ModuleID
+	if( @@rowcount >0)
+		begin
+		select * from #Temp7
+		end
+	Else
+		begin
+		select '~' as NoRecordExists
+		End
+
+-----ActiveWorkFlows & WorkFlow_SendEmail-----
+
+	select 
+	WFMas.WorkFlowName,
+	WFMas.WorkFlowTypeID,
+	WFMas.Disabled,
+	WFMas.ModuleID,
+	EmailSubject,
+	EmailTemplate,
+	SendType,
+	SendToList,
+	Culture,
+	FromEmailID
+    PreCondition
+	INTO #Temp
+	from {databaseOwner}[{objectQualifier}DCC_EF_WorkFlow_SendEmail] WFCul,{databaseOwner}[{objectQualifier}DCC_EF_ActiveWorkFlows] WFMas
+	Where 
+	 WFMas.ModuleID=@ModuleID
+	AND
+	WFMas.WorkFlowID=WFCul.WorkFlowID
+
+	if( @@rowcount >0)
+		begin
+		select * from #Temp
+		end
+	Else
+		begin
+		select '~' as NoRecordExists
+		End
+
+----Post Data WorkFlow-----
+
+	select * 
+	INTO #Temp9
+	from {databaseOwner}[{objectQualifier}DCC_EF_WorkFlow_SQLPost]
+	Where ModuleID=@ModuleID
+	if( @@rowcount >0)
+		begin
+		select * from #Temp9
+		end
+	Else
+		begin
+		select '~' as NoRecordExists
+		End
+GO
+
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+
+alter procedure {databaseOwner}[{objectQualifier}DCC_EF_GetSendEmailToWorkFlowByTypes]
+@Culture nvarchar(50),
+@ModuleID int
+as
+SELECT    A.SendType, A.SendToList,A.EmailSubject ,A.EmailTemplate,A.FromEmailID,B.WorkFlowName,B.WorkFlowID,A.PreCondition
+FROM         {databaseOwner}[{objectQualifier}DCC_EF_WorkFlow_SendEmail] AS A INNER JOIN
+                      {databaseOwner}[{objectQualifier}DCC_EF_ActiveWorkFlows] AS B 
+ON A.WorkFlowID = B.WorkFlowID
+where B.WorkFlowTypeID = 1 
+And B.Disabled=0
+AND A.Culture=@Culture
+AND B.ModuleID=@ModuleID
+
+GO
+
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+
+alter procedure {databaseOwner}[{objectQualifier}DCC_EF_InsertEmailWorkFlow]
+@WorkFlowName nvarchar(1000),
+@WorkFlowTypeID int,
+@Disabled bit,
+@ModuleID int,
+@EmailSubject nvarchar(MAX),
+@EmailTemplate nvarchar(MAX),
+@SendType nvarchar(50),
+@SendToList nvarchar(MAX),
+@Culture nvarchar(50),
+@FromEmailID nvarchar(100),
+@PreCondition nvarchar(512)
+as
+
+declare @SortOrder int
+set @SortOrder=(select isnull( MAX(WorkFlowID),0) from {databaseOwner}[{objectQualifier}DCC_EF_ActiveWorkFlows])
+set @SortOrder=@SortOrder+1
+
+insert into {databaseOwner}[{objectQualifier}DCC_EF_ActiveWorkFlows]
+(
+WorkFlowName,
+WorkFlowTypeID,
+Disabled,
+SortOrder,
+ModuleID
+)
+values
+(
+@WorkFlowName,
+@WorkFlowTypeID,
+@Disabled,
+@SortOrder,
+@ModuleID
+)
+declare @ID int
+set @ID=@@Identity
+
+insert into {databaseOwner}[{objectQualifier}DCC_EF_WorkFlow_SendEmail]
+(
+WorkFlowID,
+EmailSubject,
+EmailTemplate,
+SendType,
+SendToList,
+Culture,
+FromEmailID,
+PreCondition
+)
+values
+(
+@ID,
+@EmailSubject,
+@EmailTemplate,
+@SendType,
+@SendToList,
+@Culture,
+@FromEmailID,
+@PreCondition
+)
+
+select @ID
+
+GO
+
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+
+ALTER procedure {databaseOwner}[{objectQualifier}DCC_EF_UpdateEmailWorkFlow]
+@WorkFlowID int,
+@WorkFlowName nvarchar(1000),
+@WorkFlowTypeID int,
+@Disabled bit,
+@ModuleID int,
+@EmailSubject nvarchar(4000),
+@EmailTemplate nvarchar(MAX),
+@SendType nvarchar(50),
+@SendToList nvarchar(MAX),
+@Culture  nvarchar(50),
+@FromEmailID nvarchar(100),
+@PreCondition nvarchar(512)
+
+as
+
+update 
+	{databaseOwner}[{objectQualifier}DCC_EF_ActiveWorkFlows]
+		set 
+			WorkFlowName=@WorkFlowName,
+			WorkFlowTypeID=@WorkFlowTypeID,
+Disabled=@Disabled,
+ModuleID=@ModuleID
+
+		where
+			WorkFlowID=@WorkFlowID
+
+ update 
+       {databaseOwner}[{objectQualifier}DCC_EF_WorkFlow_SendEmail]
+     set 
+           WorkFlowID=@WorkFlowID,
+           EmailSubject=@EmailSubject,
+           EmailTemplate=@EmailTemplate,
+           SendType=@SendType,
+           SendToList=@SendToList,
+           Culture=@Culture,
+           FromEmailID=@FromEmailID,
+           PreCondition=@PreCondition
+     where
+			WorkFlowID=@WorkFlowID
+
+GO
+
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+
+alter procedure {databaseOwner}[{objectQualifier}DCC_EF_ADDPostDataWorkFlow]
+@Workflowname nvarchar(256),
+@Connectionstring nvarchar(256),
+@Scripttype nvarchar(50),
+@SQLScript nvarchar(256),
+@Culture nvarchar(50),
+@moduleId int,
+@PreCondition nvarchar(512)
+
+as
+insert into {databaseOwner}[{objectQualifier}DCC_EF_WorkFlow_SQLPost]
+(
+WorkFlowName,
+ConnectionString,
+ScriptType,
+SQLScript,
+Culture,
+ModuleID,
+PreCondition
+)
+Values
+(
+@Workflowname,
+@Connectionstring,
+@Scripttype,
+@SQLScript,
+@Culture,
+@moduleId,
+@PreCondition
+)
+
+GO
+
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+
+alter procedure {databaseOwner}[{objectQualifier}DCC_EF_UpdatePostDataWorkFlow]
+@WorkflowId int,
+@Workflowname nvarchar(256),
+@Connectionstring nvarchar(256),
+@Scripttype nvarchar(50),
+@SQLScript nvarchar(256),
+@Culture nvarchar(50),
+@ModuleId int,
+@PreCondition nvarchar(512)
+
+as
+update {databaseOwner}[{objectQualifier}DCC_EF_WorkFlow_SQLPost]
+set
+WorkFlowName=@Workflowname,
+ConnectionString=@Connectionstring,
+ScriptType=@Scripttype,
+SQLScript=@SQLScript,
+Culture=@Culture,
+ModuleID=@ModuleId,
+PreCondition=@PreCondition
+
+where WorkFlowID=@WorkflowId and ModuleID=@ModuleId
+
+GO
+
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+
+alter procedure {databaseOwner}[{objectQualifier}DCC_EF_GetWorkFlowNameByID]
+@WorkFlowID int,
+@ModuleID int
+AS
+
+select B.WorkFlowName ,A.Culture, A.EmailSubject,A.EmailTemplate,A.SendType,A.SendToList,A.FromEmailID,A.PreCondition
+from {databaseOwner}[{objectQualifier}DCC_EF_WorkFlow_SendEmail] A,{databaseOwner}[{objectQualifier}DCC_EF_ActiveWorkFlows] B
+where A.WorkFlowID=B.WorkFlowID 
+AND A.WorkFlowID=@WorkFlowID
+AND B.ModuleID=@ModuleID
+
+GO
+
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+
+-- {databaseOwner}[{objectQualifier}DCC_EF_DeleteOldDataBeforeImport] 483
+
+alter Procedure {databaseOwner}[{objectQualifier}DCC_EF_DeleteOldDataBeforeImport]
+@ModuleID int
+as
+
+-- it will delete data from 
+--{databaseOwner}[{objectQualifier}DCC_EF_CategoryMaster]
+--{databaseOwner}[{objectQualifier}DCC_EF_CategoryCulture]
+--{databaseOwner}[{objectQualifier}DCC_EF_EmailForm]
+--{databaseOwner}[{objectQualifier}DCC_EF_EmailFormCulture]
+delete from {databaseOwner}[{objectQualifier}DCC_EF_CategoryMaster]
+where 
+ModuleID=@ModuleID
+
+--it will delete data from
+--{databaseOwner}[{objectQualifier}DCC_EF_ActiveWorkFlows]
+--{databaseOwner}[{objectQualifier}DCC_EF_WorkFlow_SendEmail]
+delete from {databaseOwner}[{objectQualifier}DCC_EF_ActiveWorkFlows]
+where 
+ModuleID=@ModuleID
+
+--{databaseOwner}[{objectQualifier}DCC_EF_ErrorMsgWithCulture]
+delete from {databaseOwner}[{objectQualifier}DCC_EF_ErrorMsgWithCulture]
+where 
+ModuleID=@ModuleID
+--{databaseOwner}[{objectQualifier}DCC_EF_MiscLocalization]
+delete from {databaseOwner}[{objectQualifier}DCC_EF_MiscLocalization]
+where 
+ModuleID=@ModuleID
+--{databaseOwner}[{objectQualifier}DCC_EF_ResponseOnSubmit]
+delete from {databaseOwner}[{objectQualifier}DCC_EF_ResponseOnSubmit]
+where 
+ModuleID=@ModuleID
+
+--{databaseOwner}[{objectQualifier}DCC_EF_WorkFlow_SQLPost]
+delete from {databaseOwner}[{objectQualifier}DCC_EF_WorkFlow_SQLPost]
+where 
+ModuleID=@ModuleID
+
+GO
+
+

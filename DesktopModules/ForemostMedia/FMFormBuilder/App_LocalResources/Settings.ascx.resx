@@ -1,0 +1,1449 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="lblTemplate.Text" xml:space="preserve">
+    <value>Template</value>
+  </data>
+  <data name="lblTemplate.Help" xml:space="preserve">
+    <value>Allows you to provide a custom template for displaying the items. Use parameters for dynamic substitution ( ie. [CONTENT] [CREATEDDATE] [CREATEDBYUSER] [CREATEDBYUSERNAME] )</value>
+  </data>
+  <data name="ControlTitle_settings.Text" xml:space="preserve">
+    <value>FM Forms Settings</value>
+  </data>
+  <data name="ModuleHelp.Text" xml:space="preserve">
+    <value>About FM Module Settings</value>
+  </data>
+  <data name="HelpJSON.Text" xml:space="preserve">
+    <value>Example JSON element</value>
+  </data>
+  <data name="PasteJSON.Text" xml:space="preserve">
+    <value>Paste your JSON form element here</value>
+  </data>
+  <data name="SendEmails.Text" xml:space="preserve">
+    <value>Email Address Notified on Submission (one per line)</value>
+  </data>
+  <data name="EmailTemplate.Text" xml:space="preserve">
+    <value>Enter the message to be displayed before the form data in the email sent after a form is submitted</value>
+  </data>
+  <data name="EmailSubject.Text" xml:space="preserve">
+    <value>Email Subject</value>
+  </data>
+  <data name="ExternalLibraries.Text" xml:space="preserve">
+    <value>External Libraries</value>
+  </data>
+  <data name="FontAwesome.Text" xml:space="preserve">
+    <value>Font-Awesome</value>
+  </data>
+  <data name="FontAwesomeCdnUrl.Help" xml:space="preserve">
+    <value>The url to the CDN hosting the version of Font-Awesome requried</value>
+  </data>
+  <data name="FontAwesomeCdnUrl.Text" xml:space="preserve">
+    <value>CDN Url</value>
+  </data>
+  <data name="LoadFontAwesome.Help" xml:space="preserve">
+    <value>If the site doesn't use Font-Awesome - check this box</value>
+  </data>
+  <data name="LoadFontAwesome.Text" xml:space="preserve">
+    <value>Load Font-Awesome CSS</value>
+  </data>
+  <data name="LoadTwitterBootstrapJavascript.Help" xml:space="preserve">
+    <value>Check to load the Twitter Bootstrap JS url</value>
+  </data>
+  <data name="LoadTwitterBootstrapJavascript.Text" xml:space="preserve">
+    <value>Load JS</value>
+  </data>
+  <data name="TwitterBootstrap.Text" xml:space="preserve">
+    <value>Twitter Bootstrap</value>
+  </data>
+  <data name="TwitterBootstrapCdnUrl.Help" xml:space="preserve">
+    <value>The url to the CDN version of Twitter Bootstrap</value>
+  </data>
+  <data name="TwitterBootstrapCdnUrl.Text" xml:space="preserve">
+    <value>Twitter Bootstrap Url</value>
+  </data>
+  <data name="TwitterBootstrapJsCdn.Help" xml:space="preserve">
+    <value>The url for the Twitter Bootstrap JS cdn.</value>
+  </data>
+  <data name="TwitterBootstrapJsCdn.Text" xml:space="preserve">
+    <value>JS CDN URL</value>
+  </data>
+  <data name="UseTwitterBootstrapCdn.Help" xml:space="preserve">
+    <value>Check the box if the site skin doesn't already include Twitter Bootstrap CSS</value>
+  </data>
+  <data name="UseTwitterBootstrapCdn.Text" xml:space="preserve">
+    <value>Load CSS</value>
+  </data>
+  <data name="AdminPageSize.Text" xml:space="preserve">
+    <value>Administration Grid Page Size</value>
+  </data>
+  <data name="FormSettings.Text" xml:space="preserve">
+    <value>Form Settings</value>
+  </data>
+  <data name="SubmittedMessage.Default" xml:space="preserve">
+    <value>Thank you for contacting us.  We will be in touch shortly.</value>
+  </data>
+  <data name="SubmittedMessage.Help" xml:space="preserve">
+    <value>Enter a message to be displayed to the user after they submit the form.</value>
+  </data>
+  <data name="SubmittedMessage.Text" xml:space="preserve">
+    <value>Submitted Message</value>
+  </data>
+  <data name="Recaptcha.Text" xml:space="preserve">
+    <value>Recaptcha Keys</value>
+  </data>
+  <data name="RecaptchaSecretKey.Text" xml:space="preserve">
+    <value>Recaptcha Secret Key</value>
+  </data>
+  <data name="RecaptchaSiteKey.Text" xml:space="preserve">
+    <value>Recaptcha Site Key</value>
+  </data>
+  <data name="SendEmailToUser.Help" xml:space="preserve">
+    <value>Check this box to send a copy of the notification email to the user who filled out the form.</value>
+  </data>
+  <data name="SendEmailToUser.Text" xml:space="preserve">
+    <value>Send Email To User</value>
+  </data>
+  <data name="UseRecaptcha.Help" xml:space="preserve">
+    <value>Enables the Recaptcha field.  A valid site key and secret key must be supplied for Recaptcha to function properly.</value>
+  </data>
+  <data name="UseRecaptcha.Text" xml:space="preserve">
+    <value>Use Recaptcha</value>
+  </data>
+  <data name="FromEmail.Help" xml:space="preserve">
+    <value>Enter the from email address to be used when sending email notifications via this form.  Leave blank to use the default Portal Admin email address.</value>
+  </data>
+  <data name="FromEmail.Text" xml:space="preserve">
+    <value>Email From Address</value>
+  </data>
+  <data name="SalesForce.Text" xml:space="preserve">
+    <value>Salesforce Setup</value>
+  </data>
+  <data name="SalesForceCampaignID.Help" xml:space="preserve">
+    <value>Optional field that allows for setting the campaign id this lead should be assigned to</value>
+  </data>
+  <data name="SalesForceCampaignID.Text" xml:space="preserve">
+    <value>Salesforce Campain ID</value>
+  </data>
+  <data name="SalesForceDebugMode.Email.Help" xml:space="preserve">
+    <value>The email address that should receive debug messages</value>
+  </data>
+  <data name="SalesForceDebugMode.Email" xml:space="preserve">
+    <value>Debug Mode Email Address</value>
+  </data>
+  <data name="SalesForceDebugMode.Text" xml:space="preserve">
+    <value>Turn On Debugging</value>
+  </data>
+  <data name="SalesForceLeadSource.Default" xml:space="preserve">
+    <value>Web Site</value>
+  </data>
+  <data name="SalesForceLeadSource.Help" xml:space="preserve">
+    <value>Text value to represent the lead source.</value>
+  </data>
+  <data name="SalesForceLeadSource.Text" xml:space="preserve">
+    <value>Salesforce Lead Source</value>
+  </data>
+  <data name="SalesForceOID.Help" xml:space="preserve">
+    <value>The organization ID provided by Salesforce</value>
+  </data>
+  <data name="SalesForceOID.Text" xml:space="preserve">
+    <value>Salesforce Organization ID (oid)</value>
+  </data>
+  <data name="SalesForceWebLeadUrl.Default" xml:space="preserve">
+    <value>http://webto.salesforce.com/servlet/servlet.WebToLead?encoding=UTF-8</value>
+  </data>
+  <data name="SalesForceWebLeadUrl.Help" xml:space="preserve">
+    <value>Url to submit to...provided by Salesforce</value>
+  </data>
+  <data name="SalesForceWebLeadUrl.Text" xml:space="preserve">
+    <value>Salesforce Web to Lead URL</value>
+  </data>
+  <data name="UseSalesForce.Help" xml:space="preserve">
+    <value>If enabled, this will cause the form data to be submitted as a SalesForce.com lead</value>
+  </data>
+  <data name="UseSalesForce.Text" xml:space="preserve">
+    <value>Submit Form To SalesForce</value>
+  </data>
+  <data name="SalesForceCustomParamName.Help" xml:space="preserve">
+    <value>Use this setting to set an arbitrary field name that will be passed to Sales Force</value>
+  </data>
+  <data name="SalesForceCustomParamName.Text" xml:space="preserve">
+    <value>Custom Parameter Name</value>
+  </data>
+  <data name="SalesForceCustomParamValue.Help" xml:space="preserve">
+    <value>The custom parameter value.  Requires the Custom Parameter Name field to be populated also.</value>
+  </data>
+  <data name="SalesForceCustomParamValue.Text" xml:space="preserve">
+    <value>Custom Parameter Value</value>
+  </data>
+  <data name="KnockoutJs.Text" xml:space="preserve">
+    <value>Knockout JS</value>
+  </data>
+  <data name="KnockoutJsCdnUrl.Help" xml:space="preserve">
+    <value>Enter the URL without the "http:" or "https:"</value>
+  </data>
+  <data name="KnockoutJsCdnUrl.Text" xml:space="preserve">
+    <value>Knockout JS CDN URL</value>
+  </data>
+  <data name="UseKnockoutJsCdn.Help" xml:space="preserve">
+    <value>This module requires at least Knockout JS 3.0.0  This setting should only be enabled if the currently installed version DNN does not include at least Knockout JS 3.0.0</value>
+  </data>
+  <data name="UseKnockoutJsCdn.Text" xml:space="preserve">
+    <value>Load Knockout From CDN</value>
+  </data>
+  <data name="IncludeUserInfo.Help" xml:space="preserve">
+    <value>Enable this setting to include basic user information values on the page. These can be used to autopopulate fields on the form for logged in users.  Fields include: First Name, Last Name, Company, Email, Telelphone, Street Address, City, State, Zip, Country</value>
+  </data>
+  <data name="IncludeUserInfo.Text" xml:space="preserve">
+    <value>Include Basic User Info Object on Page</value>
+  </data>
+  <data name="AfterSubmittedAction.Help" xml:space="preserve">
+    <value>Select whether to show a message after submission or redirect to a different page.</value>
+  </data>
+  <data name="AfterSubmittedAction.Text" xml:space="preserve">
+    <value>After Submit Action</value>
+  </data>
+  <data name="RedirectURL.Help" xml:space="preserve">
+    <value>Enter the path to the page the form should redirect to after submission (this will only be used if the "After Submit Action"is set to "Redirect".</value>
+  </data>
+  <data name="RedirectURL.Text" xml:space="preserve">
+    <value>Redirect Path</value>
+  </data>
+  <data name="EmailFormatStyle.Help" xml:space="preserve">
+    <value>Choose the way the fields should be displayed in the email.  "Standard" will render each field (label and value) on a single line.  "Table"will render field labels and values in a simple table format.</value>
+  </data>
+  <data name="EmailFormatStyle.Text" xml:space="preserve">
+    <value>Email Content Formatting</value>
+  </data>
+  <data name="FileUploadFolder.Help" xml:space="preserve">
+    <value>Select the folder where file uploads should be placed</value>
+  </data>
+  <data name="FileUploadFolder.Text" xml:space="preserve">
+    <value>Select Folder for File Uploads</value>
+  </data>
+  <data name="IgnorePostBackInMainView.Help" xml:space="preserve">
+    <value>Select this option to override the PostBack check during Page_Load of the View.ascx code-behind file.  This is to help ease situations where another module might conflict with this one (e.g., using ASP.NET MultiView controls).</value>
+  </data>
+  <data name="IgnorePostBackInMainView.Text" xml:space="preserve">
+    <value>Ignore the "PostBack return" inside View.ascx.cs</value>
+  </data>
+  <data name="ActOn.Text" xml:space="preserve">
+    <value>ActOn Setup</value>
+  </data>
+  <data name="ao_PostUrl.Text" xml:space="preserve">
+    <value>Form Post Url</value>
+  </data>
+  <data name="UseActOn.Text" xml:space="preserve">
+    <value>Use ActOn</value>
+  </data>
+  <data name="CWTracking.Help" xml:space="preserve">
+    <value>Enables/Disables Connectwise tracking for Foremost Use</value>
+  </data>
+  <data name="CWTracking.Text" xml:space="preserve">
+    <value>Enable Connectwise Tracking</value>
+  </data>
+  <data name="UseRecaptchaInvisible.Help" xml:space="preserve">
+    <value>Requires configuration on key setup to be invisible</value>
+  </data>
+  <data name="UseRecaptchaInvisible.Text" xml:space="preserve">
+    <value>Enable Invisible Recaptcha</value>
+  </data>
+  <data name="RecaptchaLang.Help" xml:space="preserve">
+    <value>2-letter language code (e.g., fr, de, zh)</value>
+  </data>
+  <data name="RecaptchaLang.Text" xml:space="preserve">
+    <value>Recaptcha Language</value>
+  </data>
+  <data name="EmailSubject.Default" xml:space="preserve">
+    <value>New Form Submission</value>
+  </data>
+  <data name="EmailTemplate.Default" xml:space="preserve">
+    <value>&lt;p&gt;A new form entry has been submitted. View the form module page to review current submissions.&lt;/p&gt;</value>
+  </data>
+  <data name="FormData.Default" xml:space="preserve">
+    <value>{
+	"FMForm": {
+		"formID": "SampleForm",
+		"formCssClass": "fm-form-wrapper",
+		"formMessageLocation": "both",
+		"formElements": [{
+				"Name": "FirstName",
+				"Element": "input",
+				"Type": "text",
+				"Placeholder": "First Name",
+				"Label": "First Name",
+				"LabelSeparator": ":",
+				"WrapperCssClass": "col-12 required-field",
+				"FieldCssClass": "form-control"
+			},
+			{
+				"Name": "LastName",
+				"Element": "input",
+				"Type": "text",
+				"Placeholder": "Last Name",
+				"Label": "Last Name",
+				"LabelSeparator": ":",
+				"WrapperCssClass": "col-12 required-field",
+				"FieldCssClass": "form-control"
+			},
+			{
+				"Name": "Email",
+				"Element": "input",
+				"Type": "text",
+				"Placeholder": "Email",
+				"Label": "Email",
+				"LabelSeparator": ":",
+				"WrapperCssClass": "col-12 required-field",
+				"FieldCssClass": "form-control"
+			},
+			{
+				"Name": "Phone",
+				"Element": "input",
+				"Type": "text",
+				"Placeholder": "Phone",
+				"Label": "Phone Number",
+				"LabelSeparator": ":",
+				"WrapperCssClass": "col-12 required-field",
+				"FieldCssClass": "form-control"
+			},
+			{
+				"Name": "Country",
+				"Element": "select",
+				"Type": "",
+				"Label": "Country",
+				"LabelSeparator": ":",
+				"WrapperCssClass": "col-12 country-selection required-field",
+				"FieldCssClass": "form-control",
+				"Options": [{
+						"text": "Afghanistan"
+					},
+					{
+						"text": "Albania"
+					},
+					{
+						"text": "Algeria"
+					},
+					{
+						"text": "American Samoa"
+					},
+					{
+						"text": "Andorra"
+					},
+					{
+						"text": "Angola"
+					},
+					{
+						"text": "Anguilla"
+					},
+					{
+						"text": "Antarctica"
+					},
+					{
+						"text": "Antigua and Barbuda"
+					},
+					{
+						"text": "Argentina"
+					},
+					{
+						"text": "Armenia"
+					},
+					{
+						"text": "Aruba"
+					},
+					{
+						"text": "Australia"
+					},
+					{
+						"text": "Austria"
+					},
+					{
+						"text": "Azerbaijan"
+					},
+					{
+						"text": "Bahamas"
+					},
+					{
+						"text": "Bahrain"
+					},
+					{
+						"text": "Bangladesh"
+					},
+					{
+						"text": "Barbados"
+					},
+					{
+						"text": "Belarus"
+					},
+					{
+						"text": "Belgium"
+					},
+					{
+						"text": "Belize"
+					},
+					{
+						"text": "Benin"
+					},
+					{
+						"text": "Bermuda"
+					},
+					{
+						"text": "Bhutan"
+					},
+					{
+						"text": "Bolivia"
+					},
+					{
+						"text": "Bosnia and Herzegovina"
+					},
+					{
+						"text": "Botswana"
+					},
+					{
+						"text": "Bouvet Island"
+					},
+					{
+						"text": "Brazil"
+					},
+					{
+						"text": "British Indian Ocean Territory"
+					},
+					{
+						"text": "British Virgin Islands"
+					},
+					{
+						"text": "Brunei Darussalam"
+					},
+					{
+						"text": "Bulgaria"
+					},
+					{
+						"text": "Burkina Faso"
+					},
+					{
+						"text": "Burundi"
+					},
+					{
+						"text": "Cambodia"
+					},
+					{
+						"text": "Cameroon"
+					},
+					{
+						"text": "Canada"
+					},
+					{
+						"text": "Cape Verde"
+					},
+					{
+						"text": "Cayman Islands"
+					},
+					{
+						"text": "Central African Republic"
+					},
+					{
+						"text": "Chad"
+					},
+					{
+						"text": "Chile"
+					},
+					{
+						"text": "China"
+					},
+					{
+						"text": "Christmas Island"
+					},
+					{
+						"text": "Cocos"
+					},
+					{
+						"text": "Colombia"
+					},
+					{
+						"text": "Comoros"
+					},
+					{
+						"text": "Congo"
+					},
+					{
+						"text": "Cook Islands"
+					},
+					{
+						"text": "Costa Rica"
+					},
+					{
+						"text": "Croatia"
+					},
+					{
+						"text": "Cuba"
+					},
+					{
+						"text": "Cyprus"
+					},
+					{
+						"text": "Czech Republic"
+					},
+					{
+						"text": "Denmark"
+					},
+					{
+						"text": "Djibouti"
+					},
+					{
+						"text": "Dominica"
+					},
+					{
+						"text": "Dominican Republic"
+					},
+					{
+						"text": "East Timor"
+					},
+					{
+						"text": "Ecuador"
+					},
+					{
+						"text": "Egypt"
+					},
+					{
+						"text": "El Salvador"
+					},
+					{
+						"text": "Equatorial Guinea"
+					},
+					{
+						"text": "Eritrea"
+					},
+					{
+						"text": "Estonia"
+					},
+					{
+						"text": "Ethiopia"
+					},
+					{
+						"text": "Falkland Islands"
+					},
+					{
+						"text": "Faroe Islands"
+					},
+					{
+						"text": "Fiji"
+					},
+					{
+						"text": "Finland"
+					},
+					{
+						"text": "France"
+					},
+					{
+						"text": "French Guiana"
+					},
+					{
+						"text": "French Polynesia"
+					},
+					{
+						"text": "French Southern Territories"
+					},
+					{
+						"text": "Gabon"
+					},
+					{
+						"text": "Gambia"
+					},
+					{
+						"text": "Georgia"
+					},
+					{
+						"text": "Germany"
+					},
+					{
+						"text": "Ghana"
+					},
+					{
+						"text": "Gibraltar"
+					},
+					{
+						"text": "Greece"
+					},
+					{
+						"text": "Greenland"
+					},
+					{
+						"text": "Grenada"
+					},
+					{
+						"text": "Guadeloupe"
+					},
+					{
+						"text": "Guam"
+					},
+					{
+						"text": "Guatemala"
+					},
+					{
+						"text": "Guinea"
+					},
+					{
+						"text": "Guinea-Bissau"
+					},
+					{
+						"text": "Guyana"
+					},
+					{
+						"text": "Haiti"
+					},
+					{
+						"text": "Heard and McDonald Islands"
+					},
+					{
+						"text": "Honduras"
+					},
+					{
+						"text": "Hong Kong"
+					},
+					{
+						"text": "Hungary"
+					},
+					{
+						"text": "Iceland"
+					},
+					{
+						"text": "India"
+					},
+					{
+						"text": "Indonesia"
+					},
+					{
+						"text": "Iran"
+					},
+					{
+						"text": "Iraq"
+					},
+					{
+						"text": "Ireland"
+					},
+					{
+						"text": "Israel"
+					},
+					{
+						"text": "Italy"
+					},
+					{
+						"text": "Ivory Coast"
+					},
+					{
+						"text": "Jamaica"
+					},
+					{
+						"text": "Japan"
+					},
+					{
+						"text": "Jordan"
+					},
+					{
+						"text": "Kazakhstan"
+					},
+					{
+						"text": "Kenya"
+					},
+					{
+						"text": "Kiribati"
+					},
+					{
+						"text": "Kuwait"
+					},
+					{
+						"text": "Kyrgyzstan"
+					},
+					{
+						"text": "Laos"
+					},
+					{
+						"text": "Latvia"
+					},
+					{
+						"text": "Lebanon"
+					},
+					{
+						"text": "Lesotho"
+					},
+					{
+						"text": "Liberia"
+					},
+					{
+						"text": "Libya"
+					},
+					{
+						"text": "Liechtenstein"
+					},
+					{
+						"text": "Lithuania"
+					},
+					{
+						"text": "Luxembourg"
+					},
+					{
+						"text": "Macau"
+					},
+					{
+						"text": "Macedonia"
+					},
+					{
+						"text": "Madagascar"
+					},
+					{
+						"text": "Malawi"
+					},
+					{
+						"text": "Malaysia"
+					},
+					{
+						"text": "Maldives"
+					},
+					{
+						"text": "Mali"
+					},
+					{
+						"text": "Malta"
+					},
+					{
+						"text": "Marshall Islands"
+					},
+					{
+						"text": "Martinique"
+					},
+					{
+						"text": "Mauritania"
+					},
+					{
+						"text": "Mauritius"
+					},
+					{
+						"text": "Mayotte"
+					},
+					{
+						"text": "Mexico"
+					},
+					{
+						"text": "Micronesia"
+					},
+					{
+						"text": "Moldova"
+					},
+					{
+						"text": "Monaco"
+					},
+					{
+						"text": "Mongolia"
+					},
+					{
+						"text": "Montserrat"
+					},
+					{
+						"text": "Morocco"
+					},
+					{
+						"text": "Mozambique"
+					},
+					{
+						"text": "Myanmar"
+					},
+					{
+						"text": "Namibia"
+					},
+					{
+						"text": "Nauru"
+					},
+					{
+						"text": "Nepal"
+					},
+					{
+						"text": "Netherlands"
+					},
+					{
+						"text": "Netherlands Antilles"
+					},
+					{
+						"text": "New Caledonia"
+					},
+					{
+						"text": "New Zealand"
+					},
+					{
+						"text": "Nicaragua"
+					},
+					{
+						"text": "Niger"
+					},
+					{
+						"text": "Nigeria"
+					},
+					{
+						"text": "Niue"
+					},
+					{
+						"text": "Norfolk Island"
+					},
+					{
+						"text": "North Korea"
+					},
+					{
+						"text": "Northern Mariana Islands"
+					},
+					{
+						"text": "Norway"
+					},
+					{
+						"text": "Oman"
+					},
+					{
+						"text": "Pakistan"
+					},
+					{
+						"text": "Palau"
+					},
+					{
+						"text": "Panama"
+					},
+					{
+						"text": "Papua New Guinea"
+					},
+					{
+						"text": "Paraguay"
+					},
+					{
+						"text": "Peru"
+					},
+					{
+						"text": "Philippines"
+					},
+					{
+						"text": "Pitcairn"
+					},
+					{
+						"text": "Poland"
+					},
+					{
+						"text": "Portugal"
+					},
+					{
+						"text": "Puerto Rico"
+					},
+					{
+						"text": "Qatar"
+					},
+					{
+						"text": "Reunion"
+					},
+					{
+						"text": "Romania"
+					},
+					{
+						"text": "Russian Federation"
+					},
+					{
+						"text": "Rwanda"
+					},
+					{
+						"text": "S. Georgia and S. Sandwich Islands"
+					},
+					{
+						"text": "Saint Kitts and Nevis"
+					},
+					{
+						"text": "Saint Lucia"
+					},
+					{
+						"text": "Saint Vincent and The Grenadines"
+					},
+					{
+						"text": "Samoa"
+					},
+					{
+						"text": "San Marino"
+					},
+					{
+						"text": "Sao Tome and Principe"
+					},
+					{
+						"text": "Saudi Arabia"
+					},
+					{
+						"text": "Senegal"
+					},
+					{
+						"text": "Seychelles"
+					},
+					{
+						"text": "Sierra Leone"
+					},
+					{
+						"text": "Singapore"
+					},
+					{
+						"text": "Slovakia"
+					},
+					{
+						"text": "Slovenia"
+					},
+					{
+						"text": "Solomon Islands"
+					},
+					{
+						"text": "Somalia"
+					},
+					{
+						"text": "South Africa"
+					},
+					{
+						"text": "South Korea"
+					},
+					{
+						"text": "Soviet Union"
+					},
+					{
+						"text": "Spain"
+					},
+					{
+						"text": "Sri Lanka"
+					},
+					{
+						"text": "St. Helena"
+					},
+					{
+						"text": "St. Pierre and Miquelon"
+					},
+					{
+						"text": "Sudan"
+					},
+					{
+						"text": "Suriname"
+					},
+					{
+						"text": "Svalbard and Jan Mayen Islands"
+					},
+					{
+						"text": "Swaziland"
+					},
+					{
+						"text": "Sweden"
+					},
+					{
+						"text": "Switzerland"
+					},
+					{
+						"text": "Syria"
+					},
+					{
+						"text": "Taiwan"
+					},
+					{
+						"text": "Tajikistan"
+					},
+					{
+						"text": "Tanzania"
+					},
+					{
+						"text": "Thailand"
+					},
+					{
+						"text": "Togo"
+					},
+					{
+						"text": "Tokelau"
+					},
+					{
+						"text": "Tonga"
+					},
+					{
+						"text": "Trinidad and Tobago"
+					},
+					{
+						"text": "Tunisia"
+					},
+					{
+						"text": "Turkey"
+					},
+					{
+						"text": "Turkmenistan"
+					},
+					{
+						"text": "Turks and Caicos Islands"
+					},
+					{
+						"text": "Tuvalu"
+					},
+					{
+						"text": "Uganda"
+					},
+					{
+						"text": "Ukraine"
+					},
+					{
+						"text": "United Arab Emirates"
+					},
+					{
+						"text": "United Kingdom"
+					},
+					{
+						"text": "United States"
+					},
+					{
+						"text": "Uruguay"
+					},
+					{
+						"text": "US Minor Outlying Islands"
+					},
+					{
+						"text": "US Virgin Islands"
+					},
+					{
+						"text": "Uzbekistan"
+					},
+					{
+						"text": "Vanuatu"
+					},
+					{
+						"text": "Venezuela"
+					},
+					{
+						"text": "Viet Nam"
+					},
+					{
+						"text": "Wallis and Futuna Islands"
+					},
+					{
+						"text": "Western Sahara"
+					},
+					{
+						"text": "Yemen"
+					},
+					{
+						"text": "Yugoslavia"
+					},
+					{
+						"text": "Zaire"
+					},
+					{
+						"text": "Zambia"
+					},
+					{
+						"text": "Zimbabwe"
+					}
+				]
+			},
+			{
+				"Name": "Address",
+				"Element": "input",
+				"Type": "text",
+				"Placeholder": "Street Address",
+				"Label": "Street",
+				"LabelSeparator": ":",
+				"WrapperCssClass": "col-12 required-field",
+				"FieldCssClass": "form-control"
+			},
+			{
+				"Name": "City",
+				"Element": "input",
+				"Type": "text",
+				"Placeholder": "City",
+				"Label": "City",
+				"LabelSeparator": ":",
+				"WrapperCssClass": "col-12 required-field",
+				"FieldCssClass": "form-control"
+			},
+			{
+				"Name": "State",
+				"Element": "select",
+				"Label": "State",
+				"LabelSeparator": ":",
+				"Type": "",
+				"WrapperCssClass": "col-12 required-field",
+				"FieldCssClass": "form-control",
+				"Options": [{
+						"text": "AL"
+					},
+					{
+						"text": "AK"
+					},
+					{
+						"text": "AZ"
+					},
+					{
+						"text": "AR"
+					},
+					{
+						"text": "CA"
+					},
+					{
+						"text": "CO"
+					},
+					{
+						"text": "CT"
+					},
+					{
+						"text": "DE"
+					},
+					{
+						"text": "FL"
+					},
+					{
+						"text": "GA"
+					},
+					{
+						"text": "HI"
+					},
+					{
+						"text": "ID"
+					},
+					{
+						"text": "IL"
+					},
+					{
+						"text": "IN"
+					},
+					{
+						"text": "IA"
+					},
+					{
+						"text": "KS"
+					},
+					{
+						"text": "KY"
+					},
+					{
+						"text": "LA"
+					},
+					{
+						"text": "ME"
+					},
+					{
+						"text": "MD"
+					},
+					{
+						"text": "MA"
+					},
+					{
+						"text": "MI"
+					},
+					{
+						"text": "MN"
+					},
+					{
+						"text": "MS"
+					},
+					{
+						"text": "MO"
+					},
+					{
+						"text": "MT"
+					},
+					{
+						"text": "NE"
+					},
+					{
+						"text": "NV"
+					},
+					{
+						"text": "NH"
+					},
+					{
+						"text": "NJ"
+					},
+					{
+						"text": "NM"
+					},
+					{
+						"text": "NY"
+					},
+					{
+						"text": "NC"
+					},
+					{
+						"text": "ND"
+					},
+					{
+						"text": "OH"
+					},
+					{
+						"text": "OK"
+					},
+					{
+						"text": "OR"
+					},
+					{
+						"text": "PA"
+					},
+					{
+						"text": "RI"
+					},
+					{
+						"text": "SC"
+					},
+					{
+						"text": "SD"
+					},
+					{
+						"text": "TN"
+					},
+					{
+						"text": "TX"
+					},
+					{
+						"text": "UT"
+					},
+					{
+						"text": "VT"
+					},
+					{
+						"text": "VA"
+					},
+					{
+						"text": "WA"
+					},
+					{
+						"text": "WV"
+					},
+					{
+						"text": "WI"
+					},
+					{
+						"text": "WY"
+					}
+				]
+			},
+			{
+				"Name": "PostalCode",
+				"Element": "input",
+				"Type": "text",
+				"Placeholder": "Postal Code",
+				"Label": "Postal Code",
+				"LabelSeparator": ":",
+				"WrapperCssClass": "col-12 required-field",
+				"FieldCssClass": "form-control"
+			},
+			{
+				"Name": "Comments",
+				"Element": "textarea",
+				"Placeholder": "Comments",
+				"Label": "Comments",
+				"LabelSeparator": ":",
+				"WrapperCssClass": "col-12",
+				"FieldCssClass": "form-control"
+			},
+			{
+				"Name": "fmRecaptcha",
+				"Element": "recaptcha",
+				"WrapperCssClass": "col-12",
+				"FieldCssClass": "form-control"
+			},
+			{
+				"Name": "Button",
+				"Element": "input",
+				"Type": "submit",
+				"Value": "Submit",
+				"WrapperCssClass": "col-12 pull-right",
+				"FieldCssClass": "form-control form-button",
+				"Validation": {
+					"required": false
+				}
+			}
+		]
+	}
+}</value>
+  </data>
+  <data name="SubmitCallback.Help" xml:space="preserve">
+    <value>Javascript function to call upon form submit in format namespace.object.function. Ex: globalObject.element.myFunction</value>
+  </data>
+  <data name="SubmitCallback.Text" xml:space="preserve">
+    <value>Submit Callback Function</value>
+  </data>
+  <data name="UseKnockoutValidation.Help" xml:space="preserve">
+    <value>Enable this setting if Host Settings &gt;CDN Settings &gt; Use Javascript Libraries CDN is enabled, otherwise form with double verify.</value>
+  </data>
+  <data name="UseKnockoutValidation.Text" xml:space="preserve">
+    <value>Use Local KO Validation</value>
+  </data>
+  <data name="ExternalReplyTo.Help" xml:space="preserve">
+    <value>Defaults to 'Email From Address'.  This is the email used in the ReplyTo field of the email sent to users on form submission if 'Send Email To User' is selected.</value>
+  </data>
+  <data name="ExternalReplyTo.Text" xml:space="preserve">
+    <value>External Reply To Email</value>
+  </data>
+  <data name="InputEmail.Help" xml:space="preserve">
+    <value>Defaults to input with Name(Id) of Email.  Otherwise you can override which input should be considered the email field.</value>
+  </data>
+  <data name="InputEmail.Text" xml:space="preserve">
+    <value>Form Email Name(Id)</value>
+  </data>
+  <data name="InternalReplyTo.Help" xml:space="preserve">
+    <value>Defaults to email input, or above override.  This is the value set in the ReplyTo field of the emails sent to 'Email Address Notified' field.</value>
+  </data>
+  <data name="InternalReplyTo.Text" xml:space="preserve">
+    <value>Internal Reply To Email</value>
+  </data>
+  <data name="FileUploadRoles.Help" xml:space="preserve">
+    <value>File are encrypted and only viewable to selected roles. Changing this will update all folders for this module instance.</value>
+  </data>
+  <data name="FileUploadRoles.Text" xml:space="preserve">
+    <value>Select Roles with File View Permissions</value>
+  </data>
+  <data name="FilesNeedUpgrade.Text" xml:space="preserve">
+    <value>&lt;p&gt;The module has been upgraded to require secure folders for storing file uploads.  If you are seeing this message, then existing files need to be reviewed and upgraded to secure storage where appropriate.  All new uploads will be automatically secured, but this upgrade requires a one-time file upgrade process.  Go into the module settings and select the &lt;strong&gt;Upgrade Upload Folders&lt;/strong&gt; option.  This message will continue to appear until the process has been run.&lt;/p&gt;</value>
+  </data>
+  <data name="UpgradeFiles.Help" xml:space="preserve">
+    <value>Only necessary if warned on form page.  This will review all form folder with file uploads and change their permission from "Standard" to "Secure" to prevent url navigation.</value>
+  </data>
+  <data name="UpgradeFiles.Text" xml:space="preserve">
+    <value>Upgrade Upload Folders</value>
+  </data>
+  <data name="FilesAsAttachments.Help" xml:space="preserve">
+    <value>Determines if files should be passed as attachments in internal notifications emails.  Otherwise it will produce a secure file link.  If notifications emails are sent to people who do not need any authorization, this option should be choosen or file view permissions can be set for all users.</value>
+  </data>
+  <data name="FilesAsAttachments.Text" xml:space="preserve">
+    <value>Send Files as Email Attachments</value>
+  </data>
+  <data name="TrackGoogleUrlCodes.Help" xml:space="preserve">
+    <value>Check the box if you want to enable Site Marketing Session Data (utm_source, utm_campaign, gclid, etc.)</value>
+  </data>
+  <data name="TrackGoogleUrlCodes.Text" xml:space="preserve">
+    <value>Enable Site Marketing Session Data (Track Google URL codes)</value>
+  </data>
+  <data name="GoogleUrlCodeMsg.Text" xml:space="preserve">
+    <value>Please verify the CookiesTheme SkinObject is inserted into your skin.</value>
+  </data>
+  <data name="RecaptchaReposition.Help" xml:space="preserve">
+    <value>Reposition the reCAPTCHA badge (BottomRight / BottomLeft / Inline)</value>
+  </data>
+  <data name="RecaptchaReposition.Text" xml:space="preserve">
+    <value>Recaptcha reposition the badge</value>
+  </data>
+  <data name="IncludeWebPageSubmittedFrom.Help" xml:space="preserve">
+    <value>Option to include what webpage the form is being submitted from (include host value, uri, and query string.)</value>
+  </data>
+  <data name="IncludeWebPageSubmittedFrom.Text" xml:space="preserve">
+    <value>Include what webpage the form is being submitted from?</value>
+  </data>
+  <data name="SalesForceWebCaseUrl.Default" xml:space="preserve">
+    <value>http://webto.salesforce.com/servlet/servlet.WebToCase?encoding=UTF-8</value>
+  </data>
+  <data name="SalesForceWebCaseUrl.Help" xml:space="preserve">
+    <value>Url to submit to...provided by Salesforce</value>
+  </data>
+  <data name="SalesForceWebCaseUrl.Text" xml:space="preserve">
+    <value>Salesforce Web to Case URL</value>
+  </data>
+</root>

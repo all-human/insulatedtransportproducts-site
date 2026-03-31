@@ -1,0 +1,257 @@
+﻿SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'{databaseOwner}[{objectQualifier}DCC_EF_FormValidationCulture]') AND type in (N'U'))
+BEGIN
+CREATE TABLE {databaseOwner}[{objectQualifier}DCC_EF_FormValidationCulture](
+	[FormValidationCultureID] [int] IDENTITY(1,1) NOT NULL,
+	[FormValidationID] [int] NULL,
+	[Error] [nvarchar](512) NULL,
+	[Culture] [nvarchar](50) NULL,
+ CONSTRAINT [PK_{objectQualifier}DCC_EF_FormValidationNameCulture] PRIMARY KEY CLUSTERED 
+(
+	[FormValidationCultureID] ASC
+)WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON) 
+) ON [PRIMARY]
+END
+GO
+
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'{databaseOwner}[{objectQualifier}DCC_EF_FormValidationMaster]') AND type in (N'U'))
+BEGIN
+CREATE TABLE {databaseOwner}[{objectQualifier}DCC_EF_FormValidationMaster](
+	[FormValidationId] [int] IDENTITY(1,1) NOT NULL,
+	[FormValidationName] [nvarchar](250) NULL,
+	[FormValidationCondition] [nvarchar](max) NULL,
+	[ModuleID] [int] NULL,
+	[SortOrder] [int] NULL,
+ CONSTRAINT [PK_{objectQualifier}DCC_EF_FormValidationName] PRIMARY KEY CLUSTERED 
+(
+	[FormValidationId] ASC
+)WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON) 
+) ON [PRIMARY]
+END
+GO
+
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'{databaseOwner}[{objectQualifier}DCC_EF_FormValidationCultureAdd]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC dbo.sp_executesql @statement = N'
+
+create procedure {databaseOwner}[{objectQualifier}DCC_EF_FormValidationCultureAdd]
+@FormValidationid int,
+@Error nvarchar(512),
+@culture nvarchar(512)
+
+as
+insert into {databaseOwner}[{objectQualifier}DCC_EF_FormValidationCulture]
+(
+FormValidationID,Error,Culture
+)
+Values
+(
+@FormValidationid,
+@Error ,
+@culture 
+)
+
+' 
+END
+GO
+
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'{databaseOwner}[{objectQualifier}DCC_EF_FormValidationCultureGetbyID]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC dbo.sp_executesql @statement = N'
+CREATE procedure {databaseOwner}[{objectQualifier}DCC_EF_FormValidationCultureGetbyID] 
+ @formvalidationid int=6
+as
+
+select VC.formvalidationid,VC.formvalidationcultureid,VC.error,VC.culture 
+          from   {databaseOwner}[{objectQualifier}DCC_EF_FormValidationCulture] as VC 
+             where VC.formvalidationid=@formvalidationid
+             ' 
+END
+GO
+
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'{databaseOwner}[{objectQualifier}DCC_EF_FormValidationCultureUpdate]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC dbo.sp_executesql @statement = N'
+
+create procedure {databaseOwner}[{objectQualifier}DCC_EF_FormValidationCultureUpdate]
+@FormValidationCultureID int,
+@FormValidationID int,
+@error nvarchar(512),
+@culture nvarchar(50)
+as
+ Update {databaseOwner}[{objectQualifier}DCC_EF_FormValidationCulture]
+  Set	
+	error=@error	
+  where formvalidationcultureid=@FormValidationCultureID and formvalidationid=@FormValidationID and culture=@culture
+
+' 
+END
+GO
+
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'{databaseOwner}[{objectQualifier}DCC_EF_FormValidationDeleteByID]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC dbo.sp_executesql @statement = N'
+create procedure {databaseOwner}[{objectQualifier}DCC_EF_FormValidationDeleteByID]
+ @formvalidationId int=1,
+ @moduleid int=383
+as
+delete from {databaseOwner}[{objectQualifier}DCC_EF_FormValidationMaster]
+       where Moduleid=@moduleid and formvalidationid=@formvalidationid
+
+' 
+END
+GO
+
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'{databaseOwner}[{objectQualifier}DCC_EF_FormValidationGetByID]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC dbo.sp_executesql @statement = N'
+CREATE procedure {databaseOwner}[{objectQualifier}DCC_EF_FormValidationGetByID]
+ @formvalidationId int=1,
+ @moduleid int=383
+as
+Select * from {databaseOwner}[{objectQualifier}DCC_EF_FormValidationMaster]
+       where Moduleid=@moduleid and formvalidationid=@formvalidationid
+
+select VC.formvalidationid,VC.formvalidationcultureid,VC.error,VC.culture from {databaseOwner}[{objectQualifier}DCC_EF_FormValidationMaster] as VM 
+              inner join	
+             {databaseOwner}[{objectQualifier}DCC_EF_FormValidationCulture] as VC on VM.formvalidationid=VC.formvalidationid 
+             and VM.moduleid=@moduleid
+             and VM.formvalidationid=@formvalidationId' 
+END
+GO
+
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'{databaseOwner}[{objectQualifier}DCC_EF_FormValidationListGet]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC dbo.sp_executesql @statement = N'
+
+CREATE procedure {databaseOwner}[{objectQualifier}DCC_EF_FormValidationListGet]
+ @moduleid int=383
+as
+Select formvalidationid,formvalidationname,formvalidationcondition,SortOrder from {databaseOwner}[{objectQualifier}DCC_EF_FormValidationMaster]
+       where Moduleid=@moduleid
+       order by SortOrder asc
+
+' 
+END
+GO
+
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'{databaseOwner}[{objectQualifier}DCC_EF_FormValidationMasterAdd]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC dbo.sp_executesql @statement = N'
+
+CREATE procedure {databaseOwner}[{objectQualifier}DCC_EF_FormValidationMasterAdd]
+@FormValidationName nvarchar(250),
+@FormValidationCondition nvarchar(max),
+@moduleId int
+as
+declare @SortOrder int
+set @SortOrder=(select  isnull (max(FormValidationId),0)+1 from {databaseOwner}[{objectQualifier}DCC_EF_FormValidationMaster])
+declare @count int;
+set @count=(select COUNT(*) from {databaseOwner}[{objectQualifier}DCC_EF_FormValidationMaster] where FormValidationName=@FormValidationName);
+
+if(@count >0)
+  begin
+   select -2
+  end 
+ else
+  begin  
+	insert into {databaseOwner}[{objectQualifier}DCC_EF_FormValidationMaster]
+	(
+	FormValidationName,
+	FormValidationCondition,	
+	ModuleID,
+	SortOrder
+	)
+	Values
+	(
+	@FormValidationName,
+	@FormValidationCondition ,	
+	@moduleId,
+	@SortOrder 
+	)
+	select SCOPE_IDENTITY()
+end
+' 
+END
+GO
+
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'{databaseOwner}[{objectQualifier}DCC_EF_FormValidationMasterUpdate]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC dbo.sp_executesql @statement = N'
+
+CREATE procedure {databaseOwner}[{objectQualifier}DCC_EF_FormValidationMasterUpdate]
+@FormValidationID int=3,
+@FormValidationCondition nvarchar(max)=gfgfgg,
+@moduleId int=383
+as
+ Update {databaseOwner}[{objectQualifier}DCC_EF_FormValidationMaster]
+  Set	
+	FormValidationCondition=@FormValidationCondition
+	
+  where Moduleid=@moduleId and Formvalidationid=@FormValidationID
+
+' 
+END
+GO
+
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'{databaseOwner}[{objectQualifier}DCC_EF_UpdateFormValidationSortOrder]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC dbo.sp_executesql @statement = N'
+CREATE procedure {databaseOwner}[{objectQualifier}DCC_EF_UpdateFormValidationSortOrder] 
+
+@formvalidationid int,
+@SortOrder int,
+@moduleid int
+AS
+update  {databaseOwner}[{objectQualifier}DCC_EF_FormValidationMaster]
+set
+SortOrder=@SortOrder
+where FormValidationId=@formvalidationid and ModuleID=@moduleid
+
+' 
+END
+GO
+

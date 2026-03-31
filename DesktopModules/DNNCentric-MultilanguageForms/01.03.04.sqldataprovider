@@ -1,0 +1,179 @@
+﻿SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+
+ALTER TABLE {databaseOwner}[{objectQualifier}DCC_EF_WorkFlow_SendEmail]
+ ADD FromEmailID  nvarchar(100) NULL;
+ 
+ GO
+ 
+ SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER procedure {databaseOwner}[{objectQualifier}DCC_EF_UpdateEmailWorkFlow]
+@WorkFlowID int,
+@WorkFlowName nvarchar(1000),
+@WorkFlowTypeID int,
+@Disabled bit,
+@ModuleID int,
+@EmailSubject nvarchar(4000),
+@EmailTemplate nvarchar(MAX),
+@SendType nvarchar(50),
+@SendToList nvarchar(MAX),
+@Culture  nvarchar(50),
+@FromEmailID nvarchar(100)
+
+as
+
+update 
+	{databaseOwner}[{objectQualifier}DCC_EF_ActiveWorkFlows]
+		set 
+			WorkFlowName=@WorkFlowName,
+			WorkFlowTypeID=@WorkFlowTypeID,
+Disabled=@Disabled,
+ModuleID=@ModuleID
+
+		where
+			WorkFlowID=@WorkFlowID
+
+
+ update 
+       {databaseOwner}[{objectQualifier}DCC_EF_WorkFlow_SendEmail]
+     set 
+          WorkFlowID=@WorkFlowID,
+           EmailSubject=@EmailSubject,
+           EmailTemplate=@EmailTemplate,
+           SendType=@SendType,
+          SendToList=@SendToList,
+Culture=@Culture,
+FromEmailID=@FromEmailID
+
+     where
+			WorkFlowID=@WorkFlowID
+
+GO
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER procedure {databaseOwner}[{objectQualifier}DCC_EF_InsertEmailWorkFlow]
+@WorkFlowName nvarchar(1000),
+@WorkFlowTypeID int,
+@Disabled bit,
+@ModuleID int,
+@EmailSubject nvarchar(MAX),
+@EmailTemplate nvarchar(MAX),
+@SendType nvarchar(50),
+@SendToList nvarchar(MAX),
+@Culture nvarchar(50),
+@FromEmailID nvarchar(100)
+as
+
+declare @SortOrder int
+set @SortOrder=(select isnull( MAX(WorkFlowID),0) from {databaseOwner}[{objectQualifier}DCC_EF_ActiveWorkFlows])
+set @SortOrder=@SortOrder+1
+
+insert into {databaseOwner}[{objectQualifier}DCC_EF_ActiveWorkFlows]
+(
+WorkFlowName,
+WorkFlowTypeID,
+Disabled,
+SortOrder,
+ModuleID
+)
+values
+(
+@WorkFlowName,
+@WorkFlowTypeID,
+@Disabled,
+@SortOrder,
+@ModuleID
+)
+declare @ID int
+set @ID=@@Identity
+
+
+insert into {databaseOwner}[{objectQualifier}DCC_EF_WorkFlow_SendEmail]
+(
+WorkFlowID,
+EmailSubject,
+EmailTemplate,
+SendType,
+SendToList,
+Culture,
+FromEmailID
+)
+values
+(
+@ID,
+@EmailSubject,
+@EmailTemplate,
+@SendType,
+@SendToList,
+@Culture,
+@FromEmailID
+)
+
+GO
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+
+ALTER procedure {databaseOwner}[{objectQualifier}DCC_EF_GetSendEmailToWorkFlowByTypes]
+@Culture nvarchar(50),
+@ModuleID int
+as
+SELECT    A.SendType, A.SendToList,A.EmailSubject ,A.EmailTemplate,A.FromEmailID,B.WorkFlowName
+FROM         {databaseOwner}[{objectQualifier}DCC_EF_WorkFlow_SendEmail] AS A INNER JOIN
+                      {databaseOwner}[{objectQualifier}DCC_EF_ActiveWorkFlows] AS B 
+ON A.WorkFlowID = B.WorkFlowID
+where B.WorkFlowTypeID = 1 
+And B.Disabled=0
+AND A.Culture=@Culture
+AND B.ModuleID=@ModuleID
+
+GO
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER procedure {databaseOwner}[{objectQualifier}DCC_EF_GetWorkFlowNameByID]
+@WorkFlowID int,
+@ModuleID int
+AS
+
+select B.WorkFlowName ,A.Culture, A.EmailSubject,A.EmailTemplate,A.SendType,A.SendToList,A.FromEmailID
+from {databaseOwner}[{objectQualifier}DCC_EF_WorkFlow_SendEmail] A,{databaseOwner}[{objectQualifier}DCC_EF_ActiveWorkFlows] B
+where A.WorkFlowID=B.WorkFlowID 
+AND A.WorkFlowID=@WorkFlowID
+AND B.ModuleID=@ModuleID
+
+GO
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+
+ALTER procedure {databaseOwner}[{objectQualifier}DCC_EF_GetAvailableEmailTokens]
+@ModuleID int
+as
+select distinct FieldName 
+from {databaseOwner}[{objectQualifier}DCC_EF_EmailForm] ef,{databaseOwner}[{objectQualifier}DCC_EF_EmailFormCulture] cul
+where
+ef.FieldID=cul.FieldID 
+AND
+ef.Visible=1
+AND
+cul.Culture_Value like '%<validationType>3%'
+AND
+cul.Culture_Value like '%<required>true%'
+AND 
+ef.ModuleID=@ModuleID
+
+-- 3 is for Email validation fields
+
+GO
+

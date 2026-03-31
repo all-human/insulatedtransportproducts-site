@@ -1,0 +1,137 @@
+Sitemap: [PRIMARYDOMAIN]/sitemap.aspx
+
+User-agent: *
+Disallow: /Activity-Feed/userId/	# Do not index user profiles
+Disallow: /admin/
+Disallow: /App_Browsers/
+Disallow: /App_Code/
+Disallow: /App_Data/
+Disallow: /App_GlobalResources/
+Disallow: /bin/
+Disallow: /Components/
+Disallow: /Config/
+Disallow: /contest/
+Disallow: /controls/
+Disallow: /DesktopModules/
+Disallow: /Documentation/
+Disallow: /HttpModules/
+Disallow: /images/
+Disallow: /Install/
+Disallow: /Providers/
+Disallow: /Resources/ContentRotator/
+Disallow: /Resources/ControlPanel/
+Disallow: /Resources/Dashboard/
+Disallow: /Resources/FeedBrowser/
+Disallow: /Resources/OpenForceAd/
+Disallow: /Resources/SkinWidgets/
+Disallow: /Resources/TabStrip/
+Disallow: /Resources/Widgets/
+
+User-agent: msnbot
+Disallow: /Activity-Feed/userId/	# Do not index user profiles
+Disallow: /admin/
+Disallow: /App_Browsers/
+Disallow: /App_Code/
+Disallow: /App_Data/
+Disallow: /App_GlobalResources/
+Disallow: /bin/
+Disallow: /Components/
+Disallow: /Config/
+Disallow: /contest/
+Disallow: /controls/
+Disallow: /DesktopModules/
+Disallow: /Documentation/
+Disallow: /HttpModules/
+Disallow: /images/
+Disallow: /Install/
+Disallow: /Providers/
+Disallow: /Resources/ContentRotator/
+Disallow: /Resources/ControlPanel/
+Disallow: /Resources/Dashboard/
+Disallow: /Resources/FeedBrowser/
+Disallow: /Resources/OpenForceAd/
+Disallow: /Resources/SkinWidgets/
+Disallow: /Resources/TabStrip/
+Disallow: /Resources/Widgets/
+
+User-agent: Slurp
+Disallow: /Activity-Feed/userId/	# Do not index user profiles
+Disallow: /admin/
+Disallow: /App_Browsers/
+Disallow: /App_Code/
+Disallow: /App_Data/
+Disallow: /App_GlobalResources/
+Disallow: /bin/
+Disallow: /Components/
+Disallow: /Config/
+Disallow: /contest/
+Disallow: /controls/
+Disallow: /DesktopModules/
+Disallow: /Documentation/
+Disallow: /HttpModules/
+Disallow: /images/
+Disallow: /Install/
+Disallow: /Providers/
+Disallow: /Resources/ContentRotator/
+Disallow: /Resources/ControlPanel/
+Disallow: /Resources/Dashboard/
+Disallow: /Resources/FeedBrowser/
+Disallow: /Resources/OpenForceAd/
+Disallow: /Resources/SkinWidgets/
+Disallow: /Resources/TabStrip/
+Disallow: /Resources/Widgets/
+
+User-agent: Googlebot
+Disallow: /Activity-Feed/userId/	# Do not index user profiles
+Disallow: /admin/
+Disallow: /App_Browsers/
+Disallow: /App_Code/
+Disallow: /App_Data/
+Disallow: /App_GlobalResources/
+Disallow: /bin/
+Disallow: /Components/
+Disallow: /Config/
+Disallow: /contest/
+Disallow: /controls/
+Disallow: /DesktopModules/
+Disallow: /Documentation/
+Disallow: /HttpModules/
+Disallow: /images/
+Disallow: /Install/
+Disallow: /Providers/
+Disallow: /Resources/ContentRotator/
+Disallow: /Resources/ControlPanel/
+Disallow: /Resources/Dashboard/
+Disallow: /Resources/FeedBrowser/
+Disallow: /Resources/OpenForceAd/
+Disallow: /Resources/SkinWidgets/
+Disallow: /Resources/TabStrip/
+Disallow: /Resources/Widgets/
+
+User-agent: Yahoo Pipes 1.0
+Disallow: /Activity-Feed/userId/	# Do not index user profiles
+Disallow: /admin/
+Disallow: /App_Browsers/
+Disallow: /App_Code/
+Disallow: /App_Data/
+Disallow: /App_GlobalResources/
+Disallow: /bin/
+Disallow: /Components/
+Disallow: /Config/
+Disallow: /contest/
+Disallow: /controls/
+Disallow: /DesktopModules/
+Disallow: /Documentation/
+Disallow: /HttpModules/
+Disallow: /images/
+Disallow: /Install/
+Disallow: /Providers/
+Disallow: /Resources/ContentRotator/
+Disallow: /Resources/ControlPanel/
+Disallow: /Resources/Dashboard/
+Disallow: /Resources/FeedBrowser/
+Disallow: /Resources/OpenForceAd/
+Disallow: /Resources/SkinWidgets/
+Disallow: /Resources/TabStrip/
+Disallow: /Resources/Widgets/
+

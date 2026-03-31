@@ -1,0 +1,1 @@
+<%@ Page Language="vb" AutoEventWireup="false" Codebehind="UVGRecord.aspx.vb" Inherits="BizModules.UltraVideoGallery.UVGRecord" %>

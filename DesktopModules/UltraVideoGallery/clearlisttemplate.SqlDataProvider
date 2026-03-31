@@ -1,0 +1,4 @@
+
+delete {databaseOwner}{objectQualifier}ModuleSettings where SettingName='GridViewTemplate' or  SettingName='ListViewTemplate'
+GO
+

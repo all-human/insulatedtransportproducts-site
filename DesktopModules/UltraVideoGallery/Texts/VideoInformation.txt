@@ -1,0 +1,8 @@
+<div style="font-style:italic;">
+<p>
+This module can only be used on same page of UVG_VideoPlayer.
+</p>
+<p>
+To customize my output, goto Module Settings and edit the display template.
+</p>
+</div>

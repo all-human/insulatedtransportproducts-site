@@ -1,0 +1,32 @@
+﻿<dotnetnuke type="ResourceFile" version="5.0">
+  <files>
+    <file>
+      <path>css/</path>
+      <name>font-awesome.min.css</name>
+    </file>
+    <file>
+      <path>fonts/</path>
+      <name>FontAwesome.otf</name>
+    </file>
+    <file>
+      <path>fonts/</path>
+      <name>fontawesome-webfont.eot</name>
+    </file>
+    <file>
+      <path>fonts/</path>
+      <name>fontawesome-webfont.svg</name>
+    </file>
+    <file>
+      <path>fonts/</path>
+      <name>fontawesome-webfont.ttf</name>
+    </file>
+    <file>
+      <path>fonts/</path>
+      <name>fontawesome-webfont.woff</name>
+    </file>
+    <file>
+      <path>fonts/</path>
+      <name>fontawesome-webfont.woff2</name>
+    </file>
+  </files>
+</dotnetnuke>

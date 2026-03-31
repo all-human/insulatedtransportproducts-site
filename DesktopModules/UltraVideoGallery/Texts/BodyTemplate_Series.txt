@@ -1,0 +1,19 @@
+
+
+<a href="[LINK]" class="listitem" style="height:[SCREENSHOTHEIGHT]px;">
+	<span class="imgntime" style="width:[SCREENSHOTWIDTH]px;">
+		<img src="[SCREENSHOT]" border="0" alt="Screenshot" />
+		<span class="videolength">[VIDEOCOUNT] videos</span>
+	</span>
+
+	<span class="texts">
+	<span class="titlenstars">
+		<span class="title hl">[SERIESTITLE]</span>
+		<span class="stars"></span>
+	</span>
+		<span class="desc">last episode: <span class='hl' style='display:inline;'>[TITLE]</span></span>
+		<span class="meta">
+			by <font class="hl">[AUTHOR]</font> | [LASTUPDATEAGO]
+		</span>
+	</span>
+</a>

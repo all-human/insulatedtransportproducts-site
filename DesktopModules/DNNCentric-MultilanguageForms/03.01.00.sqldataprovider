@@ -1,0 +1,65 @@
+/**************************************/
+/* This script fixed for Sql Azure  */
+/*************************************/
+
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER Procedure {databaseOwner}[{objectQualifier}DCC_EF_GetFormSubmissionDataByPaging]
+@FromDate datetime='10/26/2009',
+@ToDate DateTime='12/31/2011',
+@FieldID int=-1,
+@StrSearchText NVARCHAR(400)='',
+@ModuleID int=375,
+@SortColumn nvarchar(200)='',
+@StartPageIndex int=0,
+@PageSize int=200,
+@PageURL nvarchar(500)=''
+as
+create table #funtable
+(
+id int identity(1,1) primary key,
+FormRecordID int ,
+FieldName nvarchar(4000),
+DateOfSubmission datetime,
+FieldValue nvarchar(max),
+SortOrder int
+)
+insert into #funtable 
+(FormRecordID,FieldName,DateOfSubmission,FieldValue,SortOrder)
+select FormRecordID,FieldName,DateOfSubmission,FieldValue,SortOrder   
+from {databaseOwner}[{objectQualifier}DCC_EF_GetSubmissionDataAttributes](@FromDate,@ToDate,@FieldID,@StrSearchText,@ModuleID,@PageURL)
+
+create table #tmptable
+(
+	id int identity(1,1) primary key,
+	sortorder int,
+	fieldname nvarchar(4000)
+)
+insert into #tmptable(sortorder,fieldname)
+select distinct sortorder,fieldname FROM #funtable as A order by A.sortorder
+
+DECLARE @cols NVARCHAR(max) 
+SELECT  @cols = COALESCE(@cols + ',' + QUOTENAME(fieldname),QUOTENAME(fieldname))
+FROM    #tmptable as df
+
+select @cols =(case when rtrim(ltrim(isnull(@cols,'')))='' then 'NoRecord' else @cols end)
+
+DECLARE @Subquery NVARCHAR(max)
+
+set @Subquery ='select FormRecordID as RecordID,DateofSubmission as PostedDate,'+ @cols + ' from (select DateofSubmission,FormRecordID ,fieldname,fieldvalue from #funtable as Q ) as P 
+            pivot ( min(fieldvalue) for fieldname in ('+ @cols + ')) as pvt'
+
+if(@SortColumn='') set @SortColumn='RecordID Desc'
+declare @myQuery NVARCHAR(max)
+set @myQuery= 'select ROW_NUMBER() OVER(ORDER BY '+ @SortColumn + ') as RowID,Sub.*
+from ('+ @Subquery+')as Sub'
+
+declare @finalQuery NVARCHAR(max)
+set @finalQuery= 'select tbl.* from ('+@myQuery +')as tbl where RowID BETWEEN ('+ str(@StartPageIndex+1)+') AND ('+str(@StartPageIndex+ @PageSize)+')'
+
+exec (@finalQuery)
+drop table #funtable
+drop table #tmptable
+GO

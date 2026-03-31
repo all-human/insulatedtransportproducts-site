@@ -1,0 +1,26 @@
+﻿SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+
+--{databaseOwner}[{objectQualifier}DCC_EF_GetAvailableEmailTokens] 376
+
+alter procedure {databaseOwner}[{objectQualifier}DCC_EF_GetAvailableEmailTokens]
+@ModuleID int
+as
+select distinct FieldName,ControlType 
+from {databaseOwner}[{objectQualifier}DCC_EF_EmailForm] ef,{databaseOwner}[{objectQualifier}DCC_EF_EmailFormCulture] cul
+where
+ef.FieldID=cul.FieldID 
+AND
+ef.Visible=1
+AND
+(cul.Culture_Value like '%<validationType>3%' or cul.Culture_Value like '%<validationType>6%'or cul.Culture_Value like '%<ItemValueType>2%')
+AND
+cul.Culture_Value like '%<required>true%'
+AND 
+ef.ModuleID=@ModuleID
+and visible='true' and  IsDeleted='false'
+
+GO
+

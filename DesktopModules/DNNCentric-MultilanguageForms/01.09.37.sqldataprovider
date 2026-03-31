@@ -1,0 +1,87 @@
+﻿
+ALTER TABLE {databaseOwner}[{objectQualifier}DCC_EF_FormValidationMaster]
+ADD HighlightFieldsName nvarchar(max) NULL
+
+GO
+
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+
+alter procedure {databaseOwner}[{objectQualifier}DCC_EF_FormValidationListGet]
+ @moduleid int=383
+as
+Select formvalidationid,formvalidationname,formvalidationcondition,SortOrder,Active,HighlightFieldsName from {databaseOwner}[{objectQualifier}DCC_EF_FormValidationMaster]
+       where Moduleid=@moduleid
+       order by SortOrder asc
+
+GO
+
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+
+alter procedure {databaseOwner}[{objectQualifier}DCC_EF_FormValidationMasterAdd]
+@FormValidationName nvarchar(250),
+@FormValidationCondition nvarchar(max),
+@moduleId int,
+@Active bit,
+@HighlightedfieldsName nvarchar(max)
+as
+declare @SortOrder int
+set @SortOrder=(select  isnull (max(FormValidationId),0)+1 from {databaseOwner}[{objectQualifier}DCC_EF_FormValidationMaster])
+declare @count int;
+set @count=(select COUNT(*) from {databaseOwner}[{objectQualifier}DCC_EF_FormValidationMaster] where FormValidationName=@FormValidationName);
+
+if(@count >0)
+  begin
+   select -2
+  end 
+ else
+  begin  
+	insert into {databaseOwner}[{objectQualifier}DCC_EF_FormValidationMaster]
+	(
+	FormValidationName,
+	FormValidationCondition,	
+	ModuleID,
+	SortOrder,
+	Active,
+	HighlightFieldsName
+	)
+	Values
+	(
+	@FormValidationName,
+	@FormValidationCondition ,	
+	@moduleId,
+	@SortOrder,
+	@Active,
+	@HighlightedfieldsName 
+	)
+	select SCOPE_IDENTITY()
+end
+
+GO
+
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+
+alter procedure {databaseOwner}[{objectQualifier}DCC_EF_FormValidationMasterUpdate]
+@FormValidationID int=3,
+@FormValidationCondition nvarchar(max)=gfgfgg,
+@moduleId int=383,
+@active bit,
+@HighlightedfieldsName nvarchar(max)
+as
+ Update {databaseOwner}[{objectQualifier}DCC_EF_FormValidationMaster]
+  Set	
+	FormValidationCondition=@FormValidationCondition,
+	Active=@active,
+	HighlightFieldsName=@HighlightedfieldsName
+  where Moduleid=@moduleId and Formvalidationid=@FormValidationID
+
+GO
+

@@ -1,0 +1,24 @@
+﻿SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'{databaseOwner}[{objectQualifier}DCC_EF_GetFormSubmissionDataCount]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC dbo.sp_executesql @statement = N'
+CREATE Procedure {databaseOwner}[{objectQualifier}DCC_EF_GetFormSubmissionDataCount]
+@FromDate datetime=''1/1/2009'',
+@ToDate DateTime=''1/1/2011'',
+@FieldID int=-1,
+@StrSearchText NVARCHAR(400)='''',
+@ModuleID int=367,
+@PageURL nvarchar(500)=''/DC490X_dev/DesktopModules/DNNCentric-MultilanguageForms/DF.aspx''
+as
+
+SELECT count(distinct FormRecordID)
+FROM  {databaseOwner}[{objectQualifier}DCC_EF_FormDataValues]
+Where FieldID=(Case when @FieldID > -1 then @FieldID Else FieldID End)  and 
+FieldValue like (case when @FieldID <0  or ltrim(rtrim(@StrSearchText))='''' then FieldValue Else  ''%''+ ltrim(rtrim(@StrSearchText)) +''%'' END)
+' 
+END
+GO
+

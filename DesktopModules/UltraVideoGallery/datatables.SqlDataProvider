@@ -1,0 +1,737 @@
+if not exists(select * from dbo.sysobjects where id = object_id('{databaseOwner}{objectQualifier}UVG_Category') and type = 'U')
+begin
+	CREATE TABLE {databaseOwner}{objectQualifier}UVG_Category(
+		ItemId int IDENTITY(1,1) NOT NULL,
+		PortalId int NOT NULL,
+		LibraryId int NULL,
+		Category nvarchar(100) NOT NULL,
+		CreatedByUser int NULL,
+		CreatedDate datetime NULL,
+		VideoCount int NULL,
+		ViewOrder nvarchar(10) NULL,
+		ViewRoles nvarchar(200) NULL,
+		PlayerTabId int NULL,
+		ListingTabId nvarchar(200) NULL,
+		 CONSTRAINT PK_UVG_Category_1 PRIMARY KEY CLUSTERED 
+		(
+			ItemId ASC
+		))
+end
+else
+begin
+	if not exists(select * from dbo.syscolumns where id = object_id('{databaseOwner}{objectQualifier}UVG_Category') and name = 'LibraryId') 
+	  alter table {databaseOwner}{objectQualifier}UVG_Category
+	    add LibraryId int
+
+	if not exists(select * from dbo.syscolumns where id = object_id('{databaseOwner}{objectQualifier}UVG_Category') and name = 'ViewOrder') 
+	  alter table {databaseOwner}{objectQualifier}UVG_Category
+	    add ViewOrder nvarchar(10)
+
+	if not exists(select * from dbo.syscolumns where id = object_id('{databaseOwner}{objectQualifier}UVG_Category') and name = 'ViewRoles') 
+	  alter table {databaseOwner}{objectQualifier}UVG_Category
+	    add ViewRoles nvarchar(200)
+
+	if not exists(select * from dbo.syscolumns where id = object_id('{databaseOwner}{objectQualifier}UVG_Category') and name = 'PlayerTabId') 
+	  alter table {databaseOwner}{objectQualifier}UVG_Category
+	    add PlayerTabId int
+
+	if not exists(select * from dbo.syscolumns where id = object_id('{databaseOwner}{objectQualifier}UVG_Category') and name = 'ListingTabId') 
+	  alter table {databaseOwner}{objectQualifier}UVG_Category
+	    add ListingTabId int
+
+end
+go
+
+
+
+
+
+
+
+
+
+
+
+
+
+if not exists(select * from dbo.sysobjects where id = object_id('{databaseOwner}{objectQualifier}UVG_Comment') and type = 'U')
+begin
+	CREATE TABLE {databaseOwner}{objectQualifier}UVG_Comment(
+		ItemId int IDENTITY(1,1) NOT NULL,
+		UserId int NULL,
+		UserFullName nvarchar(100) NULL,
+		UserIP varchar(15) NULL,
+		VideoId int NOT NULL,
+		Comment ntext NULL,
+		CreatedDate datetime NULL,
+		Email nvarchar(50) NULL,
+		 CONSTRAINT PK_UVG_Comment PRIMARY KEY CLUSTERED 
+		(
+			ItemId ASC
+		))
+end
+else
+begin
+	if not exists(select * from dbo.syscolumns where id = object_id('{databaseOwner}{objectQualifier}UVG_Comment') and name = 'Email') 
+	  alter table {databaseOwner}{objectQualifier}UVG_Comment
+	    add Email nvarchar(50)
+
+end
+go
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+if not exists(select * from dbo.sysobjects where id = object_id('{databaseOwner}{objectQualifier}UVG_Commercial') and type = 'U')
+begin
+	CREATE TABLE {databaseOwner}{objectQualifier}UVG_Commercial(
+		ItemId int IDENTITY(1,1) NOT NULL,
+		PortalId int NOT NULL,
+		VendorId int NOT NULL,
+		Type int NOT NULL,
+		Title nvarchar(100) NOT NULL,
+		Description nvarchar(1000) NULL,
+		LinkText nvarchar(100) NULL,
+		LinkUrl nvarchar(200) NOT NULL,
+		FileUrl nvarchar(200) NULL,
+		Scope int NULL,
+		StartDate smalldatetime NULL,
+		EndDate smalldatetime NULL,
+		MaxImpressions int NULL,
+		CPM money NULL,
+		Criteria bit NOT NULL,
+		Impressions int NOT NULL,
+		Clicks int NOT NULL,
+		Archived bit NOT NULL,
+		AudienceRoles nvarchar(200) NULL,
+		ApplyTo bit NULL,
+		 CONSTRAINT PK_UVG_Commercial PRIMARY KEY CLUSTERED 
+		(
+			ItemId ASC
+		))
+end
+else
+begin
+	if exists(select * from dbo.syscolumns where id = object_id('{databaseOwner}{objectQualifier}UVG_Commercial') and name = 'CategoryId') 
+	  alter table {databaseOwner}{objectQualifier}UVG_Commercial
+	    drop column CategoryId
+
+	if not exists(select * from dbo.syscolumns where id = object_id('{databaseOwner}{objectQualifier}UVG_Commercial') and name = 'Scope') 
+	  alter table {databaseOwner}{objectQualifier}UVG_Commercial
+	    add Scope int
+
+	if not exists(select * from dbo.syscolumns where id = object_id('{databaseOwner}{objectQualifier}UVG_Commercial') and name = 'AudienceRoles') 
+	  alter table {databaseOwner}{objectQualifier}UVG_Commercial
+	    add AudienceRoles nvarchar(200)
+
+	if not exists(select * from dbo.syscolumns where id = object_id('{databaseOwner}{objectQualifier}UVG_Commercial') and name = 'ApplyTo') 
+	  alter table {databaseOwner}{objectQualifier}UVG_Commercial
+	    add ApplyTo bit
+
+end
+go
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+if not exists(select * from dbo.sysobjects where id = object_id('{databaseOwner}{objectQualifier}UVG_CommercialImpression') and type = 'U')
+begin
+	CREATE TABLE {databaseOwner}{objectQualifier}UVG_CommercialImpression(
+		ItemId int IDENTITY(1,1) NOT NULL,
+		CommercialId int NOT NULL,
+		VideoId int NULL,
+		Video nvarchar(100) NULL,
+		UserId int NULL,
+		UserFullName nvarchar(50) NULL,
+		UserIp varchar(15) NOT NULL,
+		Date datetime NOT NULL,
+		IsClick bit NOT NULL,
+		 CONSTRAINT PK_UVG_CommercialImpression PRIMARY KEY CLUSTERED 
+		(
+			ItemId ASC
+		))
+end
+go
+
+
+
+
+
+
+
+
+
+
+
+
+
+if not exists(select * from dbo.sysobjects where id = object_id('{databaseOwner}{objectQualifier}UVG_Library') and type = 'U')
+begin
+	CREATE TABLE {databaseOwner}{objectQualifier}UVG_Library(
+		ItemId int IDENTITY(1,1) NOT NULL,
+		PortalId int NOT NULL,
+		Library nvarchar(100) NOT NULL,
+		Managers nvarchar(500) NULL,
+		PlayerPage int NULL,
+		CreatedDate datetime NULL,
+		 CONSTRAINT PK_UVG_Library PRIMARY KEY CLUSTERED 
+		(
+			ItemId ASC
+		))
+end
+go
+
+
+
+
+
+
+
+
+
+
+
+
+
+if not exists(select * from dbo.sysobjects where id = object_id('{databaseOwner}{objectQualifier}UVG_Queue') and type = 'U')
+begin
+	CREATE TABLE {databaseOwner}{objectQualifier}UVG_Queue(
+		ItemId int IDENTITY(1,1) NOT NULL,
+		UserId int NOT NULL,
+		PortalId int NOT NULL,
+		LibraryId int NOT NULL,
+		Path nvarchar(200) NULL,
+		CreatedDate datetime NOT NULL,
+		Priority int NOT NULL,
+		Title nvarchar(150) NULL,
+		Description nvarchar(1000) NULL,
+		Tags nvarchar(200) NULL,
+		Category varchar(500) NULL,
+		SeriesId int NULL,
+		Status int NULL,
+		ImportFrom nvarchar(200) NULL,
+		Trials int NULL,
+		JobId varchar(200) NULL,
+		AWSKey nvarchar(100) NULL,
+		 CONSTRAINT PK_UVG_Queue PRIMARY KEY CLUSTERED 
+		(
+			ItemId ASC
+		))
+end
+else
+begin
+	alter table {databaseOwner}{objectQualifier}UVG_Queue 
+	alter column Path nvarchar(200) NULL
+
+	if not exists(select * from dbo.syscolumns where id = object_id('{databaseOwner}{objectQualifier}UVG_Queue') and name = 'Status') 
+	  alter table {databaseOwner}{objectQualifier}UVG_Queue
+	    add Status int
+
+	if not exists(select * from dbo.syscolumns where id = object_id('{databaseOwner}{objectQualifier}UVG_Queue') and name = 'ImportFrom') 
+	  alter table {databaseOwner}{objectQualifier}UVG_Queue
+	    add ImportFrom nvarchar(200)
+
+	if not exists(select * from dbo.syscolumns where id = object_id('{databaseOwner}{objectQualifier}UVG_Queue') and name = 'Trials') 
+	  alter table {databaseOwner}{objectQualifier}UVG_Queue
+	    add Trials int
+
+	if not exists(select * from dbo.syscolumns where id = object_id('{databaseOwner}{objectQualifier}UVG_Queue') and name = 'JobId') 
+	  alter table {databaseOwner}{objectQualifier}UVG_Queue
+	    add JobId varchar(200)
+
+	if not exists(select * from dbo.syscolumns where id = object_id('{databaseOwner}{objectQualifier}UVG_Queue') and name = 'AWSKey') 
+	  alter table {databaseOwner}{objectQualifier}UVG_Queue
+	    add AWSKey nvarchar(100)
+end
+go
+
+
+
+
+
+
+
+
+
+
+
+
+
+if not exists(select * from dbo.sysobjects where id = object_id('{databaseOwner}{objectQualifier}UVG_Rating') and type = 'U')
+begin
+	CREATE TABLE {databaseOwner}{objectQualifier}UVG_Rating(
+		ItemId int IDENTITY(1,1) NOT NULL,
+		UserId int NULL,
+		UserIP varchar(15) NULL,
+		VideoId int NOT NULL,
+		Rating int NOT NULL,
+		 CONSTRAINT PK_UVG_Rating PRIMARY KEY CLUSTERED 
+		(
+			ItemId ASC
+		))
+end
+go
+
+
+
+
+
+
+
+
+
+
+
+
+
+if not exists(select * from dbo.sysobjects where id = object_id('{databaseOwner}{objectQualifier}UVG_Series') and type = 'U')
+begin
+	CREATE TABLE {databaseOwner}{objectQualifier}UVG_Series(
+		ItemId int IDENTITY(1,1) NOT NULL,
+		PortalId int NOT NULL,
+		LibraryId int NULL,
+		Title nvarchar(150) NOT NULL,
+		Description nvarchar(1000) NULL,
+		CreatedByUser int NOT NULL,
+		CreatedDate datetime NOT NULL,
+		LastUseDate datetime NULL,
+		VideoCount int NOT NULL,
+		 CONSTRAINT PK_UVG_Series PRIMARY KEY CLUSTERED 
+		(
+			ItemId ASC
+		))
+end
+else
+begin
+	if not exists(select * from dbo.syscolumns where id = object_id('{databaseOwner}{objectQualifier}UVG_Series') and name = 'LibraryId') 
+	  alter table {databaseOwner}{objectQualifier}UVG_Series
+	    add LibraryId int
+
+	if exists(select * from dbo.syscolumns where id = object_id('{databaseOwner}{objectQualifier}UVG_Series') and name = 'CategoryId') 
+	  alter table {databaseOwner}{objectQualifier}UVG_Series
+	    drop column CategoryId
+
+	if exists(select * from dbo.syscolumns where id = object_id('{databaseOwner}{objectQualifier}UVG_Series') and name = 'Featured') 
+	  alter table {databaseOwner}{objectQualifier}UVG_Series
+	    drop column Featured
+
+	if exists(select * from dbo.syscolumns where id = object_id('{databaseOwner}{objectQualifier}UVG_Series') and name = 'Views') 
+	  alter table {databaseOwner}{objectQualifier}UVG_Series
+	    drop column Views
+
+	if exists(select * from dbo.syscolumns where id = object_id('{databaseOwner}{objectQualifier}UVG_Series') and name = 'ViewRoles') 
+	  alter table {databaseOwner}{objectQualifier}UVG_Series
+	    drop column ViewRoles
+
+end
+go
+
+
+
+
+
+
+
+
+
+
+
+
+
+if not exists(select * from dbo.sysobjects where id = object_id('{databaseOwner}{objectQualifier}UVG_Tag') and type = 'U')
+begin
+	CREATE TABLE {databaseOwner}{objectQualifier}UVG_Tag(
+		ItemId int IDENTITY(1,1) NOT NULL,
+		PortalId int NOT NULL,
+		Tag nvarchar(100) NULL,
+		IsPrivate bit NOT NULL,
+		VideoCount int NULL,
+		CreatedByUser int NOT NULL,
+		CreatedDate datetime NOT NULL,
+		 CONSTRAINT PK_UVG_Tag PRIMARY KEY CLUSTERED 
+		(
+			ItemId ASC
+		))
+end
+go
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+if not exists(select * from dbo.sysobjects where id = object_id('{databaseOwner}{objectQualifier}UVG_Video') and type = 'U')
+begin
+	CREATE TABLE {databaseOwner}{objectQualifier}UVG_Video(
+		ItemId int IDENTITY(1,1) NOT NULL,
+		PortalId int NOT NULL,
+		LibraryId int NULL,
+		Title nvarchar(150) NULL,
+		Description nvarchar(1000) NULL,
+		VideoPath nvarchar(600) NULL,
+		OriginalName nvarchar(200) NULL,
+		Thumbnail nvarchar(200) NULL,
+		CreatedByUser int NULL,
+		CreatedDate datetime NULL,
+		LastModifiedBy int NULL,
+		LastModifiedDate datetime NULL,
+		IsPrivate bit NULL,
+		IsFeatured bit NULL,
+		FeaturedDate datetime NULL,
+		Length decimal(18, 2) NULL,
+		Views int NULL,
+		AverageRating decimal(18, 2) NULL,
+		TotalRatings int NULL,
+		TotalComments int NULL,
+		AspectRatio decimal(18, 2) NULL,
+		Approved bit NULL,
+		ViewRoles nvarchar(200) NULL,
+		IsAudio bit NULL,
+		AWS_Bucket nvarchar(50) NULL,
+		AWS_ThumbKey nvarchar(100) NULL,
+		AWS_VideoKey nvarchar(100) NULL,
+		EmbedCode nvarchar(4000) NULL,
+		LinkUrl nvarchar(400) NULL,
+		AWS_H264VideoKey nvarchar(100) NULL,
+		CategoryId int NULL,
+		H264VideoPath nvarchar(300) NULL,
+		SeriesId int NULL,
+		SeriesIndex int NULL,
+		AccessCode nvarchar(50) NULL,
+		AccessCodeUsed datetime NULL,
+		Likes int NULL,
+		Dislikes int NULL,
+		ReferenceId int NULL,
+		Subtitle nvarchar(300) NULL,
+		 CONSTRAINT PK_UVG_Video PRIMARY KEY CLUSTERED 
+		(
+			ItemId ASC
+		))
+end
+else
+begin
+	if not exists(select * from dbo.syscolumns where id = object_id('{databaseOwner}{objectQualifier}UVG_Video') and name = 'LibraryId') 
+	  alter table {databaseOwner}{objectQualifier}UVG_Video
+	    add LibraryId int
+
+	if exists(select * from dbo.syscolumns where id = object_id('{databaseOwner}{objectQualifier}UVG_Video') and name = 'Categories') 
+	  alter table {databaseOwner}{objectQualifier}UVG_Video
+	    drop column Categories
+
+	alter table {databaseOwner}{objectQualifier}UVG_Video 
+	alter column VideoPath nvarchar(600)
+
+	if exists(select * from dbo.syscolumns where id = object_id('{databaseOwner}{objectQualifier}UVG_Video') and name = 'CreatedByUserFullName') 
+	  alter table {databaseOwner}{objectQualifier}UVG_Video
+	    drop column CreatedByUserFullName
+
+	if not exists(select * from dbo.syscolumns where id = object_id('{databaseOwner}{objectQualifier}UVG_Video') and name = 'Email') 
+	  alter table {databaseOwner}{objectQualifier}UVG_Video
+	    add Email nvarchar(50)
+
+	alter table {databaseOwner}{objectQualifier}UVG_Video 
+	alter column Length decimal(18, 2)
+
+	if exists(select * from dbo.syscolumns where id = object_id('{databaseOwner}{objectQualifier}UVG_Video') and name = 'AverageRating') 
+	  alter table {databaseOwner}{objectQualifier}UVG_Video
+	    drop column AverageRating
+
+	if exists(select * from dbo.syscolumns where id = object_id('{databaseOwner}{objectQualifier}UVG_Video') and name = 'TotalRatings') 
+	  alter table {databaseOwner}{objectQualifier}UVG_Video
+	    drop column TotalRatings
+
+	if not exists(select * from dbo.syscolumns where id = object_id('{databaseOwner}{objectQualifier}UVG_Video') and name = 'AspectRatio') 
+	  alter table {databaseOwner}{objectQualifier}UVG_Video
+	    add AspectRatio decimal(18, 2)
+
+	if not exists(select * from dbo.syscolumns where id = object_id('{databaseOwner}{objectQualifier}UVG_Video') and name = 'Approved') 
+	  alter table {databaseOwner}{objectQualifier}UVG_Video
+	    add Approved bit
+
+	if not exists(select * from dbo.syscolumns where id = object_id('{databaseOwner}{objectQualifier}UVG_Video') and name = 'ViewRoles') 
+	  alter table {databaseOwner}{objectQualifier}UVG_Video
+	    add ViewRoles nvarchar(200)
+
+	if not exists(select * from dbo.syscolumns where id = object_id('{databaseOwner}{objectQualifier}UVG_Video') and name = 'IsAudio') 
+	  alter table {databaseOwner}{objectQualifier}UVG_Video
+	    add IsAudio bit
+
+	if not exists(select * from dbo.syscolumns where id = object_id('{databaseOwner}{objectQualifier}UVG_Video') and name = 'AWS_Bucket') 
+	  alter table {databaseOwner}{objectQualifier}UVG_Video
+	    add AWS_Bucket nvarchar(50)
+
+	if not exists(select * from dbo.syscolumns where id = object_id('{databaseOwner}{objectQualifier}UVG_Video') and name = 'AWS_ThumbKey') 
+	  alter table {databaseOwner}{objectQualifier}UVG_Video
+	    add AWS_ThumbKey nvarchar(100)
+
+	if not exists(select * from dbo.syscolumns where id = object_id('{databaseOwner}{objectQualifier}UVG_Video') and name = 'AWS_VideoKey') 
+	  alter table {databaseOwner}{objectQualifier}UVG_Video
+	    add AWS_VideoKey nvarchar(100)
+
+	if not exists(select * from dbo.syscolumns where id = object_id('{databaseOwner}{objectQualifier}UVG_Video') and name = 'EmbedCode') 
+	  alter table {databaseOwner}{objectQualifier}UVG_Video
+	    add EmbedCode nvarchar(4000)
+
+	if not exists(select * from dbo.syscolumns where id = object_id('{databaseOwner}{objectQualifier}UVG_Video') and name = 'LinkUrl') 
+	  alter table {databaseOwner}{objectQualifier}UVG_Video
+	    add LinkUrl nvarchar(400)
+
+	if not exists(select * from dbo.syscolumns where id = object_id('{databaseOwner}{objectQualifier}UVG_Video') and name = 'AWS_H264VideoKey') 
+	  alter table {databaseOwner}{objectQualifier}UVG_Video
+	    add AWS_H264VideoKey nvarchar(100)
+
+	if exists(select * from dbo.syscolumns where id = object_id('{databaseOwner}{objectQualifier}UVG_Video') and name = 'CategoryId') 
+	  alter table {databaseOwner}{objectQualifier}UVG_Video
+	    drop column CategoryId
+
+	if not exists(select * from dbo.syscolumns where id = object_id('{databaseOwner}{objectQualifier}UVG_Video') and name = 'H264VideoPath') 
+	  alter table {databaseOwner}{objectQualifier}UVG_Video
+	    add H264VideoPath nvarchar(300)
+
+	if not exists(select * from dbo.syscolumns where id = object_id('{databaseOwner}{objectQualifier}UVG_Video') and name = 'SeriesId') 
+	  alter table {databaseOwner}{objectQualifier}UVG_Video
+	    add SeriesId int
+
+	if not exists(select * from dbo.syscolumns where id = object_id('{databaseOwner}{objectQualifier}UVG_Video') and name = 'SeriesIndex') 
+	  alter table {databaseOwner}{objectQualifier}UVG_Video
+	    add SeriesIndex int
+
+	if not exists(select * from dbo.syscolumns where id = object_id('{databaseOwner}{objectQualifier}UVG_Video') and name = 'AccessCode') 
+	  alter table {databaseOwner}{objectQualifier}UVG_Video
+	    add AccessCode nvarchar(50)
+
+	if not exists(select * from dbo.syscolumns where id = object_id('{databaseOwner}{objectQualifier}UVG_Video') and name = 'AccessCodeUsed') 
+	  alter table {databaseOwner}{objectQualifier}UVG_Video
+	    add AccessCodeUsed datetime
+
+	if not exists(select * from dbo.syscolumns where id = object_id('{databaseOwner}{objectQualifier}UVG_Video') and name = 'Likes') 
+	  alter table {databaseOwner}{objectQualifier}UVG_Video
+	    add Likes int
+
+	if not exists(select * from dbo.syscolumns where id = object_id('{databaseOwner}{objectQualifier}UVG_Video') and name = 'Dislikes') 
+	  alter table {databaseOwner}{objectQualifier}UVG_Video
+	    add Dislikes int
+
+	if not exists(select * from dbo.syscolumns where id = object_id('{databaseOwner}{objectQualifier}UVG_Video') and name = 'ReferenceId') 
+	  alter table {databaseOwner}{objectQualifier}UVG_Video
+	    add ReferenceId int
+
+	if not exists(select * from dbo.syscolumns where id = object_id('{databaseOwner}{objectQualifier}UVG_Video') and name = 'Subtitle') 
+	  alter table {databaseOwner}{objectQualifier}UVG_Video
+	    add Subtitle nvarchar(300)
+
+end
+go
+
+
+
+
+
+
+
+
+
+
+
+
+
+if not exists(select * from dbo.sysobjects where id = object_id('{databaseOwner}{objectQualifier}UVG_VideoCategory') and type = 'U')
+begin
+	CREATE TABLE {databaseOwner}{objectQualifier}UVG_VideoCategory(
+		ItemId int IDENTITY(1,1) NOT NULL,
+		VideoId int NOT NULL,
+		CategoryId int NOT NULL,
+		 CONSTRAINT PK_UVG_VideoCategory_1 PRIMARY KEY CLUSTERED 
+		(
+			ItemId ASC
+		))
+end
+go
+
+
+
+
+
+
+
+
+
+
+
+
+
+if not exists(select * from dbo.sysobjects where id = object_id('{databaseOwner}{objectQualifier}UVG_VideoTag') and type = 'U')
+begin
+	CREATE TABLE {databaseOwner}{objectQualifier}UVG_VideoTag(
+		ItemId int IDENTITY(1,1) NOT NULL,
+		VideoId int NOT NULL,
+		TagId int NOT NULL,
+		 CONSTRAINT PK_UVG_VideoTag PRIMARY KEY CLUSTERED 
+		(
+			ItemId ASC
+		))
+end
+go
+
+
+
+
+
+
+
+
+
+
+
+
+
+--Install scheduler
+if not exists(select * from {databaseOwner}{objectQualifier}Schedule where TypeFullName='BizModules.UltraVideoGallery.Scheduling.EncodingScheduler, BizModules.UltraVideoGallery')
+begin
+insert {databaseOwner}{objectQualifier}Schedule(TypeFullName, TimeLapse, TimeLapseMeasurement, RetryTimeLapse, RetryTimeLapseMeasurement, RetainHistoryNum, AttachToEvent, CatchUpEnabled, Enabled, ObjectDependencies, FriendlyName) 
+values ('BizModules.UltraVideoGallery.Scheduling.EncodingScheduler, BizModules.UltraVideoGallery', 1, 'm', 1, 'm', 50, '', 0, 1, 'UVG', 'UVG Video Encoding')
+end
+else
+begin
+update {databaseOwner}{objectQualifier}Schedule set FriendlyName='UVG Video Encoding' where TypeFullName='BizModules.UltraVideoGallery.Scheduling.EncodingScheduler, BizModules.UltraVideoGallery'
+end
+
+
+
+
+
+
+
+
+
+
+
+
+--Create default libraries
+declare @videos int, @categories int
+select @videos = count(*) from {databaseOwner}{objectQualifier}UVG_Video where isnull(LibraryId, 0) = 0
+select @categories = count(*) from {databaseOwner}{objectQualifier}UVG_Category where isnull(LibraryId, 0) = 0
+
+if @videos < 1
+begin
+	if @categories > 0
+		delete from {databaseOwner}{objectQualifier}UVG_Category
+end
+else
+begin
+	declare @PortalId int, @LibraryId int
+	declare portal_cursor cursor for select distinct PortalId from {databaseOwner}{objectQualifier}UVG_Video
+
+	open portal_cursor
+	fetch next from portal_cursor into @PortalId
+	while @@FETCH_STATUS = 0
+	begin
+		insert {databaseOwner}{objectQualifier}UVG_Library values(@PortalId, 'UVG Default Library', 'Administrators', null, getdate())	
+		select @LibraryId = SCOPE_identity()
+		update {databaseOwner}{objectQualifier}UVG_Video set LibraryId = @LibraryId where PortalId = @PortalId
+		update {databaseOwner}{objectQualifier}UVG_Category set LibraryId = @LibraryId where PortalId = @PortalId
+
+		fetch next from portal_cursor into @PortalId
+	end
+	close portal_cursor
+	deallocate portal_cursor
+end
+
+
+
+
+
+
+
+
+
+
+
+
+if exists(select * from dbo.sysobjects where id = object_id('FK_UVG_Category_UVG_Library') and type = 'F')
+ALTER TABLE {databaseOwner}{objectQualifier}UVG_Category DROP 
+	CONSTRAINT FK_UVG_Category_UVG_Library
+GO
+
+ALTER TABLE {databaseOwner}{objectQualifier}UVG_Category  WITH CHECK ADD  CONSTRAINT FK_UVG_Category_UVG_Library FOREIGN KEY(LibraryId)
+REFERENCES {databaseOwner}{objectQualifier}UVG_Library (ItemId)
+ON DELETE CASCADE
+GO
+
+delete {databaseOwner}{objectQualifier}UVG_Comment where VideoId not in (select ItemId from {databaseOwner}{objectQualifier}UVG_Video)
+go
+
+if not exists(select * from dbo.sysobjects where id = object_id('FK_UVG_Comment_UVG_Video') and type = 'F')
+ALTER TABLE {databaseOwner}{objectQualifier}UVG_Comment  WITH CHECK ADD  CONSTRAINT FK_UVG_Comment_UVG_Video FOREIGN KEY(VideoId)
+REFERENCES {databaseOwner}{objectQualifier}UVG_Video (ItemId)
+GO
+
+if not exists(select * from dbo.sysobjects where id = object_id('FK_UVG_Queue_UVG_Library') and type = 'F')
+ALTER TABLE {databaseOwner}{objectQualifier}UVG_Queue  WITH CHECK ADD  CONSTRAINT FK_UVG_Queue_UVG_Library FOREIGN KEY(LibraryId)
+REFERENCES {databaseOwner}{objectQualifier}UVG_Library (ItemId)
+GO
+
+delete {databaseOwner}{objectQualifier}UVG_Rating where VideoId not in (select ItemId from {databaseOwner}{objectQualifier}UVG_Video)
+go
+
+if not exists(select * from dbo.sysobjects where id = object_id('FK_UVG_Rating_UVG_Video') and type = 'F')
+ALTER TABLE {databaseOwner}{objectQualifier}UVG_Rating  WITH CHECK ADD  CONSTRAINT FK_UVG_Rating_UVG_Video FOREIGN KEY(VideoId)
+REFERENCES {databaseOwner}{objectQualifier}UVG_Video (ItemId)
+GO
+
+if not exists(select * from dbo.sysobjects where id = object_id('FK_UVG_Video_UVG_Library') and type = 'F')
+ALTER TABLE {databaseOwner}{objectQualifier}UVG_Video  WITH CHECK ADD  CONSTRAINT FK_UVG_Video_UVG_Library FOREIGN KEY(LibraryId)
+REFERENCES {databaseOwner}{objectQualifier}UVG_Library (ItemId)
+GO
+
+delete {databaseOwner}{objectQualifier}UVG_VideoCategory where VideoId not in (select itemid from {databaseOwner}{objectQualifier}UVG_Video) or CategoryId not in (select itemid from {databaseOwner}{objectQualifier}UVG_Category)
+go
+
+if exists(select * from dbo.sysobjects where id = object_id('FK_UVG_VideoCategory_UVG_Category') and type = 'F')
+ALTER TABLE {databaseOwner}{objectQualifier}UVG_VideoCategory DROP 
+	CONSTRAINT FK_UVG_VideoCategory_UVG_Category
+GO
+
+ALTER TABLE {databaseOwner}{objectQualifier}UVG_VideoCategory  WITH CHECK ADD  CONSTRAINT FK_UVG_VideoCategory_UVG_Category FOREIGN KEY(CategoryId)
+REFERENCES {databaseOwner}{objectQualifier}UVG_Category (ItemId)
+ON DELETE CASCADE
+GO
+
+if exists(select * from dbo.sysobjects where id = object_id('FK_UVG_VideoCategory_UVG_Video') and type = 'F')
+ALTER TABLE {databaseOwner}{objectQualifier}UVG_VideoCategory DROP 
+	CONSTRAINT FK_UVG_VideoCategory_UVG_Video
+GO
+
+ALTER TABLE {databaseOwner}{objectQualifier}UVG_VideoCategory  WITH CHECK ADD  CONSTRAINT FK_UVG_VideoCategory_UVG_Video FOREIGN KEY(VideoId)
+REFERENCES {databaseOwner}{objectQualifier}UVG_Video (ItemId)
+ON DELETE CASCADE
+GO
+

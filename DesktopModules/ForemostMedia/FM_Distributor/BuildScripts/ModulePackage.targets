@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="Windows-1252"?>
+
+<!-- WARNING, WARNING, WARNING -->
+<!-- REMEMBER THAT IF YOU MODIFY THE TARGETS FILE YOU NEED TO CLOSE/OPEN THE PROJECT FOR THE CHANGES TO TAKE EFFECT -->
+
+<Project ToolsVersion="3.5" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+ <Import Project="MSBuild.Community.Tasks.Targets" />
+  <Target Name="BeforeBuild" >
+    <XmlRead Prefix="n"
+                   Namespace="http://schemas.microsoft.com/developer/msbuild/2003"
+                   XPath="dotnetnuke/packages/package[1]/@version"
+                   XmlFileName="$(DNNFileName).dnn">
+      <Output TaskParameter="Value" PropertyName="Version" />
+    </XmlRead>
+    <Message Text="Updating AssemblyInfo to Version $(Version)"></Message>
+    <AssemblyInfo CodeLanguage="CS"
+        OutputFile="Properties/AssemblyInfo.cs"
+        AssemblyVersion="$(Version)"
+        AssemblyFileVersion="$(Version)"
+        AssemblyTitle="Foremost Media: $(ProjectName)"
+        AssemblyDescription="Foremost Media: $(SolutionName)"
+        AssemblyCompany="Foremost Media"
+        AssemblyProduct="$(RootNameSpace)"
+        AssemblyCopyright="Copyright © $([System.DateTime]::Now.ToString(`yyyy`)) Foremost Media"
+      />
+    <Message Text="Finished updating AssemblyInfo to Version $(Version)"></Message>
+  </Target>
+ <Target Name="PackageModule" Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+   <XmlRead Prefix="n"
+                   Namespace="http://schemas.microsoft.com/developer/msbuild/2003"
+                   XPath="dotnetnuke/packages/package[1]/@version"
+                   XmlFileName="$(DNNFileName).dnn">
+     <Output TaskParameter="Value" PropertyName="Version" />
+   </XmlRead>
+     <Message Text="DnnModulePathMSBuildDnnModulePath File Name = $(MSBuildDnnModulePath)" />
+     <Message Text="MSBuildDnnBinPath File Name = $(MSBuildDnnBinPath)" />
+     <Message Text="MSBuildProjectDirectory File Name = $(MSBuildProjectDirectory)" />
+   <!-- Get All Module Files from DNN/DesktopMOdules/ForemostMedia/**MOdule**/ except *.dnn, \Sql\*, and **\assets\** -->
+   <ItemGroup>     
+     <InstallModuleFilesInclude Include="$(MSBuildDnnModulePath)\**" Exclude="$(MSBuildDnnModulePath)\Sql\**;$(MSBuildDnnModulePath)\*.dnn;$(MSBuildDnnModulePath)\**\assets\**;$(MSBuildDnnModulePath)\ReleaseNotes.txt;$(MSBuildDnnModulePath)\License.txt;$(MSBuildDnnModulePath)\*.zip.manifest" />        
+   </ItemGroup>
+   
+   <!-- Get All Module dll's - Can be $(AssemblyName) -->
+   <ItemGroup>
+    <InstallBinInclude Include="$(MSBuildDnnBinPath)\$(AssemblyName).*dll" Exclude="$(MSBuildDnnBinPath)\ForemostMedia.Modules.WasteSecure.DataMigrator.dll"  />
+   </ItemGroup>
+   <!-- Get All Sql files from the PROJECT - not MODULE -->
+   <ItemGroup>
+    <InstallSqlInclude Include="$(MSBuildProjectDirectory)\Sql\*.SqlDataProvider" />
+   </ItemGroup>
+   <!-- Get Additional Assemblies -->
+   <ItemGroup>
+    <AdditionalAssemblies Include="$(MSBuildDnnBinPath)\ForemostMedia.Helpers.dll" />
+    
+       <!-- To Add Additional
+    <AdditionalAssemblies Include="$(MSBuildDnnBinPath)\Xyz.dll" />
+    -->
+   </ItemGroup>
+   <!-- from the PROJECT - not MODULE -->
+   <CreateItem Include="$(DNNFileName).dnn">
+     <Output TaskParameter="Include" ItemName="PackageManifestFiles" />
+   </CreateItem>
+   <CreateItem Include="ReleaseNotes.txt;License.txt">
+     <Output TaskParameter="Include" ItemName="PackageTxtFiles" />
+   </CreateItem>
+
+   <Copy SourceFiles="@(InstallBinInclude)" DestinationFolder="$(MSBuildProjectDirectory)\Package\bin\%(itemname.RecursiveDir)"/>
+   <Copy SourceFiles="@(InstallSqlInclude)" DestinationFolder="$(MSBuildProjectDirectory)\Package\Sql\%(RecursiveDir)" />
+   <Copy SourceFiles="@(PackageManifestFiles)" DestinationFolder="$(MSBuildProjectDirectory)\Package" />
+   <Copy SourceFiles="@(PackageTxtFiles)" DestinationFolder="$(MSBuildProjectDirectory)\Package" />
+
+     <Message Text="InstallModuleFilesInclude File Name = $(InstallModuleFilesInclude)" />
+   <!-- Create Additional Assemblies zip -->
+   <Zip Files="@(AdditionalAssemblies)" WorkingDirectory="$(MSBuildDnnBinPath)" ZipFileName="$(ProjectName)_$(Version)_AdditionalAssemblies.$(Extension)" />
+   <Copy SourceFiles="$(MSBuildProjectDirectory)\$(ProjectName)_$(Version)_AdditionalAssemblies.$(Extension)" DestinationFolder="$(DNNDirectory)/Install/Module/" />
+   
+   <!-- create the INSTALL RESOURCES.ZIP file -->
+   <Copy SourceFiles="@(InstallModuleFilesInclude)" DestinationFolder="$(MSBuildProjectDirectory)\ResourcesZip\%(RecursiveDir)" />
+
+   <CreateItem Include="$(MSBuildProjectDirectory)\ResourcesZip\**\*.*">
+     <Output TaskParameter="Include" ItemName="ResourcesContent" />
+   </CreateItem>
+   
+   <Zip Files="@(ResourcesContent)" WorkingDirectory="$(MSBuildProjectDirectory)\ResourcesZip" ZipFileName="Resources.$(Extension)" />
+   <Copy SourceFiles="$(MSBuildProjectDirectory)\Resources.$(Extension)" DestinationFolder="package/" />
+
+   <CreateItem Include="$(MSBuildProjectDirectory)\Package\**\*.*">
+     <Output TaskParameter="Include" ItemName="OutputContent" />
+   </CreateItem>
+   <!-- Create the Install package -->    
+   <Zip Files="@(OutputContent)" WorkingDirectory="$(MSBuildProjectDirectory)\Package" ZipFileName="$(ProjectName)_$(Version)_Install.$(Extension)" />
+   <!-- Copy the Install package to the Packages folder -->
+   <Copy SourceFiles="$(MSBuildProjectDirectory)\$(ProjectName)_$(Version)_Install.$(Extension)" DestinationFolder="$(DNNDirectory)/Install/Module/" />
+   
+   <RemoveDir Directories ="$(MSBuildDnnModulePath)\Package" />
+   <RemoveDir Directories ="$(MSBuildProjectDirectory)\Package" />
+   <RemoveDir Directories ="$(MSBuildProjectDirectory)\ResourcesZip" />
+   
+   <Delete Files="$(MSBuildProjectDirectory)\$(ProjectName)_$(Version)_Install.$(Extension)" />
+   <Delete Files="$(MSBuildProjectDirectory)\Resources.Zip" />
+   <Delete Files="$(MSBuildProjectDirectory)\$(ProjectName)_$(Version)_AdditionalAssemblies.$(Extension)" />
+   <RemoveDir Directories ="$(MSBuildDnnModulePath)\Package" />
+   <RemoveDir Directories ="$(MSBuildProjectDirectory)\ResourcesZip" />
+   
+ </Target>
+</Project>

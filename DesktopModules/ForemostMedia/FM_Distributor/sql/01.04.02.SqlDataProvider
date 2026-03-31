@@ -1,0 +1,82 @@
+﻿/****** Object:  StoredProcedure  {databaseOwner}[{objectQualifier}fm_dist_Import_AddRegionToUser]    Script Date: 11/11/2010 15:22:09 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N' {databaseOwner}[{objectQualifier}fm_dist_Import_AddRegionToUser]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC dbo.sp_executesql @statement = N'-- =============================================
+-- Author:		<Author,,Name>
+-- Create date: <Create Date,,>
+-- Description:	<Description,,>
+-- =============================================
+create PROCEDURE  {databaseOwner}[{objectQualifier}fm_dist_Import_AddRegionToUser] 
+	-- Add the parameters for the stored procedure here
+	@distId int,
+	@state nvarchar(5),
+	@country nvarchar(3)
+AS
+BEGIN
+	-- SET NOCOUNT ON added to prevent extra result sets from
+	-- interfering with SELECT statements.
+	SET NOCOUNT ON;
+
+    -- Insert statements for procedure here
+	/****** Script for SelectTopNRows command from SSMS  ******/
+  
+  declare @ids int
+  
+  set @ids = (select DistId from fm_dist_RegionCovering where DistId = @distId and State = @state and Country = @country)
+  
+  if @ids > 1  
+  print @ids
+  else
+  insert into fm_dist_RegionCovering (DistId, State, Country) values (@distId, @state, @country)
+END
+' 
+END
+GO
+/****** Object:  StoredProcedure  {databaseOwner}[{objectQualifier}fm_dist_Import_AddDistTypeToUser]    Script Date: 11/11/2010 15:22:09 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N' {databaseOwner}[{objectQualifier}fm_dist_Import_AddDistTypeToUser]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC dbo.sp_executesql @statement = N'-- =============================================
+-- Author:		<Author,,Name>
+-- Create date: <Create Date,,>
+-- Description:	<Description,,>
+-- =============================================
+CREATE PROCEDURE  {databaseOwner}[{objectQualifier}fm_dist_Import_AddDistTypeToUser] 
+	-- Add the parameters for the stored procedure here
+	@distId int,
+	@typeName nvarchar(200)
+AS
+BEGIN
+	-- SET NOCOUNT ON added to prevent extra result sets from
+	-- interfering with SELECT statements.
+	SET NOCOUNT ON;
+
+    -- Insert statements for procedure here
+	/****** Script for SelectTopNRows command from SSMS  ******/
+declare @typeId int
+
+set @typeId = (
+SELECT Id
+  FROM  fm_dist_Type
+  where Name = @typeName)
+  
+  
+  declare @ids int
+  
+  set @ids = (select DistId from fm_dist_DistributorType where DistId = @distId and TypeId = @typeId )
+  
+  if @ids > 1  
+  print @ids
+  else
+  insert into fm_dist_DistributorType (DistId, TypeId) values (@distId, @typeId)
+END
+' 
+END
+GO

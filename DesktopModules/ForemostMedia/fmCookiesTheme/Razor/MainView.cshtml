@@ -1,0 +1,14 @@
+﻿@using ForemostMedia.Modules.fmCookiesTheme.Components.Factories
+@using ForemostMedia.Modules.fmCookiesTheme.Components.Models
+@inherits DotNetNuke.Web.Razor.DotNetNukeWebPage<MainModel>
+<h1>@Model.Name</h1>
+<p>@Html.GetLocalizedString("HelloWorld.Text")</p>
+<h2>I'm portal @Dnn.Portal.PortalName Specific</h2>
+<a href='@UrlFactory.Instance().ExampleView(Dnn.Module)'>Example View</a><br />
+<a href='@UrlFactory.Instance().ExampleAdminView(Dnn.Module)'>Example Admin View</a>
+<ul>
+    @foreach (var item in Model.Items)
+    {
+        <li>@item</li>
+    }
+</ul>

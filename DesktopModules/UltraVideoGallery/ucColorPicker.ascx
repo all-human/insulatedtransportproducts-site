@@ -1,0 +1,2 @@
+<%@ Control Language="vb" AutoEventWireup="false" Codebehind="ucColorPicker.ascx.vb" Inherits="BizModules.UltraVideoGallery.ucColorPicker" %>
+#<asp:textbox id="txtColor" runat="server" Width="60px" MaxLength="6" CssClass="NormalTextbox color{required:false}"></asp:textbox>

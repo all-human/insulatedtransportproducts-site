@@ -1,0 +1,139 @@
+﻿ALTER TABLE {databaseOwner}[{objectQualifier}DCC_EF_WorkFlow_SendEmail]
+ADD [EWFAdvanceSettingID] [int] NULL
+GO
+
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE {databaseOwner}[{objectQualifier}DCC_EF_WorkFlow_EmailWorkFlowAdvancedSettings](
+	[EWFAdvanceSettingID] [int] IDENTITY(1,1) NOT NULL,
+	[EnableSetting] [bit] NULL,
+	[SMTPServerName] [nvarchar](500) NULL,
+	[SMTPAuthentication] [int] NULL,
+	[SMTPEnableSSL] [bit] NULL,
+	[SMTPUserName] [nvarchar](500) NULL,
+	[SMTPPassword] [nvarchar](500) NULL,
+ CONSTRAINT [PK_{objectQualifier}DCC_EF_WorkFlow_EmailWorkFlowAdvancedSettings] PRIMARY KEY CLUSTERED 
+(
+	[EWFAdvanceSettingID] ASC
+)WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON) 
+) ON [PRIMARY]
+
+GO
+
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+
+create procedure {databaseOwner}[{objectQualifier}DCC_EF_ADDEmailWorkFlowAdvancedSettings]
+@enableSettings bit,
+@SMTPServerName nvarchar(500),
+@SMTPAuthentication int,
+@SMTPEnableSSL bit,
+@SMTPUserName nvarchar(500),
+@SMTPPassword nvarchar(500)
+
+as
+insert into {databaseOwner}[{objectQualifier}DCC_EF_WorkFlow_EmailWorkFlowAdvancedSettings]
+(
+EnableSetting,
+SMTPServerName,
+SMTPAuthentication,
+SMTPEnableSSL,
+SMTPUserName,
+SMTPPassword
+)
+Values
+(
+@enableSettings ,
+@SMTPServerName ,
+@SMTPAuthentication ,
+@SMTPEnableSSL ,
+@SMTPUserName ,
+@SMTPPassword 
+)
+
+SELECT SCOPE_IDENTITY();
+
+GO
+
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+
+CREATE procedure {databaseOwner}[{objectQualifier}DCC_EF_GetEmailWorkFlowAdvancedSettingsById]
+@EmailWorkFlowId int=6
+as
+
+select AWS.* from  {databaseOwner}[{objectQualifier}DCC_EF_WorkFlow_EmailWorkFlowAdvancedSettings] as AWS inner join
+               
+               {databaseOwner}[{objectQualifier}DCC_EF_WorkFlow_SendEmail] as SEW on SEW.EWFAdvanceSettingID=AWS.EWFAdvanceSettingID
+                and
+               SEW.WorkFlowID=@EmailWorkFlowId
+
+GO
+
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+
+CREATE procedure {databaseOwner}[{objectQualifier}DCC_EF_GetFieldValueByModuleId]
+@ModuleID int=383,
+@ControlType nvarchar(250)='autoincrementfield',
+@Culture nvarchar(50)='en-US'
+as
+Select top 1 DV.FieldValue From {databaseOwner}[{objectQualifier}DCC_EF_FormDataMaster] as DM inner join 
+                    {databaseOwner}[{objectQualifier}DCC_EF_FormDataValues] as DV on DM.FormRecordID=DV.FormRecordID and DM.ModuleID=@ModuleID and DM.Culture=@Culture inner join 
+                    {databaseOwner}[{objectQualifier}DCC_EF_EmailForm] as EF on EF.FieldID=DV.FieldID and EF.ModuleID=@ModuleID and EF.ControlType=@ControlType
+
+Order by DM.FormRecordID desc
+
+GO
+
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+
+CREATE procedure {databaseOwner}[{objectQualifier}DCC_EF_UpdateEmailWorkFlowAdvancedSettings]
+@WorkFlowId int=6,
+@enableSettings bit=1,
+@SMTPServerName nvarchar(500)='fdff',
+@SMTPAuthentication int=1,
+@SMTPEnableSSL bit=1,
+@SMTPUserName nvarchar(500)='anjani',
+@SMTPPassword nvarchar(500)='2222'
+
+as
+update {databaseOwner}[{objectQualifier}DCC_EF_WorkFlow_EmailWorkFlowAdvancedSettings]
+set
+EnableSetting=@enableSettings,
+SMTPServerName=@SMTPServerName,
+SMTPAuthentication=@SMTPAuthentication,
+SMTPEnableSSL=@SMTPEnableSSL,
+SMTPUserName=@SMTPUserName,
+SMTPPassword=@SMTPPassword
+Where EWFAdvanceSettingID=(select EWFAdvanceSettingID from {databaseOwner}[{objectQualifier}DCC_EF_WorkFlow_SendEmail] where WorkFlowID=@WorkFlowId)
+
+GO
+
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+
+Create procedure {databaseOwner}[{objectQualifier}DCC_EF_UpdateSendEmailForAdvancedSettings]
+@EmailWorkFlowId int,
+@EWFAdvanceSettingID int
+as
+
+Update {databaseOwner}[{objectQualifier}DCC_EF_WorkFlow_SendEmail] 
+          Set EWFAdvanceSettingID=@EWFAdvanceSettingID
+          Where @EmailWorkFlowId=@EmailWorkFlowId
+
+GO
+

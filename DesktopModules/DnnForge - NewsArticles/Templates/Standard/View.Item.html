@@ -1,0 +1,67 @@
+<!-- View.Item -->
+<div class="article">
+
+    <div class="articleHeadline vevent"><h3 class="summary" >[EDIT][TITLE]</h3></div>
+
+    <div class="articleEntry Normal">
+        [PAGETEXT]
+        [HASCUSTOMFIELDS][CUSTOMFIELDS][/HASCUSTOMFIELDS]
+        [HASLINK]
+            <p><a href="[LINK]" target="[LINKTARGET]">[Read More...]</a></p>
+        [/HASLINK]
+    </div>
+    
+    [HASMULTIPLEPAGES]
+    <div class="articlePaging Normal">
+        Pages: [CURRENTPAGE] of [PAGECOUNT][HASPREVPAGE] [LINKPREVIOUS][/HASPREVPAGE][HASNEXTPAGE] [LINKNEXT][/HASNEXTPAGE]
+    </div>
+    [/HASMULTIPLEPAGES]
+    
+    [HASCATEGORIES] 
+    <div class="articleCategories Normal">
+        Posted in: [CATEGORIES]
+    </div>
+    [/HASCATEGORIES]
+
+</div>
+
+[HASIMAGES]
+<div class="articleImages">
+    <h2><a href="Images">Related Images</a></h2>
+    <table><tr><td>[IMAGES]</td></tr></table>
+</div>
+[/HASIMAGES]
+
+[HASFILES]
+<div class="articleFiles">
+    <h2><a href="Files">Related Files</a></h2>
+    [FILES]
+</div>
+[/HASFILES]
+
+[HASRELATED]
+<div class="related">
+    <h2><a id="Related">Related Articles</a></h2>
+    [RELATED]
+</div>
+[/HASRELATED]
+
+[ISRATEABLE]
+<div class="postRating">
+    <h2><a id="PostRating">Post Rating</a></h2>
+    [POSTRATING]
+</div>
+[/ISRATEABLE]
+
+[HASCOMMENTSENABLED]
+<div class="articleComments">
+    <h2><a id="Comments">Comments</a></h2>
+    [HASCOMMENTS][COMMENTS][/HASCOMMENTS]
+    [HASNOCOMMENTS]<span class="Normal">There are currently no comments, be the first to post one!</span>[/HASNOCOMMENTS]
+</div>
+
+<div class="postComment">
+    <h2><a id="PostComment">Post Comment</a></h2>
+    [POSTCOMMENT]
+</div>
+[/HASCOMMENTSENABLED]

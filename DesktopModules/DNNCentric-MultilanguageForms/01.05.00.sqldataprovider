@@ -1,0 +1,189 @@
+﻿-- TAble
+ALTER TABLE {databaseOwner}[{objectQualifier}DCC_EF_Category] 
+ADD IsExpanded bit default 'True'  not null
+
+GO
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+--Function
+Alter function {databaseOwner}[{objectQualifier}DCC_EF_GetCategoryList] 
+(
+	@defaultLanguage as nvarchar(15),
+	@currentLanguage as nvarchar(15),
+	@ModuleID int
+)
+RETURNS TABLE 
+AS
+return
+(
+SELECT  TOP 100 PERCENT  
+	A.CategoryID,
+	isnull(B.CategoryName,A.CategoryName) CategoryName,
+	A.SortOrder,
+	A.IsExpanded
+FROM
+   (SELECT     
+		CategoryID, 
+		Culture, 
+		CategoryName,
+		SortORder,
+        IsExpanded
+	FROM	    	      
+		{databaseOwner}{objectQualifier}DCC_EF_Category 
+	WHERE      
+		(Culture = @defaultLanguage AND ModuleID=@ModuleID)) 
+AS A LEFT OUTER JOIN
+	(SELECT     
+		CategoryID, 
+		Culture, 
+		CategoryName,
+		SortORder,
+        IsExpanded
+	FROM          
+		{databaseOwner}{objectQualifier}DCC_EF_Category AS DCC_EF_Category_1 
+	WHERE      
+		(Culture = @currentLanguage AND ModuleID=@ModuleID)) 
+AS B ON A.CategoryID = B.CategoryID
+ORDER BY A.SortOrder
+)
+
+
+GO
+
+--- SP
+
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+Alter procedure {databaseOwner}[{objectQualifier}DCC_EF_GetAllControlList] 
+@CurrentCulture nvarchar(15),
+@DefaultCulture nvarchar(15),
+@ModuleID int
+AS
+Select 
+M.Culture,
+M.FieldName,
+M.ControlType,
+M.Culture_Value,
+C.CategoryName,
+C.CategoryID,
+C.IsExpanded
+FROM
+(select (case when B.CulTure_Value is null then a.culture else b.culture end) Culture,A.FieldName,A.ControlType, isnull(B.CulTure_Value,A.CulTure_Value) CulTure_Value,A.CategoryID,A.SortOrder
+from
+(select cul.Culture,ef.FieldID, ef.FieldName,ef.ControlType,cul.Culture_Value,ef.CategoryID,ef.SortOrder
+from {databaseOwner}[{objectQualifier}DCC_EF_EmailForm] ef,{databaseOwner}[{objectQualifier}DCC_EF_EmailFormCulture] cul 
+where ef.FieldID=cul.FieldID and cul.Culture=@DefaultCulture AND ef.ModuleID=@ModuleID) 
+AS A left Outer join
+(select  cul.Culture,ef.FieldID,ef.FieldName, ef.ControlType,cul.Culture_Value,ef.CategoryID,ef.SortOrder
+from {databaseOwner}[{objectQualifier}DCC_EF_EmailForm] ef,{databaseOwner}[{objectQualifier}DCC_EF_EmailFormCulture] cul 
+where ef.FieldID=cul.FieldID and cul.Culture=@CurrentCulture AND ef.ModuleID=@ModuleID) AS B
+ON A.FieldID=B.FieldID) 
+
+AS M,
+
+(select * from {databaseOwner}[{objectQualifier}DCC_EF_GetCategoryList](@DefaultCulture,@CurrentCulture,@ModuleID)) 
+
+AS C 
+
+where M.CategoryID=C.CategoryID
+order by C.SortOrder,M.SortOrder
+
+GO
+
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+Alter procedure {databaseOwner}[{objectQualifier}DCC_EF_GetCategoryByCulture] 
+@currentLanguage nvarchar(15),
+@DefaultLanguage nvarchar(15),
+@ModuleID int
+as
+SELECT     A.CategoryID,isnull(B.CategoryName,A.CategoryName) CategoryName,A.SortOrder,A.IsExpanded
+FROM         (SELECT     CategoryID, Culture, CategoryName,SortOrder,IsExpanded
+FROM          {databaseOwner}[{objectQualifier}DCC_EF_Category]
+WHERE      (Culture = @defaultLanguage AND ModuleID=@ModuleID)) AS A LEFT OUTER JOIN
+(SELECT     CategoryID, Culture, CategoryName,SortOrder,IsExpanded
+FROM          {databaseOwner}[{objectQualifier}DCC_EF_Category] AS DCC_EF_Category_1 
+WHERE      (Culture = @currentLanguage AND ModuleID=@ModuleID)) AS B ON A.CategoryID = B.CategoryID
+
+order by A.SortOrder
+
+GO
+
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+
+
+Alter procedure {databaseOwner}[{objectQualifier}DCC_EF_InsertCategoryCultureValue] 
+@CategoryID int,
+@Culture nvarchar(100),
+@CategoryName nvarchar(4000),
+@ModuleID int,
+@IsExpanded bit
+as
+declare @SortOrder int
+--set @SortOrder=(select isnull(MAX(CategoryID),1) from DCC_EF_Category) 
+
+set @SortOrder=@CategoryID
+
+Insert into {databaseOwner}[{objectQualifier}DCC_EF_Category](CategoryID,Culture,CategoryName,SortOrder,ModuleID,IsExpanded) 
+values(@CategoryID,@Culture,@CategoryName,@SortOrder,@ModuleID,@IsExpanded )
+
+GO
+
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+Alter procedure {databaseOwner}[{objectQualifier}DCC_EF_UpdateCategoryNameByCategoryID] 
+@CategoryID int,
+@Culture nvarchar(50),
+@CategoryName nvarchar(4000),
+@ModuleID int
+AS
+
+IF EXISTS (select Culture from {databaseOwner}[{objectQualifier}DCC_EF_Category] where CategoryID=@CategoryID AND Culture = @Culture AND ModuleID=@ModuleID) 
+Begin
+update
+{databaseOwner}[{objectQualifier}DCC_EF_Category] 
+set
+Culture=@Culture,
+CategoryName=@CategoryName
+where
+CategoryID=@CategoryID
+AND Culture=@Culture
+AND ModuleID=@ModuleID
+End
+ELSE
+Begin
+insert into
+{databaseOwner}[{objectQualifier}DCC_EF_Category] 
+(CategoryID,Culture,CategoryName,ModuleID)
+values
+(@CategoryID,@Culture,@CategoryName,@ModuleID)
+
+End
+GO
+
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+
+Create procedure {databaseOwner}[{objectQualifier}DCC_EF_UpdateCategoryIsExpanded] 
+
+@CategoryID int,
+@IsExpanded int
+AS
+update {databaseOwner}[{objectQualifier}DCC_EF_Category] 
+set
+IsExpanded=@IsExpanded
+where CategoryID=@CategoryID
+GO

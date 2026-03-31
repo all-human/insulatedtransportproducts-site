@@ -1,0 +1,35 @@
+﻿/****** Object:  Table [dbo].[FMFormThirdPartySubmission]    Script Date: 11/30/2016 11:17:32 AM ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+CREATE TABLE [dbo].[FMFormThirdPartySubmission](
+	[FormSubmissionId] [int] NOT NULL,
+	[ThirdPartyId] [int] NOT NULL,
+	[PostData] [nvarchar](max) NOT NULL,
+ CONSTRAINT [PK_FMFormThirdPartySubmission] PRIMARY KEY CLUSTERED 
+(
+	[FormSubmissionId] ASC,
+	[ThirdPartyId] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
+
+GO
+
+ALTER TABLE [dbo].[FMFormThirdPartySubmission]  WITH CHECK ADD  CONSTRAINT [FK_FMFormThirdPartySubmission_FMFormSubmissions] FOREIGN KEY([FormSubmissionId])
+REFERENCES [dbo].[FMFormSubmissions] ([ID])
+GO
+
+ALTER TABLE [dbo].[FMFormThirdPartySubmission] CHECK CONSTRAINT [FK_FMFormThirdPartySubmission_FMFormSubmissions]
+GO
+
+insert into FMFormThirdPartySubmission(FormSubmissionId, ThirdPartyId, PostData)
+select ID, 1, SalesForcePostData from FMFormSubmissions
+where Len(SalesForcePostData) > 2
+GO
+
+alter table [dbo].[FMFormSubmissions]
+	drop column SalesForcePostData
+GO

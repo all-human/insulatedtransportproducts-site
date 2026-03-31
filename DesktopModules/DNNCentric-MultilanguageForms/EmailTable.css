@@ -1,0 +1,51 @@
+﻿
+
+/************************************PLEASE NOTE*********************************************
+*   If you make any changes in this file, then make sure to keep a backup  of it before     *
+*   making any   upgrades to the module. This will be overwritten during the upgrade.       *                                            *
+********************************************************************************************/
+
+TableStyle 
+{	border : 1px solid #000;
+ 	border-collapse:collapse;
+    border-spacing: 2px;
+	background:#fff;
+	width:500px;
+}
+FieldCaptionCellStyle 
+{	
+	border : 1px solid #000;
+	border-collapse:collapse;
+	color: #111;
+	font-weight: bold;
+	padding: 3px 5px;
+	font-family:Arial, Helvetica, sans-serif;
+	font-size:12px;
+}
+FieldValueCellStyle 
+{	
+	border : 1px solid #000;
+	border-collapse:collapse;
+	color: #111;
+	padding: 3px 5px;
+	font-family:Arial, Helvetica, sans-serif;
+	font-size:14px;
+}
+CategoryHeaderStyle 
+{	
+	border : 1px solid #000;
+	border-collapse:collapse;
+	background: #808080;
+	color: #FFFFFF;
+	font-weight: bold;
+	padding: 3px 5px;
+	font-family:Verdana;
+	font-size:16px;
+}
+/* its for Label Control if used in form.  */
+LabelCellStyle 
+{
+	border : 1px solid #000;
+	border-collapse:collapse;
+	text-align:center;
+}

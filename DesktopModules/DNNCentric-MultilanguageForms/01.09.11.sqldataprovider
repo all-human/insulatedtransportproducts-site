@@ -1,0 +1,175 @@
+﻿/****** Object:  StoredProcedure {databaseOwner}[{objectQualifier}DCC_EF_GetModuleDataToExport]    Script Date: 01/25/2011 20:53:53 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+
+-- {databaseOwner}[{objectQualifier}DCC_EF_GetModuleDataToExport] 483
+ALTER Procedure {databaseOwner}[{objectQualifier}DCC_EF_GetModuleDataToExport]
+@ModuleID int
+as
+
+--- CategoryMaster ---
+
+Select * 
+INTO #Temp0
+From {databaseOwner}[{objectQualifier}DCC_EF_CategoryMaster] as CatMas
+Where ModuleID=@ModuleID
+	if( @@rowcount >0)
+		begin
+		select * from #Temp0
+		end
+	Else
+		begin
+		select '~' NoRecordExists
+		End
+-- need to fetch Culture belonging to ModuleID only ---
+--- CategoryCulture ---
+Select CC.* 
+INTO #Temp1
+From {databaseOwner}[{objectQualifier}DCC_EF_CategoryCulture] CC,{databaseOwner}[{objectQualifier}DCC_EF_CategoryMaster] CM
+Where 
+ CM.ModuleID=@ModuleID
+AND
+CM.CategoryID=CC.CategoryID
+if( @@rowcount >0)
+		begin
+		select * from #Temp1
+		end
+	Else
+		begin
+		select '~' NoRecordExists
+		End
+--- EmailForm ---
+Select * 
+INTO #Temp2
+From {databaseOwner}[{objectQualifier}DCC_EF_EmailForm]
+Where ModuleID=@ModuleID
+	if( @@rowcount >0)
+		begin
+		select * from #Temp2
+		end
+	Else
+		begin
+		select '~' NoRecordExists
+		End
+-- need to fetch Culture belonging to ModuleID only--
+--- EmailFormCulture---
+Select EFC.* 
+INTO #Temp3
+From {databaseOwner}[{objectQualifier}DCC_EF_EmailFormCulture] EFC,{databaseOwner}[{objectQualifier}DCC_EF_EmailForm] EFM
+Where 
+ EFM.ModuleID=@ModuleID
+AND
+EFM.FieldID=EFC.FieldID
+	if( @@rowcount >0)
+		begin
+		select * from #Temp3
+		end
+	Else
+		begin
+		select '~' NoRecordExists
+		End
+---- ModuleSettings-------
+Select settingName,settingValue 
+INTO #Temp4
+From {databaseOwner}[{objectQualifier}ModuleSettings]
+Where ModuleID=@ModuleID
+if( @@rowcount >0)
+		begin
+		select * from #Temp4
+		end
+	Else
+		begin
+		select '~' NoRecordExists
+		End
+-----ErrorMsgWithCulture-----
+select * 
+INTO #Temp5
+from {databaseOwner}[{objectQualifier}DCC_EF_ErrorMsgWithCulture]
+Where ModuleID=@ModuleID
+	if( @@rowcount >0)
+		begin
+		select * from #Temp5
+		end
+	Else
+		begin
+		select '~' NoRecordExists
+		End
+----MiscLocalization----
+select * 
+INTO #Temp6
+from  {databaseOwner}[{objectQualifier}DCC_EF_MiscLocalization]
+Where ModuleID=@ModuleID
+if( @@rowcount >0)
+		begin
+		select * from #Temp6
+		end
+	Else
+		begin
+		select '~' NoRecordExists
+		End
+
+----ResponseOnSubmit-----
+
+	select * 
+	INTO #Temp7
+	from {databaseOwner}[{objectQualifier}DCC_EF_ResponseOnSubmit]
+	Where ModuleID=@ModuleID
+	if( @@rowcount >0)
+		begin
+		select * from #Temp7
+		end
+	Else
+		begin
+		select '~' as NoRecordExists
+		End
+
+-----ActiveWorkFlows & WorkFlow_SendEmail-----
+
+	select 
+	WFMas.WorkFlowName,
+	WFMas.WorkFlowTypeID,
+	WFMas.Disabled,
+	WFMas.ModuleID,
+	EmailSubject,
+	EmailTemplate,
+	SendType,
+	SendToList,
+	Culture,
+	FromEmailID,
+    PreCondition
+	INTO #Temp
+	from {databaseOwner}[{objectQualifier}DCC_EF_WorkFlow_SendEmail] WFCul,{databaseOwner}[{objectQualifier}DCC_EF_ActiveWorkFlows] WFMas
+	Where 
+	 WFMas.ModuleID=@ModuleID
+	AND
+	WFMas.WorkFlowID=WFCul.WorkFlowID
+
+	if( @@rowcount >0)
+		begin
+		select * from #Temp
+		end
+	Else
+		begin
+		select '~' as NoRecordExists
+		End
+
+----Post Data WorkFlow-----
+
+	select * 
+	INTO #Temp9
+	from {databaseOwner}[{objectQualifier}DCC_EF_WorkFlow_SQLPost]
+	Where ModuleID=@ModuleID
+	if( @@rowcount >0)
+		begin
+		select * from #Temp9
+		end
+	Else
+		begin
+		select '~' as NoRecordExists
+		End
+
+
+GO
+

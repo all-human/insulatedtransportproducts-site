@@ -1,0 +1,1 @@
+<%@ Page Language="vb" AutoEventWireup="false" Codebehind="Ceq.aspx.vb" Inherits="BizModules.UltraVideoGallery.Ceq" %>

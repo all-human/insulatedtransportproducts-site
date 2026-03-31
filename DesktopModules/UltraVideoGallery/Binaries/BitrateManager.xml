@@ -1,0 +1,6 @@
+<bitratemanager>
+	<flv mode="Fixed" qmin="5" qmax="15" />
+	<mp4 mode="Dynamic" bitrate="2" />
+	<mp4_baseline mode="Dynamic" bitrate="2" />
+	<mpg mode="Dynamic" bitrate="5" />
+</bitratemanager>

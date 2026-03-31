@@ -1,0 +1,12 @@
+<div class='header'>
+<table><tr><td>
+<span id='author[ITEMID]' class='l'>[AUTHOR]</span><span class='c'>
+[CREATEDDATE]</span></td><td class='r'>
+[DELETE]<a class='quotethis' href="javascript:quote([ITEMID]);" title='Quote'></a></td></tr>
+</table></div>
+
+<div class='body'>
+<table>
+<tr><td class='cellavatar'><div class='avatar'>[AVATAR]</div></td><td><div class='commentbody' id='body[ITEMID]'>[COMMENT]</div></td></tr>
+</table>
+</div>

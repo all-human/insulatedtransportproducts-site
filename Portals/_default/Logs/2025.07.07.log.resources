@@ -1,0 +1,10 @@
+2025-07-07 15:05:52,947 [dnn2sqlv3][Thread:73][ERROR] DotNetNuke.Services.Exceptions.Exceptions - System.IO.IOException: The process cannot access the file 'V:\vhosts\insulatedtransportproducts.com\httpdocs\Portals\0-System\Cache\Pages\95_12501F292E5A603685E3125A20F9FDC5BC468018D1CD219CABAB93D3EFC7C5A9.data.resources' because it is being used by another process.
+   at System.IO.__Error.WinIOError(Int32 errorCode, String maybeFullPath)
+   at System.IO.FileStream.Init(String path, FileMode mode, FileAccess access, Int32 rights, Boolean useRights, FileShare share, Int32 bufferSize, FileOptions options, SECURITY_ATTRIBUTES secAttrs, String msgPath, Boolean bFromProxy, Boolean useLongPath, Boolean checkHost)
+   at System.IO.FileStream..ctor(String path, FileMode mode, FileAccess access, FileShare share, Int32 bufferSize, FileOptions options, String msgPath, Boolean bFromProxy, Boolean useLongPath, Boolean checkHost)
+   at System.IO.File.InternalWriteAllBytes(String path, Byte[] bytes, Boolean checkHost)
+   at System.IO.File.WriteAllBytes(String path, Byte[] bytes)
+   at DotNetNuke.Services.ModuleCache.FileProvider.SetModule(Int32 tabModuleId, String cacheKey, TimeSpan duration, Byte[] output)
+2025-07-07 15:30:15,988 [dnn2sqlv3][Thread:20][ERROR] DotNetNuke.Services.Exceptions.Exceptions - System.ArgumentException: Logins to decrypt: g35PABcgcYLejFhgr8hNRbyD2roiQCMC4Z0rncb4gvqzYLLDeJoA1g==
+2025-07-07 19:32:01,543 [dnn2sqlv3][Thread:37][ERROR] DotNetNuke.Services.Exceptions.Exceptions - System.ArgumentException: Logins to decrypt: g35PABcgcYLejFhgr8hNRbyD2roiQCMC4Z0rncb4gvqzYLLDeJoA1g==
+2025-07-07 23:33:52,821 [dnn2sqlv3][Thread:50][ERROR] DotNetNuke.Services.Exceptions.Exceptions - System.ArgumentException: Logins to decrypt: g35PABcgcYLejFhgr8hNRbyD2roiQCMC4Z0rncb4gvqzYLLDeJoA1g==

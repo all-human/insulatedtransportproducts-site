@@ -1,0 +1,139 @@
+---------------------2017-10-19T12:35:45.7810382-05:00-----------------------------
+Starting reset rewrites, Version: 01.02.17
+Deleting original file, File: fmoutboundrules.config
+Deleting original file, File: fmrules.config
+Deleting original file, File: fmrewrites.config
+
+---------------------2017-10-19T12:39:09.1019014-05:00-----------------------------
+Creating backup web.config, Version: 01.02.17
+
+---------------------2017-10-19T12:39:09.1781114-05:00-----------------------------
+Getting base call to MoveSelected, Attribute: outboundRules
+Adding rewrite tag, doesn't exist. Attribute: outboundRules
+Starting call to copy rule to base directory, Attribute: outboundRules
+Copying rules to Base: fmoutboundrules.config, Attribute: rule
+Adding missing rules node to rewrites, doesn't exist, Attribute: outboundRules
+Starting add initial rules , Attribute: fmoutboundrules.config
+Adding New Default Rule  , Attribute: fmoutboundrules.xml
+Rule added:  <rule name="Enable CORS for Fonts">
+  <match serverVariable="RESPONSE_Access_Control_Allow_Origin" pattern=".*" />
+  <conditions>
+    <add input="{REQUEST_URI}" pattern="^[^\?]+\.(ttf|otf|eot|woff|woff2|svg)(\?.*)?$" />
+  </conditions>
+  <action type="Rewrite" value="*" />
+</rule>, Rule: fmoutboundrules.config
+---------------------2017-10-19T12:39:09.1981578-05:00-----------------------------
+Getting base call to MoveSelected, Attribute: rules
+Starting call to copy rule to base directory, Attribute: rules
+Copying rules to Base: fmrules.config, Attribute: rule
+Adding missing rules node to rewrites, doesn't exist, Attribute: rules
+Starting add initial rules , Attribute: fmrules.config
+Adding New Default Rule  , Attribute: AliasRedirects.xml
+Rule added:  <rule name="Alias Redirects" stopProcessing="true">
+  <match url=".*" />
+  <conditions logicalGrouping="MatchAny" trackAllCaptures="false">
+    <add input="{HTTP_HOST}" pattern="^defaultinstall.com(.*)" />
+  </conditions>
+  <action type="Redirect" url="http://www.defaultinstall.com/{R:0}" appendQueryString="false" redirectType="Permanent" />
+</rule>, Rule: fmrules.config
+Adding New Default Rule  , Attribute: BlockBadBots.xml
+Rule added:  <rule name="Block Bad Bots" stopProcessing="true">
+  <match url=".*" />
+  <conditions trackAllCaptures="false">
+    <add input="{HTTP_USER_AGENT}" pattern="MJ12bot(/v1.4.7)?" ignoreCase="true" />
+  </conditions>
+  <action type="CustomResponse" statusCode="403" statusReason="Forbidden: Access is denied." statusDescription="You do not have permission to view this page." />
+</rule>, Rule: fmrules.config
+---------------------2017-10-19T12:39:09.2242315-05:00-----------------------------
+Getting base call to MoveSelected, Attribute: rewriteMaps
+Starting call to copy rule to base directory, Attribute: rewriteMaps
+Copying rules to Base: fmrewrites.config, Attribute: rewriteMap
+Adding missing rules node to rewrites, doesn't exist, Attribute: rewriteMaps
+Starting add initial rules , Attribute: fmrewrites.config
+Adding New Default Rule  , Attribute: fmRedirects.xml
+Rule added:  <rewriteMap name="FmRedirects"></rewriteMap>, Rule: fmrewrites.config
+---------------------2017-10-24T11:09:15.7435466-05:00-----------------------------
+Creating backup web.config, Version: 01.02.17
+
+---------------------2017-10-24T11:09:15.7936880-05:00-----------------------------
+Getting base call to MoveSelected, Attribute: outboundRules
+Adding rewrite tag, doesn't exist. Attribute: outboundRules
+Starting call to copy rule to base directory, Attribute: outboundRules
+Copying rules to Base: fmoutboundrules.config, Attribute: rule
+Adding missing rules node to rewrites, doesn't exist, Attribute: outboundRules
+Starting add initial rules , Attribute: fmoutboundrules.config
+Adding New Default Rule  , Attribute: fmoutboundrules.xml
+Rule added:  <rule name="Enable CORS for Fonts">
+  <match serverVariable="RESPONSE_Access_Control_Allow_Origin" pattern=".*" />
+  <conditions>
+    <add input="{REQUEST_URI}" pattern="^[^\?]+\.(ttf|otf|eot|woff|woff2|svg)(\?.*)?$" />
+  </conditions>
+  <action type="Rewrite" value="*" />
+</rule>, Rule: fmoutboundrules.config
+---------------------2017-10-24T11:09:15.8107342-05:00-----------------------------
+Getting base call to MoveSelected, Attribute: rules
+Starting call to copy rule to base directory, Attribute: rules
+Copying rules to Base: fmrules.config, Attribute: rule
+Adding missing rules node to rewrites, doesn't exist, Attribute: rules
+Starting add initial rules , Attribute: fmrules.config
+Adding New Default Rule  , Attribute: AliasRedirects.xml
+Rule added:  <rule name="Alias Redirects" stopProcessing="true">
+  <match url=".*" />
+  <conditions logicalGrouping="MatchAll" trackAllCaptures="false">
+    <add input="{HTTP_HOST}" pattern="^defaultinstall.com(.*)" />
+    <add input="{REQUEST_URI}" pattern="^/.well-known/(.*)" negate="true" ignoreCase="true" />
+  </conditions>
+  <action type="Redirect" url="http://www.defaultinstall.com/{R:0}" appendQueryString="false" redirectType="Permanent" />
+</rule>, Rule: fmrules.config
+Adding New Default Rule  , Attribute: BlockBadBots.xml
+Rule added:  <rule name="Block Bad Bots" stopProcessing="true">
+  <match url=".*" />
+  <conditions trackAllCaptures="false">
+    <add input="{HTTP_USER_AGENT}" pattern="MJ12bot(/v1.4.7)?" ignoreCase="true" />
+  </conditions>
+  <action type="CustomResponse" statusCode="403" statusReason="Forbidden: Access is denied." statusDescription="You do not have permission to view this page." />
+</rule>, Rule: fmrules.config
+---------------------2017-10-24T11:09:15.8187618-05:00-----------------------------
+Getting base call to MoveSelected, Attribute: rewriteMaps
+Starting call to copy rule to base directory, Attribute: rewriteMaps
+Copying rules to Base: fmrewrites.config, Attribute: rewriteMap
+Adding missing rules node to rewrites, doesn't exist, Attribute: rewriteMaps
+Starting add initial rules , Attribute: fmrewrites.config
+Adding New Default Rule  , Attribute: fmRedirects.xml
+Rule added:  <rewriteMap name="FmRedirects"></rewriteMap>, Rule: fmrewrites.config
+---------------------2017-10-25T14:15:51.0298122-05:00-----------------------------
+Getting base call to MoveSelected, Attribute: outboundRules
+Starting call to copy rule to base directory, Attribute: outboundRules
+Copying rules to Base: fmoutboundrules.config, Attribute: rule
+Adding missing rules node to rewrites, doesn't exist, Attribute: outboundRules
+Starting add initial rules , Attribute: fmoutboundrules.config
+Adding New Default Rule  , Attribute: fmoutboundrules.xml
+Rule added:  <rule name="Enable CORS for Fonts">
+  <match serverVariable="RESPONSE_Access_Control_Allow_Origin" pattern=".*" />
+  <conditions>
+    <add input="{REQUEST_URI}" pattern="^[^\?]+\.(ttf|otf|eot|woff|woff2|svg)(\?.*)?$" />
+  </conditions>
+  <action type="Rewrite" value="*" />
+</rule>, Rule: fmoutboundrules.config
+---------------------2017-10-25T14:15:51.0610653-05:00-----------------------------
+Getting base call to MoveSelected, Attribute: rules
+Starting call to copy rule to base directory, Attribute: rules
+Already have a template with the file name, backing up for uninstall, Attribute: rule
+Config is proper, adding initial rules . Attribute: rules
+Starting add initial rules , Attribute: fmrules.config
+Rule already exists AliasRedirects.xml, Attribute: fmrules.config
+Adding New Default Rule  , Attribute: BlockBadBots.xml
+Rule added:  <rule name="Block Bad Bots" stopProcessing="true">
+  <match url=".*" />
+  <conditions trackAllCaptures="false">
+    <add input="{HTTP_USER_AGENT}" pattern="MJ12bot(/v1.4.7)?" ignoreCase="true" />
+  </conditions>
+  <action type="CustomResponse" statusCode="403" statusReason="Forbidden: Access is denied." statusDescription="You do not have permission to view this page." />
+</rule>, Rule: fmrules.config
+---------------------2017-10-25T14:15:51.1548156-05:00-----------------------------
+Getting base call to MoveSelected, Attribute: rewriteMaps
+Starting call to copy rule to base directory, Attribute: rewriteMaps
+Already have a template with the file name, backing up for uninstall, Attribute: rewriteMap
+Config is proper, adding initial rules . Attribute: rewriteMaps
+Starting add initial rules , Attribute: fmrewrites.config
+Rule already exists fmRedirects.xml, Attribute: fmrewrites.config

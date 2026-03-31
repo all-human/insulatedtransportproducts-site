@@ -1,0 +1,152 @@
+﻿<dotnetnuke type="ResourceFile" version="5.0">
+  <files>
+    <file>
+      <path />
+      <name>Dispatch.ascx</name>
+    </file>
+    <file>
+      <path />
+      <name>DistributorView.ascx</name>
+    </file>
+    <file>
+      <path />
+      <name>EditFM_Distributor.ascx</name>
+    </file>
+    <file>
+      <path />
+      <name>EditPriorityGroups.ascx</name>
+    </file>
+    <file>
+      <path />
+      <name>EditTypes.ascx</name>
+    </file>
+    <file>
+      <path />
+      <name>EditView.ascx</name>
+    </file>
+    <file>
+      <path />
+      <name>Export.ascx</name>
+    </file>
+    <file>
+      <path />
+      <name>FMDistributorWebService.asmx</name>
+    </file>
+    <file>
+      <path />
+      <name>go.gif</name>
+    </file>
+    <file>
+      <path />
+      <name>Import.ascx</name>
+    </file>
+    <file>
+      <path />
+      <name>MainView.ascx</name>
+    </file>
+    <file>
+      <path />
+      <name>Settings - Copy.ascx</name>
+    </file>
+    <file>
+      <path />
+      <name>Settings.ascx</name>
+    </file>
+    <file>
+      <path />
+      <name>Template.ascx</name>
+    </file>
+    <file>
+      <path />
+      <name>ViewFM_Distributor.ascx</name>
+    </file>
+    <file>
+      <path />
+      <name>_ReadMe.txt</name>
+    </file>
+    <file>
+      <path>App_LocalResources/</path>
+      <name>DistributorView.ascx.resx</name>
+    </file>
+    <file>
+      <path>App_LocalResources/</path>
+      <name>EditFM_Distributor.ascx.resx</name>
+    </file>
+    <file>
+      <path>App_LocalResources/</path>
+      <name>EditTypes.ascx.resx</name>
+    </file>
+    <file>
+      <path>App_LocalResources/</path>
+      <name>EditView.ascx.resx</name>
+    </file>
+    <file>
+      <path>App_LocalResources/</path>
+      <name>MainView.ascx.resx</name>
+    </file>
+    <file>
+      <path>App_LocalResources/</path>
+      <name>Settings.ascx.resx</name>
+    </file>
+    <file>
+      <path>App_LocalResources/</path>
+      <name>Template.ascx.resx</name>
+    </file>
+    <file>
+      <path>App_LocalResources/</path>
+      <name>ViewFM_Distributor.ascx.resx</name>
+    </file>
+    <file>
+      <path>BuildScripts/</path>
+      <name>ModulePackage.targets</name>
+    </file>
+    <file>
+      <path>BuildScripts/</path>
+      <name>MSBuild.Community.Tasks.Targets</name>
+    </file>
+    <file>
+      <path>Cleanup/</path>
+      <name>01.04.16.txt</name>
+    </file>
+    <file>
+      <path>Components/Data/Implementation/LinqToSql/</path>
+      <name>FmDistributor.dbml</name>
+    </file>
+    <file>
+      <path>css/</path>
+      <name>application.css</name>
+    </file>
+    <file>
+      <path>fonts/bootstrap/</path>
+      <name>glyphicons-halflings-regular.eot</name>
+    </file>
+    <file>
+      <path>fonts/bootstrap/</path>
+      <name>glyphicons-halflings-regular.svg</name>
+    </file>
+    <file>
+      <path>fonts/bootstrap/</path>
+      <name>glyphicons-halflings-regular.ttf</name>
+    </file>
+    <file>
+      <path>fonts/bootstrap/</path>
+      <name>glyphicons-halflings-regular.woff</name>
+    </file>
+    <file>
+      <path>Images/</path>
+      <name>logo.jpg</name>
+    </file>
+    <file>
+      <path>Images/</path>
+      <name>logo.png</name>
+    </file>
+    <file>
+      <path>js/</path>
+      <name>application.js</name>
+    </file>
+    <file>
+      <path>Scripts/</path>
+      <name>application.js</name>
+    </file>
+  </files>
+</dotnetnuke>

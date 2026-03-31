@@ -1,0 +1,12 @@
+﻿<dotnetnuke type="ResourceFile" version="5.0">
+  <files>
+    <file>
+      <path>bin/</path>
+      <name>Telerik.Web.UI.dll</name>
+    </file>
+    <file>
+      <path>bin/</path>
+      <name>Telerik.Web.UI.Skins.dll</name>
+    </file>
+  </files>
+</dotnetnuke>

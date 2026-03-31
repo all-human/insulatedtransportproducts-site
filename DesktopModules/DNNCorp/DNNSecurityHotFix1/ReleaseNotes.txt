@@ -1,0 +1,8 @@
+﻿<h3>DNN Security HotFix 1</h3>
+<hr/>
+<div class="License">
+	<h3>About DNN Security HotFix 1</h3>
+	<p class="Owner">
+		<b>Version 1.0.0</b> - Registration control fix.<br /><br />
+	</p>
+</div>

@@ -1,0 +1,161 @@
+﻿SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE {databaseOwner}[{objectQualifier}DCC_EF_StoredSQLQuery](
+	[StoredSQLQueryID] [int] IDENTITY(1,1) NOT NULL,
+	[StoredSQLQueryName] [nvarchar](500) NULL,
+	[ConnectionString] [nvarchar](500) NULL,
+	[ScriptType] [nvarchar](50) NULL,
+	[Script] [nvarchar](max) NULL,
+	[ModuleID] [int] NULL,
+ CONSTRAINT [PK_{objectQualifier}DCC_EF_StoredSQLQuery] PRIMARY KEY CLUSTERED 
+(
+	[StoredSQLQueryID] ASC
+)WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON) 
+) ON [PRIMARY]
+
+GO
+
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+
+create procedure {databaseOwner}[{objectQualifier}DCC_EF_DeleteStoredSQLScript]
+@SqlScriptId int,
+@ModuleID int
+as
+delete from {databaseOwner}[{objectQualifier}DCC_EF_StoredSQLQuery]
+where StoredSQLQueryID=@SqlScriptId and ModuleID=@ModuleID
+
+GO
+
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+
+--ScriptName, Connectionstring, Scripttype, Culture, SQLscript, ModuleID
+CREATE procedure {databaseOwner}[{objectQualifier}DCC_EF_AddStoredSQLScript]
+@ScriptName nvarchar(500),
+@Connectionstring nvarchar(500),
+@Scripttype nvarchar(50),
+--@Culture nvarchar(50),
+@SQLScript nvarchar(max),
+@moduleId int
+
+as
+insert into {databaseOwner}[{objectQualifier}DCC_EF_StoredSQLQuery]
+(
+StoredSQLQueryName,
+ConnectionString,
+ScriptType,
+--Culture,
+Script,
+ModuleID
+
+)
+Values
+(
+@ScriptName,
+@Connectionstring,
+@Scripttype,
+--@Culture,
+@SQLScript,
+@moduleId
+
+)
+
+GO
+
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+
+create procedure {databaseOwner}[{objectQualifier}DCC_EF_GetStoredSQLScriptByID]
+@SqlScriptId int,
+@ModuleID int
+
+as
+select * from {databaseOwner}[{objectQualifier}DCC_EF_StoredSQLQuery] 
+
+where StoredSQLQueryID=@SqlScriptId and ModuleID=@ModuleID
+
+GO
+
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+
+--
+CREATE procedure {databaseOwner}[{objectQualifier}DCC_EF_GetStoredSQLScriptByName]
+@SqlScriptName nvarchar(256)='SqlQueryCountry',
+@ModuleID int=383
+
+as
+select *  from {databaseOwner}[{objectQualifier}DCC_EF_StoredSQLQuery]
+where StoredSQLQueryName=@SqlScriptName and ModuleID=@ModuleID
+
+GO
+
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+
+--
+Create procedure {databaseOwner}[{objectQualifier}DCC_EF_GetStoredSQLScriptCountByName]
+@SqlScriptName nvarchar(256)='SqlQueryCountry',
+@ModuleID int=383
+
+as
+select count(*) as Cnt from {databaseOwner}[{objectQualifier}DCC_EF_StoredSQLQuery]
+where StoredSQLQueryName=@SqlScriptName and ModuleID=@ModuleID
+
+GO
+
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+
+create procedure {databaseOwner}[{objectQualifier}DCC_EF_GetStoredSQLScriptList]
+@ModuleID int
+
+as
+select * from {databaseOwner}[{objectQualifier}DCC_EF_StoredSQLQuery] 
+where ModuleID=@ModuleID
+
+GO
+
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+
+CREATE procedure {databaseOwner}[{objectQualifier}DCC_EF_UpdateStoredSQLScript]
+@ScriptId int,
+@ScriptName nvarchar(500),
+@Connectionstring nvarchar(500),
+@Scripttype nvarchar(50),
+--@Culture nvarchar(50),
+@SQLScript nvarchar(max),
+@moduleId int
+
+as
+update {databaseOwner}[{objectQualifier}DCC_EF_StoredSQLQuery]
+set
+StoredSQLQueryName=@ScriptName,
+ConnectionString=@Connectionstring,
+ScriptType=@Scripttype,
+--Culture=@Culture,
+Script=@SQLScript,
+ModuleID=@ModuleId
+where StoredSQLQueryID=@ScriptId and ModuleID=@ModuleId
+
+GO
+
+

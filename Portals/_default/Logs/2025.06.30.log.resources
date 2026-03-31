@@ -1,0 +1,28 @@
+2025-06-30 09:27:26,098 [dnn2sqlv3][Thread:25][ERROR] DotNetNuke.Services.Exceptions.Exceptions - System.ArgumentException: Logins to decrypt: g35PABcgcYLejFhgr8hNRbyD2roiQCMC4Z0rncb4gvqzYLLDeJoA1g==
+2025-06-30 13:30:26,016 [dnn2sqlv3][Thread:41][ERROR] DotNetNuke.Services.Exceptions.Exceptions - System.ArgumentException: Logins to decrypt: g35PABcgcYLejFhgr8hNRbyD2roiQCMC4Z0rncb4gvqzYLLDeJoA1g==
+2025-06-30 17:34:39,444 [dnn2sqlv3][Thread:13][ERROR] DotNetNuke.Services.Exceptions.Exceptions - System.ArgumentException: Logins to decrypt: g35PABcgcYLejFhgr8hNRbyD2roiQCMC4Z0rncb4gvqzYLLDeJoA1g==
+2025-06-30 21:36:20,455 [dnn2sqlv3][Thread:57][ERROR] DotNetNuke.Services.Exceptions.Exceptions - System.ArgumentException: Logins to decrypt: g35PABcgcYLejFhgr8hNRbyD2roiQCMC4Z0rncb4gvqzYLLDeJoA1g==
+2025-06-30 23:09:08,235 [dnn2sqlv3][Thread:59][FATAL] DotNetNuke.Web.Common.Internal.DotNetNukeHttpApplication - System.Web.HttpException (0x80004005): A potentially dangerous Request.Path value was detected from the client (*).
+   at System.Web.HttpRequest.ValidateInputIfRequiredByConfig()
+   at System.Web.HttpApplication.PipelineStepManager.ValidateHelper(HttpContext context)
+2025-06-30 23:10:14,185 [dnn2sqlv3][Thread:9][FATAL] DotNetNuke.Web.Common.Internal.DotNetNukeHttpApplication - System.Web.HttpException (0x80004005): A potentially dangerous Request.Path value was detected from the client (:).
+   at System.Web.HttpRequest.ValidateInputIfRequiredByConfig()
+   at System.Web.HttpApplication.PipelineStepManager.ValidateHelper(HttpContext context)
+2025-06-30 23:14:07,280 [dnn2sqlv3][Thread:39][FATAL] DotNetNuke.Web.Common.Internal.DotNetNukeHttpApplication - System.Web.HttpException (0x80004005): A potentially dangerous Request.Path value was detected from the client (:).
+   at System.Web.HttpRequest.ValidateInputIfRequiredByConfig()
+   at System.Web.HttpApplication.PipelineStepManager.ValidateHelper(HttpContext context)
+2025-06-30 23:14:13,625 [dnn2sqlv3][Thread:28][FATAL] DotNetNuke.Web.Common.Internal.DotNetNukeHttpApplication - System.Web.HttpException (0x80004005): A potentially dangerous Request.Path value was detected from the client (:).
+   at System.Web.HttpRequest.ValidateInputIfRequiredByConfig()
+   at System.Web.HttpApplication.PipelineStepManager.ValidateHelper(HttpContext context)
+2025-06-30 23:14:13,857 [dnn2sqlv3][Thread:54][FATAL] DotNetNuke.Web.Common.Internal.DotNetNukeHttpApplication - System.Web.HttpException (0x80004005): A potentially dangerous Request.Path value was detected from the client (:).
+   at System.Web.HttpRequest.ValidateInputIfRequiredByConfig()
+   at System.Web.HttpApplication.PipelineStepManager.ValidateHelper(HttpContext context)
+2025-06-30 23:14:17,716 [dnn2sqlv3][Thread:58][FATAL] DotNetNuke.Web.Common.Internal.DotNetNukeHttpApplication - System.Web.HttpException (0x80004005): A potentially dangerous Request.Path value was detected from the client (*).
+   at System.Web.HttpRequest.ValidateInputIfRequiredByConfig()
+   at System.Web.HttpApplication.PipelineStepManager.ValidateHelper(HttpContext context)
+2025-06-30 23:15:41,131 [dnn2sqlv3][Thread:59][FATAL] DotNetNuke.Web.Common.Internal.DotNetNukeHttpApplication - System.Web.HttpException (0x80004005): A potentially dangerous Request.Path value was detected from the client (:).
+   at System.Web.HttpRequest.ValidateInputIfRequiredByConfig()
+   at System.Web.HttpApplication.PipelineStepManager.ValidateHelper(HttpContext context)
+2025-06-30 23:15:41,225 [dnn2sqlv3][Thread:43][FATAL] DotNetNuke.Web.Common.Internal.DotNetNukeHttpApplication - System.Web.HttpException (0x80004005): A potentially dangerous Request.Path value was detected from the client (*).
+   at System.Web.HttpRequest.ValidateInputIfRequiredByConfig()
+   at System.Web.HttpApplication.PipelineStepManager.ValidateHelper(HttpContext context)

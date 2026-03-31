@@ -1,0 +1,131 @@
+﻿SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+
+-- select * from {databaseOwner}[{objectQualifier}DCC_EF_GetDownLoadFileLink]()
+-- select * from {databaseOwner}[{objectQualifier}DCC_EF_GetSubmissionDataAttributes]('10/26/2009','12/31/2009',-1,'',482,'')
+Alter Function {databaseOwner}[{objectQualifier}DCC_EF_GetSubmissionDataAttributes]
+ (
+	@FromDate DateTime,
+	@ToDate DateTime,
+	@FieldID int,
+	@StrSearchText NVARCHAR(400),
+	@ModuleID int,
+	@PageURL nvarchar(500)
+
+ )
+RETURNS TABLE
+as
+Return 
+(
+SELECT     TOP (100) PERCENT Val.FormRecordID, EF.FieldName +'_'+EF.ControlType as FieldName,Val.FieldValue , EF.SortOrder
+FROM         {databaseOwner}[{objectQualifier}DCC_EF_FormDataValues] AS Val INNER JOIN
+                      (select * from {databaseOwner}[{objectQualifier}DCC_EF_EmailForm] where ControlType!='Label') AS EF ON Val.FieldID = EF.FieldID INNER JOIN
+                      {databaseOwner}[{objectQualifier}DCC_EF_FormDataMaster] AS Mas ON Val.FormRecordID = Mas.FormRecordID 
+                      AND Mas.DateOfSubmission BETWEEN @FromDate AND  @ToDate 
+			          AND EF.ModuleID=@ModuleID 
+					and Mas.formrecordid 
+						in (SELECT distinct FormRecordID
+							FROM  {databaseOwner}[{objectQualifier}DCC_EF_FormDataValues]
+							Where FieldID=(Case when @FieldID > -1 then @FieldID Else FieldID End)  and 
+								  FieldValue like (case when @FieldID <0  or ltrim(rtrim(@StrSearchText))='' then FieldValue Else  '%'+ ltrim(rtrim(@StrSearchText)) +'%' END))
+						order by EF.SortOrder
+)
+
+GO
+
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+
+Alter Procedure {databaseOwner}[{objectQualifier}DCC_EF_GetFormSubmissionData]
+@FromDate datetime,
+@ToDate DateTime,
+@FieldID int,
+@StrSearchText NVARCHAR(400),
+@ModuleID int,
+@PageURL nvarchar(500)
+as
+-- {databaseOwner}[{objectQualifier}DCC_EF_GetFormSubmissionData] '10/26/2009','12/31/2009',-1,'' 
+-- {databaseOwner}[{objectQualifier}DCC_EF_GetFormSubmissionData] ' ',' ' 
+-- select * from {databaseOwner}[{objectQualifier}DCC_EF_GetSubmissionDataAttributes]('10/26/2009','10/27/2010')
+-- select * from {databaseOwner}[{objectQualifier}DCC_EF_GetSubmissionDataAttributes]('','')
+-- select distinct sortorder,fieldname into #tmptable from {databaseOwner}[{objectQualifier}DCC_EF_SubmittedValues] order by sortorder
+
+select * into #funtable 
+from {databaseOwner}[{objectQualifier}DCC_EF_GetSubmissionDataAttributes](@FromDate,@ToDate,@FieldID,@StrSearchText,@ModuleID,@PageURL)
+select distinct sortorder,fieldname into #tmptable 
+FROM #funtable
+ as A order by A.sortorder
+
+DECLARE @cols NVARCHAR(max) 
+SELECT  @cols = COALESCE(@cols + ',' + QUOTENAME(fieldname),QUOTENAME(fieldname))
+FROM    (select * from #tmptable) as df
+
+select @cols =(case when rtrim(ltrim(isnull(@cols,'')))='' then 'NoRecord' else @cols end)
+
+DECLARE @query NVARCHAR(max)
+
+set @query ='select FormRecordID,'+ @cols + ' from (select FormRecordID,fieldname,fieldvalue from #funtable as Q ) as P 
+            pivot ( min(fieldvalue) for fieldname in ('+ @cols + ')) as pvt'
+
+--exec sp_executesql @query, N'@p2 datetime,@p3 datetime,@p4 int,@p5 nvarchar(400)',
+--                   @fromdate,@todate,@fieldid,@StrSearchText
+exec (@query)
+
+GO
+
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+
+Alter Procedure {databaseOwner}[{objectQualifier}DCC_EF_GetFormSubmissionDataByPaging]
+@FromDate datetime,
+@ToDate DateTime,
+@FieldID int,
+@StrSearchText NVARCHAR(400),
+@ModuleID int,
+@SortColumn nvarchar(200),
+@StartPageIndex int,
+@PageSize int,
+@PageURL nvarchar(500)
+as
+-- {databaseOwner}[{objectQualifier}DCC_EF_GetFormSubmissionDataByPaging] '10/26/2009','12/31/2009',-1,'tests asc',370,'',1,3 
+-- {databaseOwner}[{objectQualifier}DCC_EF_GetFormSubmissionData] ' ',' ' 
+-- select * from {databaseOwner}[{objectQualifier}DCC_EF_GetSubmissionDataAttributes]('10/26/2009','12/31/2009',-1,'',370)
+-- select * from {databaseOwner}[{objectQualifier}DCC_EF_GetSubmissionDataAttributes]('','')
+--select distinct sortorder,fieldname into #tmptable from {databaseOwner}[{objectQualifier}DCC_EF_SubmittedValues] order by sortorder
+
+select * into #funtable 
+from {databaseOwner}[{objectQualifier}DCC_EF_GetSubmissionDataAttributes](@FromDate,@ToDate,@FieldID,@StrSearchText,@ModuleID,@PageURL)
+select distinct sortorder,fieldname into #tmptable 
+FROM #funtable
+ as A order by A.sortorder
+
+DECLARE @cols NVARCHAR(max) 
+SELECT  @cols = COALESCE(@cols + ',' + QUOTENAME(fieldname),QUOTENAME(fieldname))
+FROM    (select * from #tmptable) as df
+
+select @cols =(case when rtrim(ltrim(isnull(@cols,'')))='' then 'NoRecord' else @cols end)
+
+DECLARE @Subquery NVARCHAR(max)
+
+set @Subquery ='select FormRecordID as RecordID,'+ @cols + ' from (select FormRecordID ,fieldname,fieldvalue from #funtable as Q ) as P 
+            pivot ( min(fieldvalue) for fieldname in ('+ @cols + ')) as pvt'
+
+if(@SortColumn='') set @SortColumn='RecordID Desc'
+declare @myQuery NVARCHAR(max)
+set @myQuery= 'select ROW_NUMBER() OVER(ORDER BY '+ @SortColumn + ') as RowID,Sub.*
+from ('+ @Subquery+')as Sub'
+
+declare @finalQuery NVARCHAR(max)
+set @finalQuery= 'select tbl.* from ('+@myQuery +')as tbl where RowID BETWEEN ('+ str(@StartPageIndex+1)+') AND ('+str(@StartPageIndex+ @PageSize)+')'
+
+--print @finalQuery
+exec (@finalQuery)
+
+GO
+

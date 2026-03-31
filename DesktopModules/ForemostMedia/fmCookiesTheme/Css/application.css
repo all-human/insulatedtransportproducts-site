@@ -1,0 +1,26 @@
+.fmForm .dnnFormItem {
+  width: auto; }
+
+.form-group .dnnLabel {
+  float: none;
+  margin-right: 0;
+  width: auto; }
+
+.form-group input[type="text"],
+.form-group input[type="password"],
+.form-group input[type="email"],
+.form-group input[type="tel"],
+.form-group textarea {
+  width: 100%;
+  max-width: 100%;
+  margin-bottom: auto; }
+
+.form-group a.btn-primary:visited,
+.form-group a.btn-success:visited,
+.form-group a.btn-info:visited,
+.form-group a.btn-warning:visited,
+.form-group a.btn-danger:visited {
+  color: #fff; }
+
+.form-group a.btn-default:visited {
+  color: #333; }

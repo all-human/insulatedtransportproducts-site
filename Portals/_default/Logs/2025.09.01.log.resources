@@ -1,0 +1,15 @@
+2025-09-01 15:35:08,942 [dnn2sqlv3][Thread:26][ERROR] DotNetNuke.Services.Exceptions.Exceptions - System.Net.Mail.SmtpException: Mailbox unavailable. The server response was: Verification failed for <sales@itpsales.net>
+   at System.Net.Mail.MailCommand.CheckResponse(SmtpStatusCode statusCode, String response)
+   at System.Net.Mail.MailCommand.Send(SmtpConnection conn, Byte[] command, MailAddress from, Boolean allowUnicode)
+   at System.Net.Mail.SmtpTransport.SendMail(MailAddress sender, MailAddressCollection recipients, String deliveryNotify, Boolean allowUnicode, SmtpFailedRecipientException& exception)
+   at System.Net.Mail.SmtpClient.Send(MailMessage message)
+   at ForemostMedia.Modules.FM_Forms_DNN.Utils.FMHelpers.FmSendMailInternal(Int32 moduleId, Int32 tabId, String emailFrom, String emailTo, String emailSubject, String emailBody, String replyToAddress, List`1 files)
+2025-09-01 17:24:10,845 [dnn2sqlv3][Thread:33][ERROR] DotNetNuke.Services.Exceptions.Exceptions - System.Net.Mail.SmtpException: Mailbox unavailable. The server response was: Verification failed for <sales@itpsales.net>
+   at System.Net.Mail.MailCommand.CheckResponse(SmtpStatusCode statusCode, String response)
+   at System.Net.Mail.MailCommand.Send(SmtpConnection conn, Byte[] command, MailAddress from, Boolean allowUnicode)
+   at System.Net.Mail.SmtpTransport.SendMail(MailAddress sender, MailAddressCollection recipients, String deliveryNotify, Boolean allowUnicode, SmtpFailedRecipientException& exception)
+   at System.Net.Mail.SmtpClient.Send(MailMessage message)
+   at ForemostMedia.Modules.FM_Forms_DNN.Utils.FMHelpers.FmSendMailInternal(Int32 moduleId, Int32 tabId, String emailFrom, String emailTo, String emailSubject, String emailBody, String replyToAddress, List`1 files)
+2025-09-01 23:43:56,129 [dnn2sqlv3][Thread:10][FATAL] DotNetNuke.Web.Common.Internal.DotNetNukeHttpApplication - System.Web.HttpException (0x80004005): A potentially dangerous Request.Path value was detected from the client (:).
+   at System.Web.HttpRequest.ValidateInputIfRequiredByConfig()
+   at System.Web.HttpApplication.PipelineStepManager.ValidateHelper(HttpContext context)

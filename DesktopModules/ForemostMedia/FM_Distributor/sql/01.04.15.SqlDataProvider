@@ -1,0 +1,51 @@
+﻿
+/****** Object:  StoredProcedure [dbo].[fm_dist_SearchByCountryCount_AnyType]    Script Date: 07/28/2011 11:08:14 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+
+
+-- =============================================
+-- Author:		<Author,,Name>
+-- Create date: <Create Date,,>
+-- Description:	<Description,,>
+-- =============================================
+ALTER PROCEDURE [dbo].[fm_dist_SearchByCountryCount_AnyType] 
+	-- Add the parameters for the stored procedure here
+	@country nvarchar(2)
+AS
+BEGIN
+    -- Insert statements for procedure here
+ 
+ SELECT count([dbo].[fm_dist_ordering_anyType].[Id])
+					     FROM [dbo].[fm_dist_ordering_anyType] inner join fm_dist_RegionCovering rc
+							on fm_dist_ordering_anyType.Id = rc.DistId
+ WHERE rc.Country = @country
+ 
+END
+
+
+/****** Object:  StoredProcedure [dbo].[fm_dist_SearchByCountryCount]    Script Date: 07/28/2011 11:11:54 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+
+-- =============================================
+-- Author:		<Author,,Name>
+-- Create date: <Create Date,,>
+-- Description:	<Description,,>
+-- =============================================
+ALTER Procedure [dbo].[fm_dist_SearchByCountryCount] 
+	-- Add the parameters for the stored procedure here
+	@country nvarchar(2),
+	@typeId int
+AS
+BEGIN
+    -- Insert statements for procedure here
+SELECT COUNT([dbo].[fm_dist_ordering].[Id])
+					     FROM [dbo].[fm_dist_ordering] inner join fm_dist_RegionCovering rc
+							on fm_dist_ordering.Id = rc.DistId
+ WHERE [dbo].[fm_dist_ordering].[TypeId] = @typeId and rc.Country = @country 
+END

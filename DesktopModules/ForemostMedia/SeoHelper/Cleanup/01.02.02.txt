@@ -1,0 +1,6 @@
+﻿DesktopModules\ForemostMedia\SeoHelper\Components\Data\SeoHelper.dbml
+DesktopModules\ForemostMedia\SeoHelper\Components\Data\
+DesktopModules\ForemostMedia\SeoHelper\Components\
+DesktopModules\ForemostMedia\SeoHelper\Settings.ascx
+DesktopModules\ForemostMedia\SeoHelper\img\fm.jpg
+DesktopModules\ForemostMedia\SeoHelper\img\

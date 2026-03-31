@@ -1,0 +1,7 @@
+﻿<rule name="Block Bad Bots" stopProcessing="true">
+  <match url=".*" />
+  <conditions trackAllCaptures="false">
+    <add input="{HTTP_USER_AGENT}" pattern="MJ12bot(/v1.4.7)?" ignoreCase="true"/>
+  </conditions>
+  <action type="CustomResponse" statusCode="403" statusReason="Forbidden: Access is denied." statusDescription="You do not have permission to view this page." />
+</rule>

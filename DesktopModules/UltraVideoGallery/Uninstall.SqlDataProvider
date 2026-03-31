@@ -1,0 +1,483 @@
+﻿
+IF  EXISTS (SELECT * FROM dbo.sysobjects WHERE id = OBJECT_ID(N'{databaseOwner}{objectQualifier}UVG_CategoryAdd') AND type in (N'P', N'PC'))
+DROP PROCEDURE {databaseOwner}{objectQualifier}UVG_CategoryAdd
+GO
+
+IF  EXISTS (SELECT * FROM dbo.sysobjects WHERE id = OBJECT_ID(N'{databaseOwner}{objectQualifier}UVG_CategoryDelete') AND type in (N'P', N'PC'))
+DROP PROCEDURE {databaseOwner}{objectQualifier}UVG_CategoryDelete
+GO
+
+IF  EXISTS (SELECT * FROM dbo.sysobjects WHERE id = OBJECT_ID(N'{databaseOwner}{objectQualifier}UVG_CategoryGet') AND type in (N'P', N'PC'))
+DROP PROCEDURE {databaseOwner}{objectQualifier}UVG_CategoryGet
+GO
+
+IF  EXISTS (SELECT * FROM dbo.sysobjects WHERE id = OBJECT_ID(N'{databaseOwner}{objectQualifier}UVG_CategoryList') AND type in (N'P', N'PC'))
+DROP PROCEDURE {databaseOwner}{objectQualifier}UVG_CategoryList
+GO
+
+IF  EXISTS (SELECT * FROM dbo.sysobjects WHERE id = OBJECT_ID(N'{databaseOwner}{objectQualifier}UVG_CategoryListByLibrary') AND type in (N'P', N'PC'))
+DROP PROCEDURE {databaseOwner}{objectQualifier}UVG_CategoryListByLibrary
+GO
+
+IF  EXISTS (SELECT * FROM dbo.sysobjects WHERE id = OBJECT_ID(N'{databaseOwner}{objectQualifier}UVG_CategoryListByVideo') AND type in (N'P', N'PC'))
+DROP PROCEDURE {databaseOwner}{objectQualifier}UVG_CategoryListByVideo
+GO
+
+IF  EXISTS (SELECT * FROM dbo.sysobjects WHERE id = OBJECT_ID(N'{databaseOwner}{objectQualifier}UVG_CategoryUpdate') AND type in (N'P', N'PC'))
+DROP PROCEDURE {databaseOwner}{objectQualifier}UVG_CategoryUpdate
+GO
+
+IF  EXISTS (SELECT * FROM dbo.sysobjects WHERE id = OBJECT_ID(N'{databaseOwner}{objectQualifier}UVG_CategoryUpdateVideoCount') AND type in (N'P', N'PC'))
+DROP PROCEDURE {databaseOwner}{objectQualifier}UVG_CategoryUpdateVideoCount
+GO
+
+IF  EXISTS (SELECT * FROM dbo.sysobjects WHERE id = OBJECT_ID(N'{databaseOwner}{objectQualifier}UVG_CommentAdd') AND type in (N'P', N'PC'))
+DROP PROCEDURE {databaseOwner}{objectQualifier}UVG_CommentAdd
+GO
+
+IF  EXISTS (SELECT * FROM dbo.sysobjects WHERE id = OBJECT_ID(N'{databaseOwner}{objectQualifier}UVG_CommentDelete') AND type in (N'P', N'PC'))
+DROP PROCEDURE {databaseOwner}{objectQualifier}UVG_CommentDelete
+GO
+
+IF  EXISTS (SELECT * FROM dbo.sysobjects WHERE id = OBJECT_ID(N'{databaseOwner}{objectQualifier}UVG_CommentList') AND type in (N'P', N'PC'))
+DROP PROCEDURE {databaseOwner}{objectQualifier}UVG_CommentList
+GO
+
+IF  EXISTS (SELECT * FROM dbo.sysobjects WHERE id = OBJECT_ID(N'{databaseOwner}{objectQualifier}UVG_CommercialAdd') AND type in (N'P', N'PC'))
+DROP PROCEDURE {databaseOwner}{objectQualifier}UVG_CommercialAdd
+GO
+
+IF  EXISTS (SELECT * FROM dbo.sysobjects WHERE id = OBJECT_ID(N'{databaseOwner}{objectQualifier}UVG_CommercialDelete') AND type in (N'P', N'PC'))
+DROP PROCEDURE {databaseOwner}{objectQualifier}UVG_CommercialDelete
+GO
+
+IF  EXISTS (SELECT * FROM dbo.sysobjects WHERE id = OBJECT_ID(N'{databaseOwner}{objectQualifier}UVG_CommercialDumpImpression') AND type in (N'P', N'PC'))
+DROP PROCEDURE {databaseOwner}{objectQualifier}UVG_CommercialDumpImpression
+GO
+
+IF  EXISTS (SELECT * FROM dbo.sysobjects WHERE id = OBJECT_ID(N'{databaseOwner}{objectQualifier}UVG_CommercialGet') AND type in (N'P', N'PC'))
+DROP PROCEDURE {databaseOwner}{objectQualifier}UVG_CommercialGet
+GO
+
+IF  EXISTS (SELECT * FROM dbo.sysobjects WHERE id = OBJECT_ID(N'{databaseOwner}{objectQualifier}UVG_CommercialList') AND type in (N'P', N'PC'))
+DROP PROCEDURE {databaseOwner}{objectQualifier}UVG_CommercialList
+GO
+
+IF  EXISTS (SELECT * FROM dbo.sysobjects WHERE id = OBJECT_ID(N'{databaseOwner}{objectQualifier}UVG_CommercialListImpression') AND type in (N'P', N'PC'))
+DROP PROCEDURE {databaseOwner}{objectQualifier}UVG_CommercialListImpression
+GO
+
+IF  EXISTS (SELECT * FROM dbo.sysobjects WHERE id = OBJECT_ID(N'{databaseOwner}{objectQualifier}UVG_CommercialPick') AND type in (N'P', N'PC'))
+DROP PROCEDURE {databaseOwner}{objectQualifier}UVG_CommercialPick
+GO
+
+IF  EXISTS (SELECT * FROM dbo.sysobjects WHERE id = OBJECT_ID(N'{databaseOwner}{objectQualifier}UVG_CommercialRecordImpression') AND type in (N'P', N'PC'))
+DROP PROCEDURE {databaseOwner}{objectQualifier}UVG_CommercialRecordImpression
+GO
+
+IF  EXISTS (SELECT * FROM dbo.sysobjects WHERE id = OBJECT_ID(N'{databaseOwner}{objectQualifier}UVG_CommercialUpdate') AND type in (N'P', N'PC'))
+DROP PROCEDURE {databaseOwner}{objectQualifier}UVG_CommercialUpdate
+GO
+
+IF  EXISTS (SELECT * FROM dbo.sysobjects WHERE id = OBJECT_ID(N'{databaseOwner}{objectQualifier}UVG_LibraryAdd') AND type in (N'P', N'PC'))
+DROP PROCEDURE {databaseOwner}{objectQualifier}UVG_LibraryAdd
+GO
+
+IF  EXISTS (SELECT * FROM dbo.sysobjects WHERE id = OBJECT_ID(N'{databaseOwner}{objectQualifier}UVG_LibraryDelete') AND type in (N'P', N'PC'))
+DROP PROCEDURE {databaseOwner}{objectQualifier}UVG_LibraryDelete
+GO
+
+IF  EXISTS (SELECT * FROM dbo.sysobjects WHERE id = OBJECT_ID(N'{databaseOwner}{objectQualifier}UVG_LibraryGet') AND type in (N'P', N'PC'))
+DROP PROCEDURE {databaseOwner}{objectQualifier}UVG_LibraryGet
+GO
+
+IF  EXISTS (SELECT * FROM dbo.sysobjects WHERE id = OBJECT_ID(N'{databaseOwner}{objectQualifier}UVG_LibraryList') AND type in (N'P', N'PC'))
+DROP PROCEDURE {databaseOwner}{objectQualifier}UVG_LibraryList
+GO
+
+IF  EXISTS (SELECT * FROM dbo.sysobjects WHERE id = OBJECT_ID(N'{databaseOwner}{objectQualifier}UVG_LibraryUpdate') AND type in (N'P', N'PC'))
+DROP PROCEDURE {databaseOwner}{objectQualifier}UVG_LibraryUpdate
+GO
+
+IF  EXISTS (SELECT * FROM dbo.sysobjects WHERE id = OBJECT_ID(N'{databaseOwner}{objectQualifier}UVG_QueueAdd') AND type in (N'P', N'PC'))
+DROP PROCEDURE {databaseOwner}{objectQualifier}UVG_QueueAdd
+GO
+
+IF  EXISTS (SELECT * FROM dbo.sysobjects WHERE id = OBJECT_ID(N'{databaseOwner}{objectQualifier}UVG_QueueDelete') AND type in (N'P', N'PC'))
+DROP PROCEDURE {databaseOwner}{objectQualifier}UVG_QueueDelete
+GO
+
+IF  EXISTS (SELECT * FROM dbo.sysobjects WHERE id = OBJECT_ID(N'{databaseOwner}{objectQualifier}UVG_QueueGet') AND type in (N'P', N'PC'))
+DROP PROCEDURE {databaseOwner}{objectQualifier}UVG_QueueGet
+GO
+
+IF  EXISTS (SELECT * FROM dbo.sysobjects WHERE id = OBJECT_ID(N'{databaseOwner}{objectQualifier}UVG_QueueList') AND type in (N'P', N'PC'))
+DROP PROCEDURE {databaseOwner}{objectQualifier}UVG_QueueList
+GO
+
+IF  EXISTS (SELECT * FROM dbo.sysobjects WHERE id = OBJECT_ID(N'{databaseOwner}{objectQualifier}UVG_QueueListByUser') AND type in (N'P', N'PC'))
+DROP PROCEDURE {databaseOwner}{objectQualifier}UVG_QueueListByUser
+GO
+
+IF  EXISTS (SELECT * FROM dbo.sysobjects WHERE id = OBJECT_ID(N'{databaseOwner}{objectQualifier}UVG_QueueUpdate') AND type in (N'P', N'PC'))
+DROP PROCEDURE {databaseOwner}{objectQualifier}UVG_QueueUpdate
+GO
+
+IF  EXISTS (SELECT * FROM dbo.sysobjects WHERE id = OBJECT_ID(N'{databaseOwner}{objectQualifier}UVG_RatingAdd') AND type in (N'P', N'PC'))
+DROP PROCEDURE {databaseOwner}{objectQualifier}UVG_RatingAdd
+GO
+
+IF  EXISTS (SELECT * FROM dbo.sysobjects WHERE id = OBJECT_ID(N'{databaseOwner}{objectQualifier}UVG_RatingIsDuplicated') AND type in (N'P', N'PC'))
+DROP PROCEDURE {databaseOwner}{objectQualifier}UVG_RatingIsDuplicated
+GO
+
+IF  EXISTS (SELECT * FROM dbo.sysobjects WHERE id = OBJECT_ID(N'{databaseOwner}{objectQualifier}UVG_SearchUVGModule') AND type in (N'P', N'PC'))
+DROP PROCEDURE {databaseOwner}{objectQualifier}UVG_SearchUVGModule
+GO
+
+IF  EXISTS (SELECT * FROM dbo.sysobjects WHERE id = OBJECT_ID(N'{databaseOwner}{objectQualifier}UVG_SearchUVGModuleInLibrary') AND type in (N'P', N'PC'))
+DROP PROCEDURE {databaseOwner}{objectQualifier}UVG_SearchUVGModuleInLibrary
+GO
+
+IF  EXISTS (SELECT * FROM dbo.sysobjects WHERE id = OBJECT_ID(N'{databaseOwner}{objectQualifier}UVG_SeriesAdd') AND type in (N'P', N'PC'))
+DROP PROCEDURE {databaseOwner}{objectQualifier}UVG_SeriesAdd
+GO
+
+IF  EXISTS (SELECT * FROM dbo.sysobjects WHERE id = OBJECT_ID(N'{databaseOwner}{objectQualifier}UVG_SeriesAdjustOrder') AND type in (N'P', N'PC'))
+DROP PROCEDURE {databaseOwner}{objectQualifier}UVG_SeriesAdjustOrder
+GO
+
+IF  EXISTS (SELECT * FROM dbo.sysobjects WHERE id = OBJECT_ID(N'{databaseOwner}{objectQualifier}UVG_SeriesDelete') AND type in (N'P', N'PC'))
+DROP PROCEDURE {databaseOwner}{objectQualifier}UVG_SeriesDelete
+GO
+
+IF  EXISTS (SELECT * FROM dbo.sysobjects WHERE id = OBJECT_ID(N'{databaseOwner}{objectQualifier}UVG_SeriesFreeSearch') AND type in (N'P', N'PC'))
+DROP PROCEDURE {databaseOwner}{objectQualifier}UVG_SeriesFreeSearch
+GO
+
+IF  EXISTS (SELECT * FROM dbo.sysobjects WHERE id = OBJECT_ID(N'{databaseOwner}{objectQualifier}UVG_SeriesGet') AND type in (N'P', N'PC'))
+DROP PROCEDURE {databaseOwner}{objectQualifier}UVG_SeriesGet
+GO
+
+IF  EXISTS (SELECT * FROM dbo.sysobjects WHERE id = OBJECT_ID(N'{databaseOwner}{objectQualifier}UVG_SeriesSearch') AND type in (N'P', N'PC'))
+DROP PROCEDURE {databaseOwner}{objectQualifier}UVG_SeriesSearch
+GO
+
+IF  EXISTS (SELECT * FROM dbo.sysobjects WHERE id = OBJECT_ID(N'{databaseOwner}{objectQualifier}UVG_SeriesUpdate') AND type in (N'P', N'PC'))
+DROP PROCEDURE {databaseOwner}{objectQualifier}UVG_SeriesUpdate
+GO
+
+IF  EXISTS (SELECT * FROM dbo.sysobjects WHERE id = OBJECT_ID(N'{databaseOwner}{objectQualifier}UVG_SetAWSOperationTime') AND type in (N'P', N'PC'))
+DROP PROCEDURE {databaseOwner}{objectQualifier}UVG_SetAWSOperationTime
+GO
+
+IF  EXISTS (SELECT * FROM dbo.sysobjects WHERE id = OBJECT_ID(N'{databaseOwner}{objectQualifier}UVG_TagGet') AND type in (N'P', N'PC'))
+DROP PROCEDURE {databaseOwner}{objectQualifier}UVG_TagGet
+GO
+
+IF  EXISTS (SELECT * FROM dbo.sysobjects WHERE id = OBJECT_ID(N'{databaseOwner}{objectQualifier}UVG_TagList') AND type in (N'P', N'PC'))
+DROP PROCEDURE {databaseOwner}{objectQualifier}UVG_TagList
+GO
+
+IF  EXISTS (SELECT * FROM dbo.sysobjects WHERE id = OBJECT_ID(N'{databaseOwner}{objectQualifier}UVG_TagListByVideo') AND type in (N'P', N'PC'))
+DROP PROCEDURE {databaseOwner}{objectQualifier}UVG_TagListByVideo
+GO
+
+IF  EXISTS (SELECT * FROM dbo.sysobjects WHERE id = OBJECT_ID(N'{databaseOwner}{objectQualifier}UVG_TagSearch') AND type in (N'P', N'PC'))
+DROP PROCEDURE {databaseOwner}{objectQualifier}UVG_TagSearch
+GO
+
+IF  EXISTS (SELECT * FROM dbo.sysobjects WHERE id = OBJECT_ID(N'{databaseOwner}{objectQualifier}UVG_UserListActive') AND type in (N'P', N'PC'))
+DROP PROCEDURE {databaseOwner}{objectQualifier}UVG_UserListActive
+GO
+
+IF  EXISTS (SELECT * FROM dbo.sysobjects WHERE id = OBJECT_ID(N'{databaseOwner}{objectQualifier}UVG_VideoAdd') AND type in (N'P', N'PC'))
+DROP PROCEDURE {databaseOwner}{objectQualifier}UVG_VideoAdd
+GO
+
+IF  EXISTS (SELECT * FROM dbo.sysobjects WHERE id = OBJECT_ID(N'{databaseOwner}{objectQualifier}UVG_VideoApprove') AND type in (N'P', N'PC'))
+DROP PROCEDURE {databaseOwner}{objectQualifier}UVG_VideoApprove
+GO
+
+IF  EXISTS (SELECT * FROM dbo.sysobjects WHERE id = OBJECT_ID(N'{databaseOwner}{objectQualifier}UVG_VideoAttachToSeries') AND type in (N'P', N'PC'))
+DROP PROCEDURE {databaseOwner}{objectQualifier}UVG_VideoAttachToSeries
+GO
+
+IF  EXISTS (SELECT * FROM dbo.sysobjects WHERE id = OBJECT_ID(N'{databaseOwner}{objectQualifier}UVG_VideoDelete') AND type in (N'P', N'PC'))
+DROP PROCEDURE {databaseOwner}{objectQualifier}UVG_VideoDelete
+GO
+
+IF  EXISTS (SELECT * FROM dbo.sysobjects WHERE id = OBJECT_ID(N'{databaseOwner}{objectQualifier}UVG_VideoDetachFromSeries') AND type in (N'P', N'PC'))
+DROP PROCEDURE {databaseOwner}{objectQualifier}UVG_VideoDetachFromSeries
+GO
+
+IF  EXISTS (SELECT * FROM dbo.sysobjects WHERE id = OBJECT_ID(N'{databaseOwner}{objectQualifier}UVG_VideoEnsureCategory') AND type in (N'P', N'PC'))
+DROP PROCEDURE {databaseOwner}{objectQualifier}UVG_VideoEnsureCategory
+GO
+
+IF  EXISTS (SELECT * FROM dbo.sysobjects WHERE id = OBJECT_ID(N'{databaseOwner}{objectQualifier}UVG_VideoEnsureTag') AND type in (N'P', N'PC'))
+DROP PROCEDURE {databaseOwner}{objectQualifier}UVG_VideoEnsureTag
+GO
+
+IF  EXISTS (SELECT * FROM dbo.sysobjects WHERE id = OBJECT_ID(N'{databaseOwner}{objectQualifier}UVG_VideoFreeSearch') AND type in (N'P', N'PC'))
+DROP PROCEDURE {databaseOwner}{objectQualifier}UVG_VideoFreeSearch
+GO
+
+IF  EXISTS (SELECT * FROM dbo.sysobjects WHERE id = OBJECT_ID(N'{databaseOwner}{objectQualifier}UVG_VideoGet') AND type in (N'P', N'PC'))
+DROP PROCEDURE {databaseOwner}{objectQualifier}UVG_VideoGet
+GO
+
+IF  EXISTS (SELECT * FROM dbo.sysobjects WHERE id = OBJECT_ID(N'{databaseOwner}{objectQualifier}UVG_VideoGetByReferenceId') AND type in (N'P', N'PC'))
+DROP PROCEDURE {databaseOwner}{objectQualifier}UVG_VideoGetByReferenceId
+GO
+
+IF  EXISTS (SELECT * FROM dbo.sysobjects WHERE id = OBJECT_ID(N'{databaseOwner}{objectQualifier}UVG_VideoGetUserCount') AND type in (N'P', N'PC'))
+DROP PROCEDURE {databaseOwner}{objectQualifier}UVG_VideoGetUserCount
+GO
+
+IF  EXISTS (SELECT * FROM dbo.sysobjects WHERE id = OBJECT_ID(N'{databaseOwner}{objectQualifier}UVG_VideoList') AND type in (N'P', N'PC'))
+DROP PROCEDURE {databaseOwner}{objectQualifier}UVG_VideoList
+GO
+
+IF  EXISTS (SELECT * FROM dbo.sysobjects WHERE id = OBJECT_ID(N'{databaseOwner}{objectQualifier}UVG_VideoListByAuthor') AND type in (N'P', N'PC'))
+DROP PROCEDURE {databaseOwner}{objectQualifier}UVG_VideoListByAuthor
+GO
+
+IF  EXISTS (SELECT * FROM dbo.sysobjects WHERE id = OBJECT_ID(N'{databaseOwner}{objectQualifier}UVG_VideoListByKeyword') AND type in (N'P', N'PC'))
+DROP PROCEDURE {databaseOwner}{objectQualifier}UVG_VideoListByKeyword
+GO
+
+IF  EXISTS (SELECT * FROM dbo.sysobjects WHERE id = OBJECT_ID(N'{databaseOwner}{objectQualifier}UVG_VideoListBySeries') AND type in (N'P', N'PC'))
+DROP PROCEDURE {databaseOwner}{objectQualifier}UVG_VideoListBySeries
+GO
+
+IF  EXISTS (SELECT * FROM dbo.sysobjects WHERE id = OBJECT_ID(N'{databaseOwner}{objectQualifier}UVG_VideoListByTag') AND type in (N'P', N'PC'))
+DROP PROCEDURE {databaseOwner}{objectQualifier}UVG_VideoListByTag
+GO
+
+IF  EXISTS (SELECT * FROM dbo.sysobjects WHERE id = OBJECT_ID(N'{databaseOwner}{objectQualifier}UVG_VideoListDateAdded') AND type in (N'P', N'PC'))
+DROP PROCEDURE {databaseOwner}{objectQualifier}UVG_VideoListDateAdded
+GO
+
+IF  EXISTS (SELECT * FROM dbo.sysobjects WHERE id = OBJECT_ID(N'{databaseOwner}{objectQualifier}UVG_VideoListPending') AND type in (N'P', N'PC'))
+DROP PROCEDURE {databaseOwner}{objectQualifier}UVG_VideoListPending
+GO
+
+IF  EXISTS (SELECT * FROM dbo.sysobjects WHERE id = OBJECT_ID(N'{databaseOwner}{objectQualifier}UVG_VideoListPending2') AND type in (N'P', N'PC'))
+DROP PROCEDURE {databaseOwner}{objectQualifier}UVG_VideoListPending2
+GO
+
+IF  EXISTS (SELECT * FROM dbo.sysobjects WHERE id = OBJECT_ID(N'{databaseOwner}{objectQualifier}UVG_VideoListRelated') AND type in (N'P', N'PC'))
+DROP PROCEDURE {databaseOwner}{objectQualifier}UVG_VideoListRelated
+GO
+
+IF  EXISTS (SELECT * FROM dbo.sysobjects WHERE id = OBJECT_ID(N'{databaseOwner}{objectQualifier}UVG_VideoOnWatch') AND type in (N'P', N'PC'))
+DROP PROCEDURE {databaseOwner}{objectQualifier}UVG_VideoOnWatch
+GO
+
+IF  EXISTS (SELECT * FROM dbo.sysobjects WHERE id = OBJECT_ID(N'{databaseOwner}{objectQualifier}UVG_VideoSearchMyVideos') AND type in (N'P', N'PC'))
+DROP PROCEDURE {databaseOwner}{objectQualifier}UVG_VideoSearchMyVideos
+GO
+
+IF  EXISTS (SELECT * FROM dbo.sysobjects WHERE id = OBJECT_ID(N'{databaseOwner}{objectQualifier}UVG_VideoSearchPlus') AND type in (N'P', N'PC'))
+DROP PROCEDURE {databaseOwner}{objectQualifier}UVG_VideoSearchPlus
+GO
+
+IF  EXISTS (SELECT * FROM dbo.sysobjects WHERE id = OBJECT_ID(N'{databaseOwner}{objectQualifier}UVG_VideoUncategorized') AND type in (N'P', N'PC'))
+DROP PROCEDURE {databaseOwner}{objectQualifier}UVG_VideoUncategorized
+GO
+
+IF  EXISTS (SELECT * FROM dbo.sysobjects WHERE id = OBJECT_ID(N'{databaseOwner}{objectQualifier}UVG_VideoUpdate') AND type in (N'P', N'PC'))
+DROP PROCEDURE {databaseOwner}{objectQualifier}UVG_VideoUpdate
+GO
+
+IF  EXISTS (SELECT * FROM dbo.sysobjects WHERE id = OBJECT_ID(N'{databaseOwner}{objectQualifier}UVG_VideoUpdateCreatedDate') AND type in (N'P', N'PC'))
+DROP PROCEDURE {databaseOwner}{objectQualifier}UVG_VideoUpdateCreatedDate
+GO
+
+IF  EXISTS (SELECT * FROM dbo.sysobjects WHERE id = OBJECT_ID(N'{databaseOwner}{objectQualifier}UVG_QueueListByPortal') AND type in (N'P', N'PC'))
+DROP PROCEDURE {databaseOwner}{objectQualifier}UVG_QueueListByPortal
+GO
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+if exists (SELECT * FROM dbo.sysobjects WHERE id = OBJECT_ID(N'{databaseOwner}{objectQualifier}UVG_CommercialIsActive') AND type in (N'FN', N'IF', N'TF', N'FS', N'FT'))
+drop function {databaseOwner}{objectQualifier}UVG_CommercialIsActive
+GO
+
+if exists (SELECT * FROM dbo.sysobjects WHERE id = OBJECT_ID(N'{databaseOwner}{objectQualifier}UVG_GetVideoCategory') AND type in (N'FN', N'IF', N'TF', N'FS', N'FT'))
+drop function {databaseOwner}{objectQualifier}UVG_GetVideoCategory
+GO
+
+if exists (SELECT * FROM dbo.sysobjects WHERE id = OBJECT_ID(N'{databaseOwner}{objectQualifier}UVG_CommercialIsAppliable') AND type in (N'FN', N'IF', N'TF', N'FS', N'FT'))
+drop function {databaseOwner}{objectQualifier}UVG_CommercialIsAppliable
+GO
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+IF  EXISTS (SELECT * FROM sys.foreign_keys WHERE object_id = OBJECT_ID(N'dbo.FK_UVG_Category_UVG_Library') AND parent_object_id = OBJECT_ID(N'{databaseOwner}{objectQualifier}UVG_Category'))
+ALTER TABLE {databaseOwner}{objectQualifier}UVG_Category DROP CONSTRAINT FK_UVG_Category_UVG_Library
+GO
+
+IF  EXISTS (SELECT * FROM sys.foreign_keys WHERE object_id = OBJECT_ID(N'dbo.FK_UVG_Comment_UVG_Video') AND parent_object_id = OBJECT_ID(N'{databaseOwner}{objectQualifier}UVG_Comment'))
+ALTER TABLE {databaseOwner}{objectQualifier}UVG_Comment DROP CONSTRAINT FK_UVG_Comment_UVG_Video
+GO
+
+IF  EXISTS (SELECT * FROM sys.foreign_keys WHERE object_id = OBJECT_ID(N'dbo.FK_UVG_Queue_UVG_Library') AND parent_object_id = OBJECT_ID(N'{databaseOwner}{objectQualifier}UVG_Queue'))
+ALTER TABLE {databaseOwner}{objectQualifier}UVG_Queue DROP CONSTRAINT FK_UVG_Queue_UVG_Library
+GO
+
+IF  EXISTS (SELECT * FROM sys.foreign_keys WHERE object_id = OBJECT_ID(N'dbo.FK_UVG_Rating_UVG_Video') AND parent_object_id = OBJECT_ID(N'{databaseOwner}{objectQualifier}UVG_Rating'))
+ALTER TABLE {databaseOwner}{objectQualifier}UVG_Rating DROP CONSTRAINT FK_UVG_Rating_UVG_Video
+GO
+
+IF  EXISTS (SELECT * FROM sys.foreign_keys WHERE object_id = OBJECT_ID(N'dbo.FK_UVG_Video_UVG_Library') AND parent_object_id = OBJECT_ID(N'{databaseOwner}{objectQualifier}UVG_Video'))
+ALTER TABLE {databaseOwner}{objectQualifier}UVG_Video DROP CONSTRAINT FK_UVG_Video_UVG_Library
+GO
+
+IF  EXISTS (SELECT * FROM sys.foreign_keys WHERE object_id = OBJECT_ID(N'dbo.FK_UVG_VideoCategory_UVG_Category') AND parent_object_id = OBJECT_ID(N'{databaseOwner}{objectQualifier}UVG_VideoCategory'))
+ALTER TABLE {databaseOwner}{objectQualifier}UVG_VideoCategory DROP CONSTRAINT FK_UVG_VideoCategory_UVG_Category
+GO
+
+IF  EXISTS (SELECT * FROM sys.foreign_keys WHERE object_id = OBJECT_ID(N'dbo.FK_UVG_VideoCategory_UVG_Video') AND parent_object_id = OBJECT_ID(N'{databaseOwner}{objectQualifier}UVG_VideoCategory'))
+ALTER TABLE {databaseOwner}{objectQualifier}UVG_VideoCategory DROP CONSTRAINT FK_UVG_VideoCategory_UVG_Video
+GO
+
+
+IF  EXISTS (SELECT * FROM dbo.sysobjects WHERE id = OBJECT_ID(N'{databaseOwner}{objectQualifier}UVG_VideoCategory') AND type in (N'U'))
+DROP TABLE {databaseOwner}{objectQualifier}UVG_VideoCategory
+GO
+
+IF  EXISTS (SELECT * FROM dbo.sysobjects WHERE id = OBJECT_ID(N'{databaseOwner}{objectQualifier}UVG_Category') AND type in (N'U'))
+DROP TABLE {databaseOwner}{objectQualifier}UVG_Category
+GO
+
+IF  EXISTS (SELECT * FROM dbo.sysobjects WHERE id = OBJECT_ID(N'{databaseOwner}{objectQualifier}UVG_Comment') AND type in (N'U'))
+DROP TABLE {databaseOwner}{objectQualifier}UVG_Comment
+GO
+
+IF  EXISTS (SELECT * FROM dbo.sysobjects WHERE id = OBJECT_ID(N'{databaseOwner}{objectQualifier}UVG_CommercialImpression') AND type in (N'U'))
+DROP TABLE {databaseOwner}{objectQualifier}UVG_CommercialImpression
+GO
+
+IF  EXISTS (SELECT * FROM dbo.sysobjects WHERE id = OBJECT_ID(N'{databaseOwner}{objectQualifier}UVG_Commercial') AND type in (N'U'))
+DROP TABLE {databaseOwner}{objectQualifier}UVG_Commercial
+GO
+
+IF  EXISTS (SELECT * FROM dbo.sysobjects WHERE id = OBJECT_ID(N'{databaseOwner}{objectQualifier}UVG_Queue') AND type in (N'U'))
+DROP TABLE {databaseOwner}{objectQualifier}UVG_Queue
+GO
+
+IF  EXISTS (SELECT * FROM dbo.sysobjects WHERE id = OBJECT_ID(N'{databaseOwner}{objectQualifier}UVG_Rating') AND type in (N'U'))
+DROP TABLE {databaseOwner}{objectQualifier}UVG_Rating
+GO
+
+IF  EXISTS (SELECT * FROM dbo.sysobjects WHERE id = OBJECT_ID(N'{databaseOwner}{objectQualifier}UVG_Screenshot') AND type in (N'U'))
+DROP TABLE {databaseOwner}{objectQualifier}UVG_Screenshot
+GO
+
+IF  EXISTS (SELECT * FROM dbo.sysobjects WHERE id = OBJECT_ID(N'{databaseOwner}{objectQualifier}UVG_VideoTag') AND type in (N'U'))
+DROP TABLE {databaseOwner}{objectQualifier}UVG_VideoTag
+GO
+
+IF  EXISTS (SELECT * FROM dbo.sysobjects WHERE id = OBJECT_ID(N'{databaseOwner}{objectQualifier}UVG_Tag') AND type in (N'U'))
+DROP TABLE {databaseOwner}{objectQualifier}UVG_Tag
+GO
+
+IF  EXISTS (SELECT * FROM dbo.sysobjects WHERE id = OBJECT_ID(N'{databaseOwner}{objectQualifier}UVG_Video') AND type in (N'U'))
+DROP TABLE {databaseOwner}{objectQualifier}UVG_Video
+GO
+
+IF  EXISTS (SELECT * FROM dbo.sysobjects WHERE id = OBJECT_ID(N'{databaseOwner}{objectQualifier}UVG_Series') AND type in (N'U'))
+DROP TABLE {databaseOwner}{objectQualifier}UVG_Series
+GO
+
+IF  EXISTS (SELECT * FROM dbo.sysobjects WHERE id = OBJECT_ID(N'{databaseOwner}{objectQualifier}UVG_Library') AND type in (N'U'))
+DROP TABLE {databaseOwner}{objectQualifier}UVG_Library
+GO
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+delete {databaseOwner}{objectQualifier}Schedule where ObjectDependencies='UVG'
+GO
+

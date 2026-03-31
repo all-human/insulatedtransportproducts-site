@@ -1,0 +1,9 @@
+<a href="[LINK]" class="relateditem [CRTCLASS]" style="height:63px;">
+	<span class="imgntime">
+		<img src="[SCREENSHOT]" border="0" alt="Screenshot" style="height:63px;" />[LENGTH]
+	</span>
+
+	<span class="stars">[INDEX]</span>
+	<span class="title hl">[VIDEOTITLE]</span>
+	<span class="meta">[VIEWS] views | [CREATEDAGO]</span>
+</a>

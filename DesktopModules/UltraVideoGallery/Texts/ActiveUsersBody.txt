@@ -1,0 +1,15 @@
+<table width='100%'>
+ <tr>
+  <td align='center' width='100'>
+   <table><tr><td class=UVGAvatarOuter><a href='[LINK]'>[AVATAR]</a>
+   </td></tr></table>
+  </td>
+  <td class='Normal'>
+   <span class='SubSubHead'>[DISPLAYNAME]</span>
+   <br>
+   Since [REGISTRATIONDATE]
+   <br>
+   [VIDEOS] Videos
+  </td>
+ </tr>
+</table>

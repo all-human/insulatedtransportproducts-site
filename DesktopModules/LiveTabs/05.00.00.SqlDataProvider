@@ -1,0 +1,119 @@
+﻿
+CREATE TABLE dbo.Tmp_LiveTabs_Tab
+	(
+	TabId int NOT NULL,
+	ModuleId int NOT NULL,
+	Permissions nvarchar(MAX) NOT NULL,
+	EmbeddedModule nvarchar(MAX) NOT NULL,
+	Locale nvarchar(255) NOT NULL,
+	TabName nvarchar(MAX) NOT NULL,
+	TabHeader nvarchar(MAX) NULL,
+	[Content] nvarchar(MAX) NULL,
+	SearchSummary nvarchar(MAX) NOT NULL,
+	Searchable bit NOT NULL,
+	SortOrder int NOT NULL,
+	LegacyTabId int NULL,
+	NavigateUrl varchar(255) NULL,
+	BreakLine nvarchar(MAX) NOT NULL,
+	LoadOnDemand bit NOT NULL
+	)  ON [PRIMARY]
+	 TEXTIMAGE_ON [PRIMARY]
+GO
+
+IF EXISTS(SELECT * FROM dbo.LiveTabs_Tab)
+	 EXEC('INSERT INTO dbo.Tmp_LiveTabs_Tab (TabId, ModuleId, Permissions, EmbeddedModule, Locale, TabName, TabHeader, [Content], SearchSummary, Searchable, SortOrder, LegacyTabId, NavigateUrl, BreakLine, LoadOnDemand)
+		SELECT TabId, ModuleId, Permissions, EmbeddedModule, Locale, TabName, TabHeader, [Content], SearchSummary, Searchable, SortOrder, LegacyTabId, NavigateUrl, BreakLine, LoadOnDemand FROM dbo.LiveTabs_Tab WITH (HOLDLOCK TABLOCKX)')
+GO
+DROP TABLE dbo.LiveTabs_Tab
+GO
+EXECUTE sp_rename N'dbo.Tmp_LiveTabs_Tab', N'LiveTabs_Tab', 'OBJECT' 
+GO
+ALTER TABLE dbo.LiveTabs_Tab ADD CONSTRAINT
+	PK_LiveTabs_Tab PRIMARY KEY CLUSTERED 
+	(
+	TabId
+	) WITH( STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+
+GO
+
+
+IF NOT EXISTS (SELECT * FROM INFORMATION_SCHEMA.COLUMNS where TABLE_NAME='LiveTabs' and COLUMN_NAME='MaxHistroy')
+BEGIN
+ALTER TABLE {databaseOwner}[LiveTabs] ADD MaxHistroy int NOT NULL DEFAULT '5'
+END
+GO
+IF EXISTS (SELECT * FROM INFORMATION_SCHEMA.COLUMNS where TABLE_NAME='Mandeeps_Workflow' and COLUMN_NAME='WorkflowID')
+BEGIN
+IF NOT EXISTS (SELECT * FROM INFORMATION_SCHEMA.COLUMNS where TABLE_NAME='LiveTabs' and COLUMN_NAME='WorkflowId')
+BEGIN
+declare @wf int
+set @wf=(Select top(1) WorkflowID from Mandeeps_Workflow )
+EXEC ('ALTER TABLE {databaseOwner}[LiveTabs] ADD WorkflowId INT NOT NULL  DEFAULT  '+@wf)
+END
+END
+GO
+
+IF NOT EXISTS (SELECT * FROM INFORMATION_SCHEMA.COLUMNS where TABLE_NAME='LiveTabs_Tab' and COLUMN_NAME='CreatedBy')
+BEGIN
+ALTER TABLE {databaseOwner}[LiveTabs_Tab] ADD
+[Version] [int] NOT NULL CONSTRAINT DF_LiveTabs_Tab_Version DEFAULT 1,
+[CreatedOn] datetime NOT NULL CONSTRAINT  DF_LiveTabs_Tab_CreatedOn DEFAULT (GETDATE()),
+[CreatedBy] int NOT NULL CONSTRAINT DF_LiveTabs_Tab_CreatedBy DEFAULT -1,
+[UpdatedBy] int NULL,
+[UpdatedOn] datetime NULL,
+[IsPublished] bit NOT NULL CONSTRAINT DF_LiveTabs_Tab_IsPublished DEFAULT 1,
+[PublishedBy] int NULL,
+[PublishedOn] datetime NULL,
+[LockedBy] int  NOT NULL CONSTRAINT  DF_LiveTabs_Tab_LockedBy DEFAULT -1
+END
+GO
+
+IF EXISTS (SELECT * FROM INFORMATION_SCHEMA.COLUMNS where TABLE_NAME='Mandeeps_Workflow_State' and COLUMN_NAME='WorkflowID')
+BEGIN
+IF NOT EXISTS (SELECT * FROM INFORMATION_SCHEMA.COLUMNS where TABLE_NAME='LiveTabs_Tab' and COLUMN_NAME='Stateid')
+BEGIN
+declare @Stateid int
+set @Stateid=(Select top(1) Stateid from Mandeeps_Workflow_State )
+EXEC ('ALTER TABLE LiveTabs_Tab ADD StateId INT NOT NULL  DEFAULT  '+@Stateid)
+END
+END
+GO
+
+IF EXISTS (SELECT * FROM sys.key_constraints WHERE type = 'PK' AND parent_object_id = OBJECT_ID('dbo.LiveTabs_Tab') AND Name = 'PK_LiveTabs_Tab')
+BEGIN
+ALTER TABLE [LiveTabs_Tab]
+	DROP CONSTRAINT PK_LiveTabs_Tab
+END
+GO
+
+ALTER TABLE {databaseOwner}[LiveTabs_Tab]
+ADD CONSTRAINT PK_LiveTabs_Tab Primary Key (TabId,ModuleId,Version) 
+
+
+/****** Object:  Table {databaseOwner}[LiveTabs_WorkflowLog]    Script Date: 02/26/2014 09:53:35 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'{databaseOwner}[LiveTabs_WorkflowLog]') AND type in (N'U'))
+BEGIN
+CREATE TABLE {databaseOwner}[LiveTabs_WorkflowLog](
+	[WorkflowLogID] [int] IDENTITY(1,1) NOT NULL,
+	[TabId] [int] NOT NULL,
+	[ModuleId] [int] NOT NULL,
+	[Version] [int] NOT NULL,
+	[StateID] [int] NOT NULL,
+	[Comment] [nvarchar](max) NULL,
+	[Approved] [bit] NOT NULL,
+	[ReviewedBy] [int] NOT NULL,
+	[ReviewedOn] [datetime] NOT NULL,
+ CONSTRAINT [PK_LiveTab_WorkflowLog] PRIMARY KEY CLUSTERED 
+(
+	[WorkflowLogID] ASC
+)WITH (STATISTICS_NORECOMPUTE  = OFF, IGNORE_DUP_KEY = OFF)
+)
+END
+GO
+
+
+

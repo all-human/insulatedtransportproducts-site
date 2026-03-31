@@ -1,0 +1,236 @@
+#_mcframe
+{
+	margin:0px;
+	padding:0px;
+}
+
+.colleft
+{
+}
+
+.colright
+{
+	position:relative;
+	padding:0px 0px 0px 10px;
+	vertical-align:top;
+}
+
+.colright>div
+{
+	position:relative;
+	height:100%;
+}
+
+.colright .xofy
+{
+	font-size:13px;
+	font-style:italic;
+	margin-top:10px;
+}
+
+.colright .title
+{
+	margin:10px 0px 10px 0px;
+}
+
+.colright .desc
+{	
+}
+
+.colright .social
+{
+	position:absolute;
+	bottom:60px;
+	width:100%;
+	text-align:center;
+}
+
+.colright .channel
+{
+	background-color:#ccc;
+	margin-top:10px;
+	padding:5px;
+	margin-bottom:5px;
+}
+
+.colright .categories td
+{
+	padding:3px;
+}
+
+.colright .aspNetDisabled
+{
+	font-size:15px;
+	font-weight:bold;
+	color:#000;
+}
+
+
+.colbottom
+{
+	width:100%;
+	display:block;
+	position:relative;
+	overflow:hidden;
+	background-color:#ddd;
+}
+
+.colbottom .scroll
+{
+	position:relative;
+	margin:0px 5px 0px 5px;
+	height:120px;
+	overflow:hidden;
+}
+
+.toleft
+{
+	z-index:2;
+	position:absolute;
+	cursor:pointer;
+	background-image:url('mc/left2.png');
+	width:34px;
+	height:100px;
+	left:0px;
+	top:50%;
+	margin-top:-50px;
+}
+
+.toleft:hover
+{
+	background-image:url('mc/left.png');
+}
+
+.toright
+{
+	z-index:2;
+	position:absolute;
+	cursor:pointer;
+	background-image:url('mc/right2.png');
+	width:34px;
+	height:100px;
+	right:0px;
+	top:50%;
+	margin-top:-50px;
+}
+
+.toright:hover
+{
+	background-image:url('mc/right.png');
+}
+
+.colbottom .scrollable
+{
+	z-index:1;
+	position:absolute;
+	top:0px;
+	left:0px;
+	width:100000px;
+	height:100%;
+	margin:0px;
+}
+
+.mcitem
+{
+	display:block;
+	height:100%;
+	float:left;
+	padding:4px;
+	min-width:90px;
+}
+
+.mcitem .body
+{
+	float:left;
+	display:block;
+	position:relative;
+	height:110px;
+	overflow:hidden;
+}
+
+.mcitem:hover
+{
+	background-color:#666;
+}
+
+.mcitem.current
+{
+	background-color:#333;
+}
+
+.mcitem .imgntime
+{
+	position:relative;
+	margin:auto;
+}
+
+.mcitem .imgntime img
+{
+}
+
+.mcitem .videolength
+{
+	position:absolute;
+	padding:0px 2px 0px 2px;
+	color:#fff;
+	font-size:10px;
+	bottom:6px;
+	right:6px;
+
+	border:1px solid #333;
+    -moz-border-radius:3px;
+    -webkit-border-radius:3px;
+    border-radius:3px;
+	background-color:#333;
+}
+
+.mcitem .title
+{
+	position:absolute;
+	display:block;
+	left:0px;
+	right:0px;
+	bottom:0px;
+
+	margin:0px;
+	line-height:22px;
+	height:22px;
+
+	text-align:left;
+	background-color:#ddd;
+
+	color:#000;
+}
+
+.mcitem:hover .title
+{
+	background-color:#666;
+	color:#fff;
+	margin:2px 0px 2px 0px;
+	line-height:18px;
+	height:auto;
+}
+
+.mcitem.current .title
+{
+	background-color:#333;
+	color:#fff;
+	margin:2px 0px 2px 0px;
+	line-height:18px;
+	height:auto;
+}
+
+.mcitem .desc, .mcitem .script
+{
+	display:none;
+}
+
+.mcitem .new
+{
+	z-index:2;
+	display:block;
+	position:absolute;
+	width:45px;
+	height:45px;
+	background-image:url('mc/new.png');
+}

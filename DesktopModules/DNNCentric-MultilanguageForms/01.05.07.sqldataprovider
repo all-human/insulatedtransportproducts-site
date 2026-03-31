@@ -1,0 +1,55 @@
+﻿SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+
+-- select * from {databaseOwner}[{objectQualifier}DCC_EF_GetSubmissionDataAttributes]('10/26/2009','10/27/2009',-1,' ',370)
+ALTER Function {databaseOwner}[{objectQualifier}DCC_EF_GetSubmissionDataAttributes]
+ (
+	@FromDate DateTime,
+	@ToDate DateTime,
+	@FieldID int,
+	@StrSearchText NVARCHAR(400),
+	@ModuleID int
+
+ )
+RETURNS TABLE
+as
+Return 
+(
+SELECT     TOP (100) PERCENT Val.FormRecordID, EF.FieldName, Val.FieldValue, EF.SortOrder
+FROM         {databaseOwner}[{objectQualifier}DCC_EF_FormDataValues] AS Val INNER JOIN
+                      (select * from {databaseOwner}[{objectQualifier}DCC_EF_EmailForm] where ControlType!='Label') AS EF ON Val.FieldID = EF.FieldID INNER JOIN
+                      {databaseOwner}[{objectQualifier}DCC_EF_FormDataMaster] AS Mas ON Val.FormRecordID = Mas.FormRecordID 
+                      AND Mas.DateOfSubmission BETWEEN @FromDate AND  @ToDate 
+			          AND EF.ModuleID=@ModuleID 
+					and Mas.formrecordid 
+						in (SELECT distinct FormRecordID
+							FROM  {databaseOwner}[{objectQualifier}DCC_EF_FormDataValues]
+							Where FieldID=(Case when @FieldID > -1 then @FieldID Else FieldID End)  and 
+								  FieldValue like (case when @FieldID <0  or ltrim(rtrim(@StrSearchText))='' then FieldValue Else  '%'+ ltrim(rtrim(@StrSearchText)) +'%' END))
+						order by EF.SortOrder
+)
+
+GO
+
+
+
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+
+-- {databaseOwner}[{objectQualifier}DCC_EF_GetAllFields] 370
+ALTER Procedure {databaseOwner}[{objectQualifier}DCC_EF_GetAllFields]
+@ModuleID int
+AS
+SELECT   Distinct  {databaseOwner}[{objectQualifier}DCC_EF_EmailForm].FieldName, {databaseOwner}[{objectQualifier}DCC_EF_EmailForm].FieldID
+FROM         {databaseOwner}[{objectQualifier}DCC_EF_EmailForm] INNER JOIN
+                      {databaseOwner}[{objectQualifier}DCC_EF_FormDataValues] ON {databaseOwner}[{objectQualifier}DCC_EF_EmailForm].FieldID = {databaseOwner}[{objectQualifier}DCC_EF_FormDataValues].FieldID
+where
+  {databaseOwner}[{objectQualifier}DCC_EF_EmailForm].ModuleID=@ModuleID
+AND
+{databaseOwner}[{objectQualifier}DCC_EF_EmailForm].ControlType!='Label'
+GO
+

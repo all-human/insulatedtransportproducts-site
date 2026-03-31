@@ -1,0 +1,17 @@
+-- New Procedure on 21/05/2010--
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+
+--DNNCentric_DCC_EF_FieldNameExistOrNot 'City' , 371
+ALTER procedure {databaseOwner}[{objectQualifier}DCC_EF_FieldNameExistOrNot] 
+@FieldName nvarchar(1000),
+@ModuleID int
+as
+select count(*) from {databaseOwner}[{objectQualifier}DCC_EF_EmailForm] 
+where FieldName=@FieldName
+AND ModuleID=@ModuleID
+AND IsDeleted='False'
+
+GO

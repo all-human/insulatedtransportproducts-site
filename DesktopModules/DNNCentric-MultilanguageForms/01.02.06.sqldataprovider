@@ -1,0 +1,1101 @@
+﻿
+Alter Table {databaseOwner}{objectQualifier}DCC_EF_WorkFlow_SendEmail 
+Alter Column EmailSubject Nvarchar(MAX) Null
+GO
+Alter Table {databaseOwner}{objectQualifier}DCC_EF_WorkFlow_SendEmail 
+Alter Column EmailTemplate Nvarchar(MAX) Null
+GO
+Alter Table {databaseOwner}{objectQualifier}DCC_EF_WorkFlow_SendEmail 
+Alter Column SendToList Nvarchar(MAX) Null
+
+GO
+
+Alter Table {databaseOwner}{objectQualifier}DCC_EF_ActiveWorkFlows 
+Alter Column WorkFlowName Nvarchar(1000) Null
+
+GO
+
+Alter Table {databaseOwner}{objectQualifier}DCC_EF_Category 
+Alter Column CategoryName Nvarchar(4000) Null
+
+GO
+
+Alter Table {databaseOwner}{objectQualifier}DCC_EF_EmailForm 
+Alter Column FieldName Nvarchar(4000) Null
+GO
+Alter Table {databaseOwner}{objectQualifier}DCC_EF_EmailForm 
+Alter Column ControlType Nvarchar(500) Null
+
+GO
+
+Alter Table {databaseOwner}{objectQualifier}DCC_EF_EmailFormCulture 
+Alter Column Culture_Value Nvarchar(MAX) Null
+
+GO
+
+Alter Table {databaseOwner}{objectQualifier}DCC_EF_ErrorMsgWithCulture 
+Alter Column ErrorMsg Nvarchar(4000) Null
+
+GO
+
+Alter Table {databaseOwner}{objectQualifier}DCC_EF_MiscLocalization 
+Alter Column ItemValue Nvarchar(4000) Null
+
+GO
+
+Alter Table {databaseOwner}{objectQualifier}DCC_EF_ResponseOnSubmit 
+Alter Column MessageText Nvarchar(MAX) Null
+
+GO
+
+Alter Table {databaseOwner}{objectQualifier}DCC_EF_WorkFlowTypes 
+Alter Column WorkFlowTypeName Nvarchar(1000) Null
+
+GO
+
+
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+
+ALTER function {databaseOwner}[{objectQualifier}DCC_EF_GetCategoryList] 
+(
+	@defaultLanguage as nvarchar(15),
+	@currentLanguage as nvarchar(15),
+	@ModuleID int
+)
+RETURNS TABLE 
+AS
+return
+(
+SELECT  TOP 100 PERCENT  
+	A.CategoryID,
+	isnull(B.CategoryName,A.CategoryName) CategoryName,
+	A.SortOrder
+FROM
+   (SELECT     
+		CategoryID, 
+		Culture, 
+		CategoryName,
+		SortORder
+	FROM	    	      
+		{databaseOwner}{objectQualifier}DCC_EF_Category 
+	WHERE      
+		(Culture = @defaultLanguage AND ModuleID=@ModuleID)) 
+AS A LEFT OUTER JOIN
+	(SELECT     
+		CategoryID, 
+		Culture, 
+		CategoryName,
+		SortORder
+	FROM          
+		{databaseOwner}{objectQualifier}DCC_EF_Category AS DCC_EF_Category_1 
+	WHERE      
+		(Culture = @currentLanguage AND ModuleID=@ModuleID)) 
+AS B ON A.CategoryID = B.CategoryID
+ORDER BY A.SortOrder
+)
+
+GO
+/****** Object:  StoredProcedure {databaseOwner}[{objectQualifier}DCC_EF_AddControls]    Script Date: 06/30/2009 17:15:13 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+
+ALTER procedure {databaseOwner}[{objectQualifier}DCC_EF_AddControls] 
+@FieldName nvarchar(1000),
+@ControlType nvarchar(50),
+@CategoryID int,
+@ModuleID int
+as
+declare @SortOrder int
+set @SortOrder =(select isnull(MAX(FieldID),0) from {databaseOwner}[{objectQualifier}DCC_EF_EmailForm]) 
+set @SortOrder=@SortOrder+1
+insert into {databaseOwner}[{objectQualifier}DCC_EF_EmailForm]
+(FieldName,ControlType,SortOrder,CategoryID,Visible,ModuleID) 
+values
+(@FieldName,@ControlType,@SortOrder,@CategoryID,1,@ModuleID)select @@identity FieldIDIndex
+
+
+
+
+GO
+/****** Object:  StoredProcedure {databaseOwner}[{objectQualifier}DCC_EF_AddControlsPropertiesByCulture]    Script Date: 06/30/2009 17:15:14 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER procedure {databaseOwner}[{objectQualifier}DCC_EF_AddControlsPropertiesByCulture]
+@FieldID int,
+@Culture nvarchar(50),
+@Culture_Value nvarchar(MAX)
+as
+insert into
+{databaseOwner}{objectQualifier}DCC_EF_EmailFormCulture (FieldID,Culture,Culture_Value) 
+values(@FieldID,@Culture,@Culture_Value)
+GO
+/****** Object:  StoredProcedure {databaseOwner}[{objectQualifier}DCC_EF_AddMLTextToMiscLocalization]    Script Date: 06/30/2009 17:15:15 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+
+ALTER procedure {databaseOwner}[{objectQualifier}DCC_EF_AddMLTextToMiscLocalization]
+@ItemType nvarchar(100),
+@Culture nvarchar(50),
+@ItemValue nvarchar(Max),
+@ModuleID int
+as
+
+if Exists(Select * from {databaseOwner}{objectQualifier}DCC_EF_MiscLocalization where  ItemType=@ItemType AND ModuleID=@ModuleID AND Culture=@Culture)
+Begin
+
+Update {databaseOwner}{objectQualifier}DCC_EF_MiscLocalization
+set ItemValue=@ItemValue
+Where 
+ItemType=@ItemType
+AND
+ModuleID=@ModuleID
+AND
+Culture=@Culture
+End
+
+else
+
+Begin
+insert into {databaseOwner}{objectQualifier}DCC_EF_MiscLocalization
+(ItemType,Culture,ItemValue,ModuleID)
+values
+(@ItemType,@Culture,@ItemValue,@ModuleID)
+End
+
+
+GO
+/****** Object:  StoredProcedure {databaseOwner}[{objectQualifier}DCC_EF_CheckCategoryName]    Script Date: 06/30/2009 17:15:15 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER procedure {databaseOwner}[{objectQualifier}DCC_EF_CheckCategoryName]
+@CategoryName nvarchar(1000),
+@ModuleID int
+as
+select CategoryName 
+from {databaseOwner}[{objectQualifier}DCC_EF_Category] 
+where CategoryName=@CategoryName
+And ModuleID=@ModuleID
+
+
+GO
+/****** Object:  StoredProcedure {databaseOwner}[{objectQualifier}DCC_EF_CheckWorkFlowName]    Script Date: 06/30/2009 17:15:16 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+
+ALTER procedure {databaseOwner}[{objectQualifier}DCC_EF_CheckWorkFlowName]
+@WorkFlowName nvarchar(1000),
+@ModuleID int
+as
+select WorkFlowName from {databaseOwner}[{objectQualifier}DCC_EF_ActiveWorkFlows]
+ where WorkFlowName=@WorkFlowName
+AND ModuleID=@ModuleID
+
+
+
+
+GO
+/****** Object:  StoredProcedure {databaseOwner}[{objectQualifier}DCC_EF_DeleteCategoryNameByID]    Script Date: 06/30/2009 17:15:16 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+
+
+ALTER procedure {databaseOwner}[{objectQualifier}DCC_EF_DeleteCategoryNameByID] 
+
+@CategoryID int
+
+as
+
+Delete
+from   {databaseOwner}[{objectQualifier}DCC_EF_EmailForm] 
+where   CategoryID = @CategoryID
+
+
+Delete
+from   {databaseOwner}[{objectQualifier}DCC_EF_Category] 
+where   CategoryID = @CategoryID
+
+
+
+
+
+GO
+/****** Object:  StoredProcedure {databaseOwner}[{objectQualifier}DCC_EF_DeleteControlAndCultureByID]    Script Date: 06/30/2009 17:15:17 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+
+
+ALTER procedure {databaseOwner}[{objectQualifier}DCC_EF_DeleteControlAndCultureByID]
+@FieldID int
+as
+delete from {databaseOwner}[{objectQualifier}DCC_EF_EmailForm] 
+WHERE FieldID=@FieldID
+
+delete from {databaseOwner}[{objectQualifier}DCC_EF_EmailFormCulture] 
+WHERE FieldID=@FieldID
+
+
+
+
+
+GO
+/****** Object:  StoredProcedure {databaseOwner}[{objectQualifier}DCC_EF_DeleteWorkFlowNameByID]    Script Date: 06/30/2009 17:15:17 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+
+
+--DCC_DeleteWorkFlowNameByID 32
+ALTER procedure {databaseOwner}[{objectQualifier}DCC_EF_DeleteWorkFlowNameByID]
+
+@WorkFlowID int
+
+as
+
+Delete 
+from   {databaseOwner}[{objectQualifier}DCC_EF_ActiveWorkFlows]
+where   WorkFlowID = @WorkFlowID
+
+
+
+
+
+GO
+/****** Object:  StoredProcedure {databaseOwner}[{objectQualifier}DCC_EF_FieldNameExistOrNot]    Script Date: 06/30/2009 17:15:18 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+
+
+ALTER procedure {databaseOwner}[{objectQualifier}DCC_EF_FieldNameExistOrNot] 
+@FieldName nvarchar(1000),
+@ModuleID int
+as
+select count(*) from {databaseOwner}[{objectQualifier}DCC_EF_EmailForm] 
+where FieldName=@FieldName
+AND ModuleID=@ModuleID
+
+
+
+
+GO
+/****** Object:  StoredProcedure {databaseOwner}[{objectQualifier}DCC_EF_GetAllCategorylist]    Script Date: 06/30/2009 17:15:18 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+
+ALTER procedure {databaseOwner}[{objectQualifier}DCC_EF_GetAllCategorylist] 
+@ModuleID int
+as
+Select CategoryName
+FROM {databaseOwner}[{objectQualifier}DCC_EF_Category]
+where ModuleID=@ModuleID
+
+
+
+
+
+GO
+/****** Object:  StoredProcedure {databaseOwner}[{objectQualifier}DCC_EF_GetAllControlList]    Script Date: 06/30/2009 17:15:19 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+--{objectQualifier}DCC_EF_GetAllControlList 'en-US','en-US',373
+
+ALTER procedure {databaseOwner}[{objectQualifier}DCC_EF_GetAllControlList] 
+@CurrentCulture nvarchar(15),
+@DefaultCulture nvarchar(15),
+@ModuleID int
+AS
+Select 
+M.FieldName,
+M.ControlType,
+M.Culture_Value,
+C.CategoryName
+FROM
+
+(select A.FieldName,A.ControlType, isnull(B.CulTure_Value,A.CulTure_Value) CulTure_Value,A.CategoryID,A.SortOrder
+from
+(select ef.FieldID, ef.FieldName,ef.ControlType,cul.Culture_Value,ef.CategoryID,ef.SortOrder
+from {databaseOwner}[{objectQualifier}DCC_EF_EmailForm] ef,{databaseOwner}[{objectQualifier}DCC_EF_EmailFormCulture] cul 
+where ef.FieldID=cul.FieldID and cul.Culture=@DefaultCulture AND ef.ModuleID=@ModuleID) 
+AS A left Outer join
+(select  ef.FieldID,ef.FieldName, ef.ControlType,cul.Culture_Value,ef.CategoryID,ef.SortOrder
+from {databaseOwner}[{objectQualifier}DCC_EF_EmailForm] ef,{databaseOwner}[{objectQualifier}DCC_EF_EmailFormCulture] cul 
+where ef.FieldID=cul.FieldID and cul.Culture=@CurrentCulture AND ef.ModuleID=@ModuleID) AS B
+ON A.FieldID=B.FieldID) 
+
+AS M,
+
+(select * from {databaseOwner}[{objectQualifier}DCC_EF_GetCategoryList](@DefaultCulture,@CurrentCulture,@ModuleID)) 
+
+AS C 
+
+where M.CategoryID=C.CategoryID
+order by C.SortOrder,M.SortOrder
+
+
+
+
+GO
+/****** Object:  StoredProcedure {databaseOwner}[{objectQualifier}DCC_EF_GetAllResponseMessage]    Script Date: 06/30/2009 17:15:20 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+
+
+ALTER procedure {databaseOwner}[{objectQualifier}DCC_EF_GetAllResponseMessage]
+@ModuleID int
+as
+select MessageID,MessageText,Culture From {databaseOwner}{objectQualifier}DCC_EF_ResponseOnSubmit
+where ModuleID=@ModuleID
+
+GO
+/****** Object:  StoredProcedure {databaseOwner}[{objectQualifier}DCC_EF_GetALLWorkFlowName]    Script Date: 06/30/2009 17:15:20 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+
+
+
+ALTER procedure {databaseOwner}[{objectQualifier}DCC_EF_GetALLWorkFlowName]
+@ModuleID int
+as
+select actWF.WorkFlowID,SndMail.Culture,actWF.WorkFlowName,actWF.SortOrder 
+from {databaseOwner}{objectQualifier}DCC_EF_ActiveWorkFlows actWF,{databaseOwner}{objectQualifier}DCC_EF_WorkFlow_SendEmail SndMail
+Where actWF.ModuleID=@ModuleID
+And actWF.WorkFlowID=SndMail.WorkFlowID
+        order by SortOrder
+ 
+
+
+
+
+
+
+GO
+/****** Object:  StoredProcedure {databaseOwner}[{objectQualifier}DCC_EF_GetAvailableEmailTokens]    Script Date: 06/30/2009 17:15:21 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+
+
+ALTER procedure {databaseOwner}[{objectQualifier}DCC_EF_GetAvailableEmailTokens]
+@ModuleID int
+as
+select distinct FieldName 
+from {databaseOwner}[{objectQualifier}DCC_EF_EmailForm] ef,{databaseOwner}[{objectQualifier}DCC_EF_EmailFormCulture] cul
+where
+ef.FieldID=cul.FieldID 
+AND
+ef.Visible=1
+AND
+cul.Culture_Value like '%<validationType>3%'
+AND 
+ef.ModuleID=@ModuleID
+
+-- 3 is for Email validation fields
+
+
+
+
+
+
+GO
+/****** Object:  StoredProcedure {databaseOwner}[{objectQualifier}DCC_EF_GetCategoryByCulture]    Script Date: 06/30/2009 17:15:21 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER procedure {databaseOwner}[{objectQualifier}DCC_EF_GetCategoryByCulture] 
+@currentLanguage nvarchar(15),
+@DefaultLanguage nvarchar(15),
+@ModuleID int
+as
+SELECT     A.CategoryID,isnull(B.CategoryName,A.CategoryName) CategoryName,A.SortOrder
+FROM         (SELECT     CategoryID, Culture, CategoryName,SortOrder
+FROM          {databaseOwner}[{objectQualifier}DCC_EF_Category]
+WHERE      (Culture = @defaultLanguage AND ModuleID=@ModuleID)) AS A LEFT OUTER JOIN
+(SELECT     CategoryID, Culture, CategoryName,SortOrder
+FROM          {databaseOwner}[{objectQualifier}DCC_EF_Category] AS DCC_EF_Category_1 
+WHERE      (Culture = @currentLanguage AND ModuleID=@ModuleID)) AS B ON A.CategoryID = B.CategoryID
+
+order by A.SortOrder
+
+
+
+
+
+GO
+/****** Object:  StoredProcedure {databaseOwner}[{objectQualifier}DCC_EF_GetCategoryNameByCategoryID]    Script Date: 06/30/2009 17:15:22 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+
+
+ALTER procedure {databaseOwner}[{objectQualifier}DCC_EF_GetCategoryNameByCategoryID] 
+@CategoryID int
+AS
+select Culture,CategoryName
+from {databaseOwner}[{objectQualifier}DCC_EF_Category] 
+where CategoryID=@CategoryID
+
+
+
+
+GO
+/****** Object:  StoredProcedure {databaseOwner}[{objectQualifier}DCC_EF_GetControlByFieldID]    Script Date: 06/30/2009 17:15:22 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+
+
+
+ALTER procedure {databaseOwner}[{objectQualifier}DCC_EF_GetControlByFieldID] 
+@FieldID int
+AS
+select cul.Culture, ef.FieldName,ef.ControlType,ef.CategoryID, cul.Culture_Value
+from {databaseOwner}[{objectQualifier}DCC_EF_EmailForm] ef,{databaseOwner}[{objectQualifier}DCC_EF_EmailFormCulture] cul 
+where cul.FieldID=ef.FieldID and ef.FieldID=@FieldID
+
+
+
+
+
+GO
+/****** Object:  StoredProcedure {databaseOwner}[{objectQualifier}DCC_EF_GetControlCategoryByCulture]    Script Date: 06/30/2009 17:15:23 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+
+/**EXEC {databaseOwner}sp_executesql @statement = N'**/
+ALTER procedure {databaseOwner}[{objectQualifier}DCC_EF_GetControlCategoryByCulture] 
+@currentLanguage nvarchar(15),
+@DefaultLanguage nvarchar(15),
+@ModuleID int
+as
+SELECT     A.CategoryID,isnull(B.CategoryName,A.CategoryName) CategoryName
+FROM         (SELECT     CategoryID, Culture, CategoryName
+FROM          {databaseOwner}[{objectQualifier}DCC_EF_Category] 
+WHERE      (Culture = @defaultLanguage And ModuleID=@ModuleID)) AS A LEFT OUTER JOIN
+(SELECT     CategoryID, Culture, CategoryName
+FROM          {databaseOwner}[{objectQualifier}DCC_EF_Category] AS DCC_EF_Category_1 
+WHERE      (Culture = @currentLanguage And ModuleID=@ModuleID)) AS B ON A.CategoryID = B.CategoryID
+
+
+
+
+
+GO
+/****** Object:  StoredProcedure {databaseOwner}[{objectQualifier}DCC_EF_GetControlsListByCategoryID]    Script Date: 06/30/2009 17:15:23 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER procedure {databaseOwner}[{objectQualifier}DCC_EF_GetControlsListByCategoryID] 
+@CurrentCulture nvarchar(15),
+@DefaultCulture nvarchar(15),
+@CategoryID int,
+@ModuleID int
+as
+select  A.FieldID,A.FieldName,A.ControlType,isnull(B.CategoryName,A.CategoryName)as CategoryName,A.SortOrder
+From
+((select  ef.FieldID,ef.FieldName,ef.ControlType,cat.CategoryName,ef.SortOrder,ef.CategoryID
+from {databaseOwner}[{objectQualifier}DCC_EF_EmailForm] ef,{databaseOwner}[{objectQualifier}DCC_EF_Category] cat 
+where ef.CategoryID=cat.CategoryID and ef.CategoryID=@CategoryID AND cat.Culture=@DefaultCulture AND ef.ModuleID=@ModuleID) AS A left outer join
+
+(select  ef.FieldID,ef.FieldName,ef.ControlType,cat.CategoryName,ef.SortOrder,ef.CategoryID
+from {databaseOwner}[{objectQualifier}DCC_EF_EmailForm] ef,{databaseOwner}[{objectQualifier}DCC_EF_Category] cat 
+where ef.CategoryID=cat.CategoryID and ef.CategoryID=@CategoryID AND cat.Culture=@CurrentCulture AND ef.ModuleID=@ModuleID) AS B
+On A.FieldID=B.FieldID)
+order by A.SortOrder
+
+
+
+
+GO
+/****** Object:  StoredProcedure {databaseOwner}[{objectQualifier}DCC_EF_GetErrorMessageByFieldtype]    Script Date: 06/30/2009 17:15:24 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER procedure {databaseOwner}[{objectQualifier}DCC_EF_GetErrorMessageByFieldtype]
+@FieldType nvarchar(50),
+@ModuleID int
+AS
+select Culture,ErrorMsg
+from {databaseOwner}[{objectQualifier}DCC_EF_ErrorMsgWithCulture] 
+where FieldType=@FieldType
+AND ModuleID= @ModuleID
+
+
+
+
+GO
+/****** Object:  StoredProcedure {databaseOwner}[{objectQualifier}DCC_EF_GetErrorMsgTextByCulture]    Script Date: 06/30/2009 17:15:25 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+
+/**EXEC {databaseOwner}sp_executesql @statement = N'**/
+ALTER procedure {databaseOwner}[{objectQualifier}DCC_EF_GetErrorMsgTextByCulture]
+@currentLanguage nvarchar(15),
+@DefaultLanguage nvarchar(15),
+@ModuleID int
+as
+SELECT     A.FieldType,isnull(B.ErrorMsg,A.ErrorMsg) ErrorMsg
+FROM         (SELECT  FieldType, ErrorMsg
+FROM          {databaseOwner}[{objectQualifier}DCC_EF_ErrorMsgWithCulture] 
+WHERE      (Culture = @defaultLanguage AND ModuleID=@ModuleID)) AS A LEFT OUTER JOIN
+(SELECT     FieldType, ErrorMsg
+FROM          {databaseOwner}[{objectQualifier}DCC_EF_ErrorMsgWithCulture] 
+WHERE      (Culture = @currentLanguage AND ModuleID=@ModuleID)) AS B
+ ON A.FieldType = B.FieldType
+
+
+
+
+GO
+/****** Object:  StoredProcedure {databaseOwner}[{objectQualifier}DCC_EF_GetMLTextByItemType]    Script Date: 06/30/2009 17:15:25 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+
+ALTER procedure {databaseOwner}[{objectQualifier}DCC_EF_GetMLTextByItemType]
+@ItemType nvarchar(100),
+@ModuleID int
+as
+
+select ItemType,Culture,ItemValue,ModuleID
+from {databaseOwner}{objectQualifier}DCC_EF_MiscLocalization
+where 
+ItemType=@ItemType
+and
+ModuleID=@ModuleID
+
+
+GO
+/****** Object:  StoredProcedure {databaseOwner}[{objectQualifier}DCC_EF_GetMLTextValueByItemType]    Script Date: 06/30/2009 17:15:26 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+
+ALTER procedure {databaseOwner}[{objectQualifier}DCC_EF_GetMLTextValueByItemType]
+@ItemType nvarchar(200),
+@Culture nvarchar(100),
+@ModuleID int
+As
+
+Select ItemValue from {databaseOwner}{objectQualifier}DCC_EF_MiscLocalization
+where
+ItemType=@ItemType
+AND
+Culture=@Culture
+AND
+ModuleID=@ModuleID
+
+GO
+
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+
+ALTER  procedure {databaseOwner}[{objectQualifier}DCC_EF_GetNewCategoryID] 
+as
+Begin
+
+select  isnull (max(CategoryID),0)+1 from {databaseOwner}[{objectQualifier}DCC_EF_Category] 
+End
+
+
+
+
+GO
+/****** Object:  StoredProcedure {databaseOwner}[{objectQualifier}DCC_EF_GetNewErrorMessageID]    Script Date: 06/30/2009 17:15:27 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+
+
+
+ ALTER  procedure {databaseOwner}[{objectQualifier}DCC_EF_GetNewErrorMessageID]
+as
+Begin
+
+select  isnull (max(ErrorMsgID),0)+1 from {databaseOwner}[{objectQualifier}DCC_EF_ErrorMsgWithCulture]
+End
+
+
+
+
+
+GO
+/****** Object:  StoredProcedure {databaseOwner}[{objectQualifier}DCC_EF_GetNewResponseMessageID]    Script Date: 06/30/2009 17:15:27 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+
+
+ALTER procedure {databaseOwner}[{objectQualifier}DCC_EF_GetNewResponseMessageID]
+as
+Begin
+select  isnull (max(MessageID),0)+1 from {databaseOwner}{objectQualifier}DCC_EF_ResponseOnSubmit
+End
+
+
+GO
+/****** Object:  StoredProcedure {databaseOwner}[{objectQualifier}DCC_EF_GetSendEmailToWorkFlowByTypes]    Script Date: 06/30/2009 17:15:27 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+
+ALTER procedure {databaseOwner}[{objectQualifier}DCC_EF_GetSendEmailToWorkFlowByTypes]
+@Culture nvarchar(50),
+@ModuleID int
+as
+SELECT    A.SendType, A.SendToList,A.EmailSubject ,A.EmailTemplate
+FROM         {databaseOwner}[{objectQualifier}DCC_EF_WorkFlow_SendEmail] AS A INNER JOIN
+                      {databaseOwner}[{objectQualifier}DCC_EF_ActiveWorkFlows] AS B 
+ON A.WorkFlowID = B.WorkFlowID
+where B.WorkFlowTypeID = 1 
+And B.Disabled=0
+AND A.Culture=@Culture
+AND B.ModuleID=@ModuleID
+
+
+
+
+GO
+/****** Object:  StoredProcedure {databaseOwner}[{objectQualifier}DCC_EF_GetTokens]    Script Date: 06/30/2009 17:15:27 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+-- new sp
+ALTER procedure {databaseOwner}[{objectQualifier}DCC_EF_GetTokens] 
+@ModuleID int
+AS
+
+select FieldName from {databaseOwner}[{objectQualifier}DCC_EF_EmailForm]
+where ControlType !='FileUpload'
+AND ModuleID=@ModuleID
+
+GO
+/****** Object:  StoredProcedure {databaseOwner}[{objectQualifier}DCC_EF_GetWorkFlowNameByID]    Script Date: 06/30/2009 17:15:28 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER procedure {databaseOwner}[{objectQualifier}DCC_EF_GetWorkFlowNameByID]
+@WorkFlowID int,
+@ModuleID int
+AS
+
+select B.WorkFlowName ,A.Culture, A.EmailSubject,A.EmailTemplate,A.SendType,A.SendToList
+from {databaseOwner}[{objectQualifier}DCC_EF_WorkFlow_SendEmail] A,{databaseOwner}[{objectQualifier}DCC_EF_ActiveWorkFlows] B
+where A.WorkFlowID=B.WorkFlowID 
+AND A.WorkFlowID=@WorkFlowID
+AND B.ModuleID=@ModuleID
+
+
+GO
+/****** Object:  StoredProcedure {databaseOwner}[{objectQualifier}DCC_EF_InsertCategoryCultureValue]    Script Date: 06/30/2009 17:15:28 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+
+
+ALTER procedure {databaseOwner}[{objectQualifier}DCC_EF_InsertCategoryCultureValue] 
+@CategoryID int,
+@Culture nvarchar(100),
+@CategoryName nvarchar(4000),
+@ModuleID int
+as
+declare @SortOrder int
+--set @SortOrder=(select isnull(MAX(CategoryID),1) from DCC_EF_Category) 
+
+set @SortOrder=@CategoryID
+
+Insert into {databaseOwner}[{objectQualifier}DCC_EF_Category](CategoryID,Culture,CategoryName,SortOrder,ModuleID) 
+values(@CategoryID,@Culture,@CategoryName,@SortOrder,@ModuleID )
+
+
+
+
+GO
+/****** Object:  StoredProcedure {databaseOwner}[{objectQualifier}DCC_EF_InsertEmailWorkFlow]    Script Date: 06/30/2009 17:15:29 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER procedure {databaseOwner}[{objectQualifier}DCC_EF_InsertEmailWorkFlow]
+@WorkFlowName nvarchar(1000),
+@WorkFlowTypeID int,
+@Disabled bit,
+@ModuleID int,
+@EmailSubject nvarchar(MAX),
+@EmailTemplate nvarchar(MAX),
+@SendType nvarchar(50),
+@SendToList nvarchar(MAX),
+@Culture nvarchar(50)
+
+as
+
+declare @SortOrder int
+set @SortOrder=(select isnull( MAX(WorkFlowID),0) from {databaseOwner}[{objectQualifier}DCC_EF_ActiveWorkFlows])
+set @SortOrder=@SortOrder+1
+
+insert into {databaseOwner}[{objectQualifier}DCC_EF_ActiveWorkFlows]
+(
+WorkFlowName,
+WorkFlowTypeID,
+Disabled,
+SortOrder,
+ModuleID
+)
+values
+(
+@WorkFlowName,
+@WorkFlowTypeID,
+@Disabled,
+@SortOrder,
+@ModuleID
+)
+declare @ID int
+set @ID=@@Identity
+
+
+insert into {databaseOwner}[{objectQualifier}DCC_EF_WorkFlow_SendEmail]
+(
+WorkFlowID,
+EmailSubject,
+EmailTemplate,
+SendType,
+SendToList,
+Culture
+)
+values
+(
+@ID,
+@EmailSubject,
+@EmailTemplate,
+@SendType,
+@SendToList,
+@Culture
+)
+
+
+GO
+/****** Object:  StoredProcedure {databaseOwner}[{objectQualifier}DCC_EF_InsertErrorMessageValue]    Script Date: 06/30/2009 17:15:30 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+
+
+--DCC_EF_InsertErrorMessageValue 1,'email','hi-IN','jack'
+ALTER procedure {databaseOwner}[{objectQualifier}DCC_EF_InsertErrorMessageValue]
+@ErrorMsgID int,
+@FieldType nvarchar(50),
+@Culture nvarchar(50),
+@ErrorMsg nvarchar(4000),
+@ModuleID int
+as	
+IF EXISTS (select * from {databaseOwner}[{objectQualifier}DCC_EF_ErrorMsgWithCulture] where Culture = @Culture AND FieldType=@FieldType AND ModuleID=@ModuleID )
+Begin
+update 
+	{databaseOwner}[{objectQualifier}DCC_EF_ErrorMsgWithCulture]
+		set 
+           FieldType=@FieldType,
+			Culture=@Culture,
+			ErrorMsg=@ErrorMsg
+		where
+			Culture = @Culture 
+            AND 
+            FieldType=@FieldType
+			AND 
+			ModuleID=@ModuleID
+End
+
+
+ELSE
+Begin
+      Insert into {databaseOwner}[{objectQualifier}DCC_EF_ErrorMsgWithCulture](ErrorMsgID,FieldType,Culture,ErrorMsg,ModuleID) 
+	  values(@ErrorMsgID,@FieldType,@Culture,@ErrorMsg ,@ModuleID)
+
+End
+
+
+
+GO
+/****** Object:  StoredProcedure {databaseOwner}[{objectQualifier}DCC_EF_InsertMessageWithCulture]    Script Date: 06/30/2009 17:15:31 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+
+
+ALTER procedure {databaseOwner}[{objectQualifier}DCC_EF_InsertMessageWithCulture]
+@MessageID int,
+@Culture nvarchar(50),
+@MessageText nvarchar(MAX),
+@ModuleID int
+as
+
+IF EXISTS (select * from {databaseOwner}{objectQualifier}DCC_EF_ResponseOnSubmit where Culture = @Culture AND  ModuleID=@ModuleID )
+Begin
+update 
+	{databaseOwner}{objectQualifier}DCC_EF_ResponseOnSubmit
+		set 
+           MessageText=@MessageText
+		where
+			Culture = @Culture 
+            AND 
+			ModuleID=@ModuleID
+End
+
+
+ELSE
+Begin
+     Insert into {databaseOwner}{objectQualifier}DCC_EF_ResponseOnSubmit (MessageID,Culture,MessageText,ModuleID) 
+values(@MessageID,@Culture,@MessageText,@ModuleID)
+End
+
+GO
+/****** Object:  StoredProcedure {databaseOwner}[{objectQualifier}DCC_EF_UpdateCategoryNameByCategoryID]    Script Date: 06/30/2009 17:15:32 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER procedure {databaseOwner}[{objectQualifier}DCC_EF_UpdateCategoryNameByCategoryID] 
+@CategoryID int,
+@Culture nvarchar(50),
+@CategoryName nvarchar(4000),
+@ModuleID int
+AS
+
+IF EXISTS (select Culture from {databaseOwner}[{objectQualifier}DCC_EF_Category] where CategoryID=@CategoryID AND Culture = @Culture AND ModuleID=@ModuleID) 
+Begin
+update
+{databaseOwner}[{objectQualifier}DCC_EF_Category] 
+set
+Culture=@Culture,
+CategoryName=@CategoryName
+where
+CategoryID=@CategoryID
+AND Culture=@Culture
+AND ModuleID=@ModuleID
+End
+ELSE
+Begin
+insert into
+{databaseOwner}[{objectQualifier}DCC_EF_Category] 
+(CategoryID,Culture,CategoryName,ModuleID)
+values
+(@CategoryID,@Culture,@CategoryName,@ModuleID)
+
+End
+
+
+
+
+GO
+/****** Object:  StoredProcedure {databaseOwner}[{objectQualifier}DCC_EF_UpdateCategorySortOrder]    Script Date: 06/30/2009 17:15:32 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+
+
+
+ALTER procedure {databaseOwner}[{objectQualifier}DCC_EF_UpdateCategorySortOrder] 
+
+@CategoryID int,
+@SortOrder int
+AS
+update {databaseOwner}[{objectQualifier}DCC_EF_Category] 
+set
+SortOrder=@SortOrder
+where CategoryID=@CategoryID
+
+
+
+
+
+GO
+/****** Object:  StoredProcedure {databaseOwner}[{objectQualifier}DCC_EF_UpdateControls]    Script Date: 06/30/2009 17:15:33 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+
+
+ALTER procedure {databaseOwner}[{objectQualifier}DCC_EF_UpdateControls] 
+@FieldName nvarchar(1000),
+@ControlType nvarchar(50),
+@CategoryID int,
+@FieldID int
+AS
+update {databaseOwner}[{objectQualifier}DCC_EF_EmailForm] 
+set
+FieldName=@FieldName,
+ControlType=@ControlType,
+CategoryID=@CategoryID
+
+where FieldID=@FieldID
+
+
+
+
+GO
+/****** Object:  StoredProcedure {databaseOwner}[{objectQualifier}DCC_EF_UpdateControlsPropertiesByCulture]    Script Date: 06/30/2009 17:15:34 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+
+
+ALTER procedure {databaseOwner}[{objectQualifier}DCC_EF_UpdateControlsPropertiesByCulture] 
+@Culture_Value nvarchar(MAX),
+@Culture nvarchar(50),
+@FieldID int
+AS
+IF EXISTS (select * from {databaseOwner}[{objectQualifier}DCC_EF_EmailFormCulture] where  FieldID=@FieldID AND Culture=@Culture) 
+Begin
+update {databaseOwner}[{objectQualifier}DCC_EF_EmailFormCulture] 
+set
+Culture_Value=@Culture_Value
+where FieldID=@FieldID AND Culture=@Culture
+End
+ELSE
+Begin
+insert into
+{databaseOwner}[{objectQualifier}DCC_EF_EmailFormCulture] (FieldID,Culture,Culture_Value) 
+values(@FieldID,@Culture,@Culture_Value)
+END
+
+
+
+
+GO
+/****** Object:  StoredProcedure {databaseOwner}[{objectQualifier}DCC_EF_UpdateEmailWorkFlow]    Script Date: 06/30/2009 17:15:34 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER procedure {databaseOwner}[{objectQualifier}DCC_EF_UpdateEmailWorkFlow]
+@WorkFlowID int,
+@WorkFlowName nvarchar(1000),
+@WorkFlowTypeID int,
+@Disabled bit,
+@ModuleID int,
+@EmailSubject nvarchar(4000),
+@EmailTemplate nvarchar(MAX),
+@SendType nvarchar(50),
+@SendToList nvarchar(MAX),
+@Culture  nvarchar(50)
+
+
+as
+
+update 
+	{databaseOwner}[{objectQualifier}DCC_EF_ActiveWorkFlows]
+		set 
+			WorkFlowName=@WorkFlowName,
+			WorkFlowTypeID=@WorkFlowTypeID,
+Disabled=@Disabled,
+ModuleID=@ModuleID
+
+		where
+			WorkFlowID=@WorkFlowID
+
+
+ update 
+       {databaseOwner}[{objectQualifier}DCC_EF_WorkFlow_SendEmail]
+     set 
+          WorkFlowID=@WorkFlowID,
+           EmailSubject=@EmailSubject,
+           EmailTemplate=@EmailTemplate,
+           SendType=@SendType,
+          SendToList=@SendToList,
+Culture=@Culture
+
+     where
+			WorkFlowID=@WorkFlowID
+GO
+/****** Object:  StoredProcedure {databaseOwner}[{objectQualifier}DCC_EF_UpdateSortOrderOfControl]    Script Date: 06/30/2009 17:15:35 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+
+
+ALTER procedure {databaseOwner}[{objectQualifier}DCC_EF_UpdateSortOrderOfControl] 
+@FieldID int,
+@SortOrder int
+
+AS
+update {databaseOwner}[{objectQualifier}DCC_EF_EmailForm] 
+set
+SortOrder=@SortOrder
+
+where FieldID=@FieldID
+
+GO
+/****** Object:  StoredProcedure {databaseOwner}[{objectQualifier}DCC_EF_UpdateWorkFlowSortOrder]    Script Date: 06/30/2009 17:15:36 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+
+ALTER procedure {databaseOwner}[{objectQualifier}DCC_EF_UpdateWorkFlowSortOrder]
+
+@WorkFlowID int,
+@SortOrder int
+AS
+update {databaseOwner}[{objectQualifier}DCC_EF_ActiveWorkFlows]
+set
+SortOrder=@SortOrder
+where WorkFlowID=@WorkFlowID 
+
+
+
+/************************************************************/
+/*****              SqlDataProvider                     *****/
+/************************************************************/
+
+

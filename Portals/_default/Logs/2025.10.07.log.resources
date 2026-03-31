@@ -1,0 +1,248 @@
+2025-10-07 03:15:40,326 [dnn2sqlv3][Thread:16][FATAL] DotNetNuke.Web.Common.Internal.DotNetNukeHttpApplication - System.Web.HttpException (0x80004005): A potentially dangerous Request.Path value was detected from the client (:).
+   at System.Web.HttpRequest.ValidateInputIfRequiredByConfig()
+   at System.Web.HttpApplication.PipelineStepManager.ValidateHelper(HttpContext context)
+2025-10-07 04:14:03,515 [dnn2sqlv3][Thread:49][FATAL] DotNetNuke.Web.Common.Internal.DotNetNukeHttpApplication - System.Web.HttpException (0x80004005): A potentially dangerous Request.Path value was detected from the client (:).
+   at System.Web.HttpRequest.ValidateInputIfRequiredByConfig()
+   at System.Web.HttpApplication.PipelineStepManager.ValidateHelper(HttpContext context)
+2025-10-07 04:55:07,055 [dnn2sqlv3][Thread:52][ERROR] DotNetNuke.Services.Exceptions.Exceptions - System.Web.HttpException (0x80004005): Not Found
+   at DotNetNuke.Modules.Admin.Users.ViewProfile.OnInit(EventArgs e)
+   at System.Web.UI.Control.InitRecursive(Control namingContainer)
+   at System.Web.UI.Control.AddedControl(Control control, Int32 index)
+   at System.Web.UI.ControlCollection.Add(Control child)
+   at DotNetNuke.UI.Modules.ModuleHost.InjectModuleContent(Control content)
+   at DotNetNuke.UI.Modules.ModuleHost.CreateChildControls()
+   at System.Web.UI.Control.EnsureChildControls()
+   at DotNetNuke.UI.Containers.Container.get_ModuleControl()
+   at DotNetNuke.UI.Containers.Container.ProcessModule()
+   at DotNetNuke.UI.Skins.Pane.InjectModule(ModuleInfo module)
+2025-10-07 04:55:07,070 [dnn2sqlv3][Thread:52][ERROR] DotNetNuke.Services.Exceptions.Exceptions - DotNetNuke.Services.Exceptions.ModuleLoadException: Unhandled Error Adding Module to contentPane ---> System.Web.HttpException: Not Found
+   at DotNetNuke.Modules.Admin.Users.ViewProfile.OnInit(EventArgs e)
+   at System.Web.UI.Control.InitRecursive(Control namingContainer)
+   at System.Web.UI.Control.AddedControl(Control control, Int32 index)
+   at System.Web.UI.ControlCollection.Add(Control child)
+   at DotNetNuke.UI.Modules.ModuleHost.InjectModuleContent(Control content)
+   at DotNetNuke.UI.Modules.ModuleHost.CreateChildControls()
+   at System.Web.UI.Control.EnsureChildControls()
+   at DotNetNuke.UI.Containers.Container.get_ModuleControl()
+   at DotNetNuke.UI.Containers.Container.ProcessModule()
+   at DotNetNuke.UI.Skins.Pane.InjectModule(ModuleInfo module)
+   --- End of inner exception stack trace ---
+   at DotNetNuke.UI.Skins.Pane.InjectModule(ModuleInfo module)
+   at DotNetNuke.UI.Skins.Skin.InjectModule(Pane pane, ModuleInfo module)
+2025-10-07 04:55:07,070 [dnn2sqlv3][Thread:52][ERROR] DotNetNuke.Services.Exceptions.Exceptions - System.Web.HttpException (0x80004005): Not Found
+   at DotNetNuke.Modules.Admin.Users.ViewProfile.OnInit(EventArgs e)
+   at System.Web.UI.Control.InitRecursive(Control namingContainer)
+   at System.Web.UI.Control.AddedControl(Control control, Int32 index)
+   at System.Web.UI.ControlCollection.Add(Control child)
+   at DotNetNuke.UI.Modules.ModuleHost.InjectModuleContent(Control content)
+   at DotNetNuke.UI.Modules.ModuleHost.CreateChildControls()
+   at System.Web.UI.Control.EnsureChildControls()
+   at DotNetNuke.UI.Containers.Container.get_ModuleControl()
+   at DotNetNuke.UI.Containers.Container.ProcessModule()
+   at DotNetNuke.UI.Skins.Pane.InjectModule(ModuleInfo module)
+2025-10-07 04:55:07,070 [dnn2sqlv3][Thread:52][ERROR] DotNetNuke.Services.Exceptions.Exceptions - DotNetNuke.Services.Exceptions.ModuleLoadException: Unhandled Error Adding Module to contentPane ---> System.Web.HttpException: Not Found
+   at DotNetNuke.Modules.Admin.Users.ViewProfile.OnInit(EventArgs e)
+   at System.Web.UI.Control.InitRecursive(Control namingContainer)
+   at System.Web.UI.Control.AddedControl(Control control, Int32 index)
+   at System.Web.UI.ControlCollection.Add(Control child)
+   at DotNetNuke.UI.Modules.ModuleHost.InjectModuleContent(Control content)
+   at DotNetNuke.UI.Modules.ModuleHost.CreateChildControls()
+   at System.Web.UI.Control.EnsureChildControls()
+   at DotNetNuke.UI.Containers.Container.get_ModuleControl()
+   at DotNetNuke.UI.Containers.Container.ProcessModule()
+   at DotNetNuke.UI.Skins.Pane.InjectModule(ModuleInfo module)
+   --- End of inner exception stack trace ---
+   at DotNetNuke.UI.Skins.Pane.InjectModule(ModuleInfo module)
+   at DotNetNuke.UI.Skins.Skin.InjectModule(Pane pane, ModuleInfo module)
+2025-10-07 04:55:07,213 [dnn2sqlv3][Thread:52][FATAL] DotNetNuke.Framework.PageBase - An error has occurred while loading page.
+System.Web.HttpException (0x80004005): Not Found
+   at DotNetNuke.Modules.Admin.Users.ViewProfile.OnInit(EventArgs e)
+   at System.Web.UI.Control.InitRecursive(Control namingContainer)
+   at System.Web.UI.Control.AddedControl(Control control, Int32 index)
+   at System.Web.UI.ControlCollection.Add(Control child)
+   at DotNetNuke.UI.Modules.ModuleHost.InjectModuleContent(Control content)
+   at DotNetNuke.UI.Modules.ModuleHost.CreateChildControls()
+   at System.Web.UI.Control.EnsureChildControls()
+   at System.Web.UI.Control.PreRenderRecursiveInternal()
+   at System.Web.UI.Control.PreRenderRecursiveInternal()
+   at System.Web.UI.Control.PreRenderRecursiveInternal()
+   at System.Web.UI.Control.PreRenderRecursiveInternal()
+   at System.Web.UI.Control.PreRenderRecursiveInternal()
+   at System.Web.UI.Control.PreRenderRecursiveInternal()
+   at System.Web.UI.Control.PreRenderRecursiveInternal()
+   at System.Web.UI.Control.PreRenderRecursiveInternal()
+   at System.Web.UI.Control.PreRenderRecursiveInternal()
+   at System.Web.UI.Control.PreRenderRecursiveInternal()
+   at System.Web.UI.Page.ProcessRequestMain(Boolean includeStagesBeforeAsyncPoint, Boolean includeStagesAfterAsyncPoint)
+2025-10-07 04:55:38,303 [dnn2sqlv3][Thread:33][ERROR] DotNetNuke.Services.Exceptions.Exceptions - System.Web.HttpException (0x80004005): Not Found
+   at DotNetNuke.Modules.Admin.Users.ViewProfile.OnInit(EventArgs e)
+   at System.Web.UI.Control.InitRecursive(Control namingContainer)
+   at System.Web.UI.Control.AddedControl(Control control, Int32 index)
+   at System.Web.UI.ControlCollection.Add(Control child)
+   at DotNetNuke.UI.Modules.ModuleHost.InjectModuleContent(Control content)
+   at DotNetNuke.UI.Modules.ModuleHost.CreateChildControls()
+   at System.Web.UI.Control.EnsureChildControls()
+   at DotNetNuke.UI.Containers.Container.get_ModuleControl()
+   at DotNetNuke.UI.Containers.Container.ProcessModule()
+   at DotNetNuke.UI.Skins.Pane.InjectModule(ModuleInfo module)
+2025-10-07 04:55:38,319 [dnn2sqlv3][Thread:33][ERROR] DotNetNuke.Services.Exceptions.Exceptions - DotNetNuke.Services.Exceptions.ModuleLoadException: Unhandled Error Adding Module to contentPane ---> System.Web.HttpException: Not Found
+   at DotNetNuke.Modules.Admin.Users.ViewProfile.OnInit(EventArgs e)
+   at System.Web.UI.Control.InitRecursive(Control namingContainer)
+   at System.Web.UI.Control.AddedControl(Control control, Int32 index)
+   at System.Web.UI.ControlCollection.Add(Control child)
+   at DotNetNuke.UI.Modules.ModuleHost.InjectModuleContent(Control content)
+   at DotNetNuke.UI.Modules.ModuleHost.CreateChildControls()
+   at System.Web.UI.Control.EnsureChildControls()
+   at DotNetNuke.UI.Containers.Container.get_ModuleControl()
+   at DotNetNuke.UI.Containers.Container.ProcessModule()
+   at DotNetNuke.UI.Skins.Pane.InjectModule(ModuleInfo module)
+   --- End of inner exception stack trace ---
+   at DotNetNuke.UI.Skins.Pane.InjectModule(ModuleInfo module)
+   at DotNetNuke.UI.Skins.Skin.InjectModule(Pane pane, ModuleInfo module)
+2025-10-07 04:55:38,319 [dnn2sqlv3][Thread:33][ERROR] DotNetNuke.Services.Exceptions.Exceptions - System.Web.HttpException (0x80004005): Not Found
+   at DotNetNuke.Modules.Admin.Users.ViewProfile.OnInit(EventArgs e)
+   at System.Web.UI.Control.InitRecursive(Control namingContainer)
+   at System.Web.UI.Control.AddedControl(Control control, Int32 index)
+   at System.Web.UI.ControlCollection.Add(Control child)
+   at DotNetNuke.UI.Modules.ModuleHost.InjectModuleContent(Control content)
+   at DotNetNuke.UI.Modules.ModuleHost.CreateChildControls()
+   at System.Web.UI.Control.EnsureChildControls()
+   at DotNetNuke.UI.Containers.Container.get_ModuleControl()
+   at DotNetNuke.UI.Containers.Container.ProcessModule()
+   at DotNetNuke.UI.Skins.Pane.InjectModule(ModuleInfo module)
+2025-10-07 04:55:38,319 [dnn2sqlv3][Thread:33][ERROR] DotNetNuke.Services.Exceptions.Exceptions - DotNetNuke.Services.Exceptions.ModuleLoadException: Unhandled Error Adding Module to contentPane ---> System.Web.HttpException: Not Found
+   at DotNetNuke.Modules.Admin.Users.ViewProfile.OnInit(EventArgs e)
+   at System.Web.UI.Control.InitRecursive(Control namingContainer)
+   at System.Web.UI.Control.AddedControl(Control control, Int32 index)
+   at System.Web.UI.ControlCollection.Add(Control child)
+   at DotNetNuke.UI.Modules.ModuleHost.InjectModuleContent(Control content)
+   at DotNetNuke.UI.Modules.ModuleHost.CreateChildControls()
+   at System.Web.UI.Control.EnsureChildControls()
+   at DotNetNuke.UI.Containers.Container.get_ModuleControl()
+   at DotNetNuke.UI.Containers.Container.ProcessModule()
+   at DotNetNuke.UI.Skins.Pane.InjectModule(ModuleInfo module)
+   --- End of inner exception stack trace ---
+   at DotNetNuke.UI.Skins.Pane.InjectModule(ModuleInfo module)
+   at DotNetNuke.UI.Skins.Skin.InjectModule(Pane pane, ModuleInfo module)
+2025-10-07 04:55:38,336 [dnn2sqlv3][Thread:33][FATAL] DotNetNuke.Framework.PageBase - An error has occurred while loading page.
+System.Web.HttpException (0x80004005): Not Found
+   at DotNetNuke.Modules.Admin.Users.ViewProfile.OnInit(EventArgs e)
+   at System.Web.UI.Control.InitRecursive(Control namingContainer)
+   at System.Web.UI.Control.AddedControl(Control control, Int32 index)
+   at System.Web.UI.ControlCollection.Add(Control child)
+   at DotNetNuke.UI.Modules.ModuleHost.InjectModuleContent(Control content)
+   at DotNetNuke.UI.Modules.ModuleHost.CreateChildControls()
+   at System.Web.UI.Control.EnsureChildControls()
+   at System.Web.UI.Control.PreRenderRecursiveInternal()
+   at System.Web.UI.Control.PreRenderRecursiveInternal()
+   at System.Web.UI.Control.PreRenderRecursiveInternal()
+   at System.Web.UI.Control.PreRenderRecursiveInternal()
+   at System.Web.UI.Control.PreRenderRecursiveInternal()
+   at System.Web.UI.Control.PreRenderRecursiveInternal()
+   at System.Web.UI.Control.PreRenderRecursiveInternal()
+   at System.Web.UI.Control.PreRenderRecursiveInternal()
+   at System.Web.UI.Control.PreRenderRecursiveInternal()
+   at System.Web.UI.Control.PreRenderRecursiveInternal()
+   at System.Web.UI.Page.ProcessRequestMain(Boolean includeStagesBeforeAsyncPoint, Boolean includeStagesAfterAsyncPoint)
+2025-10-07 06:46:24,330 [dnn2sqlv3][Thread:34][FATAL] DotNetNuke.Web.Common.Internal.DotNetNukeHttpApplication - System.Web.HttpException (0x80004005): A potentially dangerous Request.Path value was detected from the client (:).
+   at System.Web.HttpRequest.ValidateInputIfRequiredByConfig()
+   at System.Web.HttpApplication.PipelineStepManager.ValidateHelper(HttpContext context)
+2025-10-07 07:37:26,015 [dnn2sqlv3][Thread:28][FATAL] DotNetNuke.Web.Common.Internal.DotNetNukeHttpApplication - System.Web.HttpException (0x80004005): A potentially dangerous Request.Path value was detected from the client (:).
+   at System.Web.HttpRequest.ValidateInputIfRequiredByConfig()
+   at System.Web.HttpApplication.PipelineStepManager.ValidateHelper(HttpContext context)
+2025-10-07 08:22:25,434 [dnn2sqlv3][Thread:31][FATAL] DotNetNuke.Web.Common.Internal.DotNetNukeHttpApplication - System.Web.HttpException (0x80004005): A potentially dangerous Request.Path value was detected from the client (:).
+   at System.Web.HttpRequest.ValidateInputIfRequiredByConfig()
+   at System.Web.HttpApplication.PipelineStepManager.ValidateHelper(HttpContext context)
+2025-10-07 08:56:06,066 [dnn2sqlv3][Thread:86][FATAL] DotNetNuke.Web.Common.Internal.DotNetNukeHttpApplication - System.Web.HttpException (0x80004005): A potentially dangerous Request.Path value was detected from the client (:).
+   at System.Web.HttpRequest.ValidateInputIfRequiredByConfig()
+   at System.Web.HttpApplication.PipelineStepManager.ValidateHelper(HttpContext context)
+2025-10-07 10:58:44,059 [dnn2sqlv3][Thread:39][FATAL] DotNetNuke.Web.Common.Internal.DotNetNukeHttpApplication - System.Web.HttpException (0x80004005): A potentially dangerous Request.Path value was detected from the client (:).
+   at System.Web.HttpRequest.ValidateInputIfRequiredByConfig()
+   at System.Web.HttpApplication.PipelineStepManager.ValidateHelper(HttpContext context)
+2025-10-07 13:18:33,419 [dnn2sqlv3][Thread:3][FATAL] DotNetNuke.Web.Common.Internal.DotNetNukeHttpApplication - System.Web.HttpException (0x80004005): A potentially dangerous Request.Path value was detected from the client (:).
+   at System.Web.HttpRequest.ValidateInputIfRequiredByConfig()
+   at System.Web.HttpApplication.PipelineStepManager.ValidateHelper(HttpContext context)
+2025-10-07 13:51:18,915 [dnn2sqlv3][Thread:78][FATAL] DotNetNuke.Web.Common.Internal.DotNetNukeHttpApplication - System.Web.HttpException (0x80004005): A potentially dangerous Request.Path value was detected from the client (:).
+   at System.Web.HttpRequest.ValidateInputIfRequiredByConfig()
+   at System.Web.HttpApplication.PipelineStepManager.ValidateHelper(HttpContext context)
+2025-10-07 13:52:21,864 [dnn2sqlv3][Thread:48][FATAL] DotNetNuke.Web.Common.Internal.DotNetNukeHttpApplication - System.Web.HttpException (0x80004005): A potentially dangerous Request.Path value was detected from the client (:).
+   at System.Web.HttpRequest.ValidateInputIfRequiredByConfig()
+   at System.Web.HttpApplication.PipelineStepManager.ValidateHelper(HttpContext context)
+2025-10-07 15:19:41,493 [dnn2sqlv3][Thread:79][FATAL] DotNetNuke.Web.Common.Internal.DotNetNukeHttpApplication - System.Web.HttpException (0x80004005): A potentially dangerous Request.Path value was detected from the client (:).
+   at System.Web.HttpRequest.ValidateInputIfRequiredByConfig()
+   at System.Web.HttpApplication.PipelineStepManager.ValidateHelper(HttpContext context)
+2025-10-07 15:31:27,999 [dnn2sqlv3][Thread:57][FATAL] DotNetNuke.Web.Common.Internal.DotNetNukeHttpApplication - System.Web.HttpException (0x80004005): A potentially dangerous Request.Path value was detected from the client (:).
+   at System.Web.HttpRequest.ValidateInputIfRequiredByConfig()
+   at System.Web.HttpApplication.PipelineStepManager.ValidateHelper(HttpContext context)
+2025-10-07 15:42:10,964 [dnn2sqlv3][Thread:48][FATAL] DotNetNuke.Web.Common.Internal.DotNetNukeHttpApplication - System.Web.HttpException (0x80004005): A potentially dangerous Request.Path value was detected from the client (:).
+   at System.Web.HttpRequest.ValidateInputIfRequiredByConfig()
+   at System.Web.HttpApplication.PipelineStepManager.ValidateHelper(HttpContext context)
+2025-10-07 15:45:59,972 [dnn2sqlv3][Thread:25][FATAL] DotNetNuke.Web.Common.Internal.DotNetNukeHttpApplication - System.Web.HttpException (0x80004005): A potentially dangerous Request.Path value was detected from the client (:).
+   at System.Web.HttpRequest.ValidateInputIfRequiredByConfig()
+   at System.Web.HttpApplication.PipelineStepManager.ValidateHelper(HttpContext context)
+2025-10-07 15:54:39,487 [dnn2sqlv3][Thread:49][FATAL] DotNetNuke.Web.Common.Internal.DotNetNukeHttpApplication - System.Web.HttpException (0x80004005): A potentially dangerous Request.Path value was detected from the client (:).
+   at System.Web.HttpRequest.ValidateInputIfRequiredByConfig()
+   at System.Web.HttpApplication.PipelineStepManager.ValidateHelper(HttpContext context)
+2025-10-07 15:58:17,922 [dnn2sqlv3][Thread:12][FATAL] DotNetNuke.Web.Common.Internal.DotNetNukeHttpApplication - System.Web.HttpException (0x80004005): A potentially dangerous Request.Path value was detected from the client (:).
+   at System.Web.HttpRequest.ValidateInputIfRequiredByConfig()
+   at System.Web.HttpApplication.PipelineStepManager.ValidateHelper(HttpContext context)
+2025-10-07 15:58:38,646 [dnn2sqlv3][Thread:12][FATAL] DotNetNuke.Web.Common.Internal.DotNetNukeHttpApplication - System.Web.HttpException (0x80004005): A potentially dangerous Request.Path value was detected from the client (:).
+   at System.Web.HttpRequest.ValidateInputIfRequiredByConfig()
+   at System.Web.HttpApplication.PipelineStepManager.ValidateHelper(HttpContext context)
+2025-10-07 15:58:43,751 [dnn2sqlv3][Thread:6][FATAL] DotNetNuke.Web.Common.Internal.DotNetNukeHttpApplication - System.Web.HttpException (0x80004005): A potentially dangerous Request.Path value was detected from the client (:).
+   at System.Web.HttpRequest.ValidateInputIfRequiredByConfig()
+   at System.Web.HttpApplication.PipelineStepManager.ValidateHelper(HttpContext context)
+2025-10-07 15:58:53,996 [dnn2sqlv3][Thread:57][FATAL] DotNetNuke.Web.Common.Internal.DotNetNukeHttpApplication - System.Web.HttpException (0x80004005): A potentially dangerous Request.Path value was detected from the client (:).
+   at System.Web.HttpRequest.ValidateInputIfRequiredByConfig()
+   at System.Web.HttpApplication.PipelineStepManager.ValidateHelper(HttpContext context)
+2025-10-07 15:59:14,654 [dnn2sqlv3][Thread:6][FATAL] DotNetNuke.Web.Common.Internal.DotNetNukeHttpApplication - System.Web.HttpException (0x80004005): A potentially dangerous Request.Path value was detected from the client (:).
+   at System.Web.HttpRequest.ValidateInputIfRequiredByConfig()
+   at System.Web.HttpApplication.PipelineStepManager.ValidateHelper(HttpContext context)
+2025-10-07 15:59:30,238 [dnn2sqlv3][Thread:6][FATAL] DotNetNuke.Web.Common.Internal.DotNetNukeHttpApplication - System.Web.HttpException (0x80004005): A potentially dangerous Request.Path value was detected from the client (:).
+   at System.Web.HttpRequest.ValidateInputIfRequiredByConfig()
+   at System.Web.HttpApplication.PipelineStepManager.ValidateHelper(HttpContext context)
+2025-10-07 15:59:35,348 [dnn2sqlv3][Thread:62][FATAL] DotNetNuke.Web.Common.Internal.DotNetNukeHttpApplication - System.Web.HttpException (0x80004005): A potentially dangerous Request.Path value was detected from the client (:).
+   at System.Web.HttpRequest.ValidateInputIfRequiredByConfig()
+   at System.Web.HttpApplication.PipelineStepManager.ValidateHelper(HttpContext context)
+2025-10-07 16:00:22,673 [dnn2sqlv3][Thread:12][FATAL] DotNetNuke.Web.Common.Internal.DotNetNukeHttpApplication - System.Web.HttpException (0x80004005): A potentially dangerous Request.Path value was detected from the client (:).
+   at System.Web.HttpRequest.ValidateInputIfRequiredByConfig()
+   at System.Web.HttpApplication.PipelineStepManager.ValidateHelper(HttpContext context)
+2025-10-07 17:11:10,867 [dnn2sqlv3][Thread:58][FATAL] DotNetNuke.Web.Common.Internal.DotNetNukeHttpApplication - System.Web.HttpException (0x80004005): A potentially dangerous Request.Path value was detected from the client (:).
+   at System.Web.HttpRequest.ValidateInputIfRequiredByConfig()
+   at System.Web.HttpApplication.PipelineStepManager.ValidateHelper(HttpContext context)
+2025-10-07 17:12:49,090 [dnn2sqlv3][Thread:53][FATAL] DotNetNuke.Web.Common.Internal.DotNetNukeHttpApplication - System.Web.HttpException (0x80004005): A potentially dangerous Request.Path value was detected from the client (:).
+   at System.Web.HttpRequest.ValidateInputIfRequiredByConfig()
+   at System.Web.HttpApplication.PipelineStepManager.ValidateHelper(HttpContext context)
+2025-10-07 17:15:26,860 [dnn2sqlv3][Thread:53][FATAL] DotNetNuke.Web.Common.Internal.DotNetNukeHttpApplication - System.Web.HttpException (0x80004005): A potentially dangerous Request.Path value was detected from the client (:).
+   at System.Web.HttpRequest.ValidateInputIfRequiredByConfig()
+   at System.Web.HttpApplication.PipelineStepManager.ValidateHelper(HttpContext context)
+2025-10-07 17:30:37,006 [dnn2sqlv3][Thread:64][FATAL] DotNetNuke.Web.Common.Internal.DotNetNukeHttpApplication - System.Web.HttpException (0x80004005): A potentially dangerous Request.Path value was detected from the client (:).
+   at System.Web.HttpRequest.ValidateInputIfRequiredByConfig()
+   at System.Web.HttpApplication.PipelineStepManager.ValidateHelper(HttpContext context)
+2025-10-07 19:28:31,962 [dnn2sqlv3][Thread:62][FATAL] DotNetNuke.Web.Common.Internal.DotNetNukeHttpApplication - System.Web.HttpException (0x80004005): A potentially dangerous Request.Path value was detected from the client (:).
+   at System.Web.HttpRequest.ValidateInputIfRequiredByConfig()
+   at System.Web.HttpApplication.PipelineStepManager.ValidateHelper(HttpContext context)
+2025-10-07 19:29:52,741 [dnn2sqlv3][Thread:71][FATAL] DotNetNuke.Web.Common.Internal.DotNetNukeHttpApplication - System.Web.HttpException (0x80004005): A potentially dangerous Request.Path value was detected from the client (:).
+   at System.Web.HttpRequest.ValidateInputIfRequiredByConfig()
+   at System.Web.HttpApplication.PipelineStepManager.ValidateHelper(HttpContext context)
+2025-10-07 20:10:29,216 [dnn2sqlv3][Thread:47][FATAL] DotNetNuke.Web.Common.Internal.DotNetNukeHttpApplication - System.Web.HttpException (0x80004005): A potentially dangerous Request.Path value was detected from the client (:).
+   at System.Web.HttpRequest.ValidateInputIfRequiredByConfig()
+   at System.Web.HttpApplication.PipelineStepManager.ValidateHelper(HttpContext context)
+2025-10-07 20:14:43,935 [dnn2sqlv3][Thread:80][FATAL] DotNetNuke.Web.Common.Internal.DotNetNukeHttpApplication - System.Web.HttpException (0x80004005): A potentially dangerous Request.Path value was detected from the client (:).
+   at System.Web.HttpRequest.ValidateInputIfRequiredByConfig()
+   at System.Web.HttpApplication.PipelineStepManager.ValidateHelper(HttpContext context)
+2025-10-07 21:31:49,447 [dnn2sqlv3][Thread:17][FATAL] DotNetNuke.Web.Common.Internal.DotNetNukeHttpApplication - System.Web.HttpException (0x80004005): A potentially dangerous Request.Path value was detected from the client (:).
+   at System.Web.HttpRequest.ValidateInputIfRequiredByConfig()
+   at System.Web.HttpApplication.PipelineStepManager.ValidateHelper(HttpContext context)
+2025-10-07 21:56:40,838 [dnn2sqlv3][Thread:69][FATAL] DotNetNuke.Web.Common.Internal.DotNetNukeHttpApplication - System.Web.HttpException (0x80004005): A potentially dangerous Request.Path value was detected from the client (:).
+   at System.Web.HttpRequest.ValidateInputIfRequiredByConfig()
+   at System.Web.HttpApplication.PipelineStepManager.ValidateHelper(HttpContext context)
+2025-10-07 22:07:53,537 [dnn2sqlv3][Thread:89][FATAL] DotNetNuke.Web.Common.Internal.DotNetNukeHttpApplication - System.Web.HttpException (0x80004005): A potentially dangerous Request.Path value was detected from the client (:).
+   at System.Web.HttpRequest.ValidateInputIfRequiredByConfig()
+   at System.Web.HttpApplication.PipelineStepManager.ValidateHelper(HttpContext context)
+2025-10-07 23:10:04,658 [dnn2sqlv3][Thread:24][FATAL] DotNetNuke.Web.Common.Internal.DotNetNukeHttpApplication - System.Web.HttpException (0x80004005): A potentially dangerous Request.Path value was detected from the client (:).
+   at System.Web.HttpRequest.ValidateInputIfRequiredByConfig()
+   at System.Web.HttpApplication.PipelineStepManager.ValidateHelper(HttpContext context)
+2025-10-07 23:55:34,903 [dnn2sqlv3][Thread:28][FATAL] DotNetNuke.Web.Common.Internal.DotNetNukeHttpApplication - System.Web.HttpException (0x80004005): A potentially dangerous Request.Path value was detected from the client (:).
+   at System.Web.HttpRequest.ValidateInputIfRequiredByConfig()
+   at System.Web.HttpApplication.PipelineStepManager.ValidateHelper(HttpContext context)

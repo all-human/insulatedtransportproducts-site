@@ -1,0 +1,7 @@
+﻿UPDATE [dbo].[TabModuleSettings]
+SET SettingValue = REPLACE(SettingValue, '\\"', '\"')
+WHERE SettingName = 'fmformjsonmin'
+
+UPDATE [dbo].[TabModuleSettings]
+SET SettingValue = REPLACE(SettingValue, '\\"', '\"')
+WHERE SettingName = 'fmformjson'

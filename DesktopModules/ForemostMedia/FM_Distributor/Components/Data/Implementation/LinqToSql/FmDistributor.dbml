@@ -1,0 +1,74 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="FM_Distributors" Class="FmDistributorDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="WebSettings" ConnectionString="Data Source=.\sqlexpress;Initial Catalog=FM_Distributors;Integrated Security=True" SettingsObjectName="System.Configuration.ConfigurationManager.ConnectionStrings" SettingsPropertyName="FM_DistributorsConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.fm_dist_Type" Member="TypeEntities">
+    <Type Name="TypeEntity">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="NVarChar(150) NOT NULL" CanBeNull="false" />
+      <Column Name="PortalId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="ImageUrl" Type="System.String" DbType="NVarChar(350)" CanBeNull="true" />
+      <Association Name="TypeEntity_DistributorTypeEntity" Member="DistributorTypeEntities" ThisKey="Id" OtherKey="TypeId" Type="DistributorTypeEntity" />
+    </Type>
+  </Table>
+  <Table Name="dbo.fm_dist_DistributorType" Member="DistributorTypeEntities">
+    <Type Name="DistributorTypeEntity">
+      <Column Name="DistId" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="TypeId" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Association Name="TypeEntity_DistributorTypeEntity" Member="TypeEntity" ThisKey="TypeId" OtherKey="Id" Type="TypeEntity" IsForeignKey="true" />
+      <Association Name="fm_dist_Distributor_DistributorTypeEntity" Member="DistributorEntity" ThisKey="DistId" OtherKey="Id" Type="DistributorEntity" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.fm_dist_PriorityGroup" Member="PriorityGroupEntities">
+    <Type Name="PriorityGroupEntity">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="NVarChar(150) NOT NULL" CanBeNull="false" />
+      <Column Name="SortOrder" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="PortalId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="PriorityGroupEntity_fm_dist_Distributor" Member="DistributorEntities" ThisKey="Id" OtherKey="PriorityGroupId" Type="DistributorEntity" />
+    </Type>
+  </Table>
+  <Table Name="dbo.fm_dist_RegionCovering" Member="RegionCoveringEntities">
+    <Type Name="RegionCoveringEntity">
+      <Column Name="DistId" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="State" Type="System.String" DbType="NVarChar(5) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Country" Type="System.String" DbType="NVarChar(2) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Association Name="fm_dist_Distributor_RegionCoveringEntity" Member="DistributorEntity" ThisKey="DistId" OtherKey="Id" Type="DistributorEntity" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.fm_dist_Template" Member="TemplateEntities">
+    <Type Name="TemplateEntity">
+      <Column Name="PortalId" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Template" Type="System.String" DbType="NVarChar(2000)" CanBeNull="true" />
+      <Column Name="PageSize" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ButtonText" Type="System.String" DbType="NVarChar(300)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.fm_dist_Distributor" Member="DistributorEntities">
+    <Type Name="DistributorEntity">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Company" Type="System.String" DbType="NVarChar(200) NOT NULL" CanBeNull="false" />
+      <Column Name="FirstName" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="LastName" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="Address" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="Address2" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="City" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="State" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="PostalCode" Type="System.String" DbType="NVarChar(15)" CanBeNull="true" />
+      <Column Name="Country" Type="System.String" DbType="NVarChar(3) NOT NULL" CanBeNull="false" />
+      <Column Name="Phone" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="Phone2" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="Cell" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="Fax" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="Email" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="Email2" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="Website" Type="System.String" DbType="NVarChar(150)" CanBeNull="true" />
+      <Column Name="Territory" Type="System.String" DbType="NVarChar(150)" CanBeNull="true" />
+      <Column Name="PortalId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Description" Type="System.String" DbType="NVarChar(2000)" CanBeNull="true" />
+      <Column Name="PriorityGroupId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Website2" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Association Name="fm_dist_Distributor_DistributorTypeEntity" Member="DistributorTypeEntities" ThisKey="Id" OtherKey="DistId" Type="DistributorTypeEntity" />
+      <Association Name="fm_dist_Distributor_RegionCoveringEntity" Member="RegionCoveringEntities" ThisKey="Id" OtherKey="DistId" Type="RegionCoveringEntity" />
+      <Association Name="PriorityGroupEntity_fm_dist_Distributor" Member="PriorityGroupEntity" ThisKey="PriorityGroupId" OtherKey="Id" Type="PriorityGroupEntity" IsForeignKey="true" />
+    </Type>
+  </Table>
+</Database>

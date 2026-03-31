@@ -1,0 +1,68 @@
+﻿SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+
+ALTER procedure {databaseOwner}[{objectQualifier}DCC_EF_ADDPostDataWorkFlow]
+@Workflowname nvarchar(256),
+@Connectionstring nvarchar(256),
+@Scripttype nvarchar(50),
+@SQLScript nvarchar(max),
+@Culture nvarchar(50),
+@moduleId int,
+@PreCondition nvarchar(512)
+
+as
+insert into {databaseOwner}[{objectQualifier}DCC_EF_WorkFlow_SQLPost]
+(
+WorkFlowName,
+ConnectionString,
+ScriptType,
+SQLScript,
+Culture,
+ModuleID,
+PreCondition
+)
+Values
+(
+@Workflowname,
+@Connectionstring,
+@Scripttype,
+@SQLScript,
+@Culture,
+@moduleId,
+@PreCondition
+)
+
+GO
+
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+
+ALTER procedure {databaseOwner}[{objectQualifier}DCC_EF_UpdatePostDataWorkFlow]
+@WorkflowId int,
+@Workflowname nvarchar(256),
+@Connectionstring nvarchar(256),
+@Scripttype nvarchar(50),
+@SQLScript nvarchar(max),
+@Culture nvarchar(50),
+@ModuleId int,
+@PreCondition nvarchar(512)
+
+as
+update {databaseOwner}[{objectQualifier}DCC_EF_WorkFlow_SQLPost]
+set
+WorkFlowName=@Workflowname,
+ConnectionString=@Connectionstring,
+ScriptType=@Scripttype,
+SQLScript=@SQLScript,
+Culture=@Culture,
+ModuleID=@ModuleId,
+PreCondition=@PreCondition
+
+where WorkFlowID=@WorkflowId and ModuleID=@ModuleId
+
+GO
+

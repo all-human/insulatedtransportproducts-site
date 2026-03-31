@@ -1,0 +1,111 @@
+﻿SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+
+-- select * from {databaseOwner}[{objectQualifier}DCC_EF_GetDownLoadFileLink]()
+-- select * from {databaseOwner}[{objectQualifier}DCC_EF_GetSubmissionDataAttributes]('10/26/2009','12/31/2011',-1,'',375,'')
+ALTER Function {databaseOwner}[{objectQualifier}DCC_EF_GetSubmissionDataAttributes]
+ (
+    @FromDate DateTime,
+    @ToDate DateTime,
+    @FieldID int,
+    @StrSearchText NVARCHAR(400),
+    @ModuleID int,
+    @PageURL nvarchar(500)
+
+ )
+RETURNS TABLE
+as
+Return 
+(
+SELECT     TOP (100) PERCENT Val.FormRecordID, EF.FieldName +'_'+ ltrim(str(EF.FieldID)) + '_'+ EF.ControlType as FieldName,Mas.DateOfSubmission,Val.FieldValue , EF.SortOrder
+FROM         
+{databaseOwner}[{objectQualifier}DCC_EF_FormDataValues] AS Val 
+INNER JOIN
+{databaseOwner}[{objectQualifier}DCC_EF_EmailForm] AS EF ON Val.FieldID = EF.FieldID and ControlType!='Label' 
+INNER JOIN
+{databaseOwner}[{objectQualifier}DCC_EF_FormDataMaster] AS Mas ON Val.FormRecordID = Mas.FormRecordID AND 
+                                                 Mas.DateOfSubmission BETWEEN @FromDate AND  @ToDate AND EF.ModuleID=@ModuleID 
+where 
+val.FieldID=(Case when @FieldID > -1 then @FieldID Else val.FieldID End)  and 
+val.FieldValue like (case when @FieldID <0  or ltrim(rtrim(@StrSearchText))='' then '%' Else  '%'+ ltrim(rtrim(@StrSearchText)) +'%' END)
+order by EF.SortOrder
+)
+
+GO
+
+
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+
+alter Procedure {databaseOwner}[{objectQualifier}DCC_EF_GetFormSubmissionDataByPaging]
+@FromDate datetime='10/26/2009',
+@ToDate DateTime='12/31/2011',
+@FieldID int=-1,
+@StrSearchText NVARCHAR(400)='',
+@ModuleID int=375,
+@SortColumn nvarchar(200)='',
+@StartPageIndex int=0,
+@PageSize int=200,
+@PageURL nvarchar(500)=''
+as
+
+select * into #funtable 
+from {databaseOwner}[{objectQualifier}DCC_EF_GetSubmissionDataAttributes](@FromDate,@ToDate,@FieldID,@StrSearchText,@ModuleID,@PageURL)
+
+select distinct sortorder,fieldname into #tmptable 
+FROM #funtable
+as A order by A.sortorder
+
+DECLARE @cols NVARCHAR(max) 
+SELECT  @cols = COALESCE(@cols + ',' + QUOTENAME(fieldname),QUOTENAME(fieldname))
+FROM    #tmptable as df
+
+select @cols =(case when rtrim(ltrim(isnull(@cols,'')))='' then 'NoRecord' else @cols end)
+
+DECLARE @Subquery NVARCHAR(max)
+
+set @Subquery ='select FormRecordID as RecordID,DateofSubmission as PostedDate,'+ @cols + ' from (select DateofSubmission,FormRecordID ,fieldname,fieldvalue from #funtable as Q ) as P 
+            pivot ( min(fieldvalue) for fieldname in ('+ @cols + ')) as pvt'
+
+if(@SortColumn='') set @SortColumn='RecordID Desc'
+declare @myQuery NVARCHAR(max)
+set @myQuery= 'select ROW_NUMBER() OVER(ORDER BY '+ @SortColumn + ') as RowID,Sub.*
+from ('+ @Subquery+')as Sub'
+
+declare @finalQuery NVARCHAR(max)
+set @finalQuery= 'select tbl.* from ('+@myQuery +')as tbl where RowID BETWEEN ('+ str(@StartPageIndex+1)+') AND ('+str(@StartPageIndex+ @PageSize)+')'
+
+exec (@finalQuery)
+
+GO
+
+
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+
+alter Procedure {databaseOwner}[{objectQualifier}DCC_EF_GetFormSubmissionDataCount]
+@FromDate datetime='1/1/2009',
+@ToDate DateTime='1/1/2011',
+@FieldID int=-1,
+@StrSearchText NVARCHAR(400)='',
+@ModuleID int=375,
+@PageURL nvarchar(500)='/DC490X_dev/DesktopModules/DNNCentric-MultilanguageForms/DF.aspx'
+as
+
+SELECT count(distinct FM.FormRecordID)
+FROM  {databaseOwner}[{objectQualifier}DCC_EF_FormDataMaster] FM inner join {databaseOwner}[{objectQualifier}DCC_EF_FormDataValues] FV inner join
+{databaseOwner}[{objectQualifier}DCC_EF_EmailForm] EF on FV.FieldID = EF.FieldID and ef.ControlType!='Label'
+on FM.FormRecordID = FV.FormRecordID
+Where fv.FieldID=(Case when @FieldID > -1 then @FieldID Else fv.FieldID End)  and 
+FieldValue like (case when @FieldID <0  or ltrim(rtrim(@StrSearchText))='' then '%' Else  '%'+ ltrim(rtrim(@StrSearchText)) +'%' END)
+and DateOfSubmission between @fromdate and @ToDate
+AND EF.ModuleID=@ModuleID
+
+GO
+

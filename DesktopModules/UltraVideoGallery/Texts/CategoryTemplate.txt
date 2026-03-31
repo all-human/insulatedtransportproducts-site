@@ -1,0 +1,4 @@
+<div class='verticalMiddle' style='margin:1px;'>
+<img src='[MODULEPATH]images/category.jpg' />
+[EDITLINK]<a href='[CATEGORYLINK]'>[CATEGORYTITLE]</a>
+</div>

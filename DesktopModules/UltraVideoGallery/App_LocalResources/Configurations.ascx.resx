@@ -1,0 +1,387 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+	<xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+		<xsd:element name="root" msdata:IsDataSet="true">
+			<xsd:complexType>
+				<xsd:choice maxOccurs="unbounded">
+					<xsd:element name="data">
+						<xsd:complexType>
+							<xsd:sequence>
+								<xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+								<xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+							</xsd:sequence>
+							<xsd:attribute name="name" type="xsd:string" msdata:Ordinal="1" />
+							<xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+							<xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+						</xsd:complexType>
+					</xsd:element>
+					<xsd:element name="resheader">
+						<xsd:complexType>
+							<xsd:sequence>
+								<xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+							</xsd:sequence>
+							<xsd:attribute name="name" type="xsd:string" use="required" />
+						</xsd:complexType>
+					</xsd:element>
+				</xsd:choice>
+			</xsd:complexType>
+		</xsd:element>
+	</xsd:schema>
+	<resheader name="resmimetype">
+		<value>text/microsoft-resx</value>
+	</resheader>
+	<resheader name="version">
+		<value>1.3</value>
+	</resheader>
+	<resheader name="reader">
+		<value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=1.0.5000.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+	</resheader>
+	<resheader name="writer">
+		<value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=1.0.5000.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+	</resheader>
+
+	<data name="EncodingAlias.Text">
+		<value>Alias Used for Encoding</value>
+	</data>
+	<data name="EncodingAlias.Help">
+		<value>UVG launchs a http request when encode a video, this option indicates the alias used by UVG encoding engine. Make sure the following url works fine with this alias.</value>
+	</data>
+	<data name="LowQualityVersion.Text">
+		<value>Low Quality Version</value>
+	</data>
+	<data name="LowQualityVersion.Help">
+		<value>The video format of the low quality version, H264 baseline profile is recommended.</value>
+	</data>
+	<data name="LowQualitySize.Text">
+		<value>Low Resolution</value>
+	</data>
+	<data name="LowQualitySize.Help">
+		<value>The maximum vertical resolution of videos, videos bigger than this will be resized.</value>
+	</data>
+	<data name="HighQualityVersion.Text">
+		<value>High Quality Version</value>
+	</data>
+	<data name="HighQualityVersion.Help">
+		<value>The video format of the high quality version, H264 main profile is recommended.</value>
+	</data>
+	<data name="HighQualitySize.Text">
+		<value>High Resolution</value>
+	</data>
+	<data name="HighQualitySize.Help">
+		<value>The maximum vertical resolution of videos, videos bigger than this will be resized.</value>
+	</data>
+	<data name="DefaultQuality.Text">
+		<value>Default Quality</value>
+	</data>
+	<data name="DefaultQuality.Help">
+		<value>The default video quality selected.</value>
+	</data>
+	<data name="ScreenshotResolution.Text">
+		<value>Screenshot Resolution</value>
+	</data>
+	<data name="ScreenshotResolution.Help">
+		<value>UVG captures a screenshot for each uploaded video, limit size to.</value>
+	</data>
+	<data name="ReencodeMp4.Text">
+		<value>Re-encode Mp4</value>
+	</data>
+	<data name="ReencodeMp4.Help">
+		<value>Whether to re-encode mp4 files when upload, check this option if your mp4 are not encoded in H.264 format</value>
+	</data>
+	<data name="FMSUrl.Text">
+		<value>Flash Media Server</value>
+	</data>
+	<data name="FMSUrl.Help">
+		<value>If you have a FMS you can enter its URL here, which allows you to record videos from webcam</value>
+	</data>
+	<data name="VideoQuality.Text">
+		<value>Recording Quality</value>
+	</data>
+	<data name="VideoQuality.Help">
+		<value>The video quality of recorded videos</value>
+	</data>
+	<data name="VideoSize.Text">
+		<value>Camera Size</value>
+	</data>
+	<data name="VideoSize.Help">
+		<value>The camera size of video recording</value>
+	</data>
+	<data name="ScreenshotFrames.Text">
+		<value>Gif Screenshot Frames</value>
+	</data>
+	<data name="ScreenshotFrames.Help">
+		<value>UVG is able to capture a multi-frame Gif screenshot for each video uploaded, this option dicates the number frames, choose 1 for traditional static screenshot</value>
+	</data>
+
+  
+	  <data name="Saved.Text">
+	    <value>Your configuration have been saved</value>
+	  </data>
+	  <data name="AmazonS3.Text">
+	    <value>Amazon S3 Integration</value>
+	  </data>
+	  <data name="AmazonS3.Help">
+	    <value>UVG is able to transfer videos from this server to Amazon S3 for fast and security storage</value>
+	  </data>
+	  <data name="Config.Text">
+	    <value>Config</value>
+	  </data>
+	  <data name="FLV.Text">
+	    <value>FLV</value>
+	  </data>
+	  <data name="H264_Main.Text">
+	    <value>H264 main profile</value>
+	  </data>
+	  <data name="H264_Baseline.Text">
+	    <value>H264 baseline profile</value>
+	  </data>
+	  <data name="CategoryViewPermission.Text">
+	    <value>Category View Permission</value>
+	  </data>
+	  <data name="CategoryViewPermission.Help">
+	    <value>Enable view permission on categories</value>
+	  </data>
+	  <data name="VideoViewPermission.Text">
+	    <value>Video View Permission</value>
+	  </data>
+	  <data name="VideoViewPermission.Help">
+	    <value>Enable view permission on individual videos</value>
+	  </data>
+	  <data name="LoginToRate.Text">
+	    <value>Login to Rate</value>
+	  </data>
+	  <data name="LoginToRate.Help">
+	    <value>Require users to login before like/dislike a video</value>
+	  </data>
+	  <data name="VideoEncoding.Text">
+	    <value>Video Encoding</value>
+	  </data>
+	  <data name="VideoRecording.Text">
+	    <value>Video Recording</value>
+	  </data>
+	  <data name="OtherOptions.Text">
+	    <value>Other Options</value>
+	  </data>
+	  <data name="About.Text">
+	    <value>About</value>
+	  </data>
+
+
+	  <data name="VideoToWide.Text">
+	    <value>To encode in Baseline mode the video size should not exceed 640x480</value>
+	  </data>
+	  <data name="BaselineForLowOnly.Text">
+	    <value>The baseline profile can only be used for low quality version</value>
+	  </data>
+	  <data name="NeedApproval.Text">
+	    <value>Need Approval</value>
+	  </data>
+	  <data name="NeedApproval.Help">
+	    <value>Videos posted by normal users need to be approved</value>
+	  </data>
+	  <data name="NotifyModerators.Text">
+	    <value>Notify Moderators</value>
+	  </data>
+	  <data name="NotifyModerators.Help">
+	    <value>Notify moderators when there is a video pending for approval</value>
+	  </data>
+	  <data name="UploadQuota.Text">
+	    <value>Upload Quota</value>
+	  </data>
+	  <data name="UploadQuota.Help">
+	    <value>The maximum no. of videos an user can upload, this limitation does not apply to video managers</value>
+	  </data>
+	  <data name="NewTags.Text">
+	    <value>Limit Tag Add</value>
+	  </data>
+	  <data name="NewTags.Help">
+	    <value>Check this option if you wish to limit normal users from choosing existing tags only.</value>
+	  </data>
+	  <data name="Issues.Text">
+	    <value>Following issues are found, make necessary changes if they become a problem.</value>
+	  </data>
+	  <data name="FixIt.Text">
+	    <value>Fix it</value>
+	  </data>
+
+
+
+	<data name="DNNJournalIntegration.Text">
+		<value>Journal Integration</value>
+	</data>
+	<data name="DNNJournalIntegration.Help">
+		<value>When work on DNN 6.2+, post video/comment add/delete event to DNN Journal.</value>
+	</data>
+	<data name="DNN62Required.Text">
+		<value>The journal integration feature only works on DNN 6.2+</value>
+	</data>
+
+
+
+	  <data name="NoBinaryPack.Text">
+	    <value>UVG 6 Binary pack is required by UVG to do video encoding, but not part of UVG PA because of its file size, please download it, unzip it and copy to /DesktopModules/UltraVideoGallery/Binaries folder by your self.</value>
+	  </data>
+	  <data name="PermissionCheckNotPassed.Text">
+	    <value>You did not run or failed UVG &lt;span class='NormalRed'&gt;permission check&lt;/span&gt; so you are limited to upload videos in .flv and .mp4 formats only.</value>
+	  </data>
+	  <data name="MimeTypeNotEnabled.Text">
+	    <value>If videos do not play, the most common reason is .flv/.mp4 mime types are not supported by your IIS. If the mime types are properly configured you can simply ignore it.</value>
+	  </data>
+	  <data name="Ignore.Text">
+	    <value>Ignore</value>
+	  </data>
+	  <data name="RequestLengthTooSmall.Text">
+	    <value>The &lt;span class='NormalRed'&gt;maxRequestLength&lt;/span&gt; setting in your web.config is set to [VALUE], increase it if you wish to upload videos larger than this. </value>
+	  </data>
+	  <data name="ExecutionTimeoutTooSmall.Text">
+	    <value>The &lt;span class='NormalRed'&gt;executionTimeout&lt;/span&gt; setting in your web.config is set to [VALUE] seconds, which might not be enough for UVG to encode long videos. </value>
+	  </data>
+	  <data name="NotAllFormatsAllowed.Text">
+	    <value>UVG supports all popular video formats, but currently not all of them are enabled in your host settings. </value>
+	  </data>
+	  <data name="NoUVGPages.Text">
+	    <value>UVG need at least 3 extra DNN pages to upload, browse and play videos, it seems some of them does not exist. </value>
+	  </data>
+	  <data name="NoNeatUpload.Text">
+	    <value>NeatUpload, the 3rd party component used to offer upload progress bar, is not installed in your web.config. </value>
+	  </data>
+	  <data name="UpdateMRL.Text">
+	    <value>maxRequestLength in your web.config will be chanaged to 204800, are you sure you wish to continue?</value>
+	  </data>
+	  <data name="UpdateTimeout.Text">
+	    <value>executionTimeout in your web.config will be changed to 1800, are you sure you wish to continue?</value>
+	  </data>
+	  <data name="AddFormats.Text">
+	    <value>The extensions of supported video formats will be added to Host Settings -> Other Settings -> Allowed File Extensions, are you sure you wish to continue?</value>
+	  </data>
+	  <data name="EnableMime.Text">
+	    <value>We strongly recommend you to add .flv/.mp4 mime type support in your IIS, use this feature only when you are not able to do that.\n\nA new staticContent node will be added to your web.config for .flv/.mp4 mime type support. Delete this node from your web.config if any problem arise.\n\nYou can leave this message along as long as the mime types are properly configured.\n\nAre you sure you wish to continue?</value>
+	  </data>
+	  <data name="SetupPages.Text">
+	    <value>3 DNN pages will be created with 3 different UVG modules AFTER current page, are you sure you wish to continue?</value>
+	  </data>
+	  <data name="InstallNeatUpload.Text">
+	    <value>Neatupload will be injected to your web.config, you should restore it from web.config.uvg when uninstall UVG, are you sure you wish to continue?</value>
+	  </data>
+	  <data name="ProductName.Text">
+	    <value>Product Name</value>
+	  </data>
+	  <data name="VersionNumber.Text">
+	    <value>Version Number</value>
+	  </data>
+	  <data name="LicenseStatus.Text">
+	    <value>License Status</value>
+	  </data>
+	  <data name="ActivationDate.Text">
+	    <value>Activation Date</value>
+	  </data>
+
+	  <data name="lblActivate.Text">
+	    <value>Activate</value>
+	  </data>
+	  <data name="Activate.Text">
+	    <value>Activate</value>
+	  </data>
+	  <data name="Reactivate.Text">
+	    <value>Reactivate</value>
+	  </data>
+	  <data name="ConfirmReactivation.Text">
+	    <value>UVG is already activated, are you sure you wish to reactivate it?</value>
+	  </data>
+
+	  <data name="PlayerSize.Text">
+	    <value>Player Size</value>
+	  </data>
+	  <data name="PlayerSize.Help">
+	    <value>Youtube Player Size</value>
+	  </data>
+	  <data name="Theme.Text">
+	    <value>Theme</value>
+	  </data>
+	  <data name="Theme.Help">
+	    <value>This parameter indicates whether the embedded player will display player controls (like a 'play' button or volume control) within a dark or light control bar. </value>
+	  </data>
+	  <data name="AutoPlay.Text">
+	    <value>Auto play</value>
+	  </data>
+	  <data name="AutoPlay.Help">
+	    <value>Auto play videos</value>
+	  </data>
+	  <data name="ShowControls.Text">
+	    <value>Show Controls</value>
+	  </data>
+	  <data name="ShowControls.Help">
+	    <value>This parameter indicates whether the video player controls will display.</value>
+	  </data>
+	  <data name="Color.Text">
+	    <value>Highlight Color</value>
+	  </data>
+	  <data name="Color.Help">
+	    <value>This parameter specifies the color that will be used in the player's video progress bar to highlight the amount of the video that the viewer has already seen.</value>
+	  </data>
+	  <data name="Disablekb.Text">
+	    <value>Disable Keyboard Controls</value>
+	  </data>
+	  <data name="Disablekb.Help">
+	    <value>Disable the player keyboard controls</value>
+	  </data>
+	  <data name="FullScreen.Text">
+	    <value>Full screen</value>
+	  </data>
+	  <data name="FullScreen.Help">
+	    <value>Show full screen button</value>
+	  </data>
+	  <data name="Loop.Text">
+	    <value>Loop Play</value>
+	  </data>
+	  <data name="Loop.Help">
+	    <value>Play the initial video again and again.</value>
+	  </data>
+	  <data name="IncludeRelated.Text">
+	    <value>Related videos</value>
+	  </data>
+	  <data name="IncludeRelated.Help">
+	    <value>Show related videos when finsih</value>
+	  </data>
+	  <data name="Modestbranding.Text">
+	    <value>Modest Branding</value>
+	  </data>
+	  <data name="Modestbranding.Help">
+	    <value>This parameter lets you use a YouTube player that does not show a YouTube logo.</value>
+	  </data>
+	  <data name="UpdateExisting.Text">
+	    <value>Update Existing Videos</value>
+	  </data>
+	  <data name="UpdateExisting.Help">
+	    <value>Above settings applys to new-added videos only, click this button to update existing videos.</value>
+	  </data>
+	  <data name="UpdateYTVideos.Text">
+	    <value>Update All</value>
+	  </data>
+	  <data name="UpdateYTVideos.Help">
+	    <value>Are you sure you wish to update all Youtube videos within this portal?</value>
+	  </data>
+	  <data name="XVideosUpdated.Text">
+	    <value>[X] videos updated</value>
+	  </data>
+	  <data name="NeedUVG4BinaryPack.Text">
+	    <value>To use H264 baseline encoding you must install UVG 6 binary pack, which can be found on bizmodules.net "Downloads" page.</value>
+	  </data>
+
+
+
+	  <data name="cmdUpdate.Text">
+	    <value>Save Configuration</value>
+	  </data>
+	  <data name="AmazonConfig.Text">
+	    <value>The video encoding parameters in this module applies to our own video encoding engine, use UVG_AmazonConfig module(under UVG_Setup definition) to configure it if you wish to encode videos by Amazon Elastic Transcoder.</value>
+	  </data>
+
+
+	  <data name="FrameRate.Text">
+	    <value>Frame Rate</value>
+	  </data>
+	  <data name="FrameRate.Help">
+	    <value>Frames per second, leave it blank to keep the original frame rate of videos</value>
+	  </data>
+</root>

@@ -1,0 +1,4 @@
+<a class='history' href='[LINK]'>
+<span class='SubHead hl'>[TITLE]</span>
+<span class='subtitle'>on [CREATEDDATE]</span>
+</a>

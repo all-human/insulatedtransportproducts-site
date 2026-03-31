@@ -1,0 +1,44 @@
+﻿<dotnetnuke type="ResourceFile" version="5.0">
+  <files>
+    <file>
+      <path />
+      <name>License.txt</name>
+    </file>
+    <file>
+      <path />
+      <name>module.css</name>
+    </file>
+    <file>
+      <path />
+      <name>ReleaseNotes.txt</name>
+    </file>
+    <file>
+      <path />
+      <name>View.ascx</name>
+    </file>
+    <file>
+      <path>App_LocalResources/</path>
+      <name>View.ascx.resx</name>
+    </file>
+    <file>
+      <path>Images/</path>
+      <name>Extensions_16x16_Standard.png</name>
+    </file>
+    <file>
+      <path>Images/</path>
+      <name>Extensions_32x32_Standard.png</name>
+    </file>
+    <file>
+      <path>Scripts/</path>
+      <name>dnnscripts.js</name>
+    </file>
+    <file>
+      <path>Scripts/</path>
+      <name>jquery-ui.min.js</name>
+    </file>
+    <file>
+      <path>Styles/</path>
+      <name>dnnstyles.css</name>
+    </file>
+  </files>
+</dotnetnuke>

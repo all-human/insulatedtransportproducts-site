@@ -1,0 +1,105 @@
+﻿
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER procedure {databaseOwner}[{objectQualifier}DCC_EF_InsertEmailWorkFlow]
+@WorkFlowName nvarchar(200),
+@WorkFlowTypeID int,
+@Disabled bit,
+@ModuleID int,
+@EmailSubject nvarchar(100),
+@EmailTemplate nvarchar(4000),
+@SendType nvarchar(50),
+@SendToList nvarchar(4000),
+@Culture nvarchar(50)
+
+as
+
+declare @SortOrder int
+set @SortOrder=(select isnull( MAX(WorkFlowID),0) from {databaseOwner}[{objectQualifier}DCC_EF_ActiveWorkFlows])
+set @SortOrder=@SortOrder+1
+
+insert into {databaseOwner}[{objectQualifier}DCC_EF_ActiveWorkFlows]
+(
+WorkFlowName,
+WorkFlowTypeID,
+Disabled,
+SortOrder,
+ModuleID
+)
+values
+(
+@WorkFlowName,
+@WorkFlowTypeID,
+@Disabled,
+@SortOrder,
+@ModuleID
+)
+declare @ID int
+set @ID=@@Identity
+
+
+insert into {databaseOwner}[{objectQualifier}DCC_EF_WorkFlow_SendEmail]
+(
+WorkFlowID,
+EmailSubject,
+EmailTemplate,
+SendType,
+SendToList,
+Culture
+)
+values
+(
+@ID,
+@EmailSubject,
+@EmailTemplate,
+@SendType,
+@SendToList,
+@Culture
+)
+
+GO
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALter procedure {databaseOwner}[{objectQualifier}DCC_EF_UpdateEmailWorkFlow]
+@WorkFlowID int,
+@WorkFlowName nvarchar(200),
+@WorkFlowTypeID int,
+@Disabled bit,
+@ModuleID int,
+@EmailSubject nvarchar(100),
+@EmailTemplate nvarchar(4000),
+@SendType nvarchar(50),
+@SendToList nvarchar(4000),
+@Culture  nvarchar(50)
+
+
+as
+
+update 
+	{databaseOwner}[{objectQualifier}DCC_EF_ActiveWorkFlows]
+		set 
+			WorkFlowName=@WorkFlowName,
+			WorkFlowTypeID=@WorkFlowTypeID,
+Disabled=@Disabled,
+ModuleID=@ModuleID
+
+		where
+			WorkFlowID=@WorkFlowID
+
+
+ update 
+       {databaseOwner}[{objectQualifier}DCC_EF_WorkFlow_SendEmail]
+     set 
+          WorkFlowID=@WorkFlowID,
+           EmailSubject=@EmailSubject,
+           EmailTemplate=@EmailTemplate,
+           SendType=@SendType,
+          SendToList=@SendToList,
+Culture=@Culture
+
+     where
+			WorkFlowID=@WorkFlowID

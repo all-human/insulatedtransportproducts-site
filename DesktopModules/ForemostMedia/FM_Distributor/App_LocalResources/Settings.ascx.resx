@@ -1,0 +1,243 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="lblTemplate.Text" xml:space="preserve">
+    <value>Template</value>
+  </data>
+  <data name="lblTemplate.Help" xml:space="preserve">
+    <value>Allows you to provide a custom template for displaying the items. Use parameters for dynamic substitution ( ie. [CONTENT] [CREATEDDATE] [CREATEDBYUSER] [CREATEDBYUSERNAME] )</value>
+  </data>
+  <data name="ControlTitle_settings.Text" xml:space="preserve">
+    <value>FM_Distributor Settings</value>
+  </data>
+  <data name="ModuleHelp.Text" xml:space="preserve">
+    <value>About FM_Distributor Settings</value>
+  </data>
+  <data name="lblDisplayAll.Help" xml:space="preserve">
+    <value>Display Listings when page loads</value>
+  </data>
+  <data name="lblDisplayAll.Text" xml:space="preserve">
+    <value>Display Results On Page Load</value>
+  </data>
+  <data name="lblType.Help" xml:space="preserve">
+    <value>Check which type will be searched.</value>
+  </data>
+  <data name="lblType.Text" xml:space="preserve">
+    <value>Restrict Results to Distributor Type</value>
+  </data>
+  <data name="lblCompanySearch.Text" xml:space="preserve">
+    <value>Company Search Title</value>
+  </data>
+  <data name="lblDisplayCompany.Text" xml:space="preserve">
+    <value>Show Company Name Search?</value>
+  </data>
+  <data name="lblDisplayInternational.Text" xml:space="preserve">
+    <value>Show International Search?</value>
+  </data>
+  <data name="lblDisplayState.Text" xml:space="preserve">
+    <value>Show State Search?</value>
+  </data>
+  <data name="lblInternationalSearch.Text" xml:space="preserve">
+    <value>International Search Title</value>
+  </data>
+  <data name="lblSearchTitle.Text" xml:space="preserve">
+    <value>Search Title</value>
+  </data>
+  <data name="lblStateSearch.Text" xml:space="preserve">
+    <value>State Search Title</value>
+  </data>
+  <data name="lblDefaultStates.Help" xml:space="preserve">
+    <value>Select the country you would like to list the states of.</value>
+  </data>
+  <data name="lblDefaultStates.Text" xml:space="preserve">
+    <value>List States Of</value>
+  </data>
+  <data name="lblIntAddUS.Help" xml:space="preserve">
+    <value>Add US to the International Results.</value>
+  </data>
+  <data name="lblIntAddUS.Text" xml:space="preserve">
+    <value>Add United States to Internationl</value>
+  </data>
+  <data name="lblIntSortUsFirst.Help" xml:space="preserve">
+    <value>Sort International search results by US first then rest of the world.</value>
+  </data>
+  <data name="lblIntSortUsFirst.Text" xml:space="preserve">
+    <value>Results Display United States first</value>
+  </data>
+  <data name="lblSearchTitle.Help" xml:space="preserve">
+    <value>Title for the Search</value>
+  </data>
+  <data name="lblDisplayTypes.Text" xml:space="preserve">
+    <value>Show Distributor Types Search?</value>
+  </data>
+  <data name="lblDisplayTypesTitle.Text" xml:space="preserve">
+    <value>Distributor Types Title</value>
+  </data>
+  <data name="lblDistributorTypeTitle.Text" xml:space="preserve">
+    <value>Distributor Type</value>
+  </data>
+  <data name="lblDisplayTypesName.Text" xml:space="preserve">
+    <value>Dist Type Name</value>
+  </data>
+  <data name="ControlType.Help" xml:space="preserve">
+    <value>The type of control to use to show the list of items</value>
+  </data>
+  <data name="ControlType.Text" xml:space="preserve">
+    <value>Control Type</value>
+  </data>
+  <data name="lblDisplayTypes.Help" xml:space="preserve">
+    <value>Will override the Distributor Type results to show.</value>
+  </data>
+  <data name="lblDisplayTypesName.Help" xml:space="preserve">
+    <value>Default name in the list for example "Artichoke" will display "Select Artichoke" as first item in list</value>
+  </data>
+  <data name="InitalLoadImage.Help" xml:space="preserve">
+    <value>Image to show on page load if results are not being displayed</value>
+  </data>
+  <data name="InitalLoadImage.Text" xml:space="preserve">
+    <value>Initial Load Image</value>
+  </data>
+  <data name="ClearCache.Help" xml:space="preserve">
+    <value>Clear the cache for the distributor module</value>
+  </data>
+  <data name="ClearCache.Text" xml:space="preserve">
+    <value>Clear Cache</value>
+  </data>
+  <data name="AutoPostBack.Help" xml:space="preserve">
+    <value>Automatically post the form when a dropdown or listbox is selected</value>
+  </data>
+  <data name="AutoPostBack.Text" xml:space="preserve">
+    <value>AutoPostBack</value>
+  </data>
+  <data name="BootstrapCssCdnUrl.Help" xml:space="preserve">
+    <value>This module requires at least Bootstrap 3.3.6</value>
+  </data>
+  <data name="BootstrapCssCdnUrl.Text" xml:space="preserve">
+    <value>Bootstrap CSS CDN Url</value>
+  </data>
+  <data name="BootstrapJsCdnUrl.Help" xml:space="preserve">
+    <value>This module requires at least Bootstrap 3.3.6</value>
+  </data>
+  <data name="BootstrapJsCdnUrl.Text" xml:space="preserve">
+    <value>Bootstrap JS CDN Url</value>
+  </data>
+  <data name="EnableBootstrap.Text" xml:space="preserve">
+    <value>Enable Bootstrap</value>
+  </data>
+</root>

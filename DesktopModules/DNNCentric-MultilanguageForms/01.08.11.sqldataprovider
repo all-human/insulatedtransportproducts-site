@@ -1,0 +1,115 @@
+﻿SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+
+ALTER TABLE {databaseOwner}[{objectQualifier}DCC_EF_WorkFlow_SQLPost]
+	ADD 
+	ModuleID int NOT NULL default 0
+
+	GO
+
+alter procedure {databaseOwner}[{objectQualifier}DCC_EF_ADDPostDataWorkFlow]
+@Workflowname nvarchar(256),
+@Connectionstring nvarchar(256),
+@Scripttype nvarchar(50),
+@SQLScript nvarchar(256),
+@Culture nvarchar(50),
+@moduleId int
+
+as
+insert into {databaseOwner}[{objectQualifier}DCC_EF_WorkFlow_SQLPost]
+(
+WorkFlowName,
+ConnectionString,
+ScriptType,
+SQLScript,
+Culture,
+ModuleID
+)
+Values
+(
+@Workflowname,
+@Connectionstring,
+@Scripttype,
+@SQLScript,
+@Culture,
+@moduleId
+)
+
+GO
+
+alter procedure {databaseOwner}[{objectQualifier}DCC_EF_DeletePostDataWorkFlowList]
+@WorkFlowID int,
+@ModuleID int
+as
+delete from {databaseOwner}[{objectQualifier}DCC_EF_WorkFlow_SQLPost]
+where WorkFlowID=@WorkFlowID and ModuleID=@ModuleID
+
+GO
+
+alter procedure {databaseOwner}[{objectQualifier}DCC_EF_GetPostDataWorkFlowByCulture]
+@Culture nvarchar(50)='Any',
+@ModuleID int 
+
+as
+select * from {databaseOwner}[{objectQualifier}DCC_EF_WorkFlow_SQLPost]
+
+where Culture=@Culture and ModuleID=@ModuleID
+
+GO
+
+alter procedure {databaseOwner}[{objectQualifier}DCC_EF_GetPostDataWorkFlowByID]
+@WorkflowId int,
+@ModuleID int
+
+as
+select * from {databaseOwner}[{objectQualifier}DCC_EF_WorkFlow_SQLPost]
+
+where WorkFlowID=@WorkflowId and ModuleID=@ModuleID
+
+GO
+
+--
+alter procedure {databaseOwner}[{objectQualifier}DCC_EF_GetPostDataWorkFlowCountByName]
+@WorkFlowName nvarchar(256)='dffddfd',
+@ModuleID int
+
+as
+select count(*) as Cnt from {databaseOwner}[{objectQualifier}DCC_EF_WorkFlow_SQLPost]
+where WorkFlowName=@WorkFlowName and ModuleID=@ModuleID
+
+GO
+
+alter procedure {databaseOwner}[{objectQualifier}DCC_EF_GetPostDataWorkFlowList]
+@ModuleID int
+
+as
+select * from {databaseOwner}[{objectQualifier}DCC_EF_WorkFlow_SQLPost] 
+where ModuleID=@ModuleID
+
+GO
+
+alter procedure {databaseOwner}[{objectQualifier}DCC_EF_UpdatePostDataWorkFlow]
+@WorkflowId int,
+@Workflowname nvarchar(256),
+@Connectionstring nvarchar(256),
+@Scripttype nvarchar(50),
+@SQLScript nvarchar(256),
+@Culture nvarchar(50),
+@ModuleId int
+
+as
+update {databaseOwner}[{objectQualifier}DCC_EF_WorkFlow_SQLPost]
+set
+WorkFlowName=@Workflowname,
+ConnectionString=@Connectionstring,
+ScriptType=@Scripttype,
+SQLScript=@SQLScript,
+Culture=@Culture,
+ModuleID=@ModuleId
+
+where WorkFlowID=@WorkflowId and ModuleID=@ModuleId
+
+GO
+

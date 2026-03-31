@@ -1,0 +1,65 @@
+﻿SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+
+alter procedure {databaseOwner}[{objectQualifier}DCC_EF_GetEmailWorkFlowAdvancedSettingsById]
+@EmailWorkFlowId int=24
+as
+
+select AWS.* from  {databaseOwner}[{objectQualifier}DCC_EF_WorkFlow_EmailWorkFlowAdvancedSettings] as AWS inner join
+               
+               {databaseOwner}[{objectQualifier}DCC_EF_WorkFlow_SendEmail] as SEW on SEW.EWFAdvanceSettingID=AWS.EWFAdvanceSettingID
+                and
+               SEW.WorkFlowID=@EmailWorkFlowId
+
+GO
+
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+
+alter procedure {databaseOwner}[{objectQualifier}DCC_EF_UpdateEmailWorkFlowAdvancedSettings]
+@WorkFlowId int=6,
+@enableSettings bit=1,
+@SMTPServerName nvarchar(500)='fdff',
+@SMTPAuthentication int=1,
+@SMTPEnableSSL bit=1,
+@SMTPUserName nvarchar(500)='anjani',
+@SMTPPassword nvarchar(500)='dfdf*******'
+as
+	update {databaseOwner}[{objectQualifier}DCC_EF_WorkFlow_EmailWorkFlowAdvancedSettings]
+	set
+	EnableSetting=@enableSettings,
+	SMTPServerName=@SMTPServerName,
+	SMTPAuthentication=@SMTPAuthentication,
+	SMTPEnableSSL=@SMTPEnableSSL,
+	SMTPUserName=@SMTPUserName	
+	Where EWFAdvanceSettingID=(select EWFAdvanceSettingID from {databaseOwner}[{objectQualifier}DCC_EF_WorkFlow_SendEmail] where WorkFlowID=@WorkFlowId)
+ 
+  if(@SMTPPassword <> '**********')
+   Begin
+   update {databaseOwner}[{objectQualifier}DCC_EF_WorkFlow_EmailWorkFlowAdvancedSettings]
+	set
+	SMTPPassword=@SMTPPassword   
+	Where EWFAdvanceSettingID=(select EWFAdvanceSettingID from {databaseOwner}[{objectQualifier}DCC_EF_WorkFlow_SendEmail] where WorkFlowID=@WorkFlowId)
+   end
+GO
+
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+
+alter procedure {databaseOwner}[{objectQualifier}DCC_EF_UpdateSendEmailForAdvancedSettings]
+@EmailWorkFlowId int,
+@EWFAdvanceSettingID int
+as
+
+Update {databaseOwner}[{objectQualifier}DCC_EF_WorkFlow_SendEmail] 
+          Set EWFAdvanceSettingID=@EWFAdvanceSettingID
+          Where WorkFlowID=@EmailWorkFlowId
+
+GO
+

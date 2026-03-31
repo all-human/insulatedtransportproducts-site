@@ -1,0 +1,103 @@
+﻿SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE {databaseOwner}[{objectQualifier}DCC_EF_MiscLocalization](
+	[ItemID] [int] IDENTITY(1,1) NOT NULL primary key,
+	[ItemType] [nvarchar](100) NULL,
+	[Culture] [nvarchar](50) NULL,
+	[ItemValue] [nvarchar](2000) NULL,
+	[ModuleID] [int] NULL
+) ON [PRIMARY]
+
+GO
+
+
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+
+CREATE procedure {databaseOwner}[{objectQualifier}DCC_EF_AddMLTextToMiscLocalization]
+@ItemType nvarchar(100),
+@Culture nvarchar(50),
+@ItemValue nvarchar(1000),
+@ModuleID int
+as
+
+if Exists(Select * from {databaseOwner}{objectQualifier}DCC_EF_MiscLocalization where  ItemType=@ItemType AND ModuleID=@ModuleID AND Culture=@Culture)
+Begin
+
+Update {databaseOwner}{objectQualifier}DCC_EF_MiscLocalization
+set ItemValue=@ItemValue
+Where 
+ItemType=@ItemType
+AND
+ModuleID=@ModuleID
+AND
+Culture=@Culture
+End
+
+else
+
+Begin
+insert into {databaseOwner}{objectQualifier}DCC_EF_MiscLocalization
+(ItemType,Culture,ItemValue,ModuleID)
+values
+(@ItemType,@Culture,@ItemValue,@ModuleID)
+End
+
+GO
+
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+
+CREATE Procedure {databaseOwner}{objectQualifier}DCC_EF_GetMLTextByItemType
+@ItemType nvarchar(100),
+@ModuleID int
+as
+
+select ItemType,Culture,ItemValue,ModuleID
+from {databaseOwner}{objectQualifier}DCC_EF_MiscLocalization
+where 
+ItemType=@ItemType
+and
+ModuleID=@ModuleID
+
+GO
+
+
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+
+Create Procedure {databaseOwner}{objectQualifier}DCC_EF_GetMLTextValueByItemType
+@ItemType nvarchar(100),
+@Culture nvarchar(100),
+@ModuleID int
+As
+
+Select ItemValue from {databaseOwner}{objectQualifier}DCC_EF_MiscLocalization
+where
+ItemType=@ItemType
+AND
+Culture=@Culture
+AND
+ModuleID=@ModuleID
+GO
+
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER procedure {databaseOwner}[{objectQualifier}DCC_EF_AddControlsPropertiesByCulture]
+@FieldID int,
+@Culture nvarchar(50),
+@Culture_Value nvarchar(4000)
+as
+insert into
+{databaseOwner}{objectQualifier}DCC_EF_EmailFormCulture (FieldID,Culture,Culture_Value) 
+values(@FieldID,@Culture,@Culture_Value)

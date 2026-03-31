@@ -1,0 +1,28 @@
+#DNNSecurityHotFix1 .dnnFormMessage {
+    display: block;
+    padding: 17px 18px;
+    margin-bottom: 18px;
+    border: 1px solid rgba(2,139,255,0.2); /* blue */
+    background: rgba(2,139,255,0.15); /* blue */
+    -webkit-border-radius: 3px;
+    border-radius: 3px;
+    max-width: 980px;
+    text-shadow: none !important;
+}
+
+#DNNSecurityHotFix1 .dnnFormMessage.dnnFormError,
+#DNNSecurityHotFix1 .dnnFormMessage.dnnFormValidationSummary {
+        background-color: rgba(255,0,0,0.15); /* red */
+        border-color: rgba(255,0,0,0.2); /* red */
+        color: #000 !important;
+    }
+
+#DNNSecurityHotFix1 .dnnFormMessage.dnnFormWarning {
+        background-color: rgba(255,255,0,0.15); /* yellow */
+        border-color: #CDB21F; /* yellow */
+    }
+
+#DNNSecurityHotFix1 .dnnFormMessage.dnnFormSuccess {
+        background-color: rgba(0,255,0,0.15); /* green */
+        border-color: rgba(0,255,0,0.5); /* green */
+    }

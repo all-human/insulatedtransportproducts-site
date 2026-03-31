@@ -1,0 +1,13 @@
+A video has been flagged as inappropriate by [SENDER]
+<img src='[PORTALLOGOURL]'> <hr size=1>
+<p>[SENDER]([SENDEREMAIL]) flaged this video as inappropriate </p>
+
+<p>
+<a href='[VIDEOLINK]'><img src='[THUMBNAILURL]' style='border:1px solid #ccc;' /></a>
+</p>
+
+<p><b>Reason:</b>
+
+<p class=Normal> [FLAGREASON] </p>
+
+<p class=Normal> To review this video, <a href='[VIDEOLINK]'>Click Here.</a> </p>

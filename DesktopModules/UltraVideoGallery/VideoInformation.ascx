@@ -1,0 +1,2 @@
+<%@ Control Language="vb" AutoEventWireup="false" Codebehind="VideoInformation.ascx.vb" Inherits="BizModules.UltraVideoGallery.VideoInformation" %>
+<asp:Label id="lblOutput" runat="server" CssClass="Normal"></asp:Label>

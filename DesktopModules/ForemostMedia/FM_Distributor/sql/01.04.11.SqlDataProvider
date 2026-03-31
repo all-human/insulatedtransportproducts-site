@@ -1,0 +1,30 @@
+﻿ALTER PROCEDURE  [dbo].[fm_dist_Import_AddDistTypeToUser] 
+	-- Add the parameters for the stored procedure here
+	@distId int,
+	@typeName nvarchar(200),
+	@portalId int
+AS
+BEGIN
+	-- SET NOCOUNT ON added to prevent extra result sets from
+	-- interfering with SELECT statements.
+	SET NOCOUNT ON;
+
+    -- Insert statements for procedure here
+	/****** Script for SelectTopNRows command from SSMS  ******/
+declare @typeId int
+
+set @typeId = (
+SELECT Id
+  FROM  fm_dist_Type
+  where Name = @typeName and PortalId = @portalId)
+  
+  
+  declare @ids int
+  
+  set @ids = (select DistId from fm_dist_DistributorType where DistId = @distId and TypeId = @typeId )
+  
+  if @ids > 1  
+  print @ids
+  else
+  insert into fm_dist_DistributorType (DistId, TypeId) values (@distId, @typeId)
+END

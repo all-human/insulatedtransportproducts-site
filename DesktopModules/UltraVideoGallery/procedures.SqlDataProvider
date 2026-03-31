@@ -1,0 +1,2341 @@
+
+IF  EXISTS (SELECT * FROM dbo.sysobjects WHERE id = OBJECT_ID(N'{databaseOwner}{objectQualifier}UVG_CategoryAdd') AND type in (N'P', N'PC'))
+DROP PROCEDURE {databaseOwner}{objectQualifier}UVG_CategoryAdd
+GO
+
+IF  EXISTS (SELECT * FROM dbo.sysobjects WHERE id = OBJECT_ID(N'{databaseOwner}{objectQualifier}UVG_CategoryDelete') AND type in (N'P', N'PC'))
+DROP PROCEDURE {databaseOwner}{objectQualifier}UVG_CategoryDelete
+GO
+
+IF  EXISTS (SELECT * FROM dbo.sysobjects WHERE id = OBJECT_ID(N'{databaseOwner}{objectQualifier}UVG_CategoryGet') AND type in (N'P', N'PC'))
+DROP PROCEDURE {databaseOwner}{objectQualifier}UVG_CategoryGet
+GO
+
+IF  EXISTS (SELECT * FROM dbo.sysobjects WHERE id = OBJECT_ID(N'{databaseOwner}{objectQualifier}UVG_CategoryList') AND type in (N'P', N'PC'))
+DROP PROCEDURE {databaseOwner}{objectQualifier}UVG_CategoryList
+GO
+
+IF  EXISTS (SELECT * FROM dbo.sysobjects WHERE id = OBJECT_ID(N'{databaseOwner}{objectQualifier}UVG_CategoryListByLibrary') AND type in (N'P', N'PC'))
+DROP PROCEDURE {databaseOwner}{objectQualifier}UVG_CategoryListByLibrary
+GO
+
+IF  EXISTS (SELECT * FROM dbo.sysobjects WHERE id = OBJECT_ID(N'{databaseOwner}{objectQualifier}UVG_CategoryListByVideo') AND type in (N'P', N'PC'))
+DROP PROCEDURE {databaseOwner}{objectQualifier}UVG_CategoryListByVideo
+GO
+
+IF  EXISTS (SELECT * FROM dbo.sysobjects WHERE id = OBJECT_ID(N'{databaseOwner}{objectQualifier}UVG_CategoryUpdate') AND type in (N'P', N'PC'))
+DROP PROCEDURE {databaseOwner}{objectQualifier}UVG_CategoryUpdate
+GO
+
+IF  EXISTS (SELECT * FROM dbo.sysobjects WHERE id = OBJECT_ID(N'{databaseOwner}{objectQualifier}UVG_CategoryUpdateVideoCount') AND type in (N'P', N'PC'))
+DROP PROCEDURE {databaseOwner}{objectQualifier}UVG_CategoryUpdateVideoCount
+GO
+
+IF  EXISTS (SELECT * FROM dbo.sysobjects WHERE id = OBJECT_ID(N'{databaseOwner}{objectQualifier}UVG_CommentAdd') AND type in (N'P', N'PC'))
+DROP PROCEDURE {databaseOwner}{objectQualifier}UVG_CommentAdd
+GO
+
+IF  EXISTS (SELECT * FROM dbo.sysobjects WHERE id = OBJECT_ID(N'{databaseOwner}{objectQualifier}UVG_CommentDelete') AND type in (N'P', N'PC'))
+DROP PROCEDURE {databaseOwner}{objectQualifier}UVG_CommentDelete
+GO
+
+IF  EXISTS (SELECT * FROM dbo.sysobjects WHERE id = OBJECT_ID(N'{databaseOwner}{objectQualifier}UVG_CommentGet') AND type in (N'P', N'PC'))
+DROP PROCEDURE {databaseOwner}{objectQualifier}UVG_CommentGet
+GO
+
+IF  EXISTS (SELECT * FROM dbo.sysobjects WHERE id = OBJECT_ID(N'{databaseOwner}{objectQualifier}UVG_CommentList') AND type in (N'P', N'PC'))
+DROP PROCEDURE {databaseOwner}{objectQualifier}UVG_CommentList
+GO
+
+IF  EXISTS (SELECT * FROM dbo.sysobjects WHERE id = OBJECT_ID(N'{databaseOwner}{objectQualifier}UVG_CommercialAdd') AND type in (N'P', N'PC'))
+DROP PROCEDURE {databaseOwner}{objectQualifier}UVG_CommercialAdd
+GO
+
+IF  EXISTS (SELECT * FROM dbo.sysobjects WHERE id = OBJECT_ID(N'{databaseOwner}{objectQualifier}UVG_CommercialDelete') AND type in (N'P', N'PC'))
+DROP PROCEDURE {databaseOwner}{objectQualifier}UVG_CommercialDelete
+GO
+
+IF  EXISTS (SELECT * FROM dbo.sysobjects WHERE id = OBJECT_ID(N'{databaseOwner}{objectQualifier}UVG_CommercialDumpImpression') AND type in (N'P', N'PC'))
+DROP PROCEDURE {databaseOwner}{objectQualifier}UVG_CommercialDumpImpression
+GO
+
+IF  EXISTS (SELECT * FROM dbo.sysobjects WHERE id = OBJECT_ID(N'{databaseOwner}{objectQualifier}UVG_CommercialGet') AND type in (N'P', N'PC'))
+DROP PROCEDURE {databaseOwner}{objectQualifier}UVG_CommercialGet
+GO
+
+IF  EXISTS (SELECT * FROM dbo.sysobjects WHERE id = OBJECT_ID(N'{databaseOwner}{objectQualifier}UVG_CommercialList') AND type in (N'P', N'PC'))
+DROP PROCEDURE {databaseOwner}{objectQualifier}UVG_CommercialList
+GO
+
+IF  EXISTS (SELECT * FROM dbo.sysobjects WHERE id = OBJECT_ID(N'{databaseOwner}{objectQualifier}UVG_CommercialListImpression') AND type in (N'P', N'PC'))
+DROP PROCEDURE {databaseOwner}{objectQualifier}UVG_CommercialListImpression
+GO
+
+IF  EXISTS (SELECT * FROM dbo.sysobjects WHERE id = OBJECT_ID(N'{databaseOwner}{objectQualifier}UVG_CommercialPick') AND type in (N'P', N'PC'))
+DROP PROCEDURE {databaseOwner}{objectQualifier}UVG_CommercialPick
+GO
+
+IF  EXISTS (SELECT * FROM dbo.sysobjects WHERE id = OBJECT_ID(N'{databaseOwner}{objectQualifier}UVG_CommercialPickFullStage') AND type in (N'P', N'PC'))
+DROP PROCEDURE {databaseOwner}{objectQualifier}UVG_CommercialPickFullStage
+GO
+
+IF  EXISTS (SELECT * FROM dbo.sysobjects WHERE id = OBJECT_ID(N'{databaseOwner}{objectQualifier}UVG_CommercialRecordImpression') AND type in (N'P', N'PC'))
+DROP PROCEDURE {databaseOwner}{objectQualifier}UVG_CommercialRecordImpression
+GO
+
+IF  EXISTS (SELECT * FROM dbo.sysobjects WHERE id = OBJECT_ID(N'{databaseOwner}{objectQualifier}UVG_CommercialUpdate') AND type in (N'P', N'PC'))
+DROP PROCEDURE {databaseOwner}{objectQualifier}UVG_CommercialUpdate
+GO
+
+IF  EXISTS (SELECT * FROM dbo.sysobjects WHERE id = OBJECT_ID(N'{databaseOwner}{objectQualifier}UVG_LibraryAdd') AND type in (N'P', N'PC'))
+DROP PROCEDURE {databaseOwner}{objectQualifier}UVG_LibraryAdd
+GO
+
+IF  EXISTS (SELECT * FROM dbo.sysobjects WHERE id = OBJECT_ID(N'{databaseOwner}{objectQualifier}UVG_LibraryDelete') AND type in (N'P', N'PC'))
+DROP PROCEDURE {databaseOwner}{objectQualifier}UVG_LibraryDelete
+GO
+
+IF  EXISTS (SELECT * FROM dbo.sysobjects WHERE id = OBJECT_ID(N'{databaseOwner}{objectQualifier}UVG_LibraryGet') AND type in (N'P', N'PC'))
+DROP PROCEDURE {databaseOwner}{objectQualifier}UVG_LibraryGet
+GO
+
+IF  EXISTS (SELECT * FROM dbo.sysobjects WHERE id = OBJECT_ID(N'{databaseOwner}{objectQualifier}UVG_LibraryList') AND type in (N'P', N'PC'))
+DROP PROCEDURE {databaseOwner}{objectQualifier}UVG_LibraryList
+GO
+
+IF  EXISTS (SELECT * FROM dbo.sysobjects WHERE id = OBJECT_ID(N'{databaseOwner}{objectQualifier}UVG_LibraryUpdate') AND type in (N'P', N'PC'))
+DROP PROCEDURE {databaseOwner}{objectQualifier}UVG_LibraryUpdate
+GO
+
+IF  EXISTS (SELECT * FROM dbo.sysobjects WHERE id = OBJECT_ID(N'{databaseOwner}{objectQualifier}UVG_QueueAdd') AND type in (N'P', N'PC'))
+DROP PROCEDURE {databaseOwner}{objectQualifier}UVG_QueueAdd
+GO
+
+IF  EXISTS (SELECT * FROM dbo.sysobjects WHERE id = OBJECT_ID(N'{databaseOwner}{objectQualifier}UVG_QueueDelete') AND type in (N'P', N'PC'))
+DROP PROCEDURE {databaseOwner}{objectQualifier}UVG_QueueDelete
+GO
+
+IF  EXISTS (SELECT * FROM dbo.sysobjects WHERE id = OBJECT_ID(N'{databaseOwner}{objectQualifier}UVG_QueueGet') AND type in (N'P', N'PC'))
+DROP PROCEDURE {databaseOwner}{objectQualifier}UVG_QueueGet
+GO
+
+IF  EXISTS (SELECT * FROM dbo.sysobjects WHERE id = OBJECT_ID(N'{databaseOwner}{objectQualifier}UVG_QueueList') AND type in (N'P', N'PC'))
+DROP PROCEDURE {databaseOwner}{objectQualifier}UVG_QueueList
+GO
+
+IF  EXISTS (SELECT * FROM dbo.sysobjects WHERE id = OBJECT_ID(N'{databaseOwner}{objectQualifier}UVG_QueueListByUser') AND type in (N'P', N'PC'))
+DROP PROCEDURE {databaseOwner}{objectQualifier}UVG_QueueListByUser
+GO
+
+IF  EXISTS (SELECT * FROM dbo.sysobjects WHERE id = OBJECT_ID(N'{databaseOwner}{objectQualifier}UVG_QueueUpdate') AND type in (N'P', N'PC'))
+DROP PROCEDURE {databaseOwner}{objectQualifier}UVG_QueueUpdate
+GO
+
+IF  EXISTS (SELECT * FROM dbo.sysobjects WHERE id = OBJECT_ID(N'{databaseOwner}{objectQualifier}UVG_RatingAdd') AND type in (N'P', N'PC'))
+DROP PROCEDURE {databaseOwner}{objectQualifier}UVG_RatingAdd
+GO
+
+IF  EXISTS (SELECT * FROM dbo.sysobjects WHERE id = OBJECT_ID(N'{databaseOwner}{objectQualifier}UVG_RatingIsDuplicated') AND type in (N'P', N'PC'))
+DROP PROCEDURE {databaseOwner}{objectQualifier}UVG_RatingIsDuplicated
+GO
+
+IF  EXISTS (SELECT * FROM dbo.sysobjects WHERE id = OBJECT_ID(N'{databaseOwner}{objectQualifier}UVG_SearchUVGModule') AND type in (N'P', N'PC'))
+DROP PROCEDURE {databaseOwner}{objectQualifier}UVG_SearchUVGModule
+GO
+
+IF  EXISTS (SELECT * FROM dbo.sysobjects WHERE id = OBJECT_ID(N'{databaseOwner}{objectQualifier}UVG_SearchUVGModuleInLibrary') AND type in (N'P', N'PC'))
+DROP PROCEDURE {databaseOwner}{objectQualifier}UVG_SearchUVGModuleInLibrary
+GO
+
+IF  EXISTS (SELECT * FROM dbo.sysobjects WHERE id = OBJECT_ID(N'{databaseOwner}{objectQualifier}UVG_SeriesAdd') AND type in (N'P', N'PC'))
+DROP PROCEDURE {databaseOwner}{objectQualifier}UVG_SeriesAdd
+GO
+
+IF  EXISTS (SELECT * FROM dbo.sysobjects WHERE id = OBJECT_ID(N'{databaseOwner}{objectQualifier}UVG_SeriesAdjustOrder') AND type in (N'P', N'PC'))
+DROP PROCEDURE {databaseOwner}{objectQualifier}UVG_SeriesAdjustOrder
+GO
+
+IF  EXISTS (SELECT * FROM dbo.sysobjects WHERE id = OBJECT_ID(N'{databaseOwner}{objectQualifier}UVG_SeriesDelete') AND type in (N'P', N'PC'))
+DROP PROCEDURE {databaseOwner}{objectQualifier}UVG_SeriesDelete
+GO
+
+IF  EXISTS (SELECT * FROM dbo.sysobjects WHERE id = OBJECT_ID(N'{databaseOwner}{objectQualifier}UVG_SeriesFreeSearch') AND type in (N'P', N'PC'))
+DROP PROCEDURE {databaseOwner}{objectQualifier}UVG_SeriesFreeSearch
+GO
+
+IF  EXISTS (SELECT * FROM dbo.sysobjects WHERE id = OBJECT_ID(N'{databaseOwner}{objectQualifier}UVG_SeriesGet') AND type in (N'P', N'PC'))
+DROP PROCEDURE {databaseOwner}{objectQualifier}UVG_SeriesGet
+GO
+
+IF  EXISTS (SELECT * FROM dbo.sysobjects WHERE id = OBJECT_ID(N'{databaseOwner}{objectQualifier}UVG_SeriesSearch') AND type in (N'P', N'PC'))
+DROP PROCEDURE {databaseOwner}{objectQualifier}UVG_SeriesSearch
+GO
+
+IF  EXISTS (SELECT * FROM dbo.sysobjects WHERE id = OBJECT_ID(N'{databaseOwner}{objectQualifier}UVG_SeriesUpdate') AND type in (N'P', N'PC'))
+DROP PROCEDURE {databaseOwner}{objectQualifier}UVG_SeriesUpdate
+GO
+
+IF  EXISTS (SELECT * FROM dbo.sysobjects WHERE id = OBJECT_ID(N'{databaseOwner}{objectQualifier}UVG_SetAWSOperationTime') AND type in (N'P', N'PC'))
+DROP PROCEDURE {databaseOwner}{objectQualifier}UVG_SetAWSOperationTime
+GO
+
+IF  EXISTS (SELECT * FROM dbo.sysobjects WHERE id = OBJECT_ID(N'{databaseOwner}{objectQualifier}UVG_TagGet') AND type in (N'P', N'PC'))
+DROP PROCEDURE {databaseOwner}{objectQualifier}UVG_TagGet
+GO
+
+IF  EXISTS (SELECT * FROM dbo.sysobjects WHERE id = OBJECT_ID(N'{databaseOwner}{objectQualifier}UVG_TagList') AND type in (N'P', N'PC'))
+DROP PROCEDURE {databaseOwner}{objectQualifier}UVG_TagList
+GO
+
+IF  EXISTS (SELECT * FROM dbo.sysobjects WHERE id = OBJECT_ID(N'{databaseOwner}{objectQualifier}UVG_TagListByVideo') AND type in (N'P', N'PC'))
+DROP PROCEDURE {databaseOwner}{objectQualifier}UVG_TagListByVideo
+GO
+
+IF  EXISTS (SELECT * FROM dbo.sysobjects WHERE id = OBJECT_ID(N'{databaseOwner}{objectQualifier}UVG_TagSearch') AND type in (N'P', N'PC'))
+DROP PROCEDURE {databaseOwner}{objectQualifier}UVG_TagSearch
+GO
+
+IF  EXISTS (SELECT * FROM dbo.sysobjects WHERE id = OBJECT_ID(N'{databaseOwner}{objectQualifier}UVG_UserListActive') AND type in (N'P', N'PC'))
+DROP PROCEDURE {databaseOwner}{objectQualifier}UVG_UserListActive
+GO
+
+IF  EXISTS (SELECT * FROM dbo.sysobjects WHERE id = OBJECT_ID(N'{databaseOwner}{objectQualifier}UVG_VideoAdd') AND type in (N'P', N'PC'))
+DROP PROCEDURE {databaseOwner}{objectQualifier}UVG_VideoAdd
+GO
+
+IF  EXISTS (SELECT * FROM dbo.sysobjects WHERE id = OBJECT_ID(N'{databaseOwner}{objectQualifier}UVG_VideoApprove') AND type in (N'P', N'PC'))
+DROP PROCEDURE {databaseOwner}{objectQualifier}UVG_VideoApprove
+GO
+
+IF  EXISTS (SELECT * FROM dbo.sysobjects WHERE id = OBJECT_ID(N'{databaseOwner}{objectQualifier}UVG_VideoAttachToSeries') AND type in (N'P', N'PC'))
+DROP PROCEDURE {databaseOwner}{objectQualifier}UVG_VideoAttachToSeries
+GO
+
+IF  EXISTS (SELECT * FROM dbo.sysobjects WHERE id = OBJECT_ID(N'{databaseOwner}{objectQualifier}UVG_VideoDelete') AND type in (N'P', N'PC'))
+DROP PROCEDURE {databaseOwner}{objectQualifier}UVG_VideoDelete
+GO
+
+IF  EXISTS (SELECT * FROM dbo.sysobjects WHERE id = OBJECT_ID(N'{databaseOwner}{objectQualifier}UVG_VideoDetachFromSeries') AND type in (N'P', N'PC'))
+DROP PROCEDURE {databaseOwner}{objectQualifier}UVG_VideoDetachFromSeries
+GO
+
+IF  EXISTS (SELECT * FROM dbo.sysobjects WHERE id = OBJECT_ID(N'{databaseOwner}{objectQualifier}UVG_VideoEnsureCategory') AND type in (N'P', N'PC'))
+DROP PROCEDURE {databaseOwner}{objectQualifier}UVG_VideoEnsureCategory
+GO
+
+IF  EXISTS (SELECT * FROM dbo.sysobjects WHERE id = OBJECT_ID(N'{databaseOwner}{objectQualifier}UVG_VideoEnsureTag') AND type in (N'P', N'PC'))
+DROP PROCEDURE {databaseOwner}{objectQualifier}UVG_VideoEnsureTag
+GO
+
+IF  EXISTS (SELECT * FROM dbo.sysobjects WHERE id = OBJECT_ID(N'{databaseOwner}{objectQualifier}UVG_VideoFreeSearch') AND type in (N'P', N'PC'))
+DROP PROCEDURE {databaseOwner}{objectQualifier}UVG_VideoFreeSearch
+GO
+
+IF  EXISTS (SELECT * FROM dbo.sysobjects WHERE id = OBJECT_ID(N'{databaseOwner}{objectQualifier}UVG_VideoGet') AND type in (N'P', N'PC'))
+DROP PROCEDURE {databaseOwner}{objectQualifier}UVG_VideoGet
+GO
+
+IF  EXISTS (SELECT * FROM dbo.sysobjects WHERE id = OBJECT_ID(N'{databaseOwner}{objectQualifier}UVG_VideoGetByReferenceId') AND type in (N'P', N'PC'))
+DROP PROCEDURE {databaseOwner}{objectQualifier}UVG_VideoGetByReferenceId
+GO
+
+IF  EXISTS (SELECT * FROM dbo.sysobjects WHERE id = OBJECT_ID(N'{databaseOwner}{objectQualifier}UVG_VideoGetUserCount') AND type in (N'P', N'PC'))
+DROP PROCEDURE {databaseOwner}{objectQualifier}UVG_VideoGetUserCount
+GO
+
+IF  EXISTS (SELECT * FROM dbo.sysobjects WHERE id = OBJECT_ID(N'{databaseOwner}{objectQualifier}UVG_VideoList') AND type in (N'P', N'PC'))
+DROP PROCEDURE {databaseOwner}{objectQualifier}UVG_VideoList
+GO
+
+IF  EXISTS (SELECT * FROM dbo.sysobjects WHERE id = OBJECT_ID(N'{databaseOwner}{objectQualifier}UVG_VideoListByAuthor') AND type in (N'P', N'PC'))
+DROP PROCEDURE {databaseOwner}{objectQualifier}UVG_VideoListByAuthor
+GO
+
+IF  EXISTS (SELECT * FROM dbo.sysobjects WHERE id = OBJECT_ID(N'{databaseOwner}{objectQualifier}UVG_VideoListByKeyword') AND type in (N'P', N'PC'))
+DROP PROCEDURE {databaseOwner}{objectQualifier}UVG_VideoListByKeyword
+GO
+
+IF  EXISTS (SELECT * FROM dbo.sysobjects WHERE id = OBJECT_ID(N'{databaseOwner}{objectQualifier}UVG_VideoListBySeries') AND type in (N'P', N'PC'))
+DROP PROCEDURE {databaseOwner}{objectQualifier}UVG_VideoListBySeries
+GO
+
+IF  EXISTS (SELECT * FROM dbo.sysobjects WHERE id = OBJECT_ID(N'{databaseOwner}{objectQualifier}UVG_VideoListByTag') AND type in (N'P', N'PC'))
+DROP PROCEDURE {databaseOwner}{objectQualifier}UVG_VideoListByTag
+GO
+
+IF  EXISTS (SELECT * FROM dbo.sysobjects WHERE id = OBJECT_ID(N'{databaseOwner}{objectQualifier}UVG_VideoListDateAdded') AND type in (N'P', N'PC'))
+DROP PROCEDURE {databaseOwner}{objectQualifier}UVG_VideoListDateAdded
+GO
+
+IF  EXISTS (SELECT * FROM dbo.sysobjects WHERE id = OBJECT_ID(N'{databaseOwner}{objectQualifier}UVG_VideoListPending') AND type in (N'P', N'PC'))
+DROP PROCEDURE {databaseOwner}{objectQualifier}UVG_VideoListPending
+GO
+
+IF  EXISTS (SELECT * FROM dbo.sysobjects WHERE id = OBJECT_ID(N'{databaseOwner}{objectQualifier}UVG_VideoListPending2') AND type in (N'P', N'PC'))
+DROP PROCEDURE {databaseOwner}{objectQualifier}UVG_VideoListPending2
+GO
+
+IF  EXISTS (SELECT * FROM dbo.sysobjects WHERE id = OBJECT_ID(N'{databaseOwner}{objectQualifier}UVG_VideoListRelated') AND type in (N'P', N'PC'))
+DROP PROCEDURE {databaseOwner}{objectQualifier}UVG_VideoListRelated
+GO
+
+IF  EXISTS (SELECT * FROM dbo.sysobjects WHERE id = OBJECT_ID(N'{databaseOwner}{objectQualifier}UVG_VideoOnWatch') AND type in (N'P', N'PC'))
+DROP PROCEDURE {databaseOwner}{objectQualifier}UVG_VideoOnWatch
+GO
+
+IF  EXISTS (SELECT * FROM dbo.sysobjects WHERE id = OBJECT_ID(N'{databaseOwner}{objectQualifier}UVG_VideoSearchMyVideos') AND type in (N'P', N'PC'))
+DROP PROCEDURE {databaseOwner}{objectQualifier}UVG_VideoSearchMyVideos
+GO
+
+IF  EXISTS (SELECT * FROM dbo.sysobjects WHERE id = OBJECT_ID(N'{databaseOwner}{objectQualifier}UVG_VideoSearchPlus') AND type in (N'P', N'PC'))
+DROP PROCEDURE {databaseOwner}{objectQualifier}UVG_VideoSearchPlus
+GO
+
+IF  EXISTS (SELECT * FROM dbo.sysobjects WHERE id = OBJECT_ID(N'{databaseOwner}{objectQualifier}UVG_VideoUncategorized') AND type in (N'P', N'PC'))
+DROP PROCEDURE {databaseOwner}{objectQualifier}UVG_VideoUncategorized
+GO
+
+IF  EXISTS (SELECT * FROM dbo.sysobjects WHERE id = OBJECT_ID(N'{databaseOwner}{objectQualifier}UVG_VideoUpdate') AND type in (N'P', N'PC'))
+DROP PROCEDURE {databaseOwner}{objectQualifier}UVG_VideoUpdate
+GO
+
+IF  EXISTS (SELECT * FROM dbo.sysobjects WHERE id = OBJECT_ID(N'{databaseOwner}{objectQualifier}UVG_VideoUpdateCreatedDate') AND type in (N'P', N'PC'))
+DROP PROCEDURE {databaseOwner}{objectQualifier}UVG_VideoUpdateCreatedDate
+GO
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+if exists (SELECT * FROM dbo.sysobjects WHERE id = OBJECT_ID(N'{databaseOwner}{objectQualifier}UVG_CommercialIsActive') AND type in (N'FN', N'IF', N'TF', N'FS', N'FT'))
+drop function {databaseOwner}{objectQualifier}UVG_CommercialIsActive
+GO
+
+if exists (SELECT * FROM dbo.sysobjects WHERE id = OBJECT_ID(N'{databaseOwner}{objectQualifier}UVG_GetVideoCategory') AND type in (N'FN', N'IF', N'TF', N'FS', N'FT'))
+drop function {databaseOwner}{objectQualifier}UVG_GetVideoCategory
+GO
+
+if exists (SELECT * FROM dbo.sysobjects WHERE id = OBJECT_ID(N'{databaseOwner}{objectQualifier}UVG_CommercialIsAppliable') AND type in (N'FN', N'IF', N'TF', N'FS', N'FT'))
+drop function {databaseOwner}{objectQualifier}UVG_CommercialIsAppliable
+GO
+
+create function {databaseOwner}{objectQualifier}UVG_CommercialIsAppliable
+(
+@AudienceRoles nvarchar(200),
+@ApplyTo bit,
+@CurrentUserRoles nvarchar(200)
+)
+returns bit
+as
+BEGIN
+	if ISNULL(@AudienceRoles, '') = ''
+		return 1
+	if @AudienceRoles = @CurrentUserRoles
+		return @ApplyTo
+
+	DECLARE @Offset int
+	DECLARE @NextPosition int
+	DECLARE @Role nvarchar(50)
+	
+	select @AudienceRoles = ','+@AudienceRoles+','
+	select @CurrentUserRoles = ','+@CurrentUserRoles+','
+
+	select @Offset = CharIndex(',',@AudienceRoles)
+	select @NextPosition = CharIndex(',',@AudienceRoles,@Offset + 1)
+
+	while @NextPosition > 0
+	begin
+		set @Role= SUBSTRING(@AudienceRoles,@Offset + 1,@NextPosition - @Offset - 1)
+		if charindex(','+@Role+',', @CurrentUserRoles) > 0
+			return @ApplyTo
+
+		select @Offset = @NextPosition
+		select @NextPosition = CharIndex(',', @AudienceRoles, @Offset + 1)
+	end
+
+	if @ApplyTo = 1
+		return 0
+	
+	return 1
+END
+GO
+
+create function {databaseOwner}{objectQualifier}UVG_CommercialIsActive
+(
+@StartDate SmallDateTime,
+@EndDate SmallDateTime,
+@CurrentDate SmallDateTime,
+@MaxImpressions int,
+@Impressions int,
+@Criteria bit
+)
+returns bit
+as
+BEGIN
+declare @dateCondition bit
+if @StartDate > @CurrentDate or @EndDate < @CurrentDate
+	set @dateCondition = 1
+else
+	set @dateCondition = 0
+
+declare @impressionCondition bit
+if @MaxImpressions <= @Impressions and (@MaxImpressions <> 0)
+	set @impressionCondition = 1
+else
+	set @impressionCondition = 0
+
+--@Criteria = 1 means "stop it(isActive = false) when both criteria is matched"
+if @Criteria = 1
+	if @dateCondition=1 and @impressionCondition=1
+		return  0--Stopped
+	else
+		return 1
+else
+	if @dateCondition=1 or @impressionCondition=1
+		return  0--Stopped
+	else
+		return 1
+return 0
+END
+GO
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+CREATE PROCEDURE {databaseOwner}{objectQualifier}UVG_CategoryAdd
+	@PortalId int,
+	@LibraryId int,
+	@Category nvarchar(100),
+	@CreatedByUser int,
+	@CreatedDate dateTime,
+	@VideoCount int,
+	@ViewOrder nvarchar(10),
+	@ViewRoles nvarchar(200),
+	@PlayerTabId int,
+	@ListingTabId int
+AS
+
+INSERT INTO {databaseOwner}{objectQualifier}UVG_Category (
+	PortalId,
+	LibraryId,
+	Category,
+	CreatedByUser,
+	CreatedDate,
+	VideoCount,
+	ViewOrder,
+	ViewRoles,
+	PlayerTabId,
+	ListingTabId
+) VALUES (
+	@PortalId,
+	@LibraryId,
+	@Category,
+	@CreatedByUser,
+	@CreatedDate,
+	@VideoCount,
+	@ViewOrder,
+	@ViewRoles,
+	@PlayerTabId,
+	@ListingTabId
+)
+
+select SCOPE_IDENTITY()
+
+GO
+
+
+
+
+CREATE PROCEDURE {databaseOwner}{objectQualifier}UVG_CategoryDelete
+	@ItemId int
+AS
+
+DELETE FROM {databaseOwner}{objectQualifier}UVG_VideoCategory
+WHERE
+	CategoryId = @ItemId
+
+DELETE FROM {databaseOwner}{objectQualifier}UVG_Category
+WHERE
+	ItemId = @ItemId
+
+GO
+
+
+
+
+CREATE PROCEDURE {databaseOwner}{objectQualifier}UVG_CategoryGet
+	@ItemId int
+	
+AS
+SELECT
+	*
+FROM {databaseOwner}{objectQualifier}UVG_Category
+WHERE
+	ItemId = @ItemId
+
+GO
+
+
+
+CREATE PROCEDURE {databaseOwner}{objectQualifier}UVG_CategoryListByLibrary
+	@LibraryId int
+AS
+SELECT
+	*
+FROM {databaseOwner}{objectQualifier}UVG_Category
+WHERE LibraryId = @LibraryId ORDER BY ViewOrder ASC, Category ASC
+
+GO
+
+
+
+CREATE PROCEDURE {databaseOwner}{objectQualifier}UVG_CategoryListByVideo
+	@VideoId int
+AS
+SELECT
+	*
+FROM {databaseOwner}{objectQualifier}UVG_Category
+WHERE ItemId in (SELECT CategoryId from {databaseOwner}{objectQualifier}UVG_VideoCategory WHERE VideoId = @VideoId)
+ORDER BY ViewOrder ASC, Category ASC
+
+GO
+
+
+
+CREATE PROCEDURE {databaseOwner}{objectQualifier}UVG_CategoryUpdate
+	@ItemId int, 
+	@PortalId int, 
+	@LibraryId int,
+	@Category nvarchar(100), 
+	@CreatedByUser int, 
+	@CreatedDate dateTime, 
+	@VideoCount int,
+	@ViewOrder nvarchar(10),
+	@ViewRoles nvarchar(200),
+	@PlayerTabId int,
+	@ListingTabId int
+AS
+
+UPDATE {databaseOwner}{objectQualifier}UVG_Category SET
+	PortalId = @PortalId,
+	Category = @Category,
+	LibraryId = @LibraryId,
+	CreatedByUser = @CreatedByUser,
+	CreatedDate = @CreatedDate,
+	VideoCount = @VideoCount,
+	ViewOrder = @ViewOrder,
+	ViewRoles = @ViewRoles,
+	PlayerTabId = @PlayerTabId,
+	ListingTabId = @ListingTabId
+WHERE
+	ItemId = @ItemId
+
+
+GO
+
+
+
+
+CREATE procedure {databaseOwner}{objectQualifier}UVG_CategoryUpdateVideoCount
+as
+
+Update {databaseOwner}{objectQualifier}UVG_Category set VideoCount = (select count(*) from {databaseOwner}{objectQualifier}UVG_Video V inner join {databaseOwner}{objectQualifier}UVG_VideoCategory VC on V.ItemId = VC.VideoId where V.Approved = 1 And VC.CategoryId = {databaseOwner}{objectQualifier}UVG_Category.Itemid)
+GO
+
+
+
+
+CREATE procedure {databaseOwner}{objectQualifier}UVG_CommentGet
+	@ItemId int
+AS
+
+SELECT
+	*
+FROM {databaseOwner}{objectQualifier}UVG_Comment
+WHERE ItemId = @ItemId
+
+GO
+
+
+
+
+CREATE procedure {databaseOwner}{objectQualifier}UVG_CommentAdd
+	@UserId int,
+	@UserFullName nvarchar(100),
+	@UserIP varchar(15),
+	@Email varchar(50),
+	@VideoId int,
+	@Comment ntext,
+	@CreatedDate datetime
+AS
+
+insert into {databaseOwner}{objectQualifier}UVG_Comment (
+	UserId,
+	UserFullName,
+	UserIP,
+	Email,
+	VideoId,
+	Comment,
+	CreatedDate
+) values (
+	@UserId,
+	@UserFullName,
+	@UserIP,
+	@Email,
+	@VideoId,
+	@Comment,
+	@CreatedDate
+)
+
+update {databaseOwner}{objectQualifier}UVG_Video SET TotalComments = (SELECT count(*) from {databaseOwner}{objectQualifier}UVG_Comment WHERE VideoId = @VideoId) WHERE ItemId = @VideoId
+
+select SCOPE_identity()
+
+GO
+
+
+
+CREATE PROCEDURE {databaseOwner}{objectQualifier}UVG_CommentDelete
+	@ItemId int
+AS
+
+DECLARE @VideoId int
+SELECT @VideoId = VideoId FROM {databaseOwner}{objectQualifier}UVG_Comment WHERE ItemId = @ItemId
+
+DELETE FROM {databaseOwner}{objectQualifier}UVG_Comment
+WHERE
+	ItemId = @ItemId
+
+UPDATE {databaseOwner}{objectQualifier}UVG_Video SET TotalComments = (SELECT count(*) from {databaseOwner}{objectQualifier}UVG_Comment WHERE VideoId = @VideoId) WHERE ItemId = @VideoId
+GO
+
+
+
+CREATE procedure {databaseOwner}{objectQualifier}UVG_CommentList
+	@VideoId int
+AS
+
+SELECT
+	*
+FROM {databaseOwner}{objectQualifier}UVG_Comment
+WHERE VideoId = @VideoId
+ORDER BY CreatedDate Desc
+
+GO
+
+
+
+CREATE procedure {databaseOwner}{objectQualifier}UVG_CommercialAdd
+	@PortalId int,
+	@VendorId int,
+	@Type int,
+	@Title nvarchar(100),
+	@Description nvarchar(1000),
+	@LinkText nvarchar(100),
+	@LinkUrl nvarchar(200),
+	@FileUrl nvarchar(200),
+	@Scope int,
+	@StartDate smalldatetime,
+	@EndDate smalldatetime,
+	@MaxImpressions int,
+	@CPM money,
+	@Criteria bit,
+	@Impressions int,
+	@Clicks int,
+	@Archived bit,
+	@AudienceRoles nvarchar(200),
+	@ApplyTo bit
+AS
+
+insert into {databaseOwner}{objectQualifier}UVG_Commercial (
+	PortalId,
+	VendorId,
+	Type,
+	Title,
+	Description,
+	LinkText,
+	LinkUrl,
+	FileUrl,
+	Scope,
+	StartDate,
+	EndDate,
+	MaxImpressions,
+	CPM,
+	Criteria,
+	Impressions,
+	Clicks,
+	Archived,
+	AudienceRoles,
+	ApplyTo
+) values (
+	@PortalId,
+	@VendorId,
+	@Type,
+	@Title,
+	@Description,
+	@LinkText,
+	@LinkUrl,
+	@FileUrl,
+	@Scope,
+	@StartDate,
+	@EndDate,
+	@MaxImpressions,
+	@CPM,
+	@Criteria,
+	@Impressions,
+	@Clicks,
+	@Archived,
+	@AudienceRoles,
+	@ApplyTo
+)
+
+select SCOPE_identity()
+
+GO
+
+
+
+create procedure {databaseOwner}{objectQualifier}UVG_CommercialDelete
+	@ItemId int
+AS
+
+delete from {databaseOwner}{objectQualifier}UVG_Commercial
+WHERE
+	ItemId = @ItemId
+
+GO
+
+
+
+create procedure {databaseOwner}{objectQualifier}UVG_CommercialDumpImpression
+	@CommercialId int
+AS
+
+delete {databaseOwner}{objectQualifier}UVG_CommercialImpression Where CommercialId = @CommercialId
+
+GO
+
+
+
+create procedure {databaseOwner}{objectQualifier}UVG_CommercialGet
+	@ItemId int
+AS
+
+SELECT
+	*
+FROM {databaseOwner}{objectQualifier}UVG_Commercial
+WHERE
+	ItemId = @ItemId
+
+GO
+
+
+
+create procedure {databaseOwner}{objectQualifier}UVG_CommercialList
+@VendorId int
+AS
+
+SELECT
+	*
+FROM {databaseOwner}{objectQualifier}UVG_Commercial
+WHERE
+	VendorId = @VendorId
+
+GO
+
+
+
+create procedure {databaseOwner}{objectQualifier}UVG_CommercialListImpression
+	@CommercialId int
+AS
+
+SELECT * FROM {databaseOwner}{objectQualifier}UVG_CommercialImpression Where CommercialId = @CommercialId Order By Date ASC
+
+GO
+
+
+
+CREATE procedure {databaseOwner}{objectQualifier}UVG_CommercialPick
+@PortalId int,
+@LibraryId int,
+@CurrentUserRoles nvarchar(200),
+@Max int
+AS
+
+--The probability to pick a commercial, 0 ~ 100
+DECLARE @PickProbability int
+set @PickProbability = 100
+--Varibles below should not be changed
+
+--The @Rnd varible betweens 0 to 99
+DECLARE @Rnd int
+Select @Rnd = Cast(RAND() * 100 As Int)
+
+if @Rnd < (100 - @PickProbability)
+	return
+
+create table #UVG_TEMP (ItemId int not null)
+--Postroll, Preroll, Background, BottomThird
+
+insert into #UVG_TEMP SELECT TOP 1 ItemId FROM {databaseOwner}{objectQualifier}UVG_Commercial
+where (Scope = @LibraryId or ISNULL(Scope,0)<=0)  AND PortalId=@PortalId
+AND {databaseOwner}{objectQualifier}UVG_CommercialIsActive(StartDate,EndDate,getdate(),MaxImpressions,Impressions,Criteria) = 1
+AND {databaseOwner}{objectQualifier}UVG_CommercialIsAppliable(AudienceRoles, ApplyTo, @CurrentUserRoles) = 1
+And Type = 3
+order by Scope ASC,NEWID() 
+
+insert into #UVG_TEMP SELECT TOP 1 ItemId FROM {databaseOwner}{objectQualifier}UVG_Commercial
+where (Scope = @LibraryId or ISNULL(Scope,0)<=0)  AND PortalId=@PortalId
+AND {databaseOwner}{objectQualifier}UVG_CommercialIsActive(StartDate,EndDate,getdate(),MaxImpressions,Impressions,Criteria) = 1
+AND {databaseOwner}{objectQualifier}UVG_CommercialIsAppliable(AudienceRoles, ApplyTo, @CurrentUserRoles) = 1
+And Type = 4
+order by Scope ASC,NEWID() 
+
+set rowcount @Max
+insert into #UVG_TEMP SELECT ItemId FROM {databaseOwner}{objectQualifier}UVG_Commercial
+where (Scope = @LibraryId or ISNULL(Scope,0)<=0)  AND PortalId=@PortalId
+AND {databaseOwner}{objectQualifier}UVG_CommercialIsActive(StartDate,EndDate,getdate(),MaxImpressions,Impressions,Criteria) = 1
+AND {databaseOwner}{objectQualifier}UVG_CommercialIsAppliable(AudienceRoles, ApplyTo, @CurrentUserRoles) = 1
+And Type = 1
+order by Scope ASC,NEWID()
+
+insert into #UVG_TEMP SELECT ItemId FROM {databaseOwner}{objectQualifier}UVG_Commercial
+where (Scope = @LibraryId or ISNULL(Scope,0)<=0)  AND PortalId=@PortalId
+AND {databaseOwner}{objectQualifier}UVG_CommercialIsActive(StartDate,EndDate,getdate(),MaxImpressions,Impressions,Criteria) = 1
+AND {databaseOwner}{objectQualifier}UVG_CommercialIsAppliable(AudienceRoles, ApplyTo, @CurrentUserRoles) = 1
+And Type = 2
+order by Scope ASC,NEWID()
+
+set rowcount 0
+SELECT * FROM {databaseOwner}{objectQualifier}UVG_Commercial WHERE ItemId IN(SELECT ItemId FROM #UVG_TEMP)
+drop table #UVG_TEMP
+
+GO
+
+
+
+create procedure {databaseOwner}{objectQualifier}UVG_CommercialPickFullStage
+@PortalId int,
+@LibraryId int,
+@CurrentUserRoles nvarchar(200)
+AS
+
+--The probability to pick a commercial, 0 ~ 100
+DECLARE @PickProbability int
+set @PickProbability = 100
+--Varibles below should not be changed
+
+--The @Rnd varible betweens 0 to 99
+DECLARE @Rnd int
+Select @Rnd = Cast(RAND() * 100 As Int)
+
+if @Rnd < (100 - @PickProbability)
+	return
+
+SELECT * FROM {databaseOwner}{objectQualifier}UVG_Commercial where (Scope = @LibraryId or ISNULL(Scope,0)<=0)  AND PortalId=@PortalId
+AND {databaseOwner}{objectQualifier}UVG_CommercialIsActive(StartDate,EndDate,getdate(),MaxImpressions,Impressions,Criteria) = 1
+AND {databaseOwner}{objectQualifier}UVG_CommercialIsAppliable(AudienceRoles, ApplyTo, @CurrentUserRoles) = 1
+And Type = 1
+order by Scope ASC,NEWID()
+
+GO
+
+
+
+create procedure {databaseOwner}{objectQualifier}UVG_CommercialRecordImpression
+	@CommercialId int, 
+	@VideoId int,
+	@Video nvarchar(100),
+	@UserId int, 
+	@UserFullName nvarchar(50), 
+	@UserIp varchar(15), 
+	@IsClick bit
+AS
+
+INSERT {databaseOwner}{objectQualifier}UVG_CommercialImpression values(@CommercialId, @VideoId, @Video, @UserId, @UserFullName, @UserIp, getdate(), @IsClick)
+GO
+
+
+
+CREATE procedure {databaseOwner}{objectQualifier}UVG_CommercialUpdate
+	@ItemId int, 
+	@PortalId int,
+	@VendorId int, 
+	@Type int, 
+	@Title nvarchar(100), 
+	@Description nvarchar(1000), 
+	@LinkText nvarchar(100),
+	@LinkUrl nvarchar(200), 
+	@FileUrl nvarchar(200), 
+	@Scope int, 
+	@StartDate smalldatetime, 
+	@EndDate smalldatetime, 
+	@MaxImpressions int, 
+	@CPM money, 
+	@Criteria bit, 
+	@Impressions int, 
+	@Clicks int, 
+	@Archived bit,
+	@AudienceRoles nvarchar(200),
+	@ApplyTo bit
+AS
+
+update {databaseOwner}{objectQualifier}UVG_Commercial SET
+	PortalId = @PortalId,
+	VendorId = @VendorId,
+	Type = @Type,
+	Title = @Title,
+	Description = @Description,
+	LinkText = @LinkText,
+	LinkUrl = @LinkUrl,
+	FileUrl = @FileUrl,
+	Scope = @Scope,
+	StartDate = @StartDate,
+	EndDate = @EndDate,
+	MaxImpressions = @MaxImpressions,
+	CPM = @CPM,
+	Criteria = @Criteria,
+	Impressions = @Impressions,
+	Clicks = @Clicks,
+	Archived = @Archived,
+	AudienceRoles = @AudienceRoles,
+	ApplyTo = @ApplyTo
+WHERE
+	ItemId = @ItemId
+
+GO
+
+
+
+CREATE PROCEDURE {databaseOwner}{objectQualifier}UVG_LibraryAdd
+	@PortalId int,
+	@Library nvarchar(100),
+	@Managers nvarchar(500),
+	@PlayerPage int,
+	@CreatedDate datetime
+AS
+
+INSERT INTO {databaseOwner}{objectQualifier}UVG_Library (
+	PortalId,
+	Library,
+	Managers,
+	PlayerPage,
+	CreatedDate
+) VALUES (
+	@PortalId,
+	@Library,
+	@Managers,
+	@PlayerPage ,
+	@CreatedDate
+)
+select SCOPE_IDENTITY()
+
+GO
+
+
+
+CREATE PROCEDURE {databaseOwner}{objectQualifier}UVG_LibraryDelete
+	@ItemId int
+AS
+
+DELETE FROM {databaseOwner}{objectQualifier}UVG_Library
+WHERE
+	ItemId = @ItemId
+
+GO
+
+
+
+CREATE PROCEDURE {databaseOwner}{objectQualifier}UVG_LibraryGet
+	@ItemId int
+AS
+
+SELECT
+	*
+FROM {databaseOwner}{objectQualifier}UVG_Library
+WHERE
+	ItemId = @ItemId
+
+GO
+
+
+
+CREATE PROCEDURE {databaseOwner}{objectQualifier}UVG_LibraryList
+	@PortalId int
+AS
+
+SELECT
+	*
+FROM {databaseOwner}{objectQualifier}UVG_Library where PortalId = @PortalId
+
+GO
+
+
+
+CREATE PROCEDURE {databaseOwner}{objectQualifier}UVG_LibraryUpdate
+	@ItemId int,
+	@Library nvarchar(100),
+	@Managers nvarchar(500),
+	@PlayerPage int
+AS
+
+UPDATE {databaseOwner}{objectQualifier}UVG_Library SET
+	Library = @Library,
+	Managers =@Managers,
+	PlayerPage = @PlayerPage
+WHERE ItemId = @ItemId
+select SCOPE_IDENTITY()
+
+GO
+
+
+
+CREATE PROCEDURE {databaseOwner}{objectQualifier}UVG_QueueAdd
+	@UserId int,
+	@PortalId int,
+	@LibraryId int,
+	@Path nvarchar(200),
+	@Priority int,
+	@ImportFrom nvarchar(200)
+AS
+
+INSERT INTO {databaseOwner}{objectQualifier}UVG_Queue (
+	UserId,
+	PortalId,
+	LibraryId,
+	Path,
+	Priority,
+	CreatedDate,
+	ImportFrom
+) VALUES (
+	@UserId,
+	@PortalId,
+	@LibraryId,
+	@Path,
+	@Priority,
+	GETDATE(),
+	@ImportFrom
+)
+
+select SCOPE_IDENTITY()
+GO
+
+
+
+CREATE PROCEDURE {databaseOwner}{objectQualifier}UVG_QueueDelete
+	@ItemId int
+AS
+
+DELETE FROM {databaseOwner}{objectQualifier}UVG_Queue WHERE ItemId = @ItemId
+
+GO
+
+
+
+CREATE PROCEDURE {databaseOwner}{objectQualifier}UVG_QueueGet
+	@ItemId int
+	
+AS
+
+SELECT * FROM {databaseOwner}{objectQualifier}UVG_Queue WHERE ItemId = @ItemId
+
+GO
+
+
+
+
+CREATE PROCEDURE {databaseOwner}{objectQualifier}UVG_QueueList
+AS
+
+SELECT * FROM {databaseOwner}{objectQualifier}UVG_Queue Order By Priority DESC, CreatedDate ASC
+GO
+
+
+
+create PROCEDURE {databaseOwner}{objectQualifier}UVG_QueueListByUser
+	@UserId int
+AS
+
+SELECT * FROM {databaseOwner}{objectQualifier}UVG_Queue Where UserId = @UserId Order By Priority DESC, CreatedDate ASC
+GO
+
+
+
+CREATE PROCEDURE {databaseOwner}{objectQualifier}UVG_QueueUpdate
+	@ItemId int,
+	@Title nvarchar(150),
+	@Description nvarchar(1000),
+	@Tags nvarchar(200),
+	@Category varchar(500),
+	@SeriesId int,
+	@Status int,
+	@Priority int,
+	@Trials int,
+	@JobId varchar(200),
+	@AWSKey nvarchar(100)
+AS
+
+UPDATE {databaseOwner}{objectQualifier}UVG_Queue SET Title=@Title, Description=@Description, Tags=@Tags, Category=@Category, SeriesId=@SeriesId, Status=@Status, Priority=@Priority, Trials=@Trials, JobId=@JobId, AWSKey = @AWSKey WHERE ItemId = @ItemId 
+
+select SCOPE_IDENTITY()
+GO
+
+
+
+CREATE PROCEDURE {databaseOwner}{objectQualifier}UVG_RatingAdd
+	@UserId int,
+	@UserIP nvarchar(15),
+	@VideoId int,
+	@Rating int
+AS
+
+INSERT INTO {databaseOwner}{objectQualifier}UVG_Rating (
+	UserId,
+	UserIP,
+	VideoId,
+	Rating
+) VALUES (
+	@UserId,
+	@UserIP,
+	@VideoId,
+	@Rating
+)
+
+select SCOPE_IDENTITY()
+GO
+
+
+
+
+CREATE PROCEDURE {databaseOwner}{objectQualifier}UVG_RatingIsDuplicated
+	@VideoId int,
+	@UserId int,
+	@UserIP nvarchar(15)
+AS
+
+IF @UserId>0 
+BEGIN
+	IF EXISTS(
+	select * from {databaseOwner}{objectQualifier}UVG_Rating where UserId = @UserId and VideoId=@VideoId
+	)
+	BEGIN
+		SELECT 1
+		RETURN
+	END
+END
+ELSE
+BEGIN
+	IF EXISTS(
+	select * from {databaseOwner}{objectQualifier}UVG_Rating where UserIP=@UserIP and VideoId=@VideoId
+	)
+	BEGIN
+		SELECT 1
+		RETURN
+	END
+END
+
+SELECT 0
+GO
+
+
+
+CREATE proc {databaseOwner}{objectQualifier}UVG_SearchUVGModule
+@PortalId int,
+@DefinitionName varchar(50)
+as
+select M.* from {databaseOwner}{objectQualifier}vw_Modules M
+inner join {databaseOwner}{objectQualifier}DesktopModules DM on M.DesktopModuleID = DM.DesktopModuleID 
+
+Where M.PortalID = @PortalId AND DM.ModuleName=@DefinitionName And IsDeleted = 0
+GO
+
+/****** Object:  StoredProcedure {databaseOwner}{objectQualifier}UVG_SearchUVGModuleInLibrary    Script Date: 06/05/2012 21:44:57 ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+CREATE proc {databaseOwner}{objectQualifier}UVG_SearchUVGModuleInLibrary
+@LibraryId int,
+@DefinitionName varchar(50)
+as
+select M.* from {databaseOwner}{objectQualifier}ModuleSettings MS
+
+inner join {databaseOwner}{objectQualifier}vw_Modules M on MS.ModuleID = M.ModuleID 
+inner join {databaseOwner}{objectQualifier}DesktopModules DM on M.DesktopModuleID = DM.DesktopModuleID 
+
+Where MS.SettingName ='LibraryId' and MS.SettingValue=@LibraryId AND DM.ModuleName=@DefinitionName And IsDeleted = 0
+GO
+
+
+
+CREATE procedure {databaseOwner}{objectQualifier}UVG_SeriesAdd
+	@PortalId int,
+	@LibraryId int,
+	@Title nvarchar(150),
+	@Description nvarchar(1000),
+	@CreatedByUser int,
+	@CreatedDate datetime,
+	@LastUseDate datetime,
+	@VideoCount int
+AS
+
+insert into {databaseOwner}{objectQualifier}UVG_Series (
+	PortalId,
+	LibraryId,
+	Title,
+	Description,
+	CreatedByUser,
+	CreatedDate,
+	LastUseDate,
+	VideoCount
+) values (
+	@PortalId,
+	@LibraryId,
+	@Title,
+	@Description,
+	@CreatedByUser,
+	@CreatedDate,
+	@LastUseDate,
+	@VideoCount
+)
+select SCOPE_identity()
+
+GO
+
+
+
+CREATE procedure {databaseOwner}{objectQualifier}UVG_SeriesAdjustOrder
+	@videoId int,
+	@moveDirection nvarchar(10)
+AS
+
+DECLARE @itemId int,@seriesIndex int, @seriesId int
+DECLARE @_itemId int,@_seriesIndex int -- record to swap
+
+if @moveDirection = 'Down'
+BEGIN
+	SELECT @itemId=ItemId, @seriesId=SeriesId,@seriesIndex=SeriesIndex from {databaseOwner}{objectQualifier}UVG_Video WHERE ItemId=@videoId
+	SELECT TOP 1 @_itemId=Itemid,@_seriesIndex=SeriesIndex FROM {databaseOwner}{objectQualifier}UVG_Video WHERE SeriesId=@seriesId and SeriesIndex > @seriesIndex ORDER BY SeriesIndex ASC
+	if isnull(@_itemId,0) > 0 
+	begin
+		update {databaseOwner}{objectQualifier}UVG_Video set SeriesIndex = @seriesIndex where ItemId = @_itemId
+		update {databaseOwner}{objectQualifier}UVG_Video set SeriesIndex = @_seriesIndex where ItemId = @itemId
+	end
+END
+else if @moveDirection = 'Up'
+BEGIN
+	SELECT @itemId=ItemId, @seriesId=SeriesId,@seriesIndex=SeriesIndex from {databaseOwner}{objectQualifier}UVG_Video WHERE ItemId=@videoId
+	SELECT TOP 1 @_itemId=Itemid,@_seriesIndex=SeriesIndex FROM {databaseOwner}{objectQualifier}UVG_Video WHERE SeriesId=@seriesId and SeriesIndex < @seriesIndex ORDER BY SeriesIndex DESC
+	if isnull(@_itemId,0) > 0
+	begin
+		update {databaseOwner}{objectQualifier}UVG_Video set SeriesIndex = @seriesIndex where ItemId = @_itemId
+		update {databaseOwner}{objectQualifier}UVG_Video set SeriesIndex = @_seriesIndex where ItemId = @itemId
+	end
+END
+else if @moveDirection = 'Bottom'
+BEGIN
+	DECLARE @max int
+	SELECT @seriesId=SeriesId,@seriesIndex=SeriesIndex from {databaseOwner}{objectQualifier}UVG_Video WHERE ItemId=@videoId
+	SELECT @max=max(SeriesIndex) FROM {databaseOwner}{objectQualifier}UVG_Video WHERE SeriesId=@seriesId
+	if @seriesIndex < @max
+	begin
+		update {databaseOwner}{objectQualifier}UVG_Video set SeriesIndex = SeriesIndex - 1 where SeriesId=@SeriesId and SeriesIndex > @seriesIndex
+		update {databaseOwner}{objectQualifier}UVG_Video set SeriesIndex = @max where ItemId = @videoId
+	end
+END
+else if @moveDirection = 'Top'
+BEGIN
+	DECLARE @min int
+	SELECT @seriesId=SeriesId,@seriesIndex=SeriesIndex from {databaseOwner}{objectQualifier}UVG_Video WHERE ItemId=@videoId
+	--SELECT @min=min(SeriesIndex) FROM {databaseOwner}{objectQualifier}UVG_Video WHERE SeriesId=@seriesId
+	SET @min=1
+	if @seriesIndex > @min
+	begin
+		update {databaseOwner}{objectQualifier}UVG_Video set SeriesIndex = SeriesIndex + 1 where SeriesId=@SeriesId and SeriesIndex < @seriesIndex
+		update {databaseOwner}{objectQualifier}UVG_Video set SeriesIndex = @min where ItemId = @videoId
+	end
+END
+
+GO
+
+
+
+CREATE procedure {databaseOwner}{objectQualifier}UVG_SeriesDelete
+	@ItemId int
+AS
+delete from {databaseOwner}{objectQualifier}UVG_Series
+WHERE
+	ItemId = @ItemId
+
+exec {databaseOwner}{objectQualifier}UVG_CategoryUpdateVideoCount
+
+GO
+
+
+CREATE procedure {databaseOwner}{objectQualifier}UVG_SeriesFreeSearch
+@ScopeType varchar(20),
+@Scope varchar(20),
+@MaxResults int,
+@ListType varchar(20)
+AS
+
+if @MaxResults>0
+	set rowcount @MaxResults
+
+DECLARE @SQLString NVARCHAR(2000)
+SET @SQLString = 'SELECT * FROM {databaseOwner}{objectQualifier}UVG_Series Where VideoCount > 0 '
+
+if @ScopeType = 'PORTAL'
+	SET @SQLString = @SQLString + ' and PortalId=' + @Scope
+else if @ScopeType = 'LIBRARY'
+	SET @SQLString = @SQLString + ' and LibraryId=' + @Scope
+else if @ScopeType = 'USER'
+	SET @SQLString = @SQLString + ' and CreatedByUser=' + @Scope
+
+
+
+if @ListType <> 'LastUseDate'
+	SET @SQLString = @SQLString + ' Order By ISNULL(LastUseDate,CreatedDate) Desc'
+else if @ListType = 'Alphabetical'
+	SET @SQLString = @SQLString + ' Order By Title Asc'
+else if @ListType = 'CreatedDate'
+	SET @SQLString = @SQLString + ' Order By CreatedDate Desc'
+
+EXECUTE sp_executesql @SQLString
+
+GO
+
+
+
+
+create procedure {databaseOwner}{objectQualifier}UVG_SeriesGet
+	@ItemId int
+AS
+SELECT
+	*
+FROM {databaseOwner}{objectQualifier}UVG_Series
+WHERE
+	ItemId = @ItemId
+
+GO
+
+
+
+
+CREATE procedure {databaseOwner}{objectQualifier}UVG_SeriesSearch
+@portalId int,
+@libraryId int,
+@userId int,
+@key nvarchar(50)
+AS
+
+SELECT
+	*
+FROM {databaseOwner}{objectQualifier}UVG_Series
+WHERE PortalId = @portalId AND (LibraryId = @libraryId or isnull(@libraryId,0) = 0)
+AND (CreatedByUser = @userId or @userId is null)
+AND (TITLE like @key or @key = '')
+ORDER BY ISNULL(LastUseDate, CreatedDate) Desc
+GO
+
+
+
+
+CREATE procedure {databaseOwner}{objectQualifier}UVG_SeriesUpdate
+	@ItemId int,
+	@Title nvarchar(150), 
+	@Description nvarchar(1000),
+	@LastUseDate datetime,
+	@VideoCount int
+AS
+
+update {databaseOwner}{objectQualifier}UVG_Series SET
+	Title = @Title,
+	Description = @Description,
+	LastUseDate = @LastUseDate,
+	VideoCount = @VideoCount
+WHERE
+	ItemId = @ItemId
+
+GO
+
+
+
+
+CREATE Procedure {databaseOwner}{objectQualifier}UVG_SetAWSOperationTime 
+@hour int
+as
+
+declare @date datetime, @newdate datetime
+declare @id int
+
+select @date=getdate()
+select @newdate=cast(datepart(year, @date) as varchar(4)) + '-' + cast(datepart(month, @date) as varchar(2)) + '-' + cast(datepart(day, @date) as varchar(2))
+if datepart(hour, @date) > @hour
+	select @newdate=dateadd(day, 1, @newdate)
+
+select @newdate=dateadd(hour, @hour, @newdate)
+
+select top 1 @id = ScheduleHistoryId from dbo.ScheduleHistory SH inner join dbo.Schedule S on SH.ScheduleId = S.ScheduleId and S.TypeFullName='BizModules.UltraVideoGallery.Scheduling.AWSOperationScheduler, BizModules.UltraVideoGallery' order by NextStart desc
+update dbo.ScheduleHistory set NextStart = @newdate where ScheduleHistoryId = @id
+
+GO
+
+
+
+CREATE PROCEDURE {databaseOwner}{objectQualifier}UVG_TagGet
+	@ItemId int
+	
+AS
+
+SELECT
+	*
+FROM {databaseOwner}{objectQualifier}UVG_Tag
+WHERE
+	ItemId = @ItemId
+
+GO
+
+
+
+
+CREATE PROCEDURE {databaseOwner}{objectQualifier}UVG_TagList
+	@PortalId int,
+	@LibraryId int,
+	@Maximum int
+AS
+
+If @Maximum > 0
+	SET ROWCOUNT @Maximum
+
+SELECT
+	T.ItemId, T.Tag, COUNT(VT.ItemId) as VideoCount
+FROM {databaseOwner}{objectQualifier}UVG_Tag T inner join {databaseOwner}{objectQualifier}UVG_VideoTag VT on T.ItemId = VT.TagId 
+inner join {databaseOwner}{objectQualifier}UVG_Video V on VT.VideoId = V.ItemId 
+WHERE ((V.LibraryId = @LibraryId and @LibraryId > 0) OR (V.PortalId = @PortalId))
+GROUP By T.ItemId, T.Tag, T.CreatedDate
+Order By VideoCount DESC,T.CreatedDate desc
+
+GO
+
+
+
+
+CREATE PROCEDURE {databaseOwner}{objectQualifier}UVG_TagListByVideo
+	@VideoId int
+AS
+
+SELECT
+	*
+FROM {databaseOwner}{objectQualifier}UVG_Tag where ItemId in(Select TagId from {databaseOwner}{objectQualifier}UVG_VideoTag where VideoId = @VideoId)
+
+GO
+
+
+
+CREATE PROCEDURE {databaseOwner}{objectQualifier}UVG_TagSearch
+	@PortalId int,
+	@Key varchar(20)
+AS
+
+SELECT * FROM {databaseOwner}{objectQualifier}UVG_Tag where PortalId = @PortalId and Tag like '%' + @Key + '%'
+
+GO
+
+
+
+CREATE procedure {databaseOwner}{objectQualifier}UVG_UserListActive
+@PortalId int,
+@Count int,
+@Timeline int,
+@CrossPortals bit
+AS
+
+if @Timeline <= 0
+	SET @Timeline = 30
+
+select CreatedByUser, Count(CreatedByUser) as Videos into #UVGTemp from {databaseOwner}{objectQualifier}UVG_Video where (PortalId = @PortalId or @CrossPortals = 1) and datediff(d, CreatedDate, getdate()) < @Timeline group by (CreatedByUser) order by Sum(CreatedByUser) DESC
+
+if @Count>0
+	set rowcount @Count
+
+select 
+U.UserId,
+U.Username,
+U.FirstName,
+U.LastName,
+U.IsSuperUser,
+#UVGTemp.Videos,
+U.Email,
+U.DisplayName,
+UP.PortalId,
+UP.CreatedDate
+ from #UVGTemp inner join {databaseOwner}{objectQualifier}Users U on #UVGTemp.CreatedByUser = U.UserId
+left outer join {databaseOwner}{objectQualifier}UserPortals UP on U.UserId = UP.UserId
+drop table #UVGTemp
+
+GO
+
+
+
+CREATE procedure {databaseOwner}{objectQualifier}UVG_VideoAdd
+	@PortalId int,
+	@LibraryId int,
+	@Title nvarchar(150),
+	@Description nvarchar(1000),
+	@VideoPath nvarchar(600),
+	@EmbedCode nvarchar(4000),
+	@OriginalName nvarchar(200),
+	@Thumbnail nvarchar(200),
+	@LinkUrl nvarchar(400),
+	@CreatedByUser int,
+	@CreatedDate datetime,
+	@IsPrivate bit,
+	@Length decimal(18, 2),
+	@AspectRatio decimal(18, 2),
+	@Approved bit,
+	@ViewRoles nvarchar(200),
+	@IsAudio bit,
+	@H264VideoPath nvarchar(200),
+	@SeriesId int,
+	@ReferenceId int
+AS
+
+declare @seriesIndex int
+if @SeriesId > 0
+	select @seriesIndex = ISNULL(max(SeriesIndex), 0) + 1 from {databaseOwner}{objectQualifier}UVG_Video where SeriesId=@SeriesId
+
+insert into {databaseOwner}{objectQualifier}UVG_Video (
+	PortalId,
+	LibraryId,
+	Title,
+	Description,
+	VideoPath,
+	EmbedCode,
+	OriginalName,
+	Thumbnail,
+	LinkUrl,
+	CreatedByUser,
+	CreatedDate,
+	IsPrivate,
+	Length,
+	AspectRatio,
+	Approved,
+	ViewRoles,
+	IsAudio,
+	H264VideoPath,
+	SeriesId,
+	SeriesIndex,
+	
+	
+	Views,
+	TotalComments,
+	Likes,
+	Dislikes,
+	
+	ReferenceId
+) values (
+	@PortalId,
+	@LibraryId,
+	@Title,
+	@Description,
+	@VideoPath,
+	@EmbedCode,
+	@OriginalName,
+	@Thumbnail,
+	@LinkUrl,
+	@CreatedByUser,
+	@CreatedDate,
+	@IsPrivate,
+	@Length,
+	@AspectRatio,
+	@Approved,
+	@ViewRoles,
+	@IsAudio,
+	@H264VideoPath,
+	@SeriesId,
+	@seriesIndex,
+	
+	
+	0,
+	0,
+	0,
+	0,
+	
+	
+	@ReferenceId
+)
+if @SeriesId > 0
+	update {databaseOwner}{objectQualifier}UVG_Series set LastUseDate = getdate(), VideoCount=(select count(*) from {databaseOwner}{objectQualifier}UVG_Video where SeriesId=@SeriesId) where ItemId=@SeriesId
+
+exec {databaseOwner}{objectQualifier}UVG_CategoryUpdateVideoCount
+
+select SCOPE_identity()
+GO
+
+
+
+
+CREATE PROCEDURE {databaseOwner}{objectQualifier}UVG_VideoApprove
+	@ItemId int
+AS
+
+UPDATE {databaseOwner}{objectQualifier}UVG_Video
+SET Approved = 1
+WHERE
+	ItemId = @ItemId
+
+GO
+
+
+
+
+CREATE procedure {databaseOwner}{objectQualifier}UVG_VideoAttachToSeries
+@VideoId int,
+@SeriesId int
+AS
+declare @priorSeries int
+select @priorSeries = SeriesId from {databaseOwner}{objectQualifier}UVG_Video where ItemId = @VideoId
+if @priorSeries > 0
+		exec {databaseOwner}{objectQualifier}UVG_VideoDetachFromSeries @VideoId
+
+declare @seriesIndex int
+select @seriesIndex = ISNULL(max(SeriesIndex), 0) + 1 from {databaseOwner}{objectQualifier}UVG_Video where SeriesId=@SeriesId
+update {databaseOwner}{objectQualifier}UVG_Video SET SeriesId = @SeriesId,SeriesIndex = @seriesIndex WHERE ItemId = @VideoId
+update {databaseOwner}{objectQualifier}UVG_Series set LastUseDate = getdate(), VideoCount=(select count(*) from {databaseOwner}{objectQualifier}UVG_Video where SeriesId=@SeriesId) where ItemId=@SeriesId
+
+GO
+
+
+
+
+CREATE procedure {databaseOwner}{objectQualifier}UVG_VideoDelete
+	@ItemId int
+AS
+
+delete from {databaseOwner}{objectQualifier}UVG_Comment
+WHERE
+	VideoId = @ItemId
+
+delete from {databaseOwner}{objectQualifier}UVG_Rating
+WHERE
+	VideoId = @ItemId
+
+delete from {databaseOwner}{objectQualifier}UVG_VideoTag
+WHERE
+	VideoId = @ItemId
+
+declare @priorSeries int
+select @priorSeries = SeriesId from {databaseOwner}{objectQualifier}UVG_Video where ItemId = @ItemId
+
+delete from {databaseOwner}{objectQualifier}UVG_Video
+WHERE
+	ItemId = @ItemId
+
+if @priorSeries > 0
+	update {databaseOwner}{objectQualifier}UVG_Series set VideoCount=(select count(*) from {databaseOwner}{objectQualifier}UVG_Video where SeriesId=@priorSeries) where ItemId=@priorSeries
+
+exec {databaseOwner}{objectQualifier}UVG_CategoryUpdateVideoCount
+
+GO
+
+
+
+create procedure {databaseOwner}{objectQualifier}UVG_VideoDetachFromSeries
+@VideoId int
+AS
+declare @priorSeries int, @priorIndex int
+select @priorSeries = SeriesId, @priorIndex = SeriesIndex from {databaseOwner}{objectQualifier}UVG_Video where ItemId = @VideoId
+if @priorSeries > 0
+begin
+	update {databaseOwner}{objectQualifier}UVG_Video SET SeriesId = null,SeriesIndex = null WHERE ItemId = @VideoId
+	update {databaseOwner}{objectQualifier}UVG_Video SET SeriesIndex = SeriesIndex - 1 WHERE SeriesId = @priorSeries and SeriesIndex > @priorIndex
+	update {databaseOwner}{objectQualifier}UVG_Series set VideoCount=(select count(*) from {databaseOwner}{objectQualifier}UVG_Video where SeriesId=@priorSeries) where ItemId=@priorSeries
+end
+
+GO
+
+
+
+CREATE PROCEDURE {databaseOwner}{objectQualifier}UVG_VideoEnsureCategory
+	@VideoId int,
+	@BelongedCategories varchar(200)
+AS
+	DECLARE @Offset int
+	DECLARE @NextPosition int
+	DECLARE @CategoryId int
+	DECLARE @Categories varchar(200)
+
+	Set @Categories = ',' + @BelongedCategories + ','
+	
+	begin transaction
+	Set NoCount ON
+	delete from {databaseOwner}{objectQualifier}UVG_VideoCategory where VideoId=@VideoId
+
+	select @Offset = CharIndex(',',@Categories)
+	select @NextPosition = CharIndex(',',@Categories,@Offset + 1)
+
+	while @NextPosition > 0
+	begin
+		set @CategoryId=cast(SUBSTRING(@Categories,@Offset + 1,@NextPosition - @Offset - 1) as int)
+		if @CategoryId > 0
+			Insert into {databaseOwner}{objectQualifier}UVG_VideoCategory (VideoId,CategoryId) Values(@VideoId,@CategoryId)
+		select @Offset = @NextPosition
+		select @NextPosition = CharIndex(',',@Categories,@Offset + 1)
+	end
+
+	exec {databaseOwner}{objectQualifier}UVG_CategoryUpdateVideoCount
+	
+	--update {databaseOwner}{objectQualifier}UVG_Video set Categories = @BelongedCategories where ItemId = @VideoId
+	Set NoCount OFF
+	if @@error=0
+	begin
+		commit transaction
+	end
+	else
+	begin
+		rollback transaction
+	end
+GO
+
+
+
+CREATE PROCEDURE {databaseOwner}{objectQualifier}UVG_VideoEnsureTag
+	@VideoId int,
+	@UserId int,
+	@BelongedTags nvarchar(500)
+AS
+	DECLARE @Offset int
+	DECLARE @NextPosition int
+	DECLARE @Tags nvarchar(500)
+	DECLARE @Tag nvarchar(200)
+	DECLARE @TagId int
+	DECLARE @PortalId int
+
+	select @PortalId = PortalId from {databaseOwner}{objectQualifier}UVG_Video where ItemId = @VideoId
+	Set @Tags = ',' + @BelongedTags + ','
+
+	begin transaction
+	Set NoCount ON
+	delete from {databaseOwner}{objectQualifier}UVG_VideoTag where VideoId=@VideoId
+
+	select @Offset = CharIndex(',',@Tags)
+	select @NextPosition = CharIndex(',',@Tags,@Offset + 1)
+
+	while @NextPosition > 0
+	begin
+		set @Tag= SUBSTRING(@Tags,@Offset + 1,@NextPosition - @Offset - 1)
+		if @Tag <> ''
+		begin
+			set @TagId = 0
+			select @TagId = ItemId from {databaseOwner}{objectQualifier}UVG_Tag where Tag = @Tag
+			if isnull(@TagId, 0) =0 
+			begin
+				insert {databaseOwner}{objectQualifier}UVG_Tag (PortalId, Tag, IsPrivate, CreatedByUser, CreatedDate) values (@PortalId, @Tag, 0, @UserId, getdate())
+				select @TagId =  SCOPE_IDENTITY()
+			end 
+			Insert into {databaseOwner}{objectQualifier}UVG_VideoTag (VideoId,TagId) Values(@VideoId,@TagId)
+		end
+		select @Offset = @NextPosition
+		select @NextPosition = CharIndex(',',@Tags,@Offset + 1)
+	end
+	delete {databaseOwner}{objectQualifier}UVG_Tag where not exists(select * from {databaseOwner}{objectQualifier}UVG_VideoTag where {databaseOwner}{objectQualifier}UVG_VideoTag.TagId = {databaseOwner}{objectQualifier}UVG_Tag.ItemId)
+	update {databaseOwner}{objectQualifier}UVG_Tag set VideoCount = (Select count(*) from {databaseOwner}{objectQualifier}UVG_VideoTag where TagId = {databaseOwner}{objectQualifier}UVG_Tag.ItemId) where PortalId = @PortalId
+	
+	Set NoCount OFF
+	if @@error=0
+	begin
+		commit transaction
+	end
+	else
+	begin
+		rollback transaction
+	end
+
+GO
+
+
+
+CREATE procedure {databaseOwner}{objectQualifier}UVG_VideoFreeSearch
+@ScopeType varchar(20),
+@Scope varchar(20),
+@MaxResults int,
+@FeaturedOnly bit,
+@Timeline int,
+@ListType varchar(20)
+AS
+
+if @MaxResults>0
+	set rowcount @MaxResults
+
+DECLARE @SQLString NVARCHAR(2000)
+SET @SQLString = 'SELECT V.* FROM {databaseOwner}{objectQualifier}UVG_Video V Where V.Approved=1'
+
+if @ScopeType = 'PORTAL'
+	SET @SQLString = @SQLString + ' and V.PortalId=' + @Scope
+else if @ScopeType = 'LIBRARY'
+	SET @SQLString = @SQLString + ' and V.LibraryId=' + @Scope
+else if @ScopeType = 'USER'
+	SET @SQLString = @SQLString + ' and V.CreatedByUser=' + @Scope
+else if @ScopeType = 'CATEGORY'
+	SET @SQLString = @SQLString + ' and V.ItemId in (select VideoId from {databaseOwner}{objectQualifier}UVG_VideoCategory where CategoryId in (' + @Scope + '))'
+else if @ScopeType = 'SERIES'
+	SET @SQLString = @SQLString + ' and V.SeriesId=' + @Scope
+else if @ScopeType = 'GROUP'
+	SET @SQLString = @SQLString + ' and V.CreatedByUser in (Select UserId from {databaseOwner}{objectQualifier}UserRoles where RoleID = ' + @Scope + ')'
+
+if @FeaturedOnly = 1
+	SET @SQLString = @SQLString + ' and V.IsFeatured=1'
+
+if @Timeline > 0
+	SET @SQLString = @SQLString + ' and datediff(d, V.CreatedDate, getdate()) < ' + cast(@Timeline as varchar(10))
+
+if @ListType = 'RecentVideos'
+	SET @SQLString = @SQLString + ' Order By V.CreatedDate Desc'
+else if @ListType = 'SpotLight'
+	SET @SQLString = @SQLString + ' Order By newid() Desc'
+else if @ListType = 'MostPopular'
+	SET @SQLString = @SQLString + ' Order By V.Views + V.Likes + V.TotalComments Desc'
+else if @ListType = 'MostViewed'
+	SET @SQLString = @SQLString + ' Order By V.Views Desc'
+else if @ListType = 'MostDiscussedd'
+	SET @SQLString = @SQLString + ' Order By V.TotalComments Desc'
+else if @ListType = 'TopRated'
+	SET @SQLString = @SQLString + ' Order By V.Likes Desc'
+else-- if @ListType = 'AlphabeticalOrder'
+	SET @SQLString = @SQLString + ' Order By V.Title Asc'
+
+EXECUTE sp_executesql @SQLString
+
+GO
+
+
+
+
+CREATE PROCEDURE {databaseOwner}{objectQualifier}UVG_VideoGet
+	@ItemId int
+	
+AS
+
+SELECT
+	*
+FROM {databaseOwner}{objectQualifier}UVG_Video
+WHERE
+	ItemId = @ItemId
+
+GO
+
+
+
+
+CREATE PROCEDURE {databaseOwner}{objectQualifier}UVG_VideoGetByReferenceId
+	@ReferenceId int
+AS
+
+SELECT
+	*
+FROM {databaseOwner}{objectQualifier}UVG_Video
+WHERE
+	ReferenceId = @ReferenceId
+GO
+
+
+
+
+create procedure {databaseOwner}{objectQualifier}UVG_VideoGetUserCount
+	@userId int,
+	@libraryId int
+AS
+
+SELECT
+	COUNT(*)
+FROM {databaseOwner}{objectQualifier}UVG_Video where CreatedByUser=@userId and LibraryId=@libraryId
+
+GO
+
+
+
+CREATE PROCEDURE {databaseOwner}{objectQualifier}UVG_VideoList
+	@PortalId int
+AS
+
+SELECT
+	*
+FROM {databaseOwner}{objectQualifier}UVG_Video
+Where
+	PortalId = @PortalId
+	AND Approved = 1
+ORDER BY CreatedDate ASC
+
+GO
+
+
+
+CREATE procedure {databaseOwner}{objectQualifier}UVG_VideoListByAuthor
+	@PortalId int, 
+	@UserId int,
+	@Excluded int,
+	@ApprovedOnly bit,
+	@OrderType varchar(20)
+AS
+
+DECLARE @SQLString NVARCHAR(2000)
+SET @SQLString = ''
+
+SET @SQLString = 'SELECT * FROM {databaseOwner}{objectQualifier}UVG_Video WHERE PortalId = ' + cast(@PortalId as varchar(10)) + ' AND CreatedByUser = ' + cast(@UserId as varchar(10))
+
+if @ApprovedOnly = 1
+	SET @SQLString = @SQLString + ' and approved = 1'
+
+if @Excluded>0
+begin
+	set rowcount 20
+	
+	declare @BaseDate datetime
+	select @BaseDate = CreatedDate from {databaseOwner}{objectQualifier}UVG_Video where ItemId = @Excluded
+	if @BaseDate is not Null
+	begin	
+		SET @SQLString = @SQLString + ' AND ItemId <> ' + cast(@Excluded as varchar(10)) + ' and approved = 1'
+		SET @SQLString = @SQLString + ' Order By abs(datediff(hh,CreatedDate,''' + cast(@BaseDate as varchar(20)) + '''))'
+		EXECUTE sp_executesql @SQLString
+		return
+	end
+end
+
+if @OrderType = 'Featured'
+	SET @SQLString = @SQLString + ' and IsFeatured = 1 Order By FeaturedDate Desc'
+else if @OrderType = 'MostDiscussed'
+	SET @SQLString = @SQLString + ' Order By TotalComments Desc, CreatedDate Desc'
+else if @OrderType = 'MostPopular'
+	SET @SQLString = @SQLString + ' Order By Views + Likes + TotalComments DESC'
+else if @OrderType = 'MostViewed'
+	SET @SQLString = @SQLString + ' Order By Views Desc, CreatedDate Desc'
+else if @OrderType = 'RecentVideos'
+	SET @SQLString = @SQLString + ' Order By CreatedDate Desc'
+else if @OrderType = 'TopRated'
+	SET @SQLString = @SQLString + ' Order By Likes Desc, CreatedDate Desc'
+else-- if @OrderType = 'AlphabeticalOrder'
+	SET @SQLString = @SQLString + ' Order By Title Asc'
+
+EXECUTE sp_executesql @SQLString
+
+GO
+
+
+
+
+CREATE procedure {databaseOwner}{objectQualifier}UVG_VideoListByKeyword
+@PortalId int,
+@LibraryId int,
+@Keyword nvarchar(100),
+@OrderType varchar(20)
+AS
+
+DECLARE @SQLString NVARCHAR(2000)
+SET @SQLString = ''
+
+
+SET @SQLString = 'SELECT * FROM {databaseOwner}{objectQualifier}UVG_Video where isnull(Title, OriginalName) + isnull(Description,'''') like ''%' + @Keyword + '%'' And approved = 1 '
+
+if @LibraryId > 0
+	SET @SQLString = @SQLString + '  And LibraryId=' + cast(@LibraryId as varchar(10))
+else
+	SET @SQLString = @SQLString + '  And PortalId=' + cast(@PortalId as varchar(10))
+
+if @OrderType = 'MostDiscussed'
+	SET @SQLString = @SQLString + ' Order By TotalComments Desc, CreatedDate Desc'
+else if @OrderType = 'MostPopular'
+	SET @SQLString = @SQLString + ' Order By Views + Likes + TotalComments DESC'
+else if @OrderType = 'MostViewed'
+	SET @SQLString = @SQLString + ' Order By Views Desc, CreatedDate Desc'
+else if @OrderType = 'RecentVideos'
+	SET @SQLString = @SQLString + ' Order By CreatedDate Desc'
+else if @OrderType = 'TopRated'
+	SET @SQLString = @SQLString + ' Order By Likes Desc, CreatedDate Desc'
+else --if @OrderType = 'AlphabeticalOrder'
+	SET @SQLString = @SQLString + ' Order By Title Asc'
+
+EXECUTE sp_executesql @SQLString
+
+GO
+
+
+
+CREATE procedure {databaseOwner}{objectQualifier}UVG_VideoListBySeries
+	@seriesId int,
+	@excluded int
+AS
+
+if @excluded > 0
+begin
+	declare @crtindex  int
+	select @crtindex = SeriesIndex from {databaseOwner}{objectQualifier}UVG_Video where ItemId = @excluded
+	
+	SELECT * FROM (SELECT top 100 * FROM {databaseOwner}{objectQualifier}UVG_Video WHERE SeriesId = @seriesId and SeriesIndex > @crtindex ORDER BY SeriesIndex ASC, CreatedDate Desc) later
+
+	UNION ALL	
+	
+	SELECT * FROM (SELECT top 100 * FROM {databaseOwner}{objectQualifier}UVG_Video WHERE SeriesId = @seriesId AND SeriesIndex < @crtindex ORDER BY SeriesIndex ASC, CreatedDate Desc) prior
+end	
+else
+	SELECT * FROM {databaseOwner}{objectQualifier}UVG_Video WHERE SeriesId = @seriesId ORDER BY SeriesIndex ASC, CreatedDate Desc
+
+GO
+
+
+
+
+CREATE procedure {databaseOwner}{objectQualifier}UVG_VideoListByTag
+@PortalId int,
+@LibraryId int,
+@TagId int,
+@OrderType varchar(20)
+AS
+
+DECLARE @SQLString NVARCHAR(2000)
+SET @SQLString = ''
+
+SET @SQLString = 'SELECT * FROM {databaseOwner}{objectQualifier}UVG_Video where ItemId in (SELECT VideoId from {databaseOwner}{objectQualifier}UVG_VideoTag where TagId = ' + cast(@TagId as varchar(10)) + ') and approved = 1'
+
+if @LibraryId > 0
+	SET @SQLString = @SQLString + '  And LibraryId=' + cast(@LibraryId as varchar(10))
+else
+	SET @SQLString = @SQLString + '  And PortalId=' + cast(@PortalId as varchar(10))
+
+if @OrderType = 'MostDiscussed'
+	SET @SQLString = @SQLString + ' Order By TotalComments Desc, CreatedDate Desc'
+else if @OrderType = 'MostPopular'
+	SET @SQLString = @SQLString + ' Order By Views + Likes + TotalComments DESC'
+else if @OrderType = 'MostViewed'
+	SET @SQLString = @SQLString + ' Order By Views Desc, CreatedDate Desc'
+else if @OrderType = 'RecentVideos'
+	SET @SQLString = @SQLString + ' Order By CreatedDate Desc'
+else if @OrderType = 'TopRated'
+	SET @SQLString = @SQLString + ' Order By Likes Desc, CreatedDate Desc'
+else-- if @OrderType = 'AlphabeticalOrder'
+	SET @SQLString = @SQLString + ' Order By Title Asc'
+
+EXECUTE sp_executesql @SQLString
+
+GO
+
+
+
+CREATE PROCEDURE {databaseOwner}{objectQualifier}UVG_VideoListDateAdded
+	@PortalId int,
+	@LibraryId int
+AS
+	select datepart(YEAR, CreatedDate) as Year, 
+	datepart(Month, CreatedDate) as Month, 
+	COUNT(*) as VideoCount
+	from {databaseOwner}{objectQualifier}UVG_Video 
+	WHERE ((LibraryId = @LibraryId and @LibraryId > 0) OR (PortalId = @PortalId)) And Approved = 1
+	GROUP BY datepart(YEAR, CreatedDate), datepart(Month, CreatedDate)
+	order by Year DESC, Month desc
+
+GO
+
+
+
+CREATE PROCEDURE {databaseOwner}{objectQualifier}UVG_VideoListPending
+	@PortalId int
+AS
+
+SELECT
+	*
+FROM {databaseOwner}{objectQualifier}UVG_Video
+Where
+	PortalId = @PortalId
+	AND ISNULL(Approved, 0) = 0
+
+GO
+
+
+
+create PROCEDURE {databaseOwner}{objectQualifier}UVG_VideoListPending2
+	@Libraries varchar(200)
+AS
+
+DECLARE @SQLString NVARCHAR(2000)
+SET @SQLString = 'SELECT * FROM {databaseOwner}{objectQualifier}UVG_Video Where LibraryId in (' + @Libraries + ') AND ISNULL(Approved, 0) = 0'
+
+EXECUTE sp_executesql @SQLString
+GO
+
+
+
+CREATE procedure {databaseOwner}{objectQualifier}UVG_VideoListRelated
+	@ItemId int
+AS
+
+set rowcount 20
+
+declare @LibraryId int
+select @LibraryId = LibraryId  from {databaseOwner}{objectQualifier}UVG_Video where ItemId = @ItemId 
+
+declare @BaseDate datetime
+select @BaseDate = CreatedDate from {databaseOwner}{objectQualifier}UVG_Video where ItemId = @ItemId
+
+SELECT
+	distinct V.*, abs(datediff(hh,CreatedDate,@BaseDate)) as Offset
+FROM {databaseOwner}{objectQualifier}UVG_Video V Inner Join {databaseOwner}{objectQualifier}UVG_VideoTag VT On V.ItemId = VT.VideoId Where VT.TagId In 
+	(Select TagId from {databaseOwner}{objectQualifier}UVG_VideoTag Where VideoId = @ItemId)
+AND V.ItemId <> @ItemId
+AND V.LibraryId = @LibraryId
+AND V.Approved = 1
+ORDER BY Offset
+
+GO
+
+
+
+create procedure {databaseOwner}{objectQualifier}UVG_VideoOnWatch
+	@ItemId int
+AS
+
+UPDATE {databaseOwner}{objectQualifier}UVG_Video Set Views=Views+1 where ItemId = @ItemId
+
+GO
+
+
+
+CREATE procedure {databaseOwner}{objectQualifier}UVG_VideoSearchMyVideos
+	@PortalId int, 
+	@LibraryId int,
+	@UserId int,
+	@searchKey nvarchar(50),
+	@seriesId int,
+	@categoryId int,
+	@sortBy nvarchar(10),
+	@desending bit
+AS
+
+DECLARE @SQLString NVARCHAR(2000)
+SET @SQLString = 'SELECT DISTINCT V.* FROM {databaseOwner}{objectQualifier}UVG_Video V left outer join {databaseOwner}{objectQualifier}UVG_Series S on V.SeriesId = S.ItemId left outer join {databaseOwner}{objectQualifier}UVG_VideoCategory VC on V.ItemId = VC.VideoId WHERE V.PortalId = ' + cast(@PortalId as varchar(10)) + ' AND V.LibraryId = ' + cast(@LibraryId as varchar(10)) 
+if @UserId > 0
+	SET @SQLString = @SQLString + ' AND V.CreatedByUser = ' + cast(@UserId as varchar(10))
+
+if @searchKey <> ''
+	SET @SQLString = @SQLString + ' and V.Title like (''%' + @searchKey + '%'') or V.Description like (''%' + @searchKey + '%'')'
+else if @SeriesId > 0 
+	SET @SQLString = @SQLString + ' and V.SeriesId = ' + cast(@seriesId as varchar(10))
+
+if @CategoryId > 0
+	SET @SQLString = @SQLString + ' and VC.CategoryId = ' + cast(@CategoryId as varchar(10))
+
+if @sortBy = 'Title'
+	SET @SQLString = @SQLString + ' Order By V.Title'
+else if @sortBy = 'Time'
+	SET @SQLString = @SQLString + ' Order By V.Length'
+else if @sortBy = 'DateAdded'
+	SET @SQLString = @SQLString + ' Order By V.CreatedDate'
+else if @sortBy = 'Views'
+	SET @SQLString = @SQLString + ' Order By V.Views'
+
+if @desending = 1
+	SET @SQLString = @SQLString + ' DESC'
+else
+	SET @SQLString = @SQLString + ' ASC'
+--print @SqlString
+EXECUTE sp_executesql @SQLString
+
+GO
+
+
+
+
+CREATE procedure {databaseOwner}{objectQualifier}UVG_VideoSearchPlus
+@PortalId int,
+@LibraryId int,
+@Categories varchar(500),
+@Dates varchar(500),
+@OrderType varchar(20)
+AS
+
+DECLARE @SQLString NVARCHAR(2000)
+SET @SQLString = 'SELECT DISTINCT V.*, V.Views + V.Likes + V.TotalComments as Popularity FROM {databaseOwner}{objectQualifier}UVG_Video V Left Outer Join {databaseOwner}{objectQualifier}UVG_VideoCategory C on V.ItemId=C.VideoId Where V.Approved=1 '
+if @LibraryId > 0
+	SET @SQLString = @SQLString + '  And V.LibraryId=' + cast(@LibraryId as varchar(10))
+else
+	SET @SQLString = @SQLString + '  And V.PortalId=' + cast(@PortalId as varchar(10))
+
+if len(@Categories) > 0
+	if @LibraryId > 0
+		SET @SQLString = @SQLString + ' and isnull(C.CategoryId,0) not in (''' + replace(@Categories, ',',''',''') + ''')'
+	else
+		SET @SQLString = @SQLString + ' and LibraryId not in (''' + replace(@Categories, ',',''',''') + ''')'
+
+if len(@Dates) > 0
+	SET @SQLString = @SQLString + ' and left(CONVERT(varchar(10), CreatedDate, 102),7) not in (''' + replace(@Dates, ',',''',''') + ''')'
+
+SET @SQLString = @SQLString + ' Order By '
+
+if @OrderType = 'MostDiscussed'
+	SET @SQLString = @SQLString + 'V.TotalComments Desc, V.CreatedDate Desc'
+else if @OrderType = 'MostPopular'
+	SET @SQLString = @SQLString + 'V.Views + V.Likes + V.TotalComments Desc'
+else if @OrderType = 'MostViewed'
+	SET @SQLString = @SQLString + 'V.Views Desc, V.CreatedDate Desc'
+else if @OrderType = 'RecentVideos'
+	SET @SQLString = @SQLString + 'V.CreatedDate Desc'
+else if @OrderType = 'TopRated'
+	SET @SQLString = @SQLString + 'V.Likes Desc'
+else-- if @OrderType = 'AlphabeticalOrder'
+	SET @SQLString = @SQLString + ' V.Title Asc'
+Print @SqlString
+EXECUTE sp_executesql @SQLString
+
+GO
+
+
+
+
+CREATE procedure {databaseOwner}{objectQualifier}UVG_VideoUncategorized
+	@LibraryId int
+AS
+	select count(*) from {databaseOwner}{objectQualifier}UVG_Video where LibraryId=@LibraryId and ItemId not in (select VideoId from {databaseOwner}{objectQualifier}UVG_VideoCategory where LibraryId=@LibraryId)
+GO
+
+
+
+
+
+CREATE procedure {databaseOwner}{objectQualifier}UVG_VideoUpdate
+	@ItemId int, 
+	@PortalId int, 
+	@Title nvarchar(150), 
+	@Description nvarchar(1000), 
+	@VideoPath nvarchar(600),
+	@EmbedCode nvarchar(4000), 
+	@OriginalName nvarchar(200), 
+	@Thumbnail nvarchar(200),
+	@LinkUrl nvarchar(400), 
+	@LastModifiedBy int, 
+	@LastModifiedDate datetime, 
+	@IsPrivate bit, 
+	@IsFeatured bit,
+	@featuredDate datetime,
+	@Length decimal(18, 2), 
+	@Views int, 
+	@TotalComments int,
+	@AspectRatio decimal(18, 2),
+	@Approved bit,
+	@ViewRoles nvarchar(200),
+	@IsAudio bit,
+	@AWS_Bucket nvarchar(50),
+	@AWS_ThumbKey nvarchar(100),
+	@AWS_VideoKey nvarchar(100),
+	@AWS_H264VideoKey nvarchar(100),
+	@H264VideoPath nvarchar(200),
+	@AccessCode nvarchar(50),
+	@AccessCodeUsed datetime,
+	@Likes int,
+	@Dislikes int,
+	@Subtitle nvarchar(300)
+AS
+
+update {databaseOwner}{objectQualifier}UVG_Video SET
+	PortalId = @PortalId,
+	Title = @Title,
+	Description = @Description,
+	VideoPath = @VideoPath,
+	EmbedCode = @EmbedCode,
+	OriginalName = @OriginalName,
+	Thumbnail = @Thumbnail,
+	LinkUrl = @LinkUrl,
+	LastModifiedBy = @LastModifiedBy,
+	LastModifiedDate = @LastModifiedDate,
+	IsPrivate = @IsPrivate,
+	IsFeatured = @IsFeatured,
+	featuredDate = @featuredDate,
+	Length = @Length,
+	Views = @Views,
+	TotalComments = @TotalComments,
+	AspectRatio = @AspectRatio,
+	Approved = @Approved,
+	ViewRoles = @ViewRoles,
+	IsAudio = @IsAudio,
+	AWS_Bucket = @AWS_Bucket,
+	AWS_ThumbKey = @AWS_ThumbKey,
+	AWS_VideoKey = @AWS_VideoKey,
+	AWS_H264VideoKey = @AWS_H264VideoKey,
+	H264VideoPath = @H264VideoPath,
+	AccessCode = @AccessCode,
+	AccessCodeUsed = @AccessCodeUsed,
+	Likes = @Likes,
+	Dislikes = @Dislikes,
+	Subtitle = @Subtitle 
+WHERE
+	ItemId = @ItemId
+	
+exec {databaseOwner}{objectQualifier}UVG_CategoryUpdateVideoCount
+
+GO
+
+
+
+CREATE procedure {databaseOwner}{objectQualifier}UVG_VideoUpdateCreatedDate
+	@ItemId int, 
+	@CreatedDate datetime
+as
+update {databaseOwner}{objectQualifier}UVG_Video SET
+	CreatedDate = @CreatedDate
+WHERE
+	ItemId = @ItemId
+
+GO
+
+

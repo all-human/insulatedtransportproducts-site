@@ -1,0 +1,14 @@
+﻿SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+
+create procedure {databaseOwner}[{objectQualifier}DCC_EF_GetCategoryIdByCategoryName] 
+@Categoryname nvarchar(100)
+AS
+select Culture,CategoryID
+from {databaseOwner}[{objectQualifier}DCC_EF_Category] 
+where CategoryName=@Categoryname
+
+GO
+

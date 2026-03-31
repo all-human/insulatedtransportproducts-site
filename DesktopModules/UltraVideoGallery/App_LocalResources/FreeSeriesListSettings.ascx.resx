@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<root>
+	<xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+		<xsd:element name="root" msdata:IsDataSet="true">
+			<xsd:complexType>
+				<xsd:choice maxOccurs="unbounded">
+					<xsd:element name="data">
+						<xsd:complexType>
+							<xsd:sequence>
+								<xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+								<xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+							</xsd:sequence>
+							<xsd:attribute name="name" type="xsd:string" />
+							<xsd:attribute name="type" type="xsd:string" />
+							<xsd:attribute name="mimetype" type="xsd:string" />
+						</xsd:complexType>
+					</xsd:element>
+					<xsd:element name="resheader">
+						<xsd:complexType>
+							<xsd:sequence>
+								<xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+							</xsd:sequence>
+							<xsd:attribute name="name" type="xsd:string" use="required" />
+						</xsd:complexType>
+					</xsd:element>
+				</xsd:choice>
+			</xsd:complexType>
+		</xsd:element>
+	</xsd:schema>
+	<resheader name="resmimetype">
+		<value>text/microsoft-resx</value>
+	</resheader>
+	<resheader name="version">
+		<value>1.3</value>
+	</resheader>
+	<resheader name="reader">
+		<value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=1.0.5000.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+	</resheader>
+	<resheader name="writer">
+		<value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=1.0.5000.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+	</resheader>
+
+	<data name="ControlTitle_modulesettings.Text">
+		<value>Module Settings</value>
+	</data>
+
+	<data name="Scope.Text">
+		<value>Show Series of</value>
+	</data>
+	<data name="Scope.Help">
+		<value>Scope</value>
+	</data>
+	<data name="Library.Text">
+		<value>Library</value>
+	</data>
+	<data name="entirednn.Text">
+		<value>All portals</value>
+	</data>
+	<data name="portal.Text">
+		<value>This portal</value>
+	</data>
+	<data name="library.Text">
+		<value>A library</value>
+	</data>
+	<data name="currentuser.Text">
+		<value>Current user</value>
+	</data>
+	<data name="specificuser.Text">
+		<value>Specific user</value>
+	</data>
+	<data name="userinqs.Text">
+		<value>Designated user</value>
+	</data>
+	<data name="Library.Help">
+		<value>Choose a video library in this portal</value>
+	</data>
+	<data name="UserId.Text">
+		<value>User ID</value>
+	</data>
+	<data name="UserId.Help">
+		<value>Enter the ID of the user who's videos will be displayed</value>
+	</data>
+	<data name="UserKey.Text">
+		<value>User Key</value>
+	</data>
+	<data name="UserKey.Help">
+		<value>The key of the user id parameter in querystring</value>
+	</data>
+	<data name="SortBy.Text">
+		<value>Sort By</value>
+	</data>
+	<data name="SortBy.Help">
+		<value>The criteria used to sort series</value>
+	</data>
+	<data name="LastUseDate.Text">
+		<value>Time of last addition</value>
+	</data>
+	<data name="Alphabetical.Text">
+		<value>Alphabetical order</value>
+	</data>
+	<data name="CreatedDate.Text">
+		<value>Time of creation</value>
+	</data>
+	<data name="MaxResults.Text">
+		<value>Max Results</value>
+	</data>
+	<data name="MaxResults.Help">
+		<value>The maximum results to be displayed</value>
+	</data>
+	<data name="Columns.Text">
+		<value>Display Columns</value>
+	</data>
+	<data name="Columns.Help">
+		<value>The no. of columns for the final display</value>
+	</data>
+
+
+	<data name="HtmlHeader.Text">
+		<value>Header Template</value>
+	</data>
+	<data name="HtmlHeader.Help">
+		<value>The texts displayed in top sequence</value>
+	</data>
+	<data name="HtmlBody.Text">
+		<value>Body Template</value>
+	</data>
+	<data name="HtmlBody.Help">
+		<value>Refer to our user guide to see a list of supported tokens</value>
+	</data>
+	<data name="HtmlFooter.Text">
+		<value>Footer Template</value>
+	</data>
+	<data name="HtmlFooter.Help">
+		<value>The texts displayed at last</value>
+	</data>
+	<data name="HtmlSeparator.Text">
+		<value>Separator Template</value>
+	</data>
+	<data name="HtmlSeparator.Help">
+		<value>The texts between 2 items</value>
+	</data>
+	<data name="GeneralOptions.Text">
+		<value>General Options</value>
+	</data>
+	<data name="DisplayTemplate.Text">
+		<value>Display Template</value>
+	</data>
+</root>

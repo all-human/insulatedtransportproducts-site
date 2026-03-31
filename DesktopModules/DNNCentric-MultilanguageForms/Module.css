@@ -1,0 +1,589 @@
+
+/************************************PLEASE NOTE*********************************************
+*   If you make any changes in this file, then make sure to keep a backup  of it before     *
+*   making any   upgrades to the module. This will be overwritten during the upgrade.       *                                           
+********************************************************************************************/
+
+/* Start: Error Messages CSS */
+
+	/*#tblefmain */
+	.EML_FieldError
+	{
+		font-size: 12px;
+		font-weight: normal;
+		font-family:Arial, Helvetica, sans-serif;
+		color:#333;
+		background-color:#fdefea;
+		border:none;
+		border:1px solid #fea0a0;
+		border-top:1px solid #990000;
+	}
+	
+	
+	/*#tblefmain */
+	.tableErrorMsg
+	{    /* For only Error Table Outline*/
+		border: 1px solid #990000;
+		background-color:#fdefea; /*#FFEEEE;*/
+	
+	}
+	.tdErrorMsg
+	{
+		/* For Error Message Text in <td> */
+		vertical-align:middle;
+		padding:4px;
+		color:Red;
+		font-size:10px;
+		font-family:Arial, Helvetica, sans-serif;
+		background:url(Images/err.png) 5px 12px no-repeat;
+		
+		
+	}
+	.tdErrorMsgWF
+	{
+		/* For Error Message Text in <td> */
+		vertical-align:middle;
+		padding:4px;
+		color:Red;
+		font-size:11px;
+		font-family:Arial, Helvetica, sans-serif;		
+		
+		
+	}
+	.tdErrorMsg ul
+	{
+		margin-bottom:0px;
+		padding:5px 5px 5px 38px !important;
+		
+	}
+	
+	.tdErrorMsg ul li
+	{
+		/*list-style: square inside;*/
+		list-style:square;
+		padding:0px !important;
+	}
+/* End: Error Messages CSS */
+
+
+/* Start: Header CSS */
+	/*#tblefmain */
+	 td.HeaderOpen
+	{
+		background-image:url("Images/minimize.jpg");
+		background-position:99% 50%;
+		background-repeat:no-repeat;
+		
+	}
+	/*#tblefmain */
+	td.HeaderClosed 
+	{
+		background-image:url("Images/maximize.jpg");
+		background-position:99% 50%;
+		background-repeat:no-repeat;
+	}
+	
+	/*#tblefmain*/
+	/* td.DCC_EF_CategoryHeaderStyle*/
+	.DCC_EF_CategoryHeaderStyle
+	{	
+		
+		border-collapse:collapse;
+		background-color: #aaa ;
+		color:#333333; /* #666666;*/
+		font-weight: bold;
+		padding: 3px 5px;
+		font-family:Arial, Helvetica, sans-serif;
+		font-size:16px;
+		
+		-webkit-border-radius: 5px;
+		-moz-border-radius: 5px;
+		border-radius: 5px;
+	}
+	
+/* End: Header CSS */
+
+/*START: Normal Text- Sub Heading lable text */
+	 .DCC_NormalText
+	{
+	
+		/*color:#000077;*/
+		font-family:Arial, Helvetica, sans-serif;
+		font-size:11px;
+		font-weight:bold;
+		text-align:left;
+		
+	}
+/*END: Normal Text- Sub Heading lable text */
+
+
+/*START: Grid Form Submission Data */
+	/*#tblefmain */
+		.DCC_gvHeader_submissiondata th
+	{
+		background: #999;
+		color: #fff ;
+		font-weight: bold;
+		padding: 4px 5px;
+		font:Arial, Helvetica, sans-serif;
+		font-size:14px;
+	}
+	/*#tblefmain */
+		.DCC_gvRow_submissiondata td
+	{
+		background: #ddd;
+		padding: 3px 3px;
+		color: #000;
+	}
+	/*#tblefmain */
+		.DCC_gvAlternateRow_submissiondata td
+	{
+		background: #eee;
+		padding: 3px 3px;
+		color: #000;
+	}
+/*END: Grid Form Submission Data */
+
+/* Start: Form Fields/Caption CSS */
+	/*#tblefmain*/
+	 td.DCC_EF_FieldCaptionStyle 
+	{	
+		
+		/*color:#666 !important;/*#000077;*/
+		font-family:Arial, Helvetica, sans-serif;
+		font-size:11px;
+		font-weight:bold;
+		padding: 3px 5px;
+		
+	}
+	
+	/*#tblefmain label{
+		font-family:Arial, Helvetica, sans-serif;
+		font-size:12px;
+		
+	}
+	 */
+	
+	/*#tblefmain , #tblefmain select*/
+	.CFC_NormalTextBox {
+		font-size: 12px;
+		font-weight: normal;
+		font-family:Arial, Helvetica, sans-serif;
+		color:#333333 !important;
+		border: 1px solid #666666;		
+		
+	}
+	
+	
+	/*#tblefmain*/
+	 input.datepicker{
+		font-size: 12px;
+		font-weight: normal;
+		font-family:Arial, Helvetica, sans-serif;
+		
+	}
+.aspNetDisabled, a.aspNetDisabled, .dnnDisabled, a.dnnDisabled {
+    color: #333333 !important;
+    cursor: default;
+    text-decoration: none;
+}
+/* End: Form Caption CSS */
+
+/* Start: Form main table CSS */
+	/*#tblefmain */
+	table.DCC_EF_FormTable
+	{
+		/*background-color:#f5f5f5;*/
+	}
+	.Alttd {
+		
+		
+		border-right: 1px solid #C1DAD7;
+		border-bottom: 1px solid #C1DAD7;
+		background: #fff;
+		padding: 6px 6px 6px 12px;
+		color: #4f6b72;
+	}
+	
+	
+	.Alttdtwo {
+		border-right: 1px solid #C1DAD7;
+		border-bottom: 1px solid #C1DAD7;
+		background: #F5FAFA;
+		color: #797268;
+		padding: 6px 6px 6px 12px;
+	}
+	
+	.TableBorder
+	{
+		 border-left:1px solid #C1DAD7;
+		 border-top:1px solid #C1DAD7;
+	}
+
+/* End: Forma main table CSS */
+
+
+/**** css for control Pannel ****/
+
+
+	table.PageHeader
+	{
+		background-color: White;
+	}
+	
+	
+	.PageName
+	{
+		font-size: 12px;
+		color: White;
+	}
+	th.PageHeader
+	{
+		font-size: 16px;
+		color: White;
+	}
+	a.PageHeader, a.PageHeader:link, a.PageHeader:active, a.PageHeader:visited
+	{
+		font-size: 12px;
+		color: White;
+	}
+	a.PageHeader:hover
+	{
+		color: Red;
+	}
+	
+	/* for creating box borders */
+	table.box_borderTL
+	{
+		border-width: 1px 0 0 1px;
+		border-color: #000;
+		border-style: solid;
+	}
+	td.box_borderRB
+	{
+		border-width: 0 1px 1px 0;
+		border-color: #000;
+		border-style: solid;
+		text-align: center;
+		height: 25px;
+		vertical-align: middle;
+	}
+	td.box_header
+	{
+		background-color: #999999;
+		text-align: left;
+		padding-left: 25px;
+	}
+	a.AF_MenuItem
+	{
+		padding-left: 25px;
+		display: block;
+		height: 25px;
+		vertical-align: middle;
+		text-align: left;
+		text-decoration: none !important;
+	}
+	a.AF_MenuItem:hover
+	{
+		color: #000 !important;
+	}
+	a.AF_MenuInactive
+	{
+		background-color: #eee;
+	}
+	a.AF_MenuActive
+	{
+		background-color: #ffffcc;
+	}
+	table.InnerTable tr td table
+	{
+		/*border:1px solid #000;*/
+		background-color: #eee;
+	}
+	
+	.PageHeader
+	{
+		font-family: Tahoma,Arial,Verdana;
+		color: Blue;
+		font-size: 14px;
+		font-weight: bold;
+	}
+	
+/* End: Control Panel CSS */
+
+/* CSS for Calender */
+
+	table.jCalendar {
+		/*border: 1px solid #000;*/
+		background: #ffff;
+		border-collapse: separate;
+		border-spacing: 2px;
+		width:100%;
+	}
+	table.jCalendar th {
+		color: #222;
+		font-weight: bold;
+		padding: 3px 5px;
+	}
+	
+	table.jCalendar td {
+		background: #e6e6e6 url(images/glass.png) left center no-repeat;
+		color: #555555;
+		padding: 3px 5px;
+		text-align: center;
+		border: 1px solid #D3D3D3;
+		font-size: 10px !important;
+	}
+	table.jCalendar td.other-month {
+		background: #fff;
+		color: #fff;
+		border: 1px solid #fff;
+	}
+	
+	table.jCalendar td.today {
+		background: #fef09a url(images/glass.png) left center no-repeat; 
+		color: #363636;
+		border: 1px solid #fdd901;
+	}
+	
+	table.jCalendar td.today.dp-hover {
+		background: #feddc5 url(images/glass.png) left center no-repeat; 
+		color: #363636;
+		border: 1px solid #fdd901;
+	}
+	
+	table.jCalendar td.selected {
+		background: #feddc5;
+		color: #212121;
+		border: 1px solid #ffa360;
+	}
+	table.jCalendar td.selected.dp-hover {
+		background: #ffd0ad;
+		color: #212121;
+		border: 1px solid #fe6c01;
+	}
+	
+	table.jCalendar td.dp-hover,
+	table.jCalendar tr.activeWeekHover td {
+		background: #999 url(images/glass.png) left center no-repeat;
+		color: #212121;
+	}
+	table.jCalendar tr.selectedWeek td {
+		background: #f66;
+		color: #fff;
+		font-size: 10px !important;
+	}
+	table.jCalendar td.disabled, table.jCalendar td.disabled.dp-hover {
+		background:#fff;
+		color: #fff;
+	}
+	table.jCalendar td.unselectable,
+	table.jCalendar td.unselectable:hover,
+	table.jCalendar td.unselectable.dp-hover {
+		background: #fff;
+		color: #fff;
+	}
+	
+	/* For the popup */
+	
+	/* NOTE - you will probably want to style a.dp-choose-date - see how I did it in demo.css */
+	
+	
+	div.dp-popup {
+		position: relative;
+		background: #fff;
+		font-size: 10px !important;
+		font-family:Arial, Helvetica, sans-serif !important;
+		padding:2px;
+		padding-top:1px;
+		width: 197px;
+		line-height: 1.2em !important;
+		border:thin solid #aaaaaa;
+		
+		-webkit-border-radius: 5px;
+		-moz-border-radius: 5px;
+		border-radius: 5px;
+	}
+	div#dp-popup {
+		position: absolute;
+		z-index: 999;
+	}
+	div.dp-popup h2 {
+		font-size: 12px;
+		text-align: center;
+		margin: 2px 0;
+		padding: 0;
+		line-height:22px;
+		background:url(images/bg-bg.png) left center repeat-x;
+		
+		-webkit-border-radius: 5px;
+		-moz-border-radius: 5px;
+		border-radius: 5px;
+		color:#000 !important;
+	}
+	
+	a#dp-close {
+		font-size: 11px;
+		padding: 4px 0;
+		text-align: center;
+		display: block;
+	}
+	a#dp-close:hover {
+		text-decoration: underline;
+	}
+	div.dp-popup a {
+		color: #000;
+		text-decoration: none;
+		padding: 2px 1px 0;
+	}
+	div.dp-popup div.dp-nav-prev {
+		position: absolute;
+		top: 4px;
+		left: 4px;
+		width: 100px;
+	}
+	div.dp-popup div.dp-nav-prev a {
+		float: left;
+	}
+	/* Opera needs the rules to be this specific otherwise it doesn't change the cursor back to pointer after you have disabled and re-enabled a link */
+	div.dp-popup div.dp-nav-prev a, div.dp-popup div.dp-nav-next a {
+		cursor: pointer;
+	}
+	
+	div.dp-popup div.dp-nav-prev a.dp-nav-prev-year:link, 
+	div.dp-popup div.dp-nav-prev a.dp-nav-prev-year:active, 
+	div.dp-popup div.dp-nav-prev a.dp-nav-prev-year:visited{
+		background:url(images/buttons.png) -1px -1px no-repeat;
+		height: 18px;
+		width: 18px;
+		text-indent:-99999px;
+		overflow:hidden;
+		outline:none;
+		font-size: 10px !important;
+	}
+	
+	div.dp-popup div.dp-nav-prev a.dp-nav-prev-year:hover{
+		background:url(images/buttons.png) -1px -22px no-repeat;
+	}
+	
+	div.dp-popup div.dp-nav-prev a.dp-nav-prev-month:link, 
+	div.dp-popup div.dp-nav-prev a.dp-nav-prev-month:active, 
+	div.dp-popup div.dp-nav-prev a.dp-nav-prev-month:visited{
+		height: 18px;
+		width: 18px;
+		text-indent:-99999px;
+		overflow:hidden;
+		outline:none;
+		font-size: 10px !important;
+		background:url(images/buttons.png) -26px -1px no-repeat;
+	}
+	
+	div.dp-popup div.dp-nav-prev a.dp-nav-prev-month:hover{
+		background:url(images/buttons.png) -26px -22px no-repeat;
+	}
+	
+	div.dp-popup div.dp-nav-prev a.disabled, 
+	div.dp-popup div.dp-nav-next a.disabled {
+		cursor: default;
+	}
+	div.dp-popup div.dp-nav-next {
+		position: absolute;
+		top: 4px;
+		right: 4px;
+		width: 100px;
+	}
+	div.dp-popup div.dp-nav-next a {
+		float: right;
+	}
+	
+	div.dp-popup div.dp-nav-next a.dp-nav-next-year:link, 
+	div.dp-popup div.dp-nav-next a.dp-nav-next-year:active, 
+	div.dp-popup div.dp-nav-next a.dp-nav-next-year:visited{
+		background:url(images/buttons.png) -73px -1px no-repeat;
+		height: 18px;
+		width: 18px;
+		text-indent:-99999px;
+		overflow:hidden;
+		outline:none;
+		font-size: 10px !important;
+	}
+	
+	div.dp-popup div.dp-nav-next a.dp-nav-next-year:hover{
+		background:url(images/buttons.png) -73px -22px no-repeat;
+	}
+	
+	div.dp-popup div.dp-nav-next a.dp-nav-next-month:link, 
+	div.dp-popup div.dp-nav-next a.dp-nav-next-month:active, 
+	div.dp-popup div.dp-nav-next a.dp-nav-next-month:visited{
+		height: 18px;
+		width: 18px;
+		text-indent:-99999px;
+		overflow:hidden;
+		outline:none;
+		font-size: 10px !important;
+		background:url(images/buttons.png) -49px -1px no-repeat;
+	}
+	
+	div.dp-popup div.dp-nav-next a.dp-nav-next-month:hover{
+		background:url(images/buttons.png) -49px -22px no-repeat;
+	}
+	
+	div.dp-popup a.disabled {
+		cursor: default;
+		color: #aaa;
+	}
+	
+	a.dp-choose-date {
+		float: left;
+		width: 20px;
+		height: 20px;
+		padding: 0;
+		margin: 0px 3px 0;
+		display: block;
+		text-indent: -2000px;
+		overflow: hidden;
+		background: url(images/dtpicker.png) no-repeat; 
+	}
+	
+	a.dp-choose-date.dp-disabled {
+		background-position: 0 -20px;
+		cursor: default;
+	}
+	
+	
+	div.dp-popup td {
+		cursor: pointer;
+	}
+	div.dp-popup td.disabled {
+		cursor: default;
+	}
+	
+	input.dp-applied {
+		width: 140px;
+		float: left;
+		font:12px Arial, Helvetica, sans-serif;
+		color:#333;
+	}
+
+.CF_Admin_wrapper{ background:#fff; width:auto; border:1px solid #ccc;  width:820px;}
+.CF_Header{ background-color: #5D7B9D;
+    color: White;
+    font-weight: bold; padding:5px;}
+    
+.CF_Admin_NormalText {font-family: Arial,Helvetica,sans-serif;
+    font-size: 12px;
+    font-weight: bold;
+    text-align: left; color:#333;}
+.dnnLabel
+{
+    float:left;
+     text-align:left !important;
+}
+.CFC_NormalTextBox1 {
+		font-size: 12px;
+		font-weight: normal;
+		font-family:Arial, Helvetica, sans-serif;
+		color:#333333 !important;
+		
+	}
+/* End: Calender CSS */

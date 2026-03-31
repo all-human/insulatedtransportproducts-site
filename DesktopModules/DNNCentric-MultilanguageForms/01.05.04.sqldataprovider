@@ -1,0 +1,463 @@
+﻿--Category table n Query Update IsDeleted column
+ALTER TABLE {databaseOwner}[{objectQualifier}DCC_EF_CategoryMaster] 
+ADD IsDeleted bit default 'False'  not null
+
+--EF table n Query Update IsDeleted column
+ALTER TABLE {databaseOwner}[{objectQualifier}DCC_EF_EmailForm] 
+ADD IsDeleted bit default 'False'  not null
+
+--Insert
+GO
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER procedure {databaseOwner}[{objectQualifier}DCC_EF_InsertNewCategory] 
+@ModuleID int,
+@IsExpanded bit,
+@IsDeleted bit
+as
+declare @SortOrder int
+
+set @SortOrder=(select  isnull (max(CategoryID),0)+1 from {databaseOwner}[{objectQualifier}DCC_EF_CategoryMaster])
+
+Insert into {databaseOwner}[{objectQualifier}DCC_EF_CategoryMaster](ModuleID,SortOrder,IsExpanded,IsDeleted) 
+values(@ModuleID,@SortOrder,@IsExpanded ,@IsDeleted)
+SELECT  SCOPE_IDENTITY()
+
+--Delete
+GO
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER procedure {databaseOwner}[{objectQualifier}DCC_EF_DeleteCategoryNameByID] 
+
+@CategoryID int
+
+as
+
+Update
+ {databaseOwner}[{objectQualifier}DCC_EF_CategoryMaster]
+set IsDeleted='True' 
+where   CategoryID = @CategoryID
+
+Update
+  {databaseOwner}[{objectQualifier}DCC_EF_EmailForm]
+set IsDeleted='True' 
+where   CategoryID = @CategoryID
+
+--View for Category old Table
+GO
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER view {databaseOwner}[{objectQualifier}DCC_EF_Category]
+as
+select 
+	cm.CategoryID,
+	cc.Culture,
+	cc.CategoryName,
+	cm.SortOrder,
+	cm.ModuleID,
+	cm.IsExpanded
+from {databaseOwner}[{objectQualifier}DCC_EF_CategoryMaster] cm,{databaseOwner}[{objectQualifier}DCC_EF_CategoryCulture] cc
+where cm.CategoryID=cc.CategoryID AND cm.IsDeleted='false'
+
+-- EF table
+GO
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER procedure {databaseOwner}[{objectQualifier}DCC_EF_AddControls] 
+@FieldName nvarchar(1000),
+@ControlType nvarchar(50),
+@CategoryID int,
+@ModuleID int,
+@IsDeleted bit
+as
+declare @SortOrder int
+set @SortOrder =(select isnull(MAX(FieldID),0) from {databaseOwner}[{objectQualifier}DCC_EF_EmailForm]) 
+set @SortOrder=@SortOrder+1
+insert into {databaseOwner}[{objectQualifier}DCC_EF_EmailForm]
+(FieldName,ControlType,SortOrder,CategoryID,Visible,ModuleID,IsDeleted) 
+values
+(@FieldName,@ControlType,@SortOrder,@CategoryID,1,@ModuleID,@IsDeleted)select @@identity FieldIDIndex
+
+-- get all control
+
+GO
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER procedure {databaseOwner}[{objectQualifier}DCC_EF_GetAllControlList] 
+@CurrentCulture nvarchar(15),
+@DefaultCulture nvarchar(15),
+@ModuleID int
+AS
+Select 
+M.Culture,
+M.FieldName,
+M.ControlType,
+M.Culture_Value,
+C.CategoryName,
+C.CategoryID,
+C.IsExpanded,
+M.FieldID
+FROM
+(select (case when B.CulTure_Value is null then a.culture else b.culture end) Culture,A.FieldName,A.ControlType, isnull(B.CulTure_Value,A.CulTure_Value) CulTure_Value,A.CategoryID,A.SortOrder,A.FieldID
+from
+(select cul.Culture,ef.FieldID, ef.FieldName,ef.ControlType,cul.Culture_Value,ef.CategoryID,ef.SortOrder
+from {databaseOwner}[{objectQualifier}DCC_EF_EmailForm] ef,{databaseOwner}[{objectQualifier}DCC_EF_EmailFormCulture] cul 
+where ef.FieldID=cul.FieldID and ef.visible='true' and  ef.IsDeleted='false' and cul.Culture=@DefaultCulture AND ef.ModuleID=@ModuleID) 
+AS A left Outer join
+(select  cul.Culture,ef.FieldID,ef.FieldName, ef.ControlType,cul.Culture_Value,ef.CategoryID,ef.SortOrder
+from {databaseOwner}[{objectQualifier}DCC_EF_EmailForm] ef,{databaseOwner}[{objectQualifier}DCC_EF_EmailFormCulture] cul 
+where ef.FieldID=cul.FieldID and  ef.visible='true' and  ef.IsDeleted='false' and cul.Culture=@CurrentCulture AND ef.ModuleID=@ModuleID) AS B
+ON A.FieldID=B.FieldID) 
+
+AS M,
+
+(select * from {databaseOwner}[{objectQualifier}DCC_EF_GetCategoryList](@DefaultCulture,@CurrentCulture,@ModuleID)) 
+
+AS C 
+
+where M.CategoryID=C.CategoryID
+order by C.SortOrder,M.SortOrder
+
+--delete field
+GO
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+
+Alter procedure {databaseOwner}[{objectQualifier}DCC_EF_DeleteControlAndCultureByID]
+@FieldID int
+as
+
+update {databaseOwner}[{objectQualifier}DCC_EF_EmailForm]
+set
+IsDeleted='true'
+where
+FieldID=@FieldID
+
+-- Tokens
+
+GO
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+-- new sp
+ALTER procedure {databaseOwner}[{objectQualifier}DCC_EF_GetTokens] 
+@ModuleID int
+AS
+
+select FieldName from {databaseOwner}[{objectQualifier}DCC_EF_EmailForm]
+where ControlType !='FileUpload'
+AND ModuleID=@ModuleID
+and visible='true' and  IsDeleted='false'
+
+-- Control list by id
+GO
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER procedure {databaseOwner}[{objectQualifier}DCC_EF_GetControlsListByCategoryID] 
+@CurrentCulture nvarchar(15),
+@DefaultCulture nvarchar(15),
+@CategoryID int,
+@ModuleID int
+as
+select  A.FieldID,A.FieldName,A.ControlType,isnull(B.CategoryName,A.CategoryName)as CategoryName,A.SortOrder
+From
+((select  ef.FieldID,ef.FieldName,ef.ControlType,cat.CategoryName,ef.SortOrder,ef.CategoryID
+from {databaseOwner}[{objectQualifier}DCC_EF_EmailForm] ef,{databaseOwner}[{objectQualifier}DCC_EF_Category] cat 
+where ef.CategoryID=cat.CategoryID and ef.visible='true' and  ef.IsDeleted='false' and ef.CategoryID=@CategoryID AND cat.Culture=@DefaultCulture AND ef.ModuleID=@ModuleID) AS A left outer join
+
+(select  ef.FieldID,ef.FieldName,ef.ControlType,cat.CategoryName,ef.SortOrder,ef.CategoryID
+from {databaseOwner}[{objectQualifier}DCC_EF_EmailForm] ef,{databaseOwner}[{objectQualifier}DCC_EF_Category] cat 
+where ef.CategoryID=cat.CategoryID and ef.visible='true' and  ef.IsDeleted='false' and ef.CategoryID=@CategoryID AND cat.Culture=@CurrentCulture AND ef.ModuleID=@ModuleID) AS B
+On A.FieldID=B.FieldID)
+order by A.SortOrder
+
+
+--- Email Token
+GO
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+
+ALTER procedure {databaseOwner}[{objectQualifier}DCC_EF_GetAvailableEmailTokens]
+@ModuleID int
+as
+select distinct FieldName 
+from {databaseOwner}[{objectQualifier}DCC_EF_EmailForm] ef,{databaseOwner}[{objectQualifier}DCC_EF_EmailFormCulture] cul
+where
+ef.FieldID=cul.FieldID 
+AND
+ef.Visible=1
+AND
+cul.Culture_Value like '%<validationType>3%'
+AND
+cul.Culture_Value like '%<required>true%'
+AND 
+ef.ModuleID=@ModuleID
+and visible='true' and  IsDeleted='false'
+
+
+--New Changes Submission data Table
+GO
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE {databaseOwner}[{objectQualifier}DCC_EF_FormDataMaster](
+	[FormRecordID] [int] IDENTITY(1,1) NOT NULL,
+	[UserID] [int] NOT NULL,
+	[ModuleID] [int] NOT NULL,
+	[DateOfSubmission] [datetime] NOT NULL,
+	[ClientIP] [nvarchar](50) NOT NULL,
+	[URLReferrer] [nvarchar](4000) NOT NULL,
+	[Culture] [nvarchar](50) NOT NULL,
+ CONSTRAINT [PK_{objectQualifier}DCC_EF_FormDataMaster] PRIMARY KEY CLUSTERED 
+(
+	[FormRecordID] ASC
+)WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON) 
+) ON [PRIMARY]
+
+
+GO
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE {databaseOwner}[{objectQualifier}DCC_EF_FormDataValues](
+	[ID] [int] IDENTITY(1,1) NOT NULL,
+	[FieldID] [int] NOT NULL,
+	[CaptionText] [nvarchar](4000) NULL,
+	[FieldValue] [nvarchar](max) NULL,
+	[FormRecordID] [int] NOT NULL,
+ CONSTRAINT [PK_{objectQualifier}DCC_EF_FormDataValues] PRIMARY KEY CLUSTERED 
+(
+	[ID] ASC
+)WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON) 
+) ON [PRIMARY]
+
+GO
+ALTER TABLE {databaseOwner}[{objectQualifier}DCC_EF_FormDataValues]  WITH NOCHECK ADD  CONSTRAINT [FK_{objectQualifier}DCC_EF_FormDataValues_{objectQualifier}DCC_EF_FormDataMaster] FOREIGN KEY([FormRecordID])
+REFERENCES {databaseOwner}[{objectQualifier}DCC_EF_FormDataMaster] ([FormRecordID])
+ON DELETE CASCADE
+ 
+GO
+ALTER TABLE {databaseOwner}[{objectQualifier}DCC_EF_FormDataValues] CHECK CONSTRAINT [FK_{objectQualifier}DCC_EF_FormDataValues_{objectQualifier}DCC_EF_FormDataMaster]
+
+
+-- Function
+GO
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+
+CREATE Function {databaseOwner}[{objectQualifier}DCC_EF_GetSubmissionDataAttributes]
+ (
+	@FromDate DateTime,
+	@ToDate DateTime,
+	@FieldID int,
+	@StrSearchText NVARCHAR(400),
+	@ModuleID int
+
+ )
+RETURNS TABLE
+as
+Return 
+(
+SELECT     TOP (100) PERCENT Val.FormRecordID, EF.FieldName, Val.FieldValue, EF.SortOrder
+FROM         {databaseOwner}[{objectQualifier}DCC_EF_FormDataValues] AS Val INNER JOIN
+                      {databaseOwner}[{objectQualifier}DCC_EF_EmailForm] AS EF ON Val.FieldID = EF.FieldID INNER JOIN
+                      {databaseOwner}[{objectQualifier}DCC_EF_FormDataMaster] AS Mas ON Val.FormRecordID = Mas.FormRecordID 
+                      AND Mas.DateOfSubmission BETWEEN @FromDate AND  @ToDate 
+			          AND EF.ModuleID=@ModuleID and Mas.formrecordid 
+		in (SELECT distinct FormRecordID
+			FROM  {databaseOwner}[{objectQualifier}DCC_EF_FormDataValues]
+			Where FieldID=(Case when @FieldID > -1 then @FieldID Else FieldID End)  and 
+                  FieldValue like (case when @FieldID <0  or ltrim(rtrim(@StrSearchText))='' then FieldValue Else  '%'+ ltrim(rtrim(@StrSearchText)) +'%' END))
+		order by EF.SortOrder
+)
+
+-- Insert master
+GO
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE procedure {databaseOwner}[{objectQualifier}DCC_EF_InsertFormRecord]
+@UserID int,
+@ModuleID int,
+@DateOfSubmission datetime,
+@ClientIP nvarchar(50),
+@URLReferrer nvarchar(4000),
+@Culture nvarchar(50)
+as
+Begin
+insert into {databaseOwner}[{objectQualifier}DCC_EF_FormDataMaster]
+(
+UserID,
+ModuleID,
+DateOfSubmission,
+ClientIP,
+URLReferrer,
+Culture
+)
+values
+(
+@UserID,
+@ModuleID,
+@DateOfSubmission,
+@ClientIP,
+@URLReferrer,
+@Culture
+)
+
+SELECT (SCOPE_IDENTITY())
+End
+
+--insert values 
+GO
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE procedure {databaseOwner}[{objectQualifier}DCC_EF_InsertFormRecordValues]
+@FieldID int,
+@CaptionText nvarchar(4000),
+@FieldValue nvarchar(Max),
+@FormRecordID int
+as
+
+insert into {databaseOwner}[{objectQualifier}DCC_EF_FormDataValues]
+(
+FieldID ,
+CaptionText,
+FieldValue,
+FormRecordID 
+)
+values
+(
+@FieldID ,
+@CaptionText,
+@FieldValue,
+@FormRecordID
+)
+
+-- select submission data
+GO
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+
+CREATE Procedure {databaseOwner}[{objectQualifier}DCC_EF_GetFormSubmissionData]
+@FromDate datetime,
+@ToDate DateTime,
+@FieldID int,
+@StrSearchText NVARCHAR(400),
+@ModuleID int
+as
+
+select * into #funtable 
+from {databaseOwner}[{objectQualifier}DCC_EF_GetSubmissionDataAttributes](@FromDate,@ToDate,@FieldID,@StrSearchText,@ModuleID)
+select distinct sortorder,fieldname into #tmptable 
+FROM #funtable
+ as A order by A.sortorder
+
+DECLARE @cols NVARCHAR(max) 
+SELECT  @cols = COALESCE(@cols + ',' + QUOTENAME(fieldname),QUOTENAME(fieldname))
+FROM    (select * from #tmptable) as df
+
+select @cols =(case when rtrim(ltrim(isnull(@cols,'')))='' then 'NoRecord' else @cols end)
+
+DECLARE @query NVARCHAR(max)
+
+set @query ='select FormRecordID,'+ @cols + ' from (select FormRecordID,fieldname,fieldvalue from #funtable as Q ) as P 
+            pivot ( min(fieldvalue) for fieldname in ('+ @cols + ')) as pvt'
+
+exec (@query)
+
+
+-- select all fields name
+GO
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+
+CREATE Procedure {databaseOwner}[{objectQualifier}DCC_EF_GetAllFields]
+@ModuleID int
+AS
+SELECT   Distinct  {databaseOwner}[{objectQualifier}DCC_EF_EmailForm].FieldName, {databaseOwner}[{objectQualifier}DCC_EF_EmailForm].FieldID
+FROM         {databaseOwner}[{objectQualifier}DCC_EF_EmailForm] INNER JOIN
+                      {databaseOwner}[{objectQualifier}DCC_EF_FormDataValues] ON {databaseOwner}[{objectQualifier}DCC_EF_EmailForm].FieldID = {databaseOwner}[{objectQualifier}DCC_EF_FormDataValues].FieldID
+where  {databaseOwner}[{objectQualifier}DCC_EF_EmailForm].ModuleID=@ModuleID
+GO
+
+
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+
+CREATE Procedure {databaseOwner}[{objectQualifier}DCC_EF_GetFormSubmissionDataByPaging]
+@FromDate datetime,
+@ToDate DateTime,
+@FieldID int,
+@StrSearchText NVARCHAR(400),
+@ModuleID int,
+@SortColumn nvarchar(200),
+@StartPageIndex int,
+@PageSize int
+as
+
+select * into #funtable 
+from {databaseOwner}[{objectQualifier}DCC_EF_GetSubmissionDataAttributes](@FromDate,@ToDate,@FieldID,@StrSearchText,@ModuleID)
+select distinct sortorder,fieldname into #tmptable 
+FROM #funtable
+ as A order by A.sortorder
+
+DECLARE @cols NVARCHAR(max) 
+SELECT  @cols = COALESCE(@cols + ',' + QUOTENAME(fieldname),QUOTENAME(fieldname))
+FROM    (select * from #tmptable) as df
+
+select @cols =(case when rtrim(ltrim(isnull(@cols,'')))='' then 'NoRecord' else @cols end)
+
+DECLARE @Subquery NVARCHAR(max)
+
+set @Subquery ='select FormRecordID as RecordID,'+ @cols + ' from (select FormRecordID ,fieldname,fieldvalue from #funtable as Q ) as P 
+            pivot ( min(fieldvalue) for fieldname in ('+ @cols + ')) as pvt'
+
+if(@SortColumn='') set @SortColumn='RecordID Desc'
+declare @myQuery NVARCHAR(max)
+set @myQuery= 'select ROW_NUMBER() OVER(ORDER BY '+ @SortColumn + ') as RowID,Sub.*
+from ('+ @Subquery+')as Sub'
+
+declare @finalQuery NVARCHAR(max)
+set @finalQuery= 'select tbl.* from ('+@myQuery +')as tbl where RowID BETWEEN ('+ str(@StartPageIndex+1)+') AND ('+str(@StartPageIndex+ @PageSize)+')'
+
+--print @finalQuery
+exec (@finalQuery)
+
+GO
+
+
+
+
+
+
+

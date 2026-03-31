@@ -1,0 +1,763 @@
+﻿CREATE VIEW dbo.fm_dist_ordering_anyType
+AS
+SELECT DISTINCT 
+                      a.Id, a.Company, a.FirstName, a.LastName, a.Address, a.Address2, a.City, a.State, a.PostalCode, a.Country, a.Phone, a.Phone2, a.Cell, a.Fax, a.Email, a.Email2, 
+                      a.Website, a.Description, a.Territory, a.PortalId, ISNULL(a.PriorityGroupId, - 1) AS UsersPGId, ISNULL(d.SortOrder, 999999) AS SortOrder, ISNULL(d.Name, '') 
+                      AS PriorityGroup, CAST(CASE WHEN a.Country = 'US' THEN 1 ELSE 0 END AS BIT) AS IsUs, NULL AS TypeId
+FROM         dbo.fm_dist_Distributor AS a LEFT OUTER JOIN
+                      dbo.fm_dist_RegionCovering AS b ON a.Id = b.DistId LEFT OUTER JOIN
+                      dbo.fm_dist_PriorityGroup AS d ON a.PriorityGroupId = d.Id
+
+GO
+
+-- =============================================
+-- Author:		<Author,,Name>
+-- Create date: <Create Date,,>
+-- Description:	<Description,,>
+-- =============================================
+CREATE PROCEDURE [dbo].[fm_dist_SearchAll_AnyType] 
+	-- Add the parameters for the stored procedure here
+	@pageSize int,
+	@pageNum int
+AS
+BEGIN
+SET NOCOUNT ON
+
+-- create a temp table to hold order ids
+DECLARE @TempTable TABLE (IndexId int identity, _keyID Int)
+
+-- insert the table ids and row numbers into the memory table
+INSERT INTO @TempTable
+(
+  _keyID
+)
+SELECT 
+	[dbo].[fm_dist_ordering_anyType].[Id]
+     FROM [dbo].[fm_dist_ordering_anyType]
+
+ ORDER BY SortOrder ASC, Company ASC, LastName ASC, FirstName ASC
+
+-- select only those rows belonging to the proper page
+SELECT DISTINCT [dbo].[fm_dist_ordering_anyType].[Id], [dbo].[fm_dist_ordering_anyType].[Company], [dbo].[fm_dist_ordering_anyType].[FirstName], [dbo].[fm_dist_ordering_anyType].[LastName], [dbo].[fm_dist_ordering_anyType].[Address], [dbo].[fm_dist_ordering_anyType].[Address2], [dbo].[fm_dist_ordering_anyType].[City], [dbo].[fm_dist_ordering_anyType].[State], [dbo].[fm_dist_ordering_anyType].[PostalCode], [dbo].[fm_dist_ordering_anyType].[Country], [dbo].[fm_dist_ordering_anyType].[Phone], [dbo].[fm_dist_ordering_anyType].[Phone2], [dbo].[fm_dist_ordering_anyType].[Cell], [dbo].[fm_dist_ordering_anyType].[Fax], [dbo].[fm_dist_ordering_anyType].[Email], [dbo].[fm_dist_ordering_anyType].[Email2], [dbo].[fm_dist_ordering_anyType].[Website], [dbo].[fm_dist_ordering_anyType].[Description], [dbo].[fm_dist_ordering_anyType].[Territory], [dbo].[fm_dist_ordering_anyType].[PortalId], [dbo].[fm_dist_ordering_anyType].[UsersPGId], [dbo].[fm_dist_ordering_anyType].[TypeId], [dbo].[fm_dist_ordering_anyType].[SortOrder],[dbo].[fm_dist_ordering_anyType].[PriorityGroup], [dbo].[fm_dist_ordering_anyType].[IsUs]
+
+ FROM @TempTable t
+
+					INNER JOIN [dbo].[fm_dist_ordering_anyType] ON [dbo].[fm_dist_ordering_anyType].[Id] = t._keyID
+					WHERE t.IndexId BETWEEN ((@pageNum - 1) * @pageSize + 1) AND (@pageNum * @pageSize)
+					order by SortOrder, Company, LastName, FirstName
+END
+
+GO
+
+-- =============================================
+-- Author:		<Author,,Name>
+-- Create date: <Create Date,,>
+-- Description:	<Description,,>
+-- =============================================
+CREATE PROCEDURE [dbo].[fm_dist_SearchAllCount_AnyType] 
+	-- Add the parameters for the stored procedure here
+AS
+BEGIN
+
+
+SELECT count([dbo].[fm_dist_ordering_anyType].[Id])
+
+ FROM  [dbo].[fm_dist_ordering_anyType] 
+
+END
+
+
+
+GO
+
+
+-- =============================================
+-- Author:		<Author,,Name>
+-- Create date: <Create Date,,>
+-- Description:	<Description,,>
+-- =============================================
+CREATE PROCEDURE [dbo].[fm_dist_SearchAllUSFirst_AnyType] 
+	-- Add the parameters for the stored procedure here
+	@pageSize int,
+	@pageNum int
+AS
+BEGIN
+-- create a temp table to hold order ids
+					DECLARE @TempTable TABLE (IndexId int identity, _keyID Int)
+
+					-- insert the table ids and row numbers into the memory table
+					INSERT INTO @TempTable
+					(
+					  _keyID
+					)
+					SELECT 
+						[dbo].[fm_dist_ordering_anyType].[Id]
+					     FROM [dbo].[fm_dist_ordering_anyType]
+
+ ORDER BY SortOrder ASC, IsUs desc, Company ASC, LastName ASC, FirstName ASC
+
+					-- select only those rows belonging to the proper page
+					    SELECT DISTINCT [dbo].[fm_dist_ordering_anyType].[Id], [dbo].[fm_dist_ordering_anyType].[Company], [dbo].[fm_dist_ordering_anyType].[FirstName], [dbo].[fm_dist_ordering_anyType].[LastName], [dbo].[fm_dist_ordering_anyType].[Address], [dbo].[fm_dist_ordering_anyType].[Address2], [dbo].[fm_dist_ordering_anyType].[City], [dbo].[fm_dist_ordering_anyType].[State], [dbo].[fm_dist_ordering_anyType].[PostalCode], [dbo].[fm_dist_ordering_anyType].[Country], [dbo].[fm_dist_ordering_anyType].[Phone], [dbo].[fm_dist_ordering_anyType].[Phone2], [dbo].[fm_dist_ordering_anyType].[Cell], [dbo].[fm_dist_ordering_anyType].[Fax], [dbo].[fm_dist_ordering_anyType].[Email], [dbo].[fm_dist_ordering_anyType].[Email2], [dbo].[fm_dist_ordering_anyType].[Website], [dbo].[fm_dist_ordering_anyType].[Description], [dbo].[fm_dist_ordering_anyType].[Territory], [dbo].[fm_dist_ordering_anyType].[PortalId], [dbo].[fm_dist_ordering_anyType].[UsersPGId], [dbo].[fm_dist_ordering_anyType].[TypeId], [dbo].[fm_dist_ordering_anyType].[SortOrder], [dbo].[fm_dist_ordering_anyType].[PriorityGroup],[dbo].[fm_dist_ordering_anyType].[IsUs]
+
+ FROM @TempTable t
+
+					INNER JOIN [dbo].[fm_dist_ordering_anyType] ON [dbo].[fm_dist_ordering_anyType].[Id] = t._keyID
+					WHERE t.IndexId BETWEEN ((@pageNum - 1) * @pageSize + 1) AND (@pageNum * @pageSize)
+					order by SortOrder, IsUs desc, Company, LastName, FirstName
+END
+
+
+GO
+
+
+-- =============================================
+-- Author:		<Author,,Name>
+-- Create date: <Create Date,,>
+-- Description:	<Description,,>
+-- =============================================
+CREATE PROCEDURE [dbo].[fm_dist_SearchByCompany_AnyType] 
+	-- Add the parameters for the stored procedure here
+	@company nvarchar(200),
+	@pageSize int,
+	@pageNum int
+AS
+BEGIN
+	-- SET NOCOUNT ON added to prevent extra result sets from
+	-- interfering with SELECT statements.
+	SET NOCOUNT ON;
+
+ DECLARE @TempTable TABLE (IndexId int identity, _keyID Int)
+
+					-- insert the table ids and row numbers into the memory table
+					INSERT INTO @TempTable
+					(
+					  _keyID
+					)
+					SELECT 
+						[dbo].[fm_dist_ordering_anyType].[Id]
+					     FROM [dbo].[fm_dist_ordering_anyType] 
+ WHERE [dbo].[fm_dist_ordering_anyType].[Company] like @company + '%'
+
+ ORDER BY SortOrder ASC, Company ASC, LastName ASC, FirstName ASC
+
+					 --select only those rows belonging to the proper page
+					    SELECT DISTINCT [dbo].[fm_dist_ordering_anyType].[Id], [dbo].[fm_dist_ordering_anyType].[Company], [dbo].[fm_dist_ordering_anyType].[FirstName], [dbo].[fm_dist_ordering_anyType].[LastName], [dbo].[fm_dist_ordering_anyType].[Address], [dbo].[fm_dist_ordering_anyType].[Address2], [dbo].[fm_dist_ordering_anyType].[City], [dbo].[fm_dist_ordering_anyType].[State], [dbo].[fm_dist_ordering_anyType].[PostalCode], [dbo].[fm_dist_ordering_anyType].[Country], [dbo].[fm_dist_ordering_anyType].[Phone], [dbo].[fm_dist_ordering_anyType].[Phone2], [dbo].[fm_dist_ordering_anyType].[Cell], [dbo].[fm_dist_ordering_anyType].[Fax], [dbo].[fm_dist_ordering_anyType].[Email], [dbo].[fm_dist_ordering_anyType].[Email2], [dbo].[fm_dist_ordering_anyType].[Website], [dbo].[fm_dist_ordering_anyType].[Description], [dbo].[fm_dist_ordering_anyType].[Territory], [dbo].[fm_dist_ordering_anyType].[PortalId], [dbo].[fm_dist_ordering_anyType].[UsersPGId], [dbo].[fm_dist_ordering_anyType].[TypeId], [dbo].[fm_dist_ordering_anyType].[SortOrder], [dbo].[fm_dist_ordering_anyType].[PriorityGroup],[dbo].[fm_dist_ordering_anyType].[IsUs]
+
+ FROM @TempTable t
+
+					INNER JOIN [dbo].[fm_dist_ordering_anyType] ON [dbo].[fm_dist_ordering_anyType].[Id] = t._keyID
+					WHERE t.IndexId BETWEEN ((@pageNum - 1) * @pageSize + 1) AND (@pageNum * @pageSize)
+					order by SortOrder, Company, LastName, FirstName
+END
+
+
+GO
+
+-- =============================================
+-- Author:		<Author,,Name>
+-- Create date: <Create Date,,>
+-- Description:	<Description,,>
+-- =============================================
+CREATE PROCEDURE [dbo].[fm_dist_SearchByCountry_AnyType] 
+	-- Add the parameters for the stored procedure here
+	@country nvarchar(2),
+	@pageSize int,
+	@pageNum int
+AS
+BEGIN
+DECLARE @TempTable TABLE (IndexId int identity, _keyID Int)
+
+					-- insert the table ids and row numbers into the memory table
+					INSERT INTO @TempTable
+					(
+					  _keyID
+					)
+					SELECT 
+						[dbo].[fm_dist_ordering_anyType].[Id]
+					     FROM [dbo].[fm_dist_ordering_anyType] inner join fm_dist_RegionCovering rc
+							on fm_dist_ordering_anyType.Id = rc.DistId
+ WHERE rc.Country = @country
+
+ ORDER BY SortOrder ASC, Company ASC, LastName ASC, FirstName ASC
+
+					 --select only those rows belonging to the proper page
+					    SELECT DISTINCT [dbo].[fm_dist_ordering_anyType].[Id], [dbo].[fm_dist_ordering_anyType].[Company], [dbo].[fm_dist_ordering_anyType].[FirstName], [dbo].[fm_dist_ordering_anyType].[LastName], [dbo].[fm_dist_ordering_anyType].[Address], [dbo].[fm_dist_ordering_anyType].[Address2], [dbo].[fm_dist_ordering_anyType].[City], [dbo].[fm_dist_ordering_anyType].[State], [dbo].[fm_dist_ordering_anyType].[PostalCode], [dbo].[fm_dist_ordering_anyType].[Country], [dbo].[fm_dist_ordering_anyType].[Phone], [dbo].[fm_dist_ordering_anyType].[Phone2], [dbo].[fm_dist_ordering_anyType].[Cell], [dbo].[fm_dist_ordering_anyType].[Fax], [dbo].[fm_dist_ordering_anyType].[Email], [dbo].[fm_dist_ordering_anyType].[Email2], [dbo].[fm_dist_ordering_anyType].[Website], [dbo].[fm_dist_ordering_anyType].[Description], [dbo].[fm_dist_ordering_anyType].[Territory], [dbo].[fm_dist_ordering_anyType].[PortalId], [dbo].[fm_dist_ordering_anyType].[UsersPGId], [dbo].[fm_dist_ordering_anyType].[TypeId], [dbo].[fm_dist_ordering_anyType].[SortOrder], [dbo].[fm_dist_ordering_anyType].[PriorityGroup],[dbo].[fm_dist_ordering_anyType].[IsUs]
+
+ FROM @TempTable t
+
+					INNER JOIN [dbo].[fm_dist_ordering_anyType] ON [dbo].[fm_dist_ordering_anyType].[Id] = t._keyID
+					WHERE t.IndexId BETWEEN ((@pageNum - 1) * @pageSize + 1) AND (@pageNum * @pageSize)
+					order by SortOrder, Company, LastName, FirstName
+END
+
+SET ANSI_NULLS ON
+
+GO
+
+-- =============================================
+-- Author:		<Author,,Name>
+-- Create date: <Create Date,,>
+-- Description:	<Description,,>
+-- =============================================
+CREATE PROCEDURE [dbo].[fm_dist_SearchByCountryCount_AnyType] 
+	-- Add the parameters for the stored procedure here
+	@country nvarchar(2)
+AS
+BEGIN
+    -- Insert statements for procedure here
+SELECT COUNT([dbo].[fm_dist_ordering_anyType].[Id])
+					     FROM [dbo].[fm_dist_ordering_anyType] inner join fm_dist_RegionCovering rc
+							on fm_dist_ordering_anyType.Id = rc.DistId
+ WHERE  rc.State = @country 
+END
+GO
+
+-- =============================================
+-- Author:		<Author,,Name>
+-- Create date: <Create Date,,>
+-- Description:	<Description,,>
+-- =============================================
+CREATE PROCEDURE [dbo].[fm_dist_SearchByState_AnyType] 
+	-- Add the parameters for the stored procedure here
+	@state nvarchar(2),
+	@pageSize int,
+	@pageNum int
+AS
+BEGIN
+DECLARE @TempTable TABLE (IndexId int identity, _keyID Int)
+
+					-- insert the table ids and row numbers into the memory table
+					INSERT INTO @TempTable
+					(
+					  _keyID
+					)
+					SELECT 
+						[dbo].[fm_dist_ordering_anyType].[Id]
+					     FROM [dbo].[fm_dist_ordering_anyType] inner join fm_dist_RegionCovering rc
+							on fm_dist_ordering_anyType.Id = rc.DistId
+ WHERE  rc.State = @state
+
+ ORDER BY SortOrder ASC, Company ASC, LastName ASC, FirstName ASC
+
+					 --select only those rows belonging to the proper page
+					    SELECT DISTINCT [dbo].[fm_dist_ordering_anyType].[Id], [dbo].[fm_dist_ordering_anyType].[Company], [dbo].[fm_dist_ordering_anyType].[FirstName], [dbo].[fm_dist_ordering_anyType].[LastName], [dbo].[fm_dist_ordering_anyType].[Address], [dbo].[fm_dist_ordering_anyType].[Address2], [dbo].[fm_dist_ordering_anyType].[City], [dbo].[fm_dist_ordering_anyType].[State], [dbo].[fm_dist_ordering_anyType].[PostalCode], [dbo].[fm_dist_ordering_anyType].[Country], [dbo].[fm_dist_ordering_anyType].[Phone], [dbo].[fm_dist_ordering_anyType].[Phone2], [dbo].[fm_dist_ordering_anyType].[Cell], [dbo].[fm_dist_ordering_anyType].[Fax], [dbo].[fm_dist_ordering_anyType].[Email], [dbo].[fm_dist_ordering_anyType].[Email2], [dbo].[fm_dist_ordering_anyType].[Website], [dbo].[fm_dist_ordering_anyType].[Description], [dbo].[fm_dist_ordering_anyType].[Territory], [dbo].[fm_dist_ordering_anyType].[PortalId], [dbo].[fm_dist_ordering_anyType].[UsersPGId], [dbo].[fm_dist_ordering_anyType].[TypeId], [dbo].[fm_dist_ordering_anyType].[SortOrder], [dbo].[fm_dist_ordering_anyType].[PriorityGroup],[dbo].[fm_dist_ordering_anyType].[IsUs]
+
+ FROM @TempTable t
+
+					INNER JOIN [dbo].[fm_dist_ordering_anyType] ON [dbo].[fm_dist_ordering_anyType].[Id] = t._keyID
+					WHERE t.IndexId BETWEEN ((@pageNum - 1) * @pageSize + 1) AND (@pageNum * @pageSize)
+					order by SortOrder, Company, LastName, FirstName
+END
+
+
+GO
+
+-- =============================================
+-- Author:		<Author,,Name>
+-- Create date: <Create Date,,>
+-- Description:	<Description,,>
+-- =============================================
+CREATE PROCEDURE [dbo].[fm_dist_SearchByStateCount_AnyType] 
+	-- Add the parameters for the stored procedure here
+	@state nvarchar(2)
+AS
+BEGIN
+
+
+    -- Insert statements for procedure here
+SELECT COUNT([dbo].[fm_dist_ordering_anyType].[Id])
+					     FROM [dbo].[fm_dist_ordering_anyType] inner join fm_dist_RegionCovering rc
+							on fm_dist_ordering_anyType.Id = rc.DistId
+ WHERE rc.State = @state 
+END
+
+
+
+GO
+
+-- =============================================
+-- Author:		<Author,,Name>
+-- Create date: <Create Date,,>
+-- Description:	<Description,,>
+-- =============================================
+CREATE PROCEDURE [dbo].[fm_dist_SearchCompanyCount_AnyType] 
+	-- Add the parameters for the stored procedure here
+	@company nvarchar(200)
+AS
+BEGIN
+
+
+    -- Insert statements for procedure here
+SELECT 
+						count([dbo].[fm_dist_ordering_anyType].[Id])
+					     FROM [dbo].[fm_dist_ordering_anyTYpe] 
+ WHERE [dbo].[fm_dist_ordering_anyType].[Company] like @company + '%'
+
+END
+
+
+
+GO
+
+-- =============================================
+-- Author:		<Author,,Name>
+-- Create date: <Create Date,,>
+-- Description:	<Description,,>
+-- =============================================
+create PROCEDURE [dbo].[fm_dist_LoadStates_AnyType] 
+	-- Add the parameters for the stored procedure here
+	@country nvarchar(2),
+	@portalId int
+AS
+BEGIN
+	-- SET NOCOUNT ON added to prevent extra result sets from
+	-- interfering with SELECT statements.
+	SET NOCOUNT ON;
+
+    -- Insert statements for procedure here
+	select distinct(c.State) from 
+fm_dist_RegionCovering c inner join fm_dist_Distributor b
+on c.DistId = b.Id inner join fm_dist_DistributorType a
+on b.Id = a.DistId where len(c.State) > 1
+and c.Country = @country
+and b.PortalId = @portalId
+END
+
+GO
+
+-- =============================================
+-- Author:		<Author,,Name>
+-- Create date: <Create Date,,>
+-- Description:	<Description,,>
+-- =============================================
+create PROCEDURE [dbo].[fm_dist_LoadCountries_AnyType] 
+	-- Add the parameters for the stored procedure here
+	@portalId int
+AS
+BEGIN
+	-- SET NOCOUNT ON added to prevent extra result sets from
+	-- interfering with SELECT statements.
+	SET NOCOUNT ON;
+
+    -- Insert statements for procedure here
+	select distinct(c.Country) from 
+fm_dist_RegionCovering c inner join fm_dist_Distributor b
+on c.DistId = b.Id inner join fm_dist_DistributorType a
+on b.Id = a.DistId where b.PortalId = @portalId and c.Country <> 'US'
+END
+
+GO
+
+
+-- =============================================
+-- Author:		<Author,,Name>
+-- Create date: <Create Date,,>
+-- Description:	<Description,,>
+-- =============================================
+create PROCEDURE [dbo].[fm_dist_LoadCountriesWithUS_AnyType] 
+	-- Add the parameters for the stored procedure here
+	@portalId int
+AS
+BEGIN
+	-- SET NOCOUNT ON added to prevent extra result sets from
+	-- interfering with SELECT statements.
+	SET NOCOUNT ON;
+
+    -- Insert statements for procedure here
+	select distinct(c.Country) from 
+fm_dist_RegionCovering c inner join fm_dist_Distributor b
+on c.DistId = b.Id inner join fm_dist_DistributorType a
+on b.Id = a.DistId where b.PortalId = @portalId
+END
+
+GO
+
+ALTER TABLE [dbo].[fm_dist_Type] ADD
+[ImageUrl] [nvarchar] (350) COLLATE SQL_Latin1_General_CP1_CI_AS NULL
+GO
+
+
+ALTER VIEW dbo.fm_dist_ordering
+AS
+SELECT DISTINCT 
+                      a.Id, a.Company, a.FirstName, a.LastName, a.Address, a.Address2, a.City, a.State, a.PostalCode, a.Country, a.Phone, a.Phone2, a.Cell, a.Fax, a.Email, a.Email2, 
+                      a.Website, a.Description, a.Territory, a.PortalId, ISNULL(a.PriorityGroupId, - 1) AS UsersPGId, c.TypeId, ISNULL(d.SortOrder, 999999) AS SortOrder, ISNULL(d.Name, '') 
+                      AS PriorityGroup, CAST(CASE WHEN a.Country = 'US' THEN 1 ELSE 0 END AS BIT) AS IsUs
+FROM         dbo.fm_dist_Distributor AS a LEFT OUTER JOIN
+                      dbo.fm_dist_RegionCovering AS b ON a.Id = b.DistId INNER JOIN
+                      dbo.fm_dist_DistributorType AS c ON a.Id = c.DistId LEFT OUTER JOIN
+                      dbo.fm_dist_PriorityGroup AS d ON a.PriorityGroupId = d.Id
+
+GO
+
+
+-- =============================================
+-- Author:		<Author,,Name>
+-- Create date: <Create Date,,>
+-- Description:	<Description,,>
+-- =============================================
+ALTER PROCEDURE [dbo].[fm_dist_SearchByState] 
+	-- Add the parameters for the stored procedure here
+	@state nvarchar(2),
+	@typeId int,
+	@pageSize int,
+	@pageNum int
+AS
+BEGIN
+DECLARE @TempTable TABLE (IndexId int identity, _keyID Int)
+
+					-- insert the table ids and row numbers into the memory table
+					INSERT INTO @TempTable
+					(
+					  _keyID
+					)
+					SELECT 
+						[dbo].[fm_dist_ordering].[Id]
+					     FROM [dbo].[fm_dist_ordering] inner join fm_dist_RegionCovering rc
+							on fm_dist_ordering.Id = rc.DistId
+ WHERE [dbo].[fm_dist_ordering].[TypeId] = @typeId and rc.State = @state
+
+ ORDER BY SortOrder ASC, Company ASC, LastName ASC, FirstName ASC
+
+					 --select only those rows belonging to the proper page
+					    SELECT DISTINCT [dbo].[fm_dist_ordering].[Id], [dbo].[fm_dist_ordering].[Company], [dbo].[fm_dist_ordering].[FirstName], [dbo].[fm_dist_ordering].[LastName], [dbo].[fm_dist_ordering].[Address], [dbo].[fm_dist_ordering].[Address2], [dbo].[fm_dist_ordering].[City], [dbo].[fm_dist_ordering].[State], [dbo].[fm_dist_ordering].[PostalCode], [dbo].[fm_dist_ordering].[Country], [dbo].[fm_dist_ordering].[Phone], [dbo].[fm_dist_ordering].[Phone2], [dbo].[fm_dist_ordering].[Cell], [dbo].[fm_dist_ordering].[Fax], [dbo].[fm_dist_ordering].[Email], [dbo].[fm_dist_ordering].[Email2], [dbo].[fm_dist_ordering].[Website], [dbo].[fm_dist_ordering].[Description], [dbo].[fm_dist_ordering].[Territory], [dbo].[fm_dist_ordering].[PortalId], [dbo].[fm_dist_ordering].[UsersPGId], [dbo].[fm_dist_ordering].[TypeId], [dbo].[fm_dist_ordering].[SortOrder], [dbo].[fm_dist_ordering].[PriorityGroup],[dbo].[fm_dist_ordering].[IsUs]
+
+ FROM @TempTable t
+
+					INNER JOIN [dbo].[fm_dist_ordering] ON [dbo].[fm_dist_ordering].[Id] = t._keyID
+					WHERE t.IndexId BETWEEN ((@pageNum - 1) * @pageSize + 1) AND (@pageNum * @pageSize)
+					and [dbo].[fm_dist_ordering].TypeId = @typeId
+					order by SortOrder, Company, LastName, FirstName
+END
+
+
+GO
+
+
+-- =============================================
+-- Author:		<Author,,Name>
+-- Create date: <Create Date,,>
+-- Description:	<Description,,>
+-- =============================================
+ALTER PROCEDURE [dbo].[fm_dist_SearchByCountry] 
+	-- Add the parameters for the stored procedure here
+	@country nvarchar(2),
+	@typeId int,
+	@pageSize int,
+	@pageNum int
+AS
+BEGIN
+DECLARE @TempTable TABLE (IndexId int identity, _keyID Int)
+
+					-- insert the table ids and row numbers into the memory table
+					INSERT INTO @TempTable
+					(
+					  _keyID
+					)
+					SELECT 
+						[dbo].[fm_dist_ordering].[Id]
+					     FROM [dbo].[fm_dist_ordering] inner join fm_dist_RegionCovering rc
+							on fm_dist_ordering.Id = rc.DistId
+ WHERE [dbo].[fm_dist_ordering].[TypeId] = @typeId and rc.Country = @country
+
+ ORDER BY SortOrder ASC, Company ASC, LastName ASC, FirstName ASC
+
+					 --select only those rows belonging to the proper page
+					    SELECT DISTINCT [dbo].[fm_dist_ordering].[Id], [dbo].[fm_dist_ordering].[Company], [dbo].[fm_dist_ordering].[FirstName], [dbo].[fm_dist_ordering].[LastName], [dbo].[fm_dist_ordering].[Address], [dbo].[fm_dist_ordering].[Address2], [dbo].[fm_dist_ordering].[City], [dbo].[fm_dist_ordering].[State], [dbo].[fm_dist_ordering].[PostalCode], [dbo].[fm_dist_ordering].[Country], [dbo].[fm_dist_ordering].[Phone], [dbo].[fm_dist_ordering].[Phone2], [dbo].[fm_dist_ordering].[Cell], [dbo].[fm_dist_ordering].[Fax], [dbo].[fm_dist_ordering].[Email], [dbo].[fm_dist_ordering].[Email2], [dbo].[fm_dist_ordering].[Website], [dbo].[fm_dist_ordering].[Description], [dbo].[fm_dist_ordering].[Territory], [dbo].[fm_dist_ordering].[PortalId], [dbo].[fm_dist_ordering].[UsersPGId], [dbo].[fm_dist_ordering].[TypeId], [dbo].[fm_dist_ordering].[SortOrder], [dbo].[fm_dist_ordering].[PriorityGroup],[dbo].[fm_dist_ordering].[IsUs]
+
+ FROM @TempTable t
+
+					INNER JOIN [dbo].[fm_dist_ordering] ON [dbo].[fm_dist_ordering].[Id] = t._keyID
+					WHERE t.IndexId BETWEEN ((@pageNum - 1) * @pageSize + 1) AND (@pageNum * @pageSize)
+					and [dbo].[fm_dist_ordering].TypeId = @typeId
+					order by SortOrder, Company, LastName, FirstName
+END
+
+SET ANSI_NULLS ON
+
+GO
+
+
+-- =============================================
+-- Author:		<Author,,Name>
+-- Create date: <Create Date,,>
+-- Description:	<Description,,>
+-- =============================================
+ALTER PROCEDURE [dbo].[fm_dist_SearchByCompany] 
+	-- Add the parameters for the stored procedure here
+	@company nvarchar(200),
+	@typeId int,
+	@pageSize int,
+	@pageNum int
+AS
+BEGIN
+	-- SET NOCOUNT ON added to prevent extra result sets from
+	-- interfering with SELECT statements.
+	SET NOCOUNT ON;
+
+ DECLARE @TempTable TABLE (IndexId int identity, _keyID Int)
+
+					-- insert the table ids and row numbers into the memory table
+					INSERT INTO @TempTable
+					(
+					  _keyID
+					)
+					SELECT 
+						[dbo].[fm_dist_ordering].[Id]
+					     FROM [dbo].[fm_dist_ordering] 
+ WHERE [dbo].[fm_dist_ordering].[TypeId] = @typeId and [dbo].[fm_dist_ordering].[Company] like @company + '%'
+
+ ORDER BY SortOrder ASC, Company ASC, LastName ASC, FirstName ASC
+
+					 --select only those rows belonging to the proper page
+					    SELECT DISTINCT [dbo].[fm_dist_ordering].[Id], [dbo].[fm_dist_ordering].[Company], [dbo].[fm_dist_ordering].[FirstName], [dbo].[fm_dist_ordering].[LastName], [dbo].[fm_dist_ordering].[Address], [dbo].[fm_dist_ordering].[Address2], [dbo].[fm_dist_ordering].[City], [dbo].[fm_dist_ordering].[State], [dbo].[fm_dist_ordering].[PostalCode], [dbo].[fm_dist_ordering].[Country], [dbo].[fm_dist_ordering].[Phone], [dbo].[fm_dist_ordering].[Phone2], [dbo].[fm_dist_ordering].[Cell], [dbo].[fm_dist_ordering].[Fax], [dbo].[fm_dist_ordering].[Email], [dbo].[fm_dist_ordering].[Email2], [dbo].[fm_dist_ordering].[Website], [dbo].[fm_dist_ordering].[Description], [dbo].[fm_dist_ordering].[Territory], [dbo].[fm_dist_ordering].[PortalId], [dbo].[fm_dist_ordering].[UsersPGId], [dbo].[fm_dist_ordering].[TypeId], [dbo].[fm_dist_ordering].[SortOrder], [dbo].[fm_dist_ordering].[PriorityGroup],[dbo].[fm_dist_ordering].[IsUs]
+
+ FROM @TempTable t
+
+					INNER JOIN [dbo].[fm_dist_ordering] ON [dbo].[fm_dist_ordering].[Id] = t._keyID
+					WHERE t.IndexId BETWEEN ((@pageNum - 1) * @pageSize + 1) AND (@pageNum * @pageSize)
+					and [dbo].[fm_dist_ordering].TypeId = @typeId
+					order by SortOrder, Company, LastName, FirstName
+END
+
+
+GO
+
+
+
+-- =============================================
+-- Author:		<Author,,Name>
+-- Create date: <Create Date,,>
+-- Description:	<Description,,>
+-- =============================================
+ALTER PROCEDURE [dbo].[fm_dist_SearchAllUSFirst] 
+	-- Add the parameters for the stored procedure here
+	@typeId int,
+	@pageSize int,
+	@pageNum int
+AS
+BEGIN
+-- create a temp table to hold order ids
+					DECLARE @TempTable TABLE (IndexId int identity, _keyID Int)
+
+					-- insert the table ids and row numbers into the memory table
+					INSERT INTO @TempTable
+					(
+					  _keyID
+					)
+					SELECT 
+						[dbo].[fm_dist_ordering].[Id]
+					     FROM [dbo].[fm_dist_ordering]
+ WHERE [dbo].[fm_dist_ordering].[TypeId] = @typeId
+
+ ORDER BY SortOrder ASC, IsUs desc, Company ASC, LastName ASC, FirstName ASC
+
+					-- select only those rows belonging to the proper page
+					    SELECT DISTINCT [dbo].[fm_dist_ordering].[Id], [dbo].[fm_dist_ordering].[Company], [dbo].[fm_dist_ordering].[FirstName], [dbo].[fm_dist_ordering].[LastName], [dbo].[fm_dist_ordering].[Address], [dbo].[fm_dist_ordering].[Address2], [dbo].[fm_dist_ordering].[City], [dbo].[fm_dist_ordering].[State], [dbo].[fm_dist_ordering].[PostalCode], [dbo].[fm_dist_ordering].[Country], [dbo].[fm_dist_ordering].[Phone], [dbo].[fm_dist_ordering].[Phone2], [dbo].[fm_dist_ordering].[Cell], [dbo].[fm_dist_ordering].[Fax], [dbo].[fm_dist_ordering].[Email], [dbo].[fm_dist_ordering].[Email2], [dbo].[fm_dist_ordering].[Website], [dbo].[fm_dist_ordering].[Description], [dbo].[fm_dist_ordering].[Territory], [dbo].[fm_dist_ordering].[PortalId], [dbo].[fm_dist_ordering].[UsersPGId], [dbo].[fm_dist_ordering].[TypeId], [dbo].[fm_dist_ordering].[SortOrder],[dbo].[fm_dist_ordering].[PriorityGroup], [dbo].[fm_dist_ordering].[IsUs]
+
+ FROM @TempTable t
+
+					INNER JOIN [dbo].[fm_dist_ordering] ON [dbo].[fm_dist_ordering].[Id] = t._keyID
+					WHERE t.IndexId BETWEEN ((@pageNum - 1) * @pageSize + 1) AND (@pageNum * @pageSize)
+					and [dbo].[fm_dist_ordering].TypeId = @typeId
+					order by SortOrder, IsUs desc, Company, LastName, FirstName
+END
+
+
+GO
+
+
+
+-- =============================================
+-- Author:		<Author,,Name>
+-- Create date: <Create Date,,>
+-- Description:	<Description,,>
+-- =============================================
+ALTER PROCEDURE [dbo].[fm_dist_SearchAll] 
+	-- Add the parameters for the stored procedure here
+	@typeId int,
+	@pageSize int,
+	@pageNum int
+AS
+BEGIN
+SET NOCOUNT ON
+
+					-- create a temp table to hold order ids
+					DECLARE @TempTable TABLE (IndexId int identity, _keyID Int)
+
+					-- insert the table ids and row numbers into the memory table
+					INSERT INTO @TempTable
+					(
+					  _keyID
+					)
+					SELECT 
+						[dbo].[fm_dist_ordering].[Id]
+					     FROM [dbo].[fm_dist_ordering]
+ WHERE [dbo].[fm_dist_ordering].[TypeId] = @typeId
+
+ ORDER BY SortOrder ASC, Company ASC, LastName ASC, FirstName ASC
+
+					-- select only those rows belonging to the proper page
+					    SELECT DISTINCT [dbo].[fm_dist_ordering].[Id], [dbo].[fm_dist_ordering].[Company], [dbo].[fm_dist_ordering].[FirstName], [dbo].[fm_dist_ordering].[LastName], [dbo].[fm_dist_ordering].[Address], [dbo].[fm_dist_ordering].[Address2], [dbo].[fm_dist_ordering].[City], [dbo].[fm_dist_ordering].[State], [dbo].[fm_dist_ordering].[PostalCode], [dbo].[fm_dist_ordering].[Country], [dbo].[fm_dist_ordering].[Phone], [dbo].[fm_dist_ordering].[Phone2], [dbo].[fm_dist_ordering].[Cell], [dbo].[fm_dist_ordering].[Fax], [dbo].[fm_dist_ordering].[Email], [dbo].[fm_dist_ordering].[Email2], [dbo].[fm_dist_ordering].[Website], [dbo].[fm_dist_ordering].[Description], [dbo].[fm_dist_ordering].[Territory], [dbo].[fm_dist_ordering].[PortalId], [dbo].[fm_dist_ordering].[UsersPGId], [dbo].[fm_dist_ordering].[TypeId], [dbo].[fm_dist_ordering].[SortOrder],[dbo].[fm_dist_ordering].[PriorityGroup], [dbo].[fm_dist_ordering].[IsUs]
+
+ FROM @TempTable t
+
+					INNER JOIN [dbo].[fm_dist_ordering] ON [dbo].[fm_dist_ordering].[Id] = t._keyID
+					WHERE t.IndexId BETWEEN ((@pageNum - 1) * @pageSize + 1) AND (@pageNum * @pageSize)
+					and [dbo].[fm_dist_ordering].TypeId = @typeId
+					order by SortOrder, Company, LastName, FirstName
+END
+
+
+GO
+
+
+EXEC sp_addextendedproperty N'MS_DiagramPane1', N'[0E232FF0-B466-11cf-A24F-00AA00A3EFFF, 1.00]
+Begin DesignProperties = 
+   Begin PaneConfigurations = 
+      Begin PaneConfiguration = 0
+         NumPanes = 4
+         Configuration = "(H (1[40] 4[20] 2[20] 3) )"
+      End
+      Begin PaneConfiguration = 1
+         NumPanes = 3
+         Configuration = "(H (1 [50] 4 [25] 3))"
+      End
+      Begin PaneConfiguration = 2
+         NumPanes = 3
+         Configuration = "(H (1 [50] 2 [25] 3))"
+      End
+      Begin PaneConfiguration = 3
+         NumPanes = 3
+         Configuration = "(H (4 [30] 2 [40] 3))"
+      End
+      Begin PaneConfiguration = 4
+         NumPanes = 2
+         Configuration = "(H (1 [56] 3))"
+      End
+      Begin PaneConfiguration = 5
+         NumPanes = 2
+         Configuration = "(H (2 [66] 3))"
+      End
+      Begin PaneConfiguration = 6
+         NumPanes = 2
+         Configuration = "(H (4 [50] 3))"
+      End
+      Begin PaneConfiguration = 7
+         NumPanes = 1
+         Configuration = "(V (3))"
+      End
+      Begin PaneConfiguration = 8
+         NumPanes = 3
+         Configuration = "(H (1[56] 4[18] 2) )"
+      End
+      Begin PaneConfiguration = 9
+         NumPanes = 2
+         Configuration = "(H (1 [75] 4))"
+      End
+      Begin PaneConfiguration = 10
+         NumPanes = 2
+         Configuration = "(H (1[66] 2) )"
+      End
+      Begin PaneConfiguration = 11
+         NumPanes = 2
+         Configuration = "(H (4 [60] 2))"
+      End
+      Begin PaneConfiguration = 12
+         NumPanes = 1
+         Configuration = "(H (1) )"
+      End
+      Begin PaneConfiguration = 13
+         NumPanes = 1
+         Configuration = "(V (4))"
+      End
+      Begin PaneConfiguration = 14
+         NumPanes = 1
+         Configuration = "(V (2))"
+      End
+      ActivePaneConfig = 0
+   End
+   Begin DiagramPane = 
+      Begin Origin = 
+         Top = 0
+         Left = 0
+      End
+      Begin Tables = 
+         Begin Table = "a"
+            Begin Extent = 
+               Top = 6
+               Left = 38
+               Bottom = 125
+               Right = 200
+            End
+            DisplayFlags = 280
+            TopColumn = 0
+         End
+         Begin Table = "b"
+            Begin Extent = 
+               Top = 6
+               Left = 238
+               Bottom = 110
+               Right = 398
+            End
+            DisplayFlags = 280
+            TopColumn = 0
+         End
+         Begin Table = "d"
+            Begin Extent = 
+               Top = 6
+               Left = 436
+               Bottom = 125
+               Right = 596
+            End
+            DisplayFlags = 280
+            TopColumn = 0
+         End
+      End
+   End
+   Begin SQLPane = 
+   End
+   Begin DataPane = 
+      Begin ParameterDefaults = ""
+      End
+      Begin ColumnWidths = 9
+         Width = 284
+         Width = 1500
+         Width = 1500
+         Width = 1500
+         Width = 1500
+         Width = 1500
+         Width = 1500
+         Width = 1500
+         Width = 1500
+      End
+   End
+   Begin CriteriaPane = 
+      Begin ColumnWidths = 11
+         Column = 1440
+         Alias = 900
+         Table = 1170
+         Output = 720
+         Append = 1400
+         NewValue = 1170
+         SortType = 1350
+         SortOrder = 1410
+         GroupBy = 1350
+         Filter = 1350
+         Or = 1350
+         Or = 1350
+         Or = 1350
+      End
+   End
+End
+', 'SCHEMA', N'dbo', 'VIEW', N'fm_dist_ordering_anyType', NULL, NULL
+GO
+
+
+EXEC sp_addextendedproperty N'MS_DiagramPaneCount', 1, 'SCHEMA', N'dbo', 'VIEW', N'fm_dist_ordering_anyType', NULL, NULL
+GO
+
+
+
+
+

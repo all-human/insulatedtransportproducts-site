@@ -1,0 +1,17 @@
+A new comment is posted on [PORTALNAME]
+
+<style>
+P
+{
+    font-family: Tahoma, Arial, Helvetica;
+    font-size: 13px;
+    font-weight: normal;
+}
+</style>
+<p>User "[USER]" posted the following comment to video "[VIDEOTITLE]" on [TIME]:
+
+<p><i style='background-color:#EEEEEE'>[COMMENT]</i>
+
+<p>Click <a href='[DELETELINK]' target='_blank'>here</a> to quickly delete this comment.</p>
+
+<p>If desired, you can <a href='[UNSUBSCRIBELINK]' target='_blank'>unsubscribe</a> from the notification list.

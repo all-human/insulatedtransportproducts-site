@@ -1,0 +1,269 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<root>
+	<xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+		<xsd:element name="root" msdata:IsDataSet="true">
+			<xsd:complexType>
+				<xsd:choice maxOccurs="unbounded">
+					<xsd:element name="data">
+						<xsd:complexType>
+							<xsd:sequence>
+								<xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+								<xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+							</xsd:sequence>
+							<xsd:attribute name="name" type="xsd:string" />
+							<xsd:attribute name="type" type="xsd:string" />
+							<xsd:attribute name="mimetype" type="xsd:string" />
+						</xsd:complexType>
+					</xsd:element>
+					<xsd:element name="resheader">
+						<xsd:complexType>
+							<xsd:sequence>
+								<xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+							</xsd:sequence>
+							<xsd:attribute name="name" type="xsd:string" use="required" />
+						</xsd:complexType>
+					</xsd:element>
+				</xsd:choice>
+			</xsd:complexType>
+		</xsd:element>
+	</xsd:schema>
+	<resheader name="ResMimeType">
+		<value>text/microsoft-resx</value>
+	</resheader>
+	<resheader name="Version">
+		<value>1.0.0.0</value>
+	</resheader>
+	<resheader name="Reader">
+		<value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=1.0.3300.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+	</resheader>
+	<resheader name="Writer">
+		<value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=1.0.3300.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+	</resheader>
+	<data name="ModuleSettings.Text">
+		<value>Module Settings</value>
+	</data>
+	<data name="AllCategories.Text">
+		<value>All categories</value>
+	</data>
+	<data name="Title.Text">
+		<value>Title</value>
+	</data>
+	<data name="Description.Text">
+		<value>Description</value>
+	</data>
+	<data name="OriginalName.Text">
+		<value>Video Name</value>
+	</data>
+	<data name="CreatedBy.Text">
+		<value>Created By</value>
+	</data>
+	<data name="CreatedDate.Text">
+		<value>Created Date</value>
+	</data>
+	<data name="Views.Text">
+		<value>Views</value>
+	</data>
+	<data name="JustNow.Text">
+		<value>A few seconds ago</value>
+	</data>
+	<data name="XMinutesAgo.Text">
+		<value>[X] minutes ago</value>
+	</data>
+	<data name="XHoursAgo.Text">
+		<value>[X] hours ago</value>
+	</data>
+	<data name="XDaysAgo.Text">
+		<value>[X] days ago</value>
+	</data>
+	<data name="XWeeksAgo.Text">
+		<value>[X] weeks ago</value>
+	</data>
+	<data name="XMonthsAgo.Text">
+		<value>[X] months ago</value>
+	</data>
+	<data name="XYearsAgo.Text">
+		<value>[X] years ago</value>
+	</data>
+	<data name="NotifyManagerSubject.Text">
+		<value>Video pending approval</value>
+	</data>
+	<data name="NotifyManagerBody.Text">
+		<value>A new video has just been uploaded to [PORTALNAME], you must approve it before publishing.</value>
+	</data>
+	<data name="NotifyAuthorApprovedSubject.Text">
+		<value>Video approved</value>
+	</data>
+	<data name="NotifyAuthorApprovedBody.Text">
+		<value>One of your video on [PORTALNAME] is approved, visit http://[PORTALALIAS] for details.</value>
+	</data>
+	<data name="NotifyAuthorRejectedSubject.Text">
+		<value>Video rejected</value>
+	</data>
+	<data name="NotifyAuthorRejectedBody.Text">
+		<value>One of your video on [PORTALNAME] is rejected, visit http://[PORTALALIAS] for details.</value>
+	</data>
+	<data name="SpecifiedByQueryString.Text">
+		<value>Set by querystring</value>
+	</data>
+	<data name="NotRated.Text">
+		<value>Not rated</value>
+	</data>
+	<data name="Unknown.Text">
+		<value></value>
+	</data>
+
+
+
+	  <data name="XToYOfZ.Text">
+	    <value>[X] - [Y] of [Z]</value>
+	  </data>
+	  <data name="NotApproved.Text">
+	    <value>(not approved)</value>
+	  </data>
+	  <data name="Series.Text">
+	    <value>Series</value>
+	  </data>
+	  <data name="Category.Text">
+	    <value>Category</value>
+	  </data>
+	  <data name="BroadCast.Text">
+	    <value>Broadcast</value>
+	  </data>
+	  <data name="OpenTo.Text">
+	    <value>Open to</value>
+	  </data>
+	<data name="NotStarted.Text">
+	    <value>Not started</value>
+	</data>
+	<data name="InProgress.Text">
+	    <value>In progress</value>
+	</data>
+	<data name="Finished.Text">
+	    <value>Finished</value>
+	</data>
+	<data name="Archived.Text">
+	    <value>Archived</value>
+	</data>
+	<data name="Loading.Text">
+		<value>Loading... please wait</value>
+	</data>
+	<data name="RecentVideos.Text">
+	    <value>Most Recent</value>
+	</data>
+	<data name="Disabled.Text">
+	    <value>Disabled</value>
+	</data>
+	<data name="RecentVideos.Text">
+	    <value>Most Recent</value>
+	</data>
+	<data name="Spotlight.Text">
+	    <value>Random order</value>
+	</data>
+	<data name="MostViewed.Text">
+	    <value>Most Viewed</value>
+	</data>
+	<data name="MostDiscussed.Text">
+	    <value>Most Discussed</value>
+	</data>
+	<data name="TopRated.Text">
+	    <value>Top Rated</value>
+	</data>
+	<data name="MostPopular.Text">
+	    <value>Most Popular</value>
+	</data>
+	<data name="AlphabeticalOrder.Text">
+	    <value>Alphabetical Order</value>
+	</data>
+	<data name="2Days.Text">
+		<value>2 days</value>
+	</data>
+	<data name="3Days.Text">
+		<value>3 days</value>
+	</data>
+	<data name="4Days.Text">
+		<value>4 days</value>
+	</data>
+	<data name="5Days.Text">
+		<value>5 days</value>
+	</data>
+	<data name="AWeek.Text">
+		<value>a week</value>
+	</data>
+	<data name="10Days.Text">
+		<value>10 days</value>
+	</data>
+	<data name="2Weeks.Text">
+		<value>2 weeks</value>
+	</data>
+	<data name="AMonth.Text">
+		<value>a month</value>
+	</data>
+	<data name="3Months.Text">
+		<value>3 months</value>
+	</data>
+	<data name="HalfAYear.Text">
+		<value>half a year</value>
+	</data>
+	<data name="AYear.Text">
+		<value>a year</value>
+	</data>
+	<data name="AllTime.Text">
+		<value>all time</value>
+	</data>
+
+
+
+	<data name="InvalidSelection.Text">
+		<value>This category have child categories, the first child category is automatically selected</value>
+	</data>
+	<data name="Appearance.Text">
+		<value>Appearance</value>
+	</data>
+
+
+
+	  <data name="NoResults.Text">
+	    <value>no results</value>
+	  </data>
+	<data name="MayNotAvailable.Text">
+		<value>Our videos might not fully work on iPhone/iPad.</value>
+	</data>
+	<data name="NotAvailable.Text">
+		<value>This video is not available on your browser.</value>
+	</data>
+
+
+
+	  <data name="ChooseLibrary.Text">
+	    <value>Choose Library</value>
+	  </data>
+	  <data name="HtmlCode.Text">
+	    <value>A piece of HTML code</value>
+	  </data>
+	<data name="ANewSeries.Text">
+		<value>A new series: [NAME]</value>
+	</data>
+	<data name="Uncategorized.Text">
+		<value>Uncategorized</value>
+	</data>
+
+	<data name="NeedLogin.Text">
+		<value>You should login first</value>
+	</data>
+	<data name="NeedChooseLibrary.Text">
+		<value>This module must be linked to a video library, click here to choose one.</value>
+	</data>
+
+	<data name="GroupIntegrationModeButNoGroupId.Text">
+		<value>Work in social group integration mode, but GroupId is not presented in query string.</value>
+	</data>
+	<data name="ProfileIntegrationMode.Text">
+		<value>Work in user profile integration mode.</value>
+	</data>
+	<data name="ProfileIntegrationModeButNoUserId.Text">
+		<value>Work in user profile integration mode, but UserId is not presented in query string.</value>
+	</data>
+	<data name="ProfileNotFound.Text">
+		<value>This module can only be used with user profile or social group profile.</value>
+	</data>
+</root>

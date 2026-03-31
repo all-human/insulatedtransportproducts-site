@@ -1,0 +1,15 @@
+2025-09-08 11:35:17,330 [dnn2sqlv3][Thread:88][FATAL] DotNetNuke.Web.Common.Internal.DotNetNukeHttpApplication - System.Web.HttpException (0x80004005): A potentially dangerous Request.Path value was detected from the client (:).
+   at System.Web.HttpRequest.ValidateInputIfRequiredByConfig()
+   at System.Web.HttpApplication.PipelineStepManager.ValidateHelper(HttpContext context)
+2025-09-08 13:53:04,072 [dnn2sqlv3][Thread:100][ERROR] DotNetNuke.Services.Exceptions.Exceptions - System.Net.Mail.SmtpException: Mailbox unavailable. The server response was: Verification failed for <sales@itpsales.net>
+   at System.Net.Mail.MailCommand.CheckResponse(SmtpStatusCode statusCode, String response)
+   at System.Net.Mail.MailCommand.Send(SmtpConnection conn, Byte[] command, MailAddress from, Boolean allowUnicode)
+   at System.Net.Mail.SmtpTransport.SendMail(MailAddress sender, MailAddressCollection recipients, String deliveryNotify, Boolean allowUnicode, SmtpFailedRecipientException& exception)
+   at System.Net.Mail.SmtpClient.Send(MailMessage message)
+   at ForemostMedia.Modules.FM_Forms_DNN.Utils.FMHelpers.FmSendMailInternal(Int32 moduleId, Int32 tabId, String emailFrom, String emailTo, String emailSubject, String emailBody, String replyToAddress, List`1 files)
+2025-09-08 16:00:08,008 [dnn2sqlv3][Thread:81][FATAL] DotNetNuke.Web.Common.Internal.DotNetNukeHttpApplication - System.Web.HttpException (0x80004005): A potentially dangerous Request.Path value was detected from the client (:).
+   at System.Web.HttpRequest.ValidateInputIfRequiredByConfig()
+   at System.Web.HttpApplication.PipelineStepManager.ValidateHelper(HttpContext context)
+2025-09-08 21:15:21,892 [dnn2sqlv3][Thread:108][FATAL] DotNetNuke.Web.Common.Internal.DotNetNukeHttpApplication - System.Web.HttpException (0x80004005): A potentially dangerous Request.Path value was detected from the client (:).
+   at System.Web.HttpRequest.ValidateInputIfRequiredByConfig()
+   at System.Web.HttpApplication.PipelineStepManager.ValidateHelper(HttpContext context)

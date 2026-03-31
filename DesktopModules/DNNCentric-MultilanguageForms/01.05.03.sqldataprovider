@@ -1,0 +1,176 @@
+﻿CREATE TABLE {databaseOwner}[{objectQualifier}DCC_EF_CategoryMaster](
+	[CategoryID] [int] NOT NULL IDENTITY (1, 1),
+	[ModuleID] [int] NOT NULL,
+	[SortOrder] [int] NOT NULL,
+	[IsExpanded] [bit] NOT NULL,
+ CONSTRAINT [PK_{objectQualifier}DCC_EF_CategoryMaster] PRIMARY KEY CLUSTERED 
+(
+	[CategoryID] ASC
+)WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON)
+) ON [PRIMARY]
+
+
+GO
+CREATE TABLE {databaseOwner}[{objectQualifier}DCC_EF_CategoryCulture](
+	[ID] [int] IDENTITY(1,1) NOT NULL,
+	[CategoryID] [int] NOT NULL,
+	[Culture] [nvarchar](50) NOT NULL,
+	[CategoryName] [nvarchar](4000) NULL,
+ CONSTRAINT [PK_{objectQualifier}DCC_EF_CategoryCulture] PRIMARY KEY CLUSTERED 
+(
+	[ID] ASC
+)WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON) 
+) ON [PRIMARY]
+
+GO
+ALTER TABLE {databaseOwner}[{objectQualifier}DCC_EF_CategoryCulture]  WITH CHECK ADD  CONSTRAINT [FK_{objectQualifier}DCC_EF_CategoryCulture_{objectQualifier}DCC_EF_CategoryMaster] FOREIGN KEY([CategoryID])
+REFERENCES {databaseOwner}[{objectQualifier}DCC_EF_CategoryMaster] ([CategoryID])
+ON DELETE CASCADE
+GO
+ALTER TABLE {databaseOwner}[{objectQualifier}DCC_EF_CategoryCulture] CHECK CONSTRAINT [FK_{objectQualifier}DCC_EF_CategoryCulture_{objectQualifier}DCC_EF_CategoryMaster]
+
+GO
+Begin
+SET IDENTITY_INSERT {databaseOwner}[{objectQualifier}DCC_EF_CategoryMaster] ON
+
+INSERT INTO {databaseOwner}[{objectQualifier}DCC_EF_CategoryMaster] (CategoryID,ModuleID,SortOrder,IsExpanded)
+select distinct CategoryID,ModuleID,SortOrder,IsExpanded 
+from {databaseOwner}[{objectQualifier}DCC_EF_Category]
+
+SET IDENTITY_INSERT {databaseOwner}[{objectQualifier}DCC_EF_CategoryMaster] OFF
+END
+GO
+INSERT INTO {databaseOwner}[{objectQualifier}DCC_EF_CategoryCulture](CategoryID,Culture,CategoryName)
+select distinct CategoryID,Culture,CategoryName 
+from {databaseOwner}[{objectQualifier}DCC_EF_Category]
+
+GO
+-- relation to EF
+ALTER TABLE {databaseOwner}[{objectQualifier}DCC_EF_EmailForm]  WITH CHECK ADD  CONSTRAINT [FK_{objectQualifier}DCC_EF_EmailForm_{objectQualifier}DCC_EF_CategoryMaster] FOREIGN KEY([CategoryID])
+REFERENCES {databaseOwner}[{objectQualifier}DCC_EF_CategoryMaster] ([CategoryID])
+ON DELETE CASCADE
+GO
+--ALTER TABLE {databaseOwner}[{objectQualifier}DCC_EF_EmailForm] CHECK CONSTRAINT --[FK_{objectQualifier}DCC_EF_EmailForm_{objectQualifier}DCC_EF_CategoryMaster]
+GO
+
+CREATE TABLE {databaseOwner}[{objectQualifier}DCC_EF_Category_NotInUse](
+	[CategoryID] [int] NOT NULL primary key,
+	[Culture] [nvarchar](100) NOT NULL,
+	[CategoryName] [nvarchar](4000) NULL,
+	[SortOrder] [int] NOT NULL,
+	[ModuleID] [int] NOT NULL,
+	[IsExpanded] [bit] NOT NULL DEFAULT ('True')
+) ON [PRIMARY]
+
+GO
+INSERT INTO {databaseOwner}[{objectQualifier}DCC_EF_Category_NotInUse]
+select *
+from {databaseOwner}[{objectQualifier}DCC_EF_Category]
+
+GO
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'{databaseOwner}[{objectQualifier}DCC_EF_Category]') AND type in (N'U'))
+DROP TABLE {databaseOwner}[{objectQualifier}DCC_EF_Category]
+
+GO
+CREATE view {databaseOwner}[{objectQualifier}DCC_EF_Category]
+as
+select 
+	cm.CategoryID,
+	cc.Culture,
+	cc.CategoryName,
+	cm.SortOrder,
+	cm.ModuleID,
+	cm.IsExpanded
+from {databaseOwner}[{objectQualifier}DCC_EF_CategoryMaster] cm,{databaseOwner}[{objectQualifier}DCC_EF_CategoryCulture] cc
+where cm.CategoryID=cc.CategoryID
+
+GO
+Create procedure {databaseOwner}[{objectQualifier}DCC_EF_InsertNewCategory] 
+@ModuleID int,
+@IsExpanded bit
+as
+declare @SortOrder int
+
+set @SortOrder=(select  isnull (max(CategoryID),0)+1 from {databaseOwner}[{objectQualifier}DCC_EF_CategoryMaster])
+
+Insert into {databaseOwner}[{objectQualifier}DCC_EF_CategoryMaster](ModuleID,SortOrder,IsExpanded) 
+values(@ModuleID,@SortOrder,@IsExpanded )
+SELECT NEW_CatID = SCOPE_IDENTITY()
+
+GO
+
+ALTER procedure {databaseOwner}[{objectQualifier}DCC_EF_InsertCategoryCultureValue] 
+@CategoryID int,
+@Culture nvarchar(100),
+@CategoryName nvarchar(4000)
+as
+Insert into {databaseOwner}[{objectQualifier}DCC_EF_CategoryCulture](CategoryID,Culture,CategoryName) 
+values(@CategoryID,@Culture,@CategoryName )
+
+GO
+-- Drop SP to get Category ID
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'{databaseOwner}[{objectQualifier}DCC_EF_GetNewCategoryID]') AND type in (N'P', N'PC'))
+DROP PROCEDURE {databaseOwner}[{objectQualifier}DCC_EF_GetNewCategoryID]
+
+GO
+-- change Table to update 
+ALTER procedure {databaseOwner}[{objectQualifier}DCC_EF_UpdateCategoryIsExpanded] 
+
+@CategoryID int,
+@IsExpanded int
+AS
+update {databaseOwner}[{objectQualifier}DCC_EF_CategoryMaster]
+set
+IsExpanded=@IsExpanded
+where CategoryID=@CategoryID
+
+GO
+ALTER procedure {databaseOwner}[{objectQualifier}DCC_EF_UpdateCategorySortOrder] 
+
+@CategoryID int,
+@SortOrder int
+AS
+update  {databaseOwner}[{objectQualifier}DCC_EF_CategoryMaster]
+set
+SortOrder=@SortOrder
+where CategoryID=@CategoryID
+
+GO
+ALTER procedure {databaseOwner}[{objectQualifier}DCC_EF_DeleteCategoryNameByID] 
+
+@CategoryID int
+
+as
+
+Delete
+from   {databaseOwner}[{objectQualifier}DCC_EF_CategoryMaster]
+where   CategoryID = @CategoryID
+
+GO
+
+ALTER procedure {databaseOwner}[{objectQualifier}DCC_EF_UpdateCategoryNameByCategoryID] 
+@CategoryID int,
+@Culture nvarchar(50),
+@CategoryName nvarchar(4000),
+@ModuleID int
+AS
+
+IF EXISTS (select Culture from {databaseOwner}[{objectQualifier}DCC_EF_Category] where CategoryID=@CategoryID AND Culture = @Culture AND ModuleID=@ModuleID) 
+Begin
+update
+{databaseOwner}[{objectQualifier}DCC_EF_CategoryCulture]
+set
+Culture=@Culture,
+CategoryName=@CategoryName
+where
+CategoryID=@CategoryID
+AND Culture=@Culture
+End
+ELSE
+Begin
+insert into
+{databaseOwner}[{objectQualifier}DCC_EF_CategoryCulture]
+(CategoryID,Culture,CategoryName)
+values
+(@CategoryID,@Culture,@CategoryName)
+End

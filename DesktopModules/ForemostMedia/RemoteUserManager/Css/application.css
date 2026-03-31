@@ -1,0 +1,138 @@
+.fmRemoteUserManager-view .form-control-static span {
+  color: #555555;
+}
+.fmRemoteUserManager-view .fmForm .dnnFormItem {
+  width: auto;
+}
+.fmRemoteUserManager-view .form-group .dnnLabel {
+  float: none;
+  margin-right: 0;
+  width: auto;
+}
+.fmRemoteUserManager-view .form-group input[type=text],
+.fmRemoteUserManager-view .form-group input[type=password],
+.fmRemoteUserManager-view .form-group input[type=email],
+.fmRemoteUserManager-view .form-group input[type=tel],
+.fmRemoteUserManager-view .form-group textarea {
+  width: 100%;
+  max-width: 100%;
+  margin-bottom: auto;
+}
+.fmRemoteUserManager-view .form-group a.btn-primary:visited,
+.fmRemoteUserManager-view .form-group a.btn-success:visited,
+.fmRemoteUserManager-view .form-group a.btn-info:visited,
+.fmRemoteUserManager-view .form-group a.btn-warning:visited,
+.fmRemoteUserManager-view .form-group a.btn-danger:visited {
+  color: #fff;
+}
+.fmRemoteUserManager-view .form-group a.btn-default:visited {
+  color: #333;
+}
+.fmRemoteUserManager-view dd {
+  padding-left: 30px;
+  padding-bottom: 10px;
+}
+.fmRemoteUserManager-view .alert-default {
+  color: #777777;
+  background-color: #ccc;
+  border-color: #222222;
+}
+.fmRemoteUserManager-view .alert-default hr {
+  border-top-color: #161616;
+}
+.fmRemoteUserManager-view .alert-default .alert-link {
+  color: #5e5e5e;
+}
+.fmRemoteUserManager-view .fm-scroll-body {
+  max-height: 500px;
+}
+.fmRemoteUserManager-view .fm-scroll-body thead tr:nth-child(1) th {
+  position: sticky;
+  top: 0;
+  background: white;
+}
+.fmRemoteUserManager-view .fm-scroll-body tfoot tr:nth-child(1) th {
+  position: sticky;
+  bottom: 0;
+  background: white;
+}
+.fmRemoteUserManager-view .alert-no-revenue {
+  color: #fff;
+  background-color: red;
+  border-color: #d43f3a;
+}
+.fmRemoteUserManager-view .alert-no-revenue hr {
+  border-top-color: #c9302c;
+}
+.fmRemoteUserManager-view .alert-no-revenue .alert-link {
+  color: #e6e6e6;
+}
+.fmRemoteUserManager-view .alert-not-invoiced {
+  color: #333;
+  background-color: lightgray;
+  border-color: #ccc;
+}
+.fmRemoteUserManager-view .alert-not-invoiced hr {
+  border-top-color: #bfbfbf;
+}
+.fmRemoteUserManager-view .alert-not-invoiced .alert-link {
+  color: #1a1a1a;
+}
+.fmRemoteUserManager-view .alert-15 {
+  color: #333;
+  background-color: orange;
+  border-color: #ebccd1;
+}
+.fmRemoteUserManager-view .alert-15 hr {
+  border-top-color: #e4b9c0;
+}
+.fmRemoteUserManager-view .alert-15 .alert-link {
+  color: #1a1a1a;
+}
+.fmRemoteUserManager-view .alert-30 {
+  color: #333;
+  background-color: gold;
+  border-color: #eea236;
+}
+.fmRemoteUserManager-view .alert-30 hr {
+  border-top-color: #ec971f;
+}
+.fmRemoteUserManager-view .alert-30 .alert-link {
+  color: #1a1a1a;
+}
+.fmRemoteUserManager-view .alert-45 {
+  color: #333;
+  background-color: LemonChiffon;
+  border-color: gold;
+}
+.fmRemoteUserManager-view .alert-45 hr {
+  border-top-color: #e6c200;
+}
+.fmRemoteUserManager-view .alert-45 .alert-link {
+  color: #1a1a1a;
+}
+.fmRemoteUserManager-view .table-hover > tbody > tr:hover {
+  background-color: #777777;
+  color: #fff;
+}
+.fmRemoteUserManager-view #fmLoadingSpinner {
+  height: 100%;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  z-index: 10000;
+}
+.fmRemoteUserManager-view #fmLoadingSpinner .ui-widget-overlay {
+  top: 0;
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  background-color: #555555;
+  filter: alpha(opacity=50);
+  opacity: 0.5;
+}
+.fmRemoteUserManager-view #fmLoadingSpinner .fm-loading {
+  top: 50%;
+  left: 50%;
+  position: absolute;
+}

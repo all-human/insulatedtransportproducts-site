@@ -1,0 +1,418 @@
+<FM_Distributors>
+  <ModuleSettings>
+    <distributorTypes>
+      <distributorType>
+        <Name>Manufacturer Rep</Name>
+        <ImageUrl />
+      </distributorType>
+      <distributorType>
+        <Name>Regional Sales Representative</Name>
+        <ImageUrl />
+      </distributorType>
+    </distributorTypes>
+    <PriorityGroups>
+      <PriorityGroup>
+        <Name />
+        <SortOrder>0</SortOrder>
+      </PriorityGroup>
+    </PriorityGroups>
+    <distributors>
+      <distributor>
+        <UserInfo>
+          <Company />
+          <FirstName>Terry</FirstName>
+          <LastName>Craft</LastName>
+          <Email>tcraft@signode.com</Email>
+          <AltEmail />
+          <Website />
+          <Address />
+          <Address2 />
+          <City />
+          <State />
+          <Country>US</Country>
+          <PostalCode />
+          <Phone>800-233-6180 x8212</Phone>
+          <AltPhone />
+          <Cellphone>706-505-6902</Cellphone>
+          <Fax />
+          <Territory />
+          <PriorityGroup />
+        </UserInfo>
+        <Regions>
+          <Region>
+            <State />
+            <Country>US</Country>
+          </Region>
+          <Region>
+            <State>CA-MB</State>
+            <Country>CA</Country>
+          </Region>
+          <Region>
+            <State>CA-NB</State>
+            <Country>CA</Country>
+          </Region>
+          <Region>
+            <State>CA-NL</State>
+            <Country>CA</Country>
+          </Region>
+          <Region>
+            <State>CA-NS</State>
+            <Country>CA</Country>
+          </Region>
+          <Region>
+            <State>CA-NT</State>
+            <Country>CA</Country>
+          </Region>
+          <Region>
+            <State>CA-NV</State>
+            <Country>CA</Country>
+          </Region>
+          <Region>
+            <State>CA-ON</State>
+            <Country>CA</Country>
+          </Region>
+          <Region>
+            <State>CA-PE</State>
+            <Country>CA</Country>
+          </Region>
+          <Region>
+            <State>CA-QC</State>
+            <Country>CA</Country>
+          </Region>
+          <Region>
+            <State>CA-SK</State>
+            <Country>CA</Country>
+          </Region>
+          <Region>
+            <State>CA-YT</State>
+            <Country>CA</Country>
+          </Region>
+          <Region>
+            <State>US-CT</State>
+            <Country>US</Country>
+          </Region>
+          <Region>
+            <State>US-FL</State>
+            <Country>US</Country>
+          </Region>
+          <Region>
+            <State>US-IA</State>
+            <Country>US</Country>
+          </Region>
+          <Region>
+            <State>US-IL</State>
+            <Country>US</Country>
+          </Region>
+          <Region>
+            <State>US-IN</State>
+            <Country>US</Country>
+          </Region>
+          <Region>
+            <State>US-KY</State>
+            <Country>US</Country>
+          </Region>
+          <Region>
+            <State>US-MA</State>
+            <Country>US</Country>
+          </Region>
+          <Region>
+            <State>US-ME</State>
+            <Country>US</Country>
+          </Region>
+          <Region>
+            <State>US-MI</State>
+            <Country>US</Country>
+          </Region>
+          <Region>
+            <State>US-MN</State>
+            <Country>US</Country>
+          </Region>
+          <Region>
+            <State>US-ND</State>
+            <Country>US</Country>
+          </Region>
+          <Region>
+            <State>US-NE</State>
+            <Country>US</Country>
+          </Region>
+          <Region>
+            <State>US-NH</State>
+            <Country>US</Country>
+          </Region>
+          <Region>
+            <State>US-NJ</State>
+            <Country>US</Country>
+          </Region>
+          <Region>
+            <State>US-NY</State>
+            <Country>US</Country>
+          </Region>
+          <Region>
+            <State>US-OH</State>
+            <Country>US</Country>
+          </Region>
+          <Region>
+            <State>US-RI</State>
+            <Country>US</Country>
+          </Region>
+          <Region>
+            <State>US-SD</State>
+            <Country>US</Country>
+          </Region>
+          <Region>
+            <State>US-VT</State>
+            <Country>US</Country>
+          </Region>
+          <Region>
+            <State>US-WV</State>
+            <Country>US</Country>
+          </Region>
+        </Regions>
+        <DistTypes>
+          <DistType>
+            <Name>Regional Sales Representative</Name>
+          </DistType>
+        </DistTypes>
+      </distributor>
+      <distributor>
+        <UserInfo>
+          <Company>Cherry Sales</Company>
+          <FirstName>Cherry</FirstName>
+          <LastName>Sales</LastName>
+          <Email>sales@cherrysales.net</Email>
+          <AltEmail />
+          <Website />
+          <Address />
+          <Address2 />
+          <City />
+          <State />
+          <Country>US</Country>
+          <PostalCode />
+          <Phone>706-884-4504</Phone>
+          <AltPhone />
+          <Cellphone />
+          <Fax />
+          <Territory />
+          <PriorityGroup />
+        </UserInfo>
+        <Regions>
+          <Region>
+            <State>US-AL</State>
+            <Country>US</Country>
+          </Region>
+          <Region>
+            <State>US-GA</State>
+            <Country>US</Country>
+          </Region>
+          <Region>
+            <State>US-MS</State>
+            <Country>US</Country>
+          </Region>
+          <Region>
+            <State>US-NC</State>
+            <Country>US</Country>
+          </Region>
+          <Region>
+            <State>US-SC</State>
+            <Country>US</Country>
+          </Region>
+          <Region>
+            <State>US-TN</State>
+            <Country>US</Country>
+          </Region>
+          <Region>
+            <State>US-VA</State>
+            <Country>US</Country>
+          </Region>
+        </Regions>
+        <DistTypes>
+          <DistType>
+            <Name>Manufacturer Rep</Name>
+          </DistType>
+        </DistTypes>
+      </distributor>
+      <distributor>
+        <UserInfo>
+          <Company>Rick Eberts</Company>
+          <FirstName>Rick</FirstName>
+          <LastName>Eberts</LastName>
+          <Email>rickeberts@gmail.com</Email>
+          <AltEmail />
+          <Website />
+          <Address />
+          <Address2 />
+          <City />
+          <State />
+          <Country>US</Country>
+          <PostalCode />
+          <Phone>215-859-0169</Phone>
+          <AltPhone />
+          <Cellphone />
+          <Fax />
+          <Territory />
+          <PriorityGroup />
+        </UserInfo>
+        <Regions>
+          <Region>
+            <State>US-DE</State>
+            <Country>US</Country>
+          </Region>
+          <Region>
+            <State>US-MD</State>
+            <Country>US</Country>
+          </Region>
+          <Region>
+            <State>US-NJ</State>
+            <Country>US</Country>
+          </Region>
+          <Region>
+            <State>US-PA</State>
+            <Country>US</Country>
+          </Region>
+        </Regions>
+        <DistTypes>
+          <DistType>
+            <Name>Manufacturer Rep</Name>
+          </DistType>
+        </DistTypes>
+      </distributor>
+      <distributor>
+        <UserInfo>
+          <Company>Mike Jones</Company>
+          <FirstName>Mike</FirstName>
+          <LastName>Jones</LastName>
+          <Email>mdjones@signode.com</Email>
+          <AltEmail />
+          <Website />
+          <Address />
+          <Address2 />
+          <City />
+          <State />
+          <Country>US</Country>
+          <PostalCode />
+          <Phone>800-233-6180 x8204</Phone>
+          <AltPhone />
+          <Cellphone>706-415-0612</Cellphone>
+          <Fax />
+          <Territory />
+          <PriorityGroup />
+        </UserInfo>
+        <Regions>
+          <Region>
+            <State />
+            <Country>US</Country>
+          </Region>
+          <Region>
+            <State>CA-AB</State>
+            <Country>CA</Country>
+          </Region>
+          <Region>
+            <State>CA-BC</State>
+            <Country>CA</Country>
+          </Region>
+          <Region>
+            <State>CA-MB</State>
+            <Country>CA</Country>
+          </Region>
+          <Region>
+            <State>CA-SK</State>
+            <Country>CA</Country>
+          </Region>
+          <Region>
+            <State>US-AR</State>
+            <Country>US</Country>
+          </Region>
+          <Region>
+            <State>US-AZ</State>
+            <Country>US</Country>
+          </Region>
+          <Region>
+            <State>US-CA</State>
+            <Country>US</Country>
+          </Region>
+          <Region>
+            <State>US-CO</State>
+            <Country>US</Country>
+          </Region>
+          <Region>
+            <State>US-ID</State>
+            <Country>US</Country>
+          </Region>
+          <Region>
+            <State>US-KS</State>
+            <Country>US</Country>
+          </Region>
+          <Region>
+            <State>US-LA</State>
+            <Country>US</Country>
+          </Region>
+          <Region>
+            <State>US-MO</State>
+            <Country>US</Country>
+          </Region>
+          <Region>
+            <State>US-MT</State>
+            <Country>US</Country>
+          </Region>
+          <Region>
+            <State>US-NV</State>
+            <Country>US</Country>
+          </Region>
+          <Region>
+            <State>US-OK</State>
+            <Country>US</Country>
+          </Region>
+          <Region>
+            <State>US-OR</State>
+            <Country>US</Country>
+          </Region>
+          <Region>
+            <State>US-TX</State>
+            <Country>US</Country>
+          </Region>
+          <Region>
+            <State>US-UT</State>
+            <Country>US</Country>
+          </Region>
+          <Region>
+            <State>US-WA</State>
+            <Country>US</Country>
+          </Region>
+          <Region>
+            <State>US-WI</State>
+            <Country>US</Country>
+          </Region>
+          <Region>
+            <State>US-WY</State>
+            <Country>US</Country>
+          </Region>
+        </Regions>
+        <DistTypes>
+          <DistType>
+            <Name>Regional Sales Representative</Name>
+          </DistType>
+        </DistTypes>
+      </distributor>
+    </distributors>
+    <template>
+      <ButtonText>Submit</ButtonText>
+      <PageSize>4</PageSize>
+      <templateText>&lt;div class="row"&gt;
+    &lt;div class="col-md-12"&gt;
+        &lt;h4&gt;[EDIT] [FIRSTNAME] [LASTNAME]&lt;/h4&gt;
+&lt;p&gt;[NOTES]&lt;/p&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="row"&gt;
+    &lt;div class="col-md-12"&gt;
+        [HASPHONE]&lt;p&gt;&lt;span&gt;Phone: &lt;/span&gt;&lt;a href="tel:[PHONE]"&gt;[PHONE]&lt;/a&gt;&lt;/p&gt;[/HASPHONE]
+        [HASCELL]&lt;p&gt;&lt;span&gt;Cell: &lt;/span&gt;&lt;a href="tel:[CELL]"&gt; [CELL]&lt;/a&gt;&lt;/p&gt;[/HASCELL]
+        [HASFAX]&lt;p&gt;&lt;span&gt;Fax: &lt;/span&gt;[FAX]&lt;/p&gt;[/HASFAX]
+        [HASEMAIL]&lt;p&gt;&lt;span&gt;Email: &lt;/span&gt;&lt;a href="mailto:[EMAIL]"&gt;[EMAIL]&lt;/a&gt;&lt;/p&gt;[/HASEMAIL]
+    &lt;/div&gt;
+&lt;/div&gt;
+&lt;hr class="distributor"/&gt;</templateText>
+      <PortalId>0</PortalId>
+    </template>
+  </ModuleSettings>
+</FM_Distributors>

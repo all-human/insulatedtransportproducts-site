@@ -1,0 +1,20 @@
+﻿<dotnetnuke type="ResourceFile" version="5.0">
+  <files>
+    <file>
+      <path>css/</path>
+      <name>bootstrap.css</name>
+    </file>
+    <file>
+      <path>css/</path>
+      <name>bootstrap.min.css</name>
+    </file>
+    <file>
+      <path>js/</path>
+      <name>bootstrap.js</name>
+    </file>
+    <file>
+      <path>js/</path>
+      <name>bootstrap.min.js</name>
+    </file>
+  </files>
+</dotnetnuke>

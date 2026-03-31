@@ -1,0 +1,23 @@
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+
+CREATE procedure {databaseOwner}[{objectQualifier}DCC_EF_FormDataDelete] 
+
+@RowID int
+
+as
+if(@RowID<>0)
+begin
+delete from {databaseOwner}[{objectQualifier}DCC_EF_FormDataMaster] where FormRecordID=@RowID
+end
+else
+begin
+delete from {databaseOwner}[{objectQualifier}DCC_EF_FormDataMaster]
+end 
+--View for Category old Table
+
+GO
+
+
