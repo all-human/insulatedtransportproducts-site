@@ -6,57 +6,87 @@ This document covers the full migration of the DotNetNuke 7.3.1 site to Azure.
 
 **Azure resources (resource group: `signode-rg`, location: North Europe)**
 
-| Resource | Name | Purpose |
-|---|---|---|
-| App Service (Windows) | TBD | Host the ASP.NET WebForms app |
-| Azure SQL Database | TBD | Replace SQL Server Compact |
-| Storage Account | `itpdocs` | Video files (container: `videos`) |
+| Resource | Name | Status | Purpose |
+|---|---|---|---|
+| App Service (Windows) | TBD | Not created | Host the ASP.NET WebForms app |
+| Azure SQL Server | `itp-sql-server` | ✅ Created | Hosts the DNN database |
+| Azure SQL Database | `insulatedtransportproducts` | ✅ Created | DNN database (Basic tier, 2GB) |
+| Storage Account | `itpdocs` | ✅ Created | Video files (container: `videos`) |
+
+**Azure SQL connection details:**
+- Server: `itp-sql-server.database.windows.net`
+- Database: `insulatedtransportproducts`
+- Admin user: `itpadmin`
+- Password: stored securely — do not commit to repo
 
 **GitHub repo:** https://github.com/all-human/insulatedtransportproducts-site
 
 ---
 
-## Step 1 — Database Migration
+## Step 1 — Database Migration ✅ In Progress
 
-The site uses SQL Server Compact (`App_Data/Database.mdf`). Azure SQL does not support SQL CE.
+### What we found
+The `App_Data/Database.mdf` is SQL Server Compact but the live site actually used a full SQL Server (`DNN2SQLV3` on the old hosting). The complete DNN schema is available in `Providers/DataProviders/SqlDataProvider/` — no backup from the hosting provider needed.
 
-1. Install SQL Server Express locally
-2. Use the [SQL CE to SQL Server migration tool](https://sqlcetoolbox.codeplex.com/) or SSMS to migrate the schema and data
-3. Run DNN's built-in data provider upgrade if prompted
-4. Export to `.bacpac` via SSMS (`Tasks → Export Data-tier Application`)
-5. Create an Azure SQL Database in `signode-rg`
-6. Import the `.bacpac` (`Tasks → Import Data-tier Application`)
-7. Update the connection string in `web.config` (see Step 3)
+### What was done
+1. ✅ Azure SQL Server `itp-sql-server` created in `signode-rg` (North Europe)
+2. ✅ Database `insulatedtransportproducts` created (Basic tier)
+3. ✅ Firewall rules set (local machine + Azure services)
+4. ✅ `sqlpackage` installed via `dotnet tool install -g microsoft.sqlpackage`
+5. ⏳ DNN schema being installed via `Scripts/install-dnn-schema-azure.ps1`
+
+### To re-run schema installation
+```powershell
+cd <site-root>
+powershell -ExecutionPolicy Bypass -File Scripts/install-dnn-schema-azure.ps1
+```
+
+The script runs all scripts in this order:
+1. `InstallCommon.sql` — ASP.NET common tables
+2. `InstallMembership.sql` — membership tables
+3. `InstallRoles.sql` — roles tables
+4. `InstallProfile.sql` — profile tables
+5. `DotNetNuke.Schema.SqlDataProvider` — core DNN tables
+6. `DotNetNuke.Data.SqlDataProvider` — stored procedures + seed data
+7. All `XX.XX.XX.SqlDataProvider` version upgrade scripts in order (up to 7.3.3)
+
+### After schema is installed
+Update `web.config` connection string:
+```xml
+<add name="SiteSqlServer"
+     connectionString="Server=itp-sql-server.database.windows.net;Database=insulatedtransportproducts;User Id=itpadmin;Password=ITP@Azure2024!;Encrypt=True;TrustServerCertificate=False;"
+     providerName="System.Data.SqlClient" />
+```
 
 ---
 
-## Step 2 — Migrate Video Paths to Azure Blob Storage
+## Step 2 — Video Files ✅ Complete
 
-Videos are stored in `itpdocs` storage account, container `videos`.
+47 video files uploaded to Azure Blob Storage.
 
-**Base URL:** `https://itpdocs.blob.core.windows.net/videos/`
+- Storage account: `itpdocs` (signode-rg, North Europe)
+- Container: `videos` (public blob access)
+- Base URL: `https://itpdocs.blob.core.windows.net/videos/`
 
-After the database is on Azure SQL, run the script at:
+### Migrate video paths in database
+After the schema install completes, run:
 
 ```
 Scripts/migrate-videos-to-azure-blob.sql
 ```
 
-### What the script does
+What it updates:
+- `UVG_Video.VideoPath` — `/Portals/0/UltraVideoGallery/...` → Azure Blob URL
+- `UVG_Video.H264VideoPath` — same
+- `UVG_Library.VideoPath` — same
+- `EasyGalleryPictures` — inspect column name first, then uncomment and run
 
-- Updates `UVG_Video.VideoPath` — replaces `/Portals/0/UltraVideoGallery/...` with the Azure Blob URL
-- Updates `UVG_Video.H264VideoPath` — same replacement
-- Updates `UVG_Library.VideoPath` — same replacement
-- Includes a preview SELECT for `EasyGalleryPictures` (column name must be confirmed before running)
-- Ends with a verification query that should return 0 rows on success
-
-### Run order
-
+Run order:
 1. Run all `SELECT` preview statements first
 2. Run `UVG_Video` UPDATE statements
 3. Run `UVG_Library` UPDATE statement
-4. Inspect `EasyGalleryPictures` columns, then uncomment and run that UPDATE
-5. Run the final verification query
+4. Inspect `EasyGalleryPictures` columns, uncomment and run that UPDATE
+5. Run the final verification query (should return 0 rows)
 
 ---
 
@@ -66,7 +96,7 @@ Before deploying, update `web.config`:
 
 | Setting | Change |
 |---|---|
-| Connection string | Point to Azure SQL Database |
+| Connection string | `Server=itp-sql-server.database.windows.net;Database=insulatedtransportproducts;User Id=itpadmin;Password=...;Encrypt=True;` |
 | `machineKey` validationKey/decryptionKey | Regenerate — do not reuse current keys |
 | Temp path `V:\vhosts\...` | Change to `~/Temp` |
 | Error page `/500.html` | Fix or remove `V:\` reference |
@@ -90,7 +120,7 @@ Store secrets as Azure App Service Application Settings, not in `web.config` dir
 
 ## Step 5 — Deploy from GitHub
 
-A GitHub Actions workflow deploys to Azure App Service on push to `main`.
+A GitHub Actions workflow deploys to Azure App Service on push to `master`.
 
 Workflow file: `.github/workflows/deploy.yml` (to be created)
 
@@ -126,12 +156,15 @@ jobs:
 
 ## Step 6 — Post-Deploy Checklist
 
-- [ ] DNN upgrade check completes in browser on first load
+- [ ] Schema installation completes without errors
+- [ ] Run `Scripts/migrate-videos-to-azure-blob.sql` against Azure SQL
+- [ ] Update `web.config` connection string to Azure SQL
+- [ ] DNN loads in browser and upgrade check completes on first load
 - [ ] Update `PortalAlias` in database to match new domain/Azure URL
 - [ ] Update `SiteUrls.config` primary domain
 - [ ] Test UltraVideoGallery — videos load from Azure Blob
 - [ ] Test EasyDNNGallery — videos/images load correctly
-- [ ] Verify URL rewriting works (check `fmrewrites.config` rules)
+- [ ] Verify URL rewriting works (`fmrewrites.config` rules)
 - [ ] Point custom domain + SSL in App Service
 - [ ] Rotate database credentials (currently exposed in public GitHub repo)
 - [ ] Regenerate MachineKey values
@@ -143,3 +176,4 @@ jobs:
 - DNN 7.3.1 is EOL — consider upgrading to DNN 9.x post-migration
 - Third-party module licenses (EasyDNNGallery, UltraVideoGallery) may need to be re-issued for the new domain/server
 - `web.config` is committed to the public repo and contains live credentials — rotate immediately
+- `sqlpackage` is installed globally: `dotnet tool install -g microsoft.sqlpackage`
