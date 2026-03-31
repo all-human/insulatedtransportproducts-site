@@ -2,38 +2,57 @@
 
 ## Overview
 
-This document covers the full migration of the DotNetNuke 7.3.1 site to Azure.
+This document covers the full migration of the DotNetNuke 7.3.1 site to Azure, including a new CMS instance for content management.
 
 **Azure resources (resource group: `signode-rg`, location: North Europe)**
+
+### DNN Site Resources
 
 | Resource | Name | Status | Purpose |
 |---|---|---|---|
 | App Service (Windows) | TBD | Not created | Host the ASP.NET WebForms app |
-| Azure SQL Server | `itp-sql-server` | ✅ Created | Hosts the DNN database |
-| Azure SQL Database | `insulatedtransportproducts` | ✅ Created | DNN database (Basic tier, 2GB) |
-| Storage Account | `itpdocs` | ✅ Created | Video files (container: `videos`) |
+| Azure SQL Server | `itp-sql-server` | ✅ Created | Hosts all databases |
+| Azure SQL Database | `insulatedtransportproducts` | ✅ Created | DNN database — 144 tables, 769 stored procs |
+| Storage Account | `itpdocs` | ✅ Created | Shared storage for all assets |
+| Blob container | `videos` | ✅ Created | 47 video files |
+
+### CMS Instance Resources (all-human CMS pilot — ITP prod)
+
+| Resource | Name | Status | Purpose |
+|---|---|---|---|
+| SQL Database | `cms-itp-prod` on `itp-sql-server` | ✅ Created | CMS database (Serverless GP Gen5) |
+| App Service Plan | `asp-cms-ah-itp` | ✅ Created | Linux B1 |
+| App Service | `app-cms-ah-itp-prod` | ✅ Created | CMS admin + Delivery API |
+| Key Vault | `kv-cms-ah-itp` | ✅ Created | Secrets (DB conn string, JWT) |
+| Blob container | `cms-itp-prod` in `itpdocs` | ✅ Created | CMS media assets |
+
+**CMS URL:** https://app-cms-ah-itp-prod.azurewebsites.net
+
+**Key Vault secrets:**
+- `DbConnectionString-itp-prod` — Azure SQL connection string
+- `JwtSecret-itp` — JWT signing secret
 
 **Azure SQL connection details:**
 - Server: `itp-sql-server.database.windows.net`
-- Database: `insulatedtransportproducts`
-- Admin user: `itpadmin`
-- Password: stored securely — do not commit to repo
+- DNN Database: `insulatedtransportproducts` / Admin: `itpadmin`
+- CMS Database: `cms-itp-prod` / Admin: `itpadmin`
 
 **GitHub repo:** https://github.com/all-human/insulatedtransportproducts-site
 
 ---
 
-## Step 1 — Database Migration ✅ In Progress
+## Step 1 — DNN Database Migration ✅ Complete
 
 ### What we found
-The `App_Data/Database.mdf` is SQL Server Compact but the live site actually used a full SQL Server (`DNN2SQLV3` on the old hosting). The complete DNN schema is available in `Providers/DataProviders/SqlDataProvider/` — no backup from the hosting provider needed.
+The `App_Data/Database.mdf` is SQL Server Compact but the live site used a full SQL Server (`DNN2SQLV3` on old hosting). The complete DNN schema is in `Providers/DataProviders/SqlDataProvider/` — no backup from the hosting provider needed.
 
 ### What was done
 1. ✅ Azure SQL Server `itp-sql-server` created in `signode-rg` (North Europe)
-2. ✅ Database `insulatedtransportproducts` created (Basic tier)
+2. ✅ Database `insulatedtransportproducts` created (Basic tier, 2GB)
 3. ✅ Firewall rules set (local machine + Azure services)
 4. ✅ `sqlpackage` installed via `dotnet tool install -g microsoft.sqlpackage`
-5. ⏳ DNN schema being installed via `Scripts/install-dnn-schema-azure.ps1`
+5. ✅ DNN schema installed via `Scripts/install-dnn-schema-azure.ps1` — **144 tables, 769 stored procedures**
+6. ✅ `web.config` updated to point at Azure SQL
 
 ### To re-run schema installation
 ```powershell
@@ -41,22 +60,41 @@ cd <site-root>
 powershell -ExecutionPolicy Bypass -File Scripts/install-dnn-schema-azure.ps1
 ```
 
-The script runs all scripts in this order:
-1. `InstallCommon.sql` — ASP.NET common tables
-2. `InstallMembership.sql` — membership tables
-3. `InstallRoles.sql` — roles tables
-4. `InstallProfile.sql` — profile tables
-5. `DotNetNuke.Schema.SqlDataProvider` — core DNN tables
-6. `DotNetNuke.Data.SqlDataProvider` — stored procedures + seed data
-7. All `XX.XX.XX.SqlDataProvider` version upgrade scripts in order (up to 7.3.3)
-
-### After schema is installed
-Update `web.config` connection string:
+### web.config connection string (already updated)
 ```xml
 <add name="SiteSqlServer"
      connectionString="Server=itp-sql-server.database.windows.net;Database=insulatedtransportproducts;User Id=itpadmin;Password=ITP@Azure2024!;Encrypt=True;TrustServerCertificate=False;"
      providerName="System.Data.SqlClient" />
 ```
+
+---
+
+## Step 1b — CMS Instance Setup ✅ Complete
+
+CMS instance deployed following `SCALING.md` from the CMS prototype project.
+
+### What was done
+1. ✅ Key Vault `kv-cms-ah-itp` created (RBAC mode)
+2. ✅ SQL Database `cms-itp-prod` created on shared `itp-sql-server`
+3. ✅ App Service Plan `asp-cms-ah-itp` created (Linux B1)
+4. ✅ App Service `app-cms-ah-itp-prod` created (.NET 9)
+5. ✅ Managed identity enabled on App Service
+6. ✅ KV Secrets User role granted to App Service managed identity
+7. ✅ Storage Blob Data Contributor role granted to App Service managed identity
+8. ✅ Blob container `cms-itp-prod` created in `itpdocs`
+9. ✅ Secrets stored in Key Vault (DB connection string, JWT secret)
+10. ✅ App Service settings configured (storage, JWT, environment)
+11. ⏳ EF Core migrations running
+12. ⬜ CMS build + deploy pending
+
+### CMS App Service settings
+| Setting | Value |
+|---|---|
+| `Storage__Type` | `azure` |
+| `Storage__Azure__ContainerUrl` | `https://itpdocs.blob.core.windows.net/cms-itp-prod` |
+| `ASPNETCORE_ENVIRONMENT` | `Production` |
+| Connection string | KV ref → `DbConnectionString-itp-prod` |
+| JWT secret | KV ref → `JwtSecret-itp` |
 
 ---
 
